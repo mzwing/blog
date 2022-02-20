@@ -3,18 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
-    />
     <link rel="shortcut icon" href="./favicon.ico" />
     <title></title>
 
+
+  </head>
+
+  <body>
+    
     <style id="blogcss">
       .article-item,
       .article-content,
@@ -439,58 +435,56 @@
         }
       }
     </style>
-    <style id="whether_nightmode">
+        <style id="whether_nightmode">
 
-    </style>
-    <style>
-      
-blockquote {
-  color: #666666;
-  margin: 0;
-  padding-left: 12px;
-  border-left: 4px #eee solid;
-}
-
-hr {
-  display: block;
-  border: 0;
-  border-top: 1px solid #aaa;
-  border-bottom: 1px solid #eee;
-  margin: 1em 0;
-  padding: 0;
-}
-
-pre,
-code,
-kbd,
-samp {
-  border-radius: 4px;
-  background-color: #f2f5f8;
-  padding-top:4px;
-  padding-bottom: 4px;
-  padding-left: 12px;
-  padding-right: 12px;
-  color:#0550ae;
-  display: inline-block;
-}
-
-#night_mode_btn{
-  position: fixed;
-  z-index: 99;
-  right: 20px;
-  bottom: 20px;
-}
-#back_to_top_btn{
-  position: fixed;
-  z-index: 99;
-  right: 20px;
-  bottom: 60px;
-}
-
-    </style>
-  </head>
-
-  <body>
+        </style>
+        <style>
+          
+    blockquote {
+      color: #666666;
+      margin: 0;
+      padding-left: 12px;
+      border-left: 4px #eee solid;
+    }
+    
+    hr {
+      display: block;
+      border: 0;
+      border-top: 1px solid #aaa;
+      border-bottom: 1px solid #eee;
+      margin: 1em 0;
+      padding: 0;
+    }
+    
+    pre,
+    code,
+    kbd,
+    samp {
+      border-radius: 4px;
+      background-color: #f2f5f8;
+      padding-top:4px;
+      padding-bottom: 4px;
+      padding-left: 12px;
+      padding-right: 12px;
+      color:#0550ae;
+      display: inline-block;
+    }
+    
+    #night_mode_btn{
+      position: fixed;
+      z-index: 99;
+      right: 20px;
+      bottom: 20px;
+    }
+    #back_to_top_btn{
+      position: fixed;
+      z-index: 99;
+      right: 20px;
+      bottom: 60px;
+    }
+    
+        </style>
+        <style id="custom_css"></style>
     <div id="top"></div>
     <div id="root"></div>
     <div id="back_to_top_btn">
@@ -501,10 +495,10 @@ samp {
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/valine@1.4.16/dist/Valine.min.js"></script>
     <script>
 
       if(localStorage.getItem("is_nightmode") === null || localStorage.getItem("is_nightmode") === undefined){
@@ -862,6 +856,7 @@ samp {
             }
 
             render_bottom_information();
+            execute_custom_js();
 
             if (
               blog["全局评论设置"]["启用valine评论"] &&
@@ -950,6 +945,7 @@ samp {
               ).innerHTML += `<div class="bbg-comment-area"><h3><i class="fa fa-comments-o"></i> 在友人帐中评论：</h3><br /><div id="vcomments"></div></div>`;
             }
             render_bottom_information();
+            execute_custom_js();
             if (
               blog["全局评论设置"]["启用valine评论"] &&
               blog["友人帐页面允许评论"]
@@ -1176,6 +1172,7 @@ samp {
               ).innerHTML += `<div class="bbg-comment-area"><h3><i class="fa fa-comments-o"></i> 在此页面 《${blog["页面列表"][page_id]["页面标题"]}》 下评论：</h3><br /><div id="vcomments"></div></div>`;
             }
             render_bottom_information();
+            execute_custom_js();
             if (
               blog["全局评论设置"]["启用valine评论"] &&
               blog["页面列表"][page_id]["启用评论"]
@@ -1247,12 +1244,19 @@ samp {
             `;
       }
 
+      function execute_custom_js(){
+        if(blog["启用自定义JS"] === true){
+          eval(blog["自定义JS"]);
+        }
+      }
+
       function enter_tag(tagname) {
         resetPage();
         render_nav(false);
         render_container();
         render_tag(decodeURIComponent(tagname));
         render_bottom_information();
+        execute_custom_js();
       }
 
       function enter_friend_book(){
@@ -1268,6 +1272,7 @@ samp {
         render_container();
         render_tag_tree();
         render_bottom_information();
+        execute_custom_js();
       }
 
       function enter_indexPage() {
@@ -1277,6 +1282,7 @@ samp {
         render_index_title_info();
         render_article_list();
         render_bottom_information();
+        execute_custom_js();
       }
 
       function enter_article(article_id) {
@@ -1298,13 +1304,26 @@ samp {
         return false;
       }
 
+      function importCSSFile(uri) {
+        let css = document.createElement('link');
+        css.setAttribute('rel','stylesheet');
+        css.setAttribute('href',uri);
+        document.getElementsByTagName('head')[0].appendChild(css);
+      }
       axios
         .get("./data/index.json?timestamp=" + Date.parse(new Date()))
         .then(function (response) {
           blog = response.data;
+          
+          let cdn_path = blog["CDN路径"];
 
+          // js importing disabled due to execution order is inevitable, while css importing can safely operate.
+
+          importCSSFile(cdn_path + "/bootstrap@5.0.2/dist/css/bootstrap.min.css");
+          importCSSFile(cdn_path + "/font-awesome@4.7.0/css/font-awesome.min.css");
+          
           lang_name = blog["网站语言"];
-
+          
           if (blog["全局评论设置"]["valine设置"]["是否使用bbg公共评论服务"]) {
             if (window.location.href.indexOf("?") === -1) {
               comment_authcode = `domain=${window.location.href
@@ -1351,7 +1370,15 @@ samp {
             }
           }
 
-          enter_indexPage();
+          // 自定义css载入
+
+          if(blog["启用自定义CSS"] === true){
+            document.getElementById("custom_css").innerHTML= blog["自定义CSS"];
+          }
+
+          if(getUrlArgs("type") === false){
+            enter_indexPage();
+          }
 
           if (getUrlArgs("type") === "article") {
             let article_filename = getUrlArgs("filename");
