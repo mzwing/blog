@@ -4,7 +4,7 @@
 
 ### 对于看不懂英文的
 
-那似乎只有按照\[官方教程]直接开敲了嘛……
+那似乎只有按照[官方教程](https://wiki.archlinux.org/title/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87))直接开敲了嘛……
 
 ### 能看懂英文的
 
@@ -22,7 +22,7 @@ arch-install
 
 #### 按官方教程来的
 
-建议先参考[此教程](https://opentuna.cn/help/articles/archlinux)去换个源，当然你也可以选择相信arch默认源的速度（反正广东这边不咋地）。
+建议先参考[此教程](https://opentuna.cn/help/archlinux)去换个源，当然你也可以选择相信arch默认源的速度（反正广东这边不咋地）。
 
 然后为新系统安装nano（vim也可以，但我不会，所以后面都以nano为例）。
 
