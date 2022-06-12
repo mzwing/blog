@@ -27,7 +27,7 @@ arch-install
 然后为新系统安装nano（vim也可以，但我不会，所以后面都以nano为例）。
 
 ```bash
-pacstarp -S nano
+pacstrap -S nano
 ```
 
 #### 用arch-install的
