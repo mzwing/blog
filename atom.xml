@@ -1,0 +1,36 @@
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title>洛仙璃の幻梦</title>
+    <subtitle>如光似幻，如影随形</subtitle>
+    <link href="https://mzwing.eu.org/atom.xml" rel="self"/>
+    <link href="https://mzwing.eu.org"/>
+    <updated>2022-07-06T11:31:00.000Z</updated>
+    <id>https://mzwing.eu.org</id>
+    <author>
+        <name>洛仙璃の幻梦</name>
+    </author>
+    <generator uri="https://bbg.nekomoe.xyz">Baiyang-lzy's Blog Generator</generator>
+    <entry>
+        <title>安装ArchLinux+DDE</title>
+        <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=jxiGQWTkcXM4.md"/>
+        <id>https://mzwing.eu.org/index.html?type=article&amp;filename=jxiGQWTkcXM4.md</id>
+        <content type="html">
+            由于安装过程中踩了一些坑，因此记录一下
+        </content>
+        <summary type="html">由于安装过程中踩了一些坑，因此记录一下</summary>
+        </entry><entry>
+        <title>碎记 · 从前的自己</title>
+        <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=33FYJMaEX6dd.md"/>
+        <id>https://mzwing.eu.org/index.html?type=article&amp;filename=33FYJMaEX6dd.md</id>
+        <content type="html">
+            
+        </content>
+        <summary type="html"></summary>
+        </entry><entry>
+        <title>碎记 · 小中考前</title>
+        <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=SsCxhFkRzSfN.md"/>
+        <id>https://mzwing.eu.org/index.html?type=article&amp;filename=SsCxhFkRzSfN.md</id>
+        <content type="html">
+            这是很久前的的一篇文章，现在终于有时间打出来了……
+        </content>
+        <summary type="html">这是很久前的的一篇文章，现在终于有时间打出来了……</summary>
+        </entry></feed>
