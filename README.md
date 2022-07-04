@@ -1,4 +1,4 @@
-# Homepage-bbg  
+# Blog  
 ## Introduction  
 Here is my blog repo.  
 ## 介绍  
