@@ -1,3 +1,16 @@
+marked.setOptions({
+  highlight: function (code) {
+    return hljs.highlightAuto(code).value;
+  }
+});
+
+window.onpopstate = function () {
+  if (window.location.href.indexOf("#top") === -1) {
+    window.location.reload();
+  }
+}
+
+
 currentArticleListPageOrder = 1; //这个变量表示目前在显示文章列表中的第几页，是从1开始数的
 
 if (localStorage.getItem("is_nightmode") === null || localStorage.getItem("is_nightmode") === undefined) {
@@ -14,9 +27,10 @@ function switch_to_night_mode() {
             background-color:#000000c7;
             
           }
-          #blog_index_title,#blog_index_subtitle, .article-content h2,.page-content h2, #article-content-html *, #page-content-html *{
+          #blog_index_title,#blog_index_subtitle, .article-content h2,.page-content h2, #article-content-html p, #page-content-html p{
             color:white;
           }
+
           .article-item, .article-content, .page-content{
             background-color:#000000a8
           }
@@ -26,10 +40,32 @@ function switch_to_night_mode() {
           a{
             color:#67a5ff
           }
-          .card{
+          .card, #tag-content{
             background-color:black;
             color:white
           }
+
+          ul,ol,li,h1,h2 ,h3,h4,h5,h6,.vcontent *, #veditor{
+            color:white
+          }
+
+          pre,
+    code,
+    kbd,
+    samp {
+      border-radius: 4px;
+      background-color: black;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      padding-left: 12px;
+      padding-right: 12px;
+      display: inline-block;
+    }
+
+    .bbg-comment-area{
+      background-color:black;
+      color:white
+    }
           `;
   localStorage.setItem("is_nightmode", "on");
 }
@@ -48,7 +84,7 @@ function switch_night_mode() {
 }
 
 function detect_whether_ui_load_finished() {
-  if (bootstrap_css_import_finished === true && content_load_finished === true) {
+  if (highlight_css_import_finished === true && bootstrap_css_import_finished === true && content_load_finished === true) {
     document.getElementById("root").setAttribute("style", "");
     document.getElementById("loading").setAttribute("style", "display:none");
   }
@@ -61,6 +97,7 @@ function copy_full_article_to_clipboard() {
 
 bootstrap_css_import_finished = false;
 content_load_finished = false;
+highlight_css_import_finished = false;
 
 const langdata = {
   "ARCHIVE_AND_TAGS": {
@@ -104,17 +141,17 @@ function render_nav(isIndexPage) {
   //todo: fix router
   let nav_base = `<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" id="navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" id="navbar_title" href="./index.html">${blog["博客标题"]}</a>
+    <a class="navbar-brand" id="navbar_title" href="./index.html" onclick="enter_indexPage();return false;">${blog["博客标题"]}</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar_items">
         <li class="nav-item" id="navbar_article_list">
-          <a class="nav-link" href="./index.html?type=internal&function=article_list">${langdata["ARTICLE_LIST"][lang_name]}</a>
+          <a class="nav-link" href="./index.html?type=internal&function=article_list" onclick="enter_indexPage();return false;">${langdata["ARTICLE_LIST"][lang_name]}</a>
         </li>
         <li class="nav-item" id="navbar_archive_and_tags">
-          <a class="nav-link" href="./index.html?type=internal&function=archive_and_tags">${langdata["ARCHIVE_AND_TAGS"][lang_name]}</a>
+          <a class="nav-link" href="./index.html?type=internal&function=archive_and_tags" onclick="enter_archive_and_tags();return false;">${langdata["ARCHIVE_AND_TAGS"][lang_name]}</a>
         </li>
       </ul>
     </div>
@@ -139,7 +176,7 @@ function render_nav(isIndexPage) {
       if (blog["页面列表"][i]["是否显示在菜单中"]) {
         document.querySelector("#navbar_items").innerHTML += `
                         <li class="nav-item" id="navbar_page_${i}">
-                            <a class="nav-link" href="./index.html?type=page&filename=${blog["页面列表"][i]["文件名"]}">${blog["页面列表"][i]["若显示在菜单中，则在菜单中显示为"]}</a>
+                            <a class="nav-link" href="./index.html?type=page&filename=${blog["页面列表"][i]["文件名"]}" onclick="enter_page(${i});return false;">${blog["页面列表"][i]["若显示在菜单中，则在菜单中显示为"]}</a>
                         </li>
                         `;
       }
@@ -149,7 +186,7 @@ function render_nav(isIndexPage) {
   if (blog["启用内建友人帐页面"] === true) {
     document.querySelector("#navbar_items").innerHTML += `
                         <li class="nav-item" id="navbar_friendbook">
-                            <a class="nav-link" href="./index.html?type=internal&function=friendbook">友人帐</a>
+                            <a class="nav-link" href="./index.html?type=internal&function=friendbook" onclick="enter_friend_book();return false;">友人帐</a>
                         </li>
             `;
 
@@ -233,7 +270,7 @@ function render_article_list() {
       document.querySelector("#container").innerHTML += `
                     <div class="article-item" id="article-item-${i}">
                         <div class="article-item-sub"><i class="fa fa-thumb-tack"></i> 置顶文章</div>
-                        <h2><a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}">${blog["文章列表"][i]["文章标题"]}</a></h2>
+                        <h2><a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}" onclick="enter_article(${i});return false;">${blog["文章列表"][i]["文章标题"]}</a></h2>
                        
                         
                     </div>
@@ -254,7 +291,7 @@ function render_article_list() {
     } else {
       document.querySelector("#container").innerHTML += `
                     <div class="article-item" id="article-item-${i}">
-                        <h2><a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}">${blog["文章列表"][i]["文章标题"]}</a></h2>
+                        <h2><a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}" onclick="enter_article(${i});return false;">${blog["文章列表"][i]["文章标题"]}</a></h2>
                        
                         
                     </div>
@@ -276,7 +313,7 @@ function render_article_list() {
 
         for (let k = 0; k < blog["文章列表"][i]["标签"].length; k++) {
           document.querySelector("#article-item-sub-" + i).innerHTML += `
-                                <a class="btn btn-light btn-sm" href="./index.html?type=internal&function=tag&argument=${blog["文章列表"][i]["标签"][k]}">${blog["文章列表"][i]["标签"][k]}</a>
+                                <a class="btn btn-light btn-sm" href="./index.html?type=internal&function=tag&argument=${blog["文章列表"][i]["标签"][k]}" onclick="enter_tag('${blog["文章列表"][i]["标签"][k]}');return false;">${blog["文章列表"][i]["标签"][k]}</a>
                                 `;
         }
       }
@@ -350,7 +387,7 @@ function render_article_content(article_id) {
     ) {
       //todo:fix router 2
       document.querySelector("#article-content-sub").innerHTML += `
-            <a class="btn btn-light btn-sm" href="./index.html?type=internal&function=tag&argument=${blog["文章列表"][article_id]["标签"][k]}">${blog["文章列表"][article_id]["标签"][k]}</a>
+            <a class="btn btn-light btn-sm" href="./index.html?type=internal&function=tag&argument=${blog["文章列表"][article_id]["标签"][k]}" onclick="enter_tag('${blog["文章列表"][article_id]["标签"][k]}');return false;">${blog["文章列表"][article_id]["标签"][k]}</a>
             `;
     }
   }
@@ -415,7 +452,7 @@ function render_article_content(article_id) {
       <div class="card articlebottomnav" style="float:left;width:100%">
   <div class="card-body">
     <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> 上一篇文章</h6>
-    <h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id + 1]["文件名"]}">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
+    <h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id + 1]["文件名"]}" onclick="enter_article(${article_id + 1});return false;">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
   </div>
 </div>
     </div>
@@ -471,7 +508,7 @@ function render_article_content(article_id) {
       <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
   <div class="card-body">
     <h6 class="card-subtitle mb-2 text-muted">下一篇文章 <i class="fa fa-arrow-right"></i></h6>
-    <h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id - 1]["文件名"]}">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
+    <h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id - 1]["文件名"]}" onclick="enter_article(${article_id - 1});return false;">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
   </div>
 </div>
     </div>
@@ -487,7 +524,7 @@ function render_article_content(article_id) {
       <div class="card articlebottomnav" style="float:left;width:100%">
   <div class="card-body">
     <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> 上一篇文章</h6>
-    <h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id + 1]["文件名"]}">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
+    <h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id + 1]["文件名"]}" onclick="enter_article(${article_id + 1});return false;">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
   </div>
 </div>
     </div>
@@ -495,7 +532,7 @@ function render_article_content(article_id) {
       <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
   <div class="card-body">
     <h6 class="card-subtitle mb-2 text-muted">下一篇文章 <i class="fa fa-arrow-right"></i></h6>
-    <h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id - 1]["文件名"]}">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
+    <h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id - 1]["文件名"]}" onclick="enter_article(${article_id - 1});return false;">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
   </div>
 </div>
     </div>
@@ -683,7 +720,7 @@ function render_tag_tree() {
         if (tagtree[Object.keys(tagtree)[i]][k] === blog["文章列表"][j]) {
           document.querySelector(
             "#tag-content"
-          ).innerHTML += `<p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][j]["文件名"]}">${tagtree[Object.keys(tagtree)[i]][k]["文章标题"]
+          ).innerHTML += `<p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][j]["文件名"]}" onclick="enter_article(${j});return false;">${tagtree[Object.keys(tagtree)[i]][k]["文章标题"]
           }</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${tagtree[Object.keys(tagtree)[i]][k]["创建日期"]
             }，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${tagtree[Object.keys(tagtree)[i]][k]["修改日期"]
             }）</p>`;
@@ -757,7 +794,7 @@ function render_tag(tagname) {
       if (tagtree[tagname][i] === blog["文章列表"][j]) {
         document.querySelector(
           "#tag-content"
-        ).innerHTML += `<p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][j]["文件名"]}">${tagtree[tagname][i]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${tagtree[tagname][i]["创建日期"]}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${tagtree[tagname][i]["修改日期"]}）</p>`;
+        ).innerHTML += `<p><i class="fa fa-file-text-o"></i> <a href="/index.html?type=article&filename=${blog["文章列表"][j]["文件名"]}" onclick="enter_article(${j});return false;">${tagtree[tagname][i]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${tagtree[tagname][i]["创建日期"]}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${tagtree[tagname][i]["修改日期"]}）</p>`;
       }
     }
   }
@@ -837,6 +874,7 @@ function render_page(page_id) {
 }
 
 function enter_page(page_id) {
+  history.pushState({ type: "page", filename: blog["页面列表"][page_id]["文件名"] }, "", `./index.html?type=page&filename=${blog["页面列表"][page_id]["文件名"]}`);
   if (blog["页面列表"][page_id]["是否在新标签页打开"]) {
     if (blog["页面列表"][page_id]["这是一个完整的html"]) {
       // 在新标签页打开，是完整的html
@@ -897,6 +935,7 @@ function execute_custom_js() {
 }
 
 function enter_tag(tagname) {
+  history.pushState({ type: "internal", function: "tag", argument: decodeURIComponent(tagname) }, "", `./index.html?type=internal&function=tag&argument=${tagname}`);
   document.getElementsByTagName("title")[0].innerHTML = `标签为 ${decodeURIComponent(tagname)} 下的文章 - ${blog["博客标题"]} `;
   resetPage();
   render_nav(false);
@@ -911,6 +950,7 @@ function enter_tag(tagname) {
 }
 
 function enter_friend_book() {
+  history.pushState({ type: "internal", function: "friendbook" }, "", `./index.html?type=internal&function=friendbook`);
   document.getElementsByTagName("title")[0].innerHTML = `友人帐 - ${blog["博客标题"]} `;
   resetPage();
   render_nav(false);
@@ -924,6 +964,7 @@ function enter_friend_book() {
 }
 
 function enter_archive_and_tags() {
+  history.pushState({ type: "internal", function: "archive_and_tags" }, "", `./index.html?type=internal&function=archive_and_tags`);
   document.getElementsByTagName("title")[0].innerHTML = `归档与标签 - ${blog["博客标题"]} `;
   resetPage();
   render_nav(false);
@@ -938,6 +979,7 @@ function enter_archive_and_tags() {
 }
 
 function enter_indexPage() {
+  history.pushState({ type: "internal", function: "article_list" }, "", `./index.html?type=internal&function=article_list`);
   document.getElementsByTagName("title")[0].innerHTML = blog["博客标题"];
   resetPage();
   render_nav(true);
@@ -954,6 +996,7 @@ function enter_indexPage() {
 }
 
 function enter_article(article_id) {
+  history.pushState({ type: "article", filename: blog["文章列表"][article_id]["文件名"] }, "", `./index.html?type=article&filename=${blog["文章列表"][article_id]["文件名"]}`);
   document.getElementsByTagName("title")[0].innerHTML = `${blog["文章列表"][article_id]["文章标题"]} - ${blog["博客标题"]} `;
   resetPage();
   render_nav(false);
@@ -982,6 +1025,18 @@ function importBootstrapCSSFile(uri) {
       detect_whether_ui_load_finished();
     })
 }
+
+
+function importHighlightCSSFile(uri) {
+  axios
+    .get(uri)
+    .then(function (response) {
+      document.getElementById("highlight_css").innerHTML += response.data;
+      highlight_css_import_finished = true;
+      detect_whether_ui_load_finished();
+    })
+}
+
 axios
   .get("./data/index.json?timestamp=" + Date.parse(new Date()))
   .then(function (response) {
@@ -1006,6 +1061,9 @@ axios
     // js importing disabled due to execution order is inevitable, while css importing can safely operate.
 
     importBootstrapCSSFile(cdn_path + "/bootstrap@5.0.2/dist/css/bootstrap.min.css");
+
+    importHighlightCSSFile(cdn_path + "/highlight.js@9.12.0/styles/tomorrow.css");
+
 
     lang_name = blog["网站语言"];
     articleListPageLength = Math.ceil(blog["文章列表"].length / blog["文章列表中每页的文章数为"]); // 从1开始数

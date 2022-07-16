@@ -45,16 +45,15 @@
 }
 
 @media (max-width: 1050px) {
-
   #empty_friend_book_list {
-
     display: none;
-
-
   }
+}
 
-
-
+@media (max-width: 520px) {
+  #article-bottom-bar {
+    display: none;
+  }
 }
 
 

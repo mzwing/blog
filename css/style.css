@@ -26,6 +26,8 @@ samp {
   padding-right: 12px;
   color: #0550ae;
   display: inline-block;
+  word-break: break-all !important;
+  white-space: pre-wrap;
 }
 
 #night_mode_btn {
