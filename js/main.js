@@ -1115,10 +1115,6 @@ axios
       document.getElementById("custom_css").innerHTML = blog["自定义CSS"];
     }
 
-    if (getUrlArgs("type") === false) {
-      enter_indexPage();
-    }
-
     if (getUrlArgs("type") === "article") {
       let article_filename = getUrlArgs("filename");
       for (let i = 0; i < blog["文章列表"].length; i++) {
@@ -1157,5 +1153,8 @@ axios
       }
     }
 
+    if (getUrlArgs("type") === false) {
+      enter_indexPage();
+    }
 
   });
