@@ -123,6 +123,38 @@ const langdata = {
   "COMMENT_UNAVAILABLE_DUE_TO_PREVIEW": {
     "简体中文": "由于你目前正在预览环境之中，评论功能暂时被禁用了。当你的站点被从互联网访问时，评论系统会正常地显示在这里。",
     "English": "Comment function banned because you are now in the preview environment. When the site is visited from the Internet, the comment system will be available here."
+  },
+  "FRIEND_BOOK": {
+    "简体中文": "友人帐",
+    "English": "Friend book"
+  },
+  "COPYRIGHT_HINT": {
+    "简体中文": "版权声明",
+    "English": "About the copyright of the article"
+  },
+  "PREVIOUS_POST": {
+    "简体中文": "上一篇文章",
+    "English": "Previous post"
+  },
+  "NEXT_POST": {
+    "简体中文": "下一篇文章",
+    "English": "Next post"
+  },
+  "NOTHING": {
+    "简体中文": "没有了",
+    "English": "nothing"
+  },
+  "COPYRIGHT_RESERVED": {
+    "简体中文": "除特别声明外，本博客上的内容由博主保留所有权利，进行转载前需先获得博主同意。",
+    "English": "Unless otherwise stated, the content on this blog is reserved by the blogger, and the blogger's consent must be obtained before reprinting."
+  },
+  "COPYRIGHT_CC_BY_NC_SA_FOUR_DOT_ZERO": {
+    "简体中文": "除特别声明外，本博客上的内容采用 <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh' target='_blank'>CC BY-NC-SA 4.0 许可协议</a> 授权。转载请注明出处！",
+    "English": "Unless otherwise stated, the content on this blog is licensed under the CC BY-NC-SA 4.0 license. Please indicate the source when reprinting!"
+  },
+  "COPYRIGHT_UNLICENSED": {
+    "简体中文": "除特别声明外，本博客上的内容属于公有领域，这意味着你可以不受限制地使用和加工它们。",
+    "English": "Unless otherwise stated, the content on this blog is in the public domain, which means you can use and process it without restriction."
   }
 }
 
@@ -186,7 +218,7 @@ function render_nav(isIndexPage) {
   if (blog["启用内建友人帐页面"] === true) {
     document.querySelector("#navbar_items").innerHTML += `
                         <li class="nav-item" id="navbar_friendbook">
-                            <a class="nav-link" href="./index.html?type=internal&function=friendbook" onclick="enter_friend_book();return false;">友人帐</a>
+                            <a class="nav-link" href="./index.html?type=internal&function=friendbook" onclick="enter_friend_book();return false;">${langdata.FRIEND_BOOK[lang_name]}</a>
                         </li>
             `;
 
@@ -435,7 +467,7 @@ function render_article_content(article_id) {
           "#article-content"
         ).innerHTML += `<br />
             <div class="alert alert-info" role="alert">
-              <h5 class="alert-heading">版权声明</h5>
+              <h5 class="alert-heading">${langdata.COPYRIGHT_HINT[lang_name]}</h5>
             <p class="mb-0">${blogContentLicenseText}</p>
             </div>
             
@@ -451,7 +483,7 @@ function render_article_content(article_id) {
     <div class="col">
       <div class="card articlebottomnav" style="float:left;width:100%">
   <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> 上一篇文章</h6>
+    <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
     <h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id + 1]["文件名"]}" onclick="enter_article(${article_id + 1});return false;">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
   </div>
 </div>
@@ -459,8 +491,8 @@ function render_article_content(article_id) {
     <div class="col">
       <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
   <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted">下一篇文章 <i class="fa fa-arrow-right"></i></h6>
-    <h5 class="card-title">没有了</h5>
+    <h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+    <h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
   </div>
 </div>
     </div>
@@ -475,16 +507,16 @@ function render_article_content(article_id) {
     <div class="col">
       <div class="card articlebottomnav" style="float:left;width:100%">
   <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> 上一篇文章</h6>
-    <h5 class="card-title">没有了</h5>
+    <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+    <h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
   </div>
 </div>
     </div>
     <div class="col">
       <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
   <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted">下一篇文章 <i class="fa fa-arrow-right"></i></h6>
-    <h5 class="card-title">没有了</h5>
+    <h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+    <h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
   </div>
 </div>
     </div>
@@ -499,15 +531,15 @@ function render_article_content(article_id) {
     <div class="col">
       <div class="card articlebottomnav" style="float:left;width:100%">
   <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> 上一篇文章</h6>
-    <h5 class="card-title">没有了</h5>
+    <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+    <h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
   </div>
 </div>
     </div>
     <div class="col">
       <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
   <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted">下一篇文章 <i class="fa fa-arrow-right"></i></h6>
+    <h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
     <h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id - 1]["文件名"]}" onclick="enter_article(${article_id - 1});return false;">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
   </div>
 </div>
@@ -523,7 +555,7 @@ function render_article_content(article_id) {
     <div class="col">
       <div class="card articlebottomnav" style="float:left;width:100%">
   <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> 上一篇文章</h6>
+    <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
     <h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id + 1]["文件名"]}" onclick="enter_article(${article_id + 1});return false;">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
   </div>
 </div>
@@ -531,7 +563,7 @@ function render_article_content(article_id) {
     <div class="col">
       <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
   <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted">下一篇文章 <i class="fa fa-arrow-right"></i></h6>
+    <h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
     <h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id - 1]["文件名"]}" onclick="enter_article(${article_id - 1});return false;">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
   </div>
 </div>
@@ -607,7 +639,7 @@ function render_friend_book_friend(listid, name, url, icon, description) {
 function render_friend_book() {
   document.querySelector("#container").innerHTML += `
             <div class="page-content">
-                <h2>友人帐</h2>
+                <h2>${langdata.FRIEND_BOOK[lang_name]}</h2>
                 <hr />
                 <p>${blog["友人帐页面附加信息"]}</p>
                 
@@ -831,7 +863,7 @@ function render_page(page_id) {
       if (blog["不使用全站内容授权协议"] === false) {
         document.getElementById("page-content").innerHTML += `<br />
             <div class="alert alert-info" role="alert">
-              <h5 class="alert-heading">版权声明</h5>
+              <h5 class="alert-heading">${langdata.COPYRIGHT_HINT[lang_name]}</h5>
               <p class="mb-0">${blogContentLicenseText}</p>
             </div>
             
@@ -1041,16 +1073,17 @@ axios
   .get("./data/index.json?timestamp=" + Date.parse(new Date()))
   .then(function (response) {
     blog = response.data;
+    lang_name = blog["网站语言"];
 
     switch (blog["全站内容授权协议"]) {
       case "reserved":
-        blogContentLicenseText = `除特别声明外，本博客上的内容由博主保留所有权利，进行转载前需先获得博主同意。`
+        blogContentLicenseText = `${langdata.COPYRIGHT_RESERVED[lang_name]}`
         break;
       case "unlicensed":
-        blogContentLicenseText = `除特别声明外，本博客上的内容属于公有领域，这意味着你可以不受限制地使用和加工它们。`
+        blogContentLicenseText = `${langdata.COPYRIGHT_UNLICENSED[lang_name]}`
         break;
       case "cc-by-nc-sa-4.0":
-        blogContentLicenseText = `除特别声明外，本博客上的内容采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">CC BY-NC-SA 4.0 许可协议</a> 授权。转载请注明出处！ `
+        blogContentLicenseText = `${langdata.COPYRIGHT_CC_BY_NC_SA_FOUR_DOT_ZERO[lang_name]}`
         break;
       default:
         blogContentLicenseText = `${blog["全站内容授权协议"]}`;
@@ -1065,7 +1098,7 @@ axios
     importHighlightCSSFile(cdn_path + "/highlight.js@9.12.0/styles/tomorrow.css");
 
 
-    lang_name = blog["网站语言"];
+
     articleListPageLength = Math.ceil(blog["文章列表"].length / blog["文章列表中每页的文章数为"]); // 从1开始数
 
     if (blog["全局评论设置"]["valine设置"]["是否使用bbg公共评论服务"]) {
@@ -1114,6 +1147,7 @@ axios
     if (blog["启用自定义CSS"] === true) {
       document.getElementById("custom_css").innerHTML = blog["自定义CSS"];
     }
+
 
     if (getUrlArgs("type") === "article") {
       let article_filename = getUrlArgs("filename");
