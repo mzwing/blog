@@ -1,0 +1,45 @@
+blockquote {
+  color: #666666;
+  margin: 0;
+  padding-left: 12px;
+  border-left: 4px #eee solid;
+}
+
+hr {
+  display: block;
+  border: 0;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #eee;
+  margin: 1em 0;
+  padding: 0;
+}
+
+pre,
+code,
+kbd,
+samp {
+  border-radius: 4px;
+  background-color: #f2f5f8;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  color: #0550ae;
+  display: inline-block;
+  word-break: break-all !important;
+  white-space: pre-wrap;
+}
+
+#night_mode_btn {
+  position: fixed;
+  z-index: 99;
+  right: 20px;
+  bottom: 20px;
+}
+
+#back_to_top_btn {
+  position: fixed;
+  z-index: 99;
+  right: 20px;
+  bottom: 60px;
+}
