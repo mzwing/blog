@@ -10,6 +10,20 @@ window.onpopstate = function () {
   }
 }
 
+function content_decrypt(content, password, verify = null) {
+  if (verify !== null)
+    if (CryptoJS.SHA256(password).toString() != verify)
+      return [false];
+  var key = CryptoJS.enc.Utf8.parse(password).toString();
+  var argument = {
+    iv: CryptoJS.enc.Utf8.parse('1145141919810').toString(),
+    mode: CryptoJS.mode.CBC,
+    padding: CryptoJS.pad.Pkcs7
+  }
+  var result = CryptoJS.AES.decrypt(content, key, argument).toString(CryptoJS.enc.Utf8);
+  if (result == "") return [false];
+  else return [true, result];
+}
 
 currentArticleListPageOrder = 1; //这个变量表示目前在显示文章列表中的第几页，是从1开始数的
 
