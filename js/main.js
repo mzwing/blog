@@ -398,6 +398,19 @@ function render_article_list() {
   }
 }
 
+function render_friend_book_list() {
+
+  let numberInFriendListOne = Math.ceil(blog["友人帐"].length / 2);
+  for (let i = 0; i < numberInFriendListOne; i++) {
+    render_friend_book_friend("friend_book_list1", blog["友人帐"][i]["名称"], blog["友人帐"][i]["链接"], blog["友人帐"][i]["图标"], blog["友人帐"][i]["简介"])
+  }
+
+  for (let i = numberInFriendListOne; i < blog["友人帐"].length; i++) {
+    render_friend_book_friend("friend_book_list2", blog["友人帐"][i]["名称"], blog["友人帐"][i]["链接"], blog["友人帐"][i]["图标"], blog["友人帐"][i]["简介"])
+  }
+
+}
+
 function render_article_content(article_id) {
 
   if (blog["启用网站公告"] === true && blog["网站公告仅在首页显示"] === false) {
@@ -672,17 +685,14 @@ function render_friend_book() {
   </div>
             `;
 
-
-  let numberInFriendListOne = Math.ceil(blog["友人帐"].length / 2);
-
-
-
-  for (let i = 0; i < numberInFriendListOne; i++) {
-    render_friend_book_friend("friend_book_list1", blog["友人帐"][i]["名称"], blog["友人帐"][i]["链接"], blog["友人帐"][i]["图标"], blog["友人帐"][i]["简介"])
-  }
-
-  for (let i = numberInFriendListOne; i < blog["友人帐"].length; i++) {
-    render_friend_book_friend("friend_book_list2", blog["友人帐"][i]["名称"], blog["友人帐"][i]["链接"], blog["友人帐"][i]["图标"], blog["友人帐"][i]["简介"])
+  if (blog["友人帐来自json文件"] === true) {
+    axios.get(blog["若友人帐来自json文件，则地址为"]).then(
+      function (response) {
+        blog["友人帐"] = response.data["友人帐"];
+        render_friend_book_list();
+      })
+  } else {
+    render_friend_book_list();
   }
 
   if (
