@@ -63,12 +63,28 @@ function switch_to_night_mode() {
             color:white
           }
 
+          .vcontent p, .vnick, .vlink, .vmail, .vinput, .vsubmit{
+            color:white!important
+          }
+
+          .vcontent *{
+            background-color:black!important;
+          }
+
+          .expand::after{
+            background:black!important;
+            color:white!important;
+          }
+          .expand::before{
+            background:rgba(0, 0, 0, 0.5)!important
+          }
+
           pre,
     code,
     kbd,
     samp {
       border-radius: 4px;
-      background-color: black;
+      background-color: black!important;
       padding-top: 4px;
       padding-bottom: 4px;
       padding-left: 12px;
@@ -307,7 +323,7 @@ function render_index_title_info() {
 function changeArticleListPageOrderTo(page_order) {
   currentArticleListPageOrder = page_order;
   enter_indexPage();
-  window.location = "#top";
+  scrollTo(0, 0);
 }
 
 function render_article_list() {
@@ -765,24 +781,31 @@ function render_tag_tree() {
     // 渲染标签名字
     document.querySelector(
       "#tag-content"
-    ).innerHTML += `<h2><i class="fa fa-tags"></i> ${Object.keys(tagtree)[i]
+    ).innerHTML += `<h2 id="tag-content-of-tag-${Object.keys(tagtree)[i]}"><i class="fa fa-tags"></i> ${Object.keys(tagtree)[i]
     }</h2>`;
+    currentTagTreeArticleNumber = 0;
     for (let k = 0; k < tagtree[Object.keys(tagtree)[i]].length; k++) {
       // 遍历某个标签中的所有文章
       for (let j = 0; j < blog["文章列表"].length; j++) {
         // 遍历index.json中的所有文章object，与标签中的文章object相比较，
         // 这是为了取得标签中的文章object在index.json中的文章列表array中对应的下标。
         // 因为 enter_article函数的参数是index.json中的文章列表array的下标，因此必须要获取到。
-        if (tagtree[Object.keys(tagtree)[i]][k] === blog["文章列表"][j]) {
+        if (tagtree[Object.keys(tagtree)[i]][k] === blog["文章列表"][j] && blog["文章列表"][j]["是否隐藏"] === false) {
           document.querySelector(
             "#tag-content"
           ).innerHTML += `<p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][j]["文件名"]}" onclick="enter_article(${j});return false;">${tagtree[Object.keys(tagtree)[i]][k]["文章标题"]
           }</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${tagtree[Object.keys(tagtree)[i]][k]["创建日期"]
             }，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${tagtree[Object.keys(tagtree)[i]][k]["修改日期"]
             }）</p>`;
+          currentTagTreeArticleNumber++;
 
-          totalTagTreeArticleLength = totalTagTreeArticleLength + 1;
+
         }
+
+        totalTagTreeArticleLength = totalTagTreeArticleLength + 1;
+      }
+      if (currentTagTreeArticleNumber === 0) {
+        document.getElementById(`tag-content-of-tag-${Object.keys(tagtree)[i]}`).setAttribute("style", "display:none");
       }
     }
   }
@@ -794,7 +817,8 @@ function render_tag_tree() {
           `;
 
     for (let i = 0; i < blog["文章列表"].length; i++) {
-      document.querySelector("#tag-content").innerHTML += `
+      if (blog["文章列表"][i]["是否隐藏"] === false) {
+        document.querySelector("#tag-content").innerHTML += `
             <p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}">${blog["文章列表"][i]["文章标题"]}</a>
               
               （
@@ -808,6 +832,7 @@ function render_tag_tree() {
               </p>
 
           `;
+      }
     }
   } else {
     if (totalTagTreeArticleLength < blog["文章列表"].length) {
@@ -816,8 +841,9 @@ function render_tag_tree() {
             `;
 
       for (let i = 0; i < blog["文章列表"].length; i++) {
-        if (blog["文章列表"][i]["标签"].length === 0 || blog["文章列表"][i]["标签"] === false || blog["文章列表"][i]["标签"] === "" || blog["文章列表"][i]["标签"] === undefined || blog["文章列表"][i]["标签"] === null) {
-          document.querySelector("#tag-content").innerHTML += `
+        if (blog["文章列表"][i]["是否隐藏"] === false) {
+          if (blog["文章列表"][i]["标签"].length === 0 || blog["文章列表"][i]["标签"] === false || blog["文章列表"][i]["标签"] === "" || blog["文章列表"][i]["标签"] === undefined || blog["文章列表"][i]["标签"] === null) {
+            document.querySelector("#tag-content").innerHTML += `
             <p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}">${blog["文章列表"][i]["文章标题"]}</a>
               
               （
@@ -831,6 +857,7 @@ function render_tag_tree() {
               </p>
 
           `;
+          }
         }
       }
     }
@@ -847,7 +874,7 @@ function render_tag(tagname) {
   let tagtree = getTagTree();
   for (let i = 0; i < tagtree[tagname].length; i++) {
     for (let j = 0; j < blog["文章列表"].length; j++) {
-      if (tagtree[tagname][i] === blog["文章列表"][j]) {
+      if (tagtree[tagname][i] === blog["文章列表"][j] && blog["文章列表"][j]["是否隐藏"] === false) {
         document.querySelector(
           "#tag-content"
         ).innerHTML += `<p><i class="fa fa-file-text-o"></i> <a href="/index.html?type=article&filename=${blog["文章列表"][j]["文件名"]}" onclick="enter_article(${j});return false;">${tagtree[tagname][i]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${tagtree[tagname][i]["创建日期"]}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${tagtree[tagname][i]["修改日期"]}）</p>`;
