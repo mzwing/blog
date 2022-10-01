@@ -27,6 +27,9 @@ function content_decrypt(content, password, verify = null) {
 
 currentArticleListPageOrder = 1; //这个变量表示目前在显示文章列表中的第几页，是从1开始数的
 
+success_locate_article_id = false;
+success_locate_page_id = false;
+
 if (localStorage.getItem("is_nightmode") === null || localStorage.getItem("is_nightmode") === undefined) {
   localStorage.setItem("is_nightmode", "off");
 }
@@ -114,7 +117,7 @@ function switch_night_mode() {
 }
 
 function detect_whether_ui_load_finished() {
-  if (highlight_css_import_finished === true && bootstrap_css_import_finished === true && content_load_finished === true) {
+  if (bootstrap_css_import_finished === true && content_load_finished === true) {
     document.getElementById("root").setAttribute("style", "");
     document.getElementById("loading").setAttribute("style", "display:none");
   }
@@ -132,59 +135,98 @@ highlight_css_import_finished = false;
 const langdata = {
   "ARCHIVE_AND_TAGS": {
     "简体中文": "归档和标签",
-    "English": "Archive and tags"
+    "English": "Archive and tags",
+    "日本語": "アーカイブとタグ"
   },
   "ARTICLE_LIST": {
     "简体中文": "文章列表",
-    "English": "Article List"
+    "English": "Article List",
+    "日本語": "記事一覧"
   },
   "ARTICLE_CREATEDAT": {
     "简体中文": "此文章编写于",
-    "English": "This article is written at "
+    "English": "This article is written at ",
+    "日本語": "作成日"
   },
   "LASTMODIFIEDAT": {
     "简体中文": "最近修改于",
-    "English": "Last modified at "
+    "English": "Last modified at ",
+    "日本語": "修正日"
   },
   "TAGS": {
     "简体中文": "标签",
-    "English": "Tags: "
+    "English": "Tags: ",
+    "日本語": "タグ"
   },
   "COMMENT_UNAVAILABLE_DUE_TO_PREVIEW": {
     "简体中文": "由于你目前正在预览环境之中，评论功能暂时被禁用了。当你的站点被从互联网访问时，评论系统会正常地显示在这里。",
-    "English": "Comment function banned because you are now in the preview environment. When the site is visited from the Internet, the comment system will be available here."
+    "English": "Comment function banned because you are now in the preview environment. When the site is visited from the Internet, the comment system will be available here.",
+    "日本語": "現在プレビュー環境のため、コメント機能が禁止されています。インターネットからサイトにアクセスすると、ここにコメントシステムが表示されます。"
   },
   "FRIEND_BOOK": {
     "简体中文": "友人帐",
-    "English": "Friend book"
+    "English": "Friend book",
+    "日本語": "友人帳"
   },
   "COPYRIGHT_HINT": {
     "简体中文": "版权声明",
-    "English": "About the copyright of the article"
+    "English": "About the copyright of the article",
+    "日本語": "記事の著作権について"
   },
   "PREVIOUS_POST": {
     "简体中文": "上一篇文章",
-    "English": "Previous post"
+    "English": "Previous post",
+    "日本語": "前の記事へ"
   },
   "NEXT_POST": {
     "简体中文": "下一篇文章",
-    "English": "Next post"
+    "English": "Next post",
+    "日本語": "次の記事へ"
   },
   "NOTHING": {
     "简体中文": "没有了",
-    "English": "nothing"
+    "English": "nothing",
+    "日本語": "記事が存在しない"
   },
   "COPYRIGHT_RESERVED": {
     "简体中文": "除特别声明外，本博客上的内容由博主保留所有权利，进行转载前需先获得博主同意。",
-    "English": "Unless otherwise stated, the content on this blog is reserved by the blogger, and the blogger's consent must be obtained before reprinting."
+    "English": "Unless otherwise stated, the content on this blog is reserved by the blogger, and the blogger's consent must be obtained before reprinting.",
+    "日本語": "特別な記載がない限り、このブログ内の記事はブロガーの所有物であり、転載にはブロガーの同意が必要です。"
   },
   "COPYRIGHT_CC_BY_NC_SA_FOUR_DOT_ZERO": {
     "简体中文": "除特别声明外，本博客上的内容采用 <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh' target='_blank'>CC BY-NC-SA 4.0 许可协议</a> 授权。转载请注明出处！",
-    "English": "Unless otherwise stated, the content on this blog is licensed under the CC BY-NC-SA 4.0 license. Please indicate the source when reprinting!"
+    "English": "Unless otherwise stated, the content on this blog is licensed under the <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en' target='_blank'>CC BY-NC-SA 4.0 license</a>. Please indicate the source when reprinting!",
+    "日本語": "特別な記載がない限り、このブログ内の記事は<a href='https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja' target='_blank'>CC BY-NC-SA 4.0ライセンス</a>を使用しています。転載の際は出典を明記してください！"
   },
   "COPYRIGHT_UNLICENSED": {
     "简体中文": "除特别声明外，本博客上的内容属于公有领域，这意味着你可以不受限制地使用和加工它们。",
-    "English": "Unless otherwise stated, the content on this blog is in the public domain, which means you can use and process it without restriction."
+    "English": "Unless otherwise stated, the content on this blog is in the public domain, which means you can use and process it without restriction.",
+    "日本語": "特別な記載がない限り、このブログ内の記事はパブリックドメインであり、制限なく使用・加工できます。"
+  },
+  "SEARCH_SOMETHING": {
+    "简体中文": "在站点内搜索",
+    "English": "Search something...",
+    "日本語": "Search something..."
+  },
+  "START_SEARCH": {
+    "简体中文": "开始搜索",
+    "English": "Search",
+    "日本語": "Search"
+  },
+  "KEYWORD": {
+    "简体中文": "关键词",
+    "English": "Keyword",
+    "日本語": "Keyword"
+  },
+  "SEARCH_RESULT": {
+    "简体中文": "搜索结果",
+    "English": "Results",
+    "日本語": "Results"
+  },
+  "COULD_NOT_FIND_RESULT": {
+    "简体中文": "未找到结果",
+    "English": "Could not find a result",
+    "日本語": "Could not find a result"
   }
 }
 
@@ -198,6 +240,62 @@ function preview_env_public_comment_fix() {
 function resetPage() {
   document.querySelector("#root").innerHTML = "";
   console.log("reset ok");
+}
+
+function start_search() {
+  let keyword = document.getElementById("search_keyword").value;
+  let totalSearchResultNumber = 0;
+
+  document.getElementById("search_dialog_results").innerHTML = `
+  <br /><hr />
+  <h3>${langdata["SEARCH_RESULT"][lang_name]}</h3>
+  `;
+
+  for (let i = 0; i < blog["文章列表"].length; i++) {
+    if (blog["文章列表"][i]["文章标题"].indexOf(keyword) !== -1 || blog["文章列表"][i]["摘要"].indexOf(keyword) !== -1) {
+      if (blog["文章列表"][i]["是否隐藏"] === false) {
+        document.getElementById("search_dialog_results").innerHTML += `
+      <br />
+      <div class="card" style="padding:20px">
+        <a href="javascript:void(0)" data-bs-dismiss="modal" onclick="enter_article(${i});return false;"><h5>${blog["文章列表"][i]["文章标题"]}</h5></a>
+        <p>${blog["文章列表"][i]["摘要"]}</p>
+        </div>
+      
+      `;
+        totalSearchResultNumber++;
+      }
+    }
+  }
+  if (totalSearchResultNumber === 0) {
+    document.getElementById("search_dialog_results").innerHTML += `
+      <br />
+      <p>${langdata["COULD_NOT_FIND_RESULT"][lang_name]}</p>
+      
+      `;
+  }
+}
+
+function start_search_dialog() {
+  const dialog = new bootstrap.Modal(document.getElementById('search_dialog'))
+  dialog.toggle();
+
+  document.getElementById("search_dialog_title").innerHTML = langdata["SEARCH_SOMETHING"][lang_name];
+  document.getElementById("search_dialog_body").innerHTML = `
+
+  <div class="row g-2">
+<div class="col-auto">
+<input class="form-control" id="search_keyword" placeholder="${langdata["KEYWORD"][lang_name]}">
+</div>
+<div class="col-auto">
+<button class="btn btn-primary" onclick="start_search()"> ${langdata["START_SEARCH"][lang_name]}</button>
+</div>
+</div>
+
+<div id="search_dialog_results">
+
+</div>
+  
+  `;
 }
 function render_nav(isIndexPage) {
   //todo: fix router
@@ -216,6 +314,9 @@ function render_nav(isIndexPage) {
           <a class="nav-link" href="./index.html?type=internal&function=archive_and_tags" onclick="enter_archive_and_tags();return false;">${langdata["ARCHIVE_AND_TAGS"][lang_name]}</a>
         </li>
       </ul>
+      <div class="d-flex" role="search">
+      <button class="btn btn-outline-light" onclick="start_search_dialog()"><i class="fa fa-search"></i> ${langdata["SEARCH_SOMETHING"][lang_name]}</button>
+  </div>
     </div>
   </div>
 </nav>`;
@@ -415,16 +516,13 @@ function render_article_list() {
 }
 
 function render_friend_book_list() {
-
-  let numberInFriendListOne = Math.ceil(blog["友人帐"].length / 2);
-  for (let i = 0; i < numberInFriendListOne; i++) {
-    render_friend_book_friend("friend_book_list1", blog["友人帐"][i]["名称"], blog["友人帐"][i]["链接"], blog["友人帐"][i]["图标"], blog["友人帐"][i]["简介"])
+  for (let i = 0; i < blog["友人帐"].length; i++) {
+    if ((i % 2) === 0) {
+      render_friend_book_friend("friend_book_list1", blog["友人帐"][i]["名称"], blog["友人帐"][i]["链接"], blog["友人帐"][i]["图标"], blog["友人帐"][i]["简介"])
+    } else {
+      render_friend_book_friend("friend_book_list2", blog["友人帐"][i]["名称"], blog["友人帐"][i]["链接"], blog["友人帐"][i]["图标"], blog["友人帐"][i]["简介"])
+    }
   }
-
-  for (let i = numberInFriendListOne; i < blog["友人帐"].length; i++) {
-    render_friend_book_friend("friend_book_list2", blog["友人帐"][i]["名称"], blog["友人帐"][i]["链接"], blog["友人帐"][i]["图标"], blog["友人帐"][i]["简介"])
-  }
-
 }
 
 function render_article_content(article_id) {
@@ -1115,8 +1213,6 @@ function importHighlightCSSFile(uri) {
     .get(uri)
     .then(function (response) {
       document.getElementById("highlight_css").innerHTML += response.data;
-      highlight_css_import_finished = true;
-      detect_whether_ui_load_finished();
     })
 }
 
@@ -1204,8 +1300,20 @@ axios
       let article_filename = getUrlArgs("filename");
       for (let i = 0; i < blog["文章列表"].length; i++) {
         if (blog["文章列表"][i]["文件名"] === article_filename) {
+          success_locate_article_id = true;
           enter_article(i);
         }
+      }
+      if (success_locate_article_id !== true) {
+        document.getElementById("root").setAttribute("style", "");
+        document.getElementById("loading").setAttribute("style", "display:none;");
+        document.getElementById("root").innerHTML = `
+        <div style="text-align:center">
+          <br />
+        <h3>此文章不存在或已被删除</h3>
+        <p>This article does not exist or has already been deleted.</p>
+        </div>
+        `;
       }
     }
 
@@ -1213,8 +1321,20 @@ axios
       let page_filename = getUrlArgs("filename");
       for (let i = 0; i < blog["页面列表"].length; i++) {
         if (blog["页面列表"][i]["文件名"] === page_filename) {
+          success_locate_page_id = true;
           enter_page(i);
         }
+      }
+      if (success_locate_page_id !== true) {
+        document.getElementById("root").setAttribute("style", "");
+        document.getElementById("loading").setAttribute("style", "display:none;");
+        document.getElementById("root").innerHTML = `
+        <div style="text-align:center">
+          <br />
+        <h3>此页面不存在或已被删除</h3>
+        <p>This page does not exist or has already been deleted.</p>
+        </div>
+        `;
       }
     }
 
