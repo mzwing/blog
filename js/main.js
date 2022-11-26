@@ -40,66 +40,66 @@ if (localStorage.getItem("is_nightmode") === "on") {
 
 function switch_to_night_mode() {
   document.getElementById("whether_nightmode").innerHTML = `
-          body{
-            background-color:#000000c7;
-            
-          }
-          #blog_index_title,#blog_index_subtitle, .article-content h2,.page-content h2, #article-content-html p, #page-content-html p{
-            color:white;
-          }
+      body{
+        background-color:#000000c7;
+        
+      }
+      #blog_index_title,#blog_index_subtitle, .article-content h2,.page-content h2, #article-content-html p, #page-content-html p{
+        color:white;
+      }
 
-          .article-item, .article-content, .page-content{
-            background-color:#000000a8
-          }
-          .article-item p, .article-item-sub, .article-content-sub, #page_order_html, #bottom_info_html{
-            color:lightgrey!important;
-          }
-          a{
-            color:#67a5ff
-          }
-          .card, #tag-content{
-            background-color:black;
-            color:white
-          }
+      .article-item, .article-content, .page-content{
+        background-color:#000000a8
+      }
+      .article-item p, .article-item-sub, .article-content-sub, #page_order_html, #bottom_info_html{
+        color:lightgrey!important;
+      }
+      a{
+        color:#67a5ff
+      }
+      .card, #tag-content{
+        background-color:black;
+        color:white
+      }
 
-          ul,ol,li,h1,h2 ,h3,h4,h5,h6,.vcontent *, #veditor{
-            color:white
-          }
+      ul,ol,li,h1,h2 ,h3,h4,h5,h6,.vcontent *, #veditor{
+        color:white
+      }
 
-          .vcontent p, .vnick, .vlink, .vmail, .vinput, .vsubmit{
-            color:white!important
-          }
+      .vcontent p, .vnick, .vlink, .vmail, .vinput, .vsubmit{
+        color:white!important
+      }
 
-          .vcontent *{
-            background-color:black!important;
-          }
+      .vcontent *{
+        background-color:black!important;
+      }
 
-          .expand::after{
-            background:black!important;
-            color:white!important;
-          }
-          .expand::before{
-            background:rgba(0, 0, 0, 0.5)!important
-          }
+      .expand::after{
+        background:black!important;
+        color:white!important;
+      }
+      .expand::before{
+        background:rgba(0, 0, 0, 0.5)!important
+      }
+      
+      pre,
+code,
+kbd,
+samp{
+  border-radius: 4px;
+  background-color: black!important;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  display: inline-block;
+}
 
-          pre,
-    code,
-    kbd,
-    samp {
-      border-radius: 4px;
-      background-color: black!important;
-      padding-top: 4px;
-      padding-bottom: 4px;
-      padding-left: 12px;
-      padding-right: 12px;
-      display: inline-block;
-    }
-
-    .bbg-comment-area{
-      background-color:black;
-      color:white
-    }
-          `;
+.bbg-comment-area{
+  background-color:black;
+  color:white
+}
+      `;
   localStorage.setItem("is_nightmode", "on");
 }
 
@@ -206,27 +206,27 @@ const langdata = {
   "SEARCH_SOMETHING": {
     "简体中文": "在站点内搜索",
     "English": "Search something...",
-    "日本語": "Search something..."
+    "日本語": "検索..."
   },
   "START_SEARCH": {
     "简体中文": "开始搜索",
     "English": "Search",
-    "日本語": "Search"
+    "日本語": "検索"
   },
   "KEYWORD": {
     "简体中文": "关键词",
     "English": "Keyword",
-    "日本語": "Keyword"
+    "日本語": "キーワード"
   },
   "SEARCH_RESULT": {
     "简体中文": "搜索结果",
     "English": "Results",
-    "日本語": "Results"
+    "日本語": "検索結果"
   },
   "COULD_NOT_FIND_RESULT": {
     "简体中文": "未找到结果",
     "English": "Could not find a result",
-    "日本語": "Could not find a result"
+    "日本語": "検索結果はありません"
   }
 }
 
@@ -243,35 +243,80 @@ function resetPage() {
 }
 
 function start_search() {
-  let keyword = document.getElementById("search_keyword").value;
+  let keyword = document.getElementById("search_keyword").value.toLowerCase();
   let totalSearchResultNumber = 0;
 
   document.getElementById("search_dialog_results").innerHTML = `
   <br /><hr />
-  <h3>${langdata["SEARCH_RESULT"][lang_name]}</h3>
   `;
 
+  if (history.state.type === "article" || history.state.type === "short_article") {
+    // 在文章内检索
+    let articleContent = document.querySelector("#article-content-html").innerText.toLowerCase();
+    if (articleContent.indexOf(keyword) !== -1) {
+      document.getElementById("search_dialog_results").innerHTML += `
+      <h3>在当前文章中找到了一处结果</h3>
+      <div class="card" style="padding:20px">
+        <a href="javascript:void(0)" data-bs-dismiss="modal" onclick="return false;"><h5>${document.getElementById("current_article_title").innerText}</h5></a>
+        <p class="search_result_detail">${articleContent.substring(articleContent.indexOf(keyword) - 20, articleContent.indexOf(keyword) + 20)}</p>
+      </div>
+      `;
+
+      totalSearchResultNumber++;
+    }
+
+  }
+
+  document.getElementById("search_dialog_results").innerHTML += `
+  <br />
+      <h3>全部搜索结果</h3>
+  <br />
+      `;
+
   for (let i = 0; i < blog["文章列表"].length; i++) {
-    if (blog["文章列表"][i]["文章标题"].indexOf(keyword) !== -1 || blog["文章列表"][i]["摘要"].indexOf(keyword) !== -1) {
-      if (blog["文章列表"][i]["是否隐藏"] === false) {
-        document.getElementById("search_dialog_results").innerHTML += `
-      <br />
+    if (blog["文章列表"][i]["是否是短文章"]) {
+      const articleTitle = blog["文章列表"][i]["文章标题"].toLowerCase();
+      const articleContent = blog["文章列表"][i]["文章内容"].toLowerCase();
+      if (articleTitle.indexOf(keyword) !== -1 || articleContent.indexOf(keyword) !== -1) {
+        if (blog["文章列表"][i]["是否隐藏"] === false) {
+          document.getElementById("search_dialog_results").innerHTML += `
       <div class="card" style="padding:20px">
         <a href="javascript:void(0)" data-bs-dismiss="modal" onclick="enter_article(${i});return false;"><h5>${blog["文章列表"][i]["文章标题"]}</h5></a>
-        <p>${blog["文章列表"][i]["摘要"]}</p>
+        <p class="search_result_detail">${blog["文章列表"][i]["文章内容"]}</p>
         </div>
-      
+
       `;
-        totalSearchResultNumber++;
+          totalSearchResultNumber++;
+        }
+      }
+    } else {
+      const articleTitle = blog["文章列表"][i]["文章标题"].toLowerCase();
+      const articleAbstract = blog["文章列表"][i]["摘要"].toLowerCase();
+      if (articleTitle.indexOf(keyword) !== -1 || articleAbstract.indexOf(keyword) !== -1) {
+        if (blog["文章列表"][i]["是否隐藏"] === false) {
+          document.getElementById("search_dialog_results").innerHTML += `
+      <div class="card" style="padding:20px">
+        <a href="javascript:void(0)" data-bs-dismiss="modal" onclick="enter_article(${i});return false;"><h5>${blog["文章列表"][i]["文章标题"]}</h5></a>
+        <p class="search_result_detail">${blog["文章列表"][i]["摘要"]}</p>
+        </div>
+
+      `;
+          totalSearchResultNumber++;
+        }
       }
     }
+
   }
   if (totalSearchResultNumber === 0) {
     document.getElementById("search_dialog_results").innerHTML += `
       <br />
       <p>${langdata["COULD_NOT_FIND_RESULT"][lang_name]}</p>
-      
+
       `;
+  } else {
+    for (let i = 0; i < document.getElementsByClassName("search_result_detail").length; i++) {
+      document.getElementsByClassName("search_result_detail")[i].innerHTML = document.getElementsByClassName("search_result_detail")[i].innerHTML.replaceAll(keyword, `<span style="background-color:yellow">${keyword}</span>`)
+    }
   }
 }
 
@@ -284,7 +329,7 @@ function start_search_dialog() {
 
   <div class="row g-2">
 <div class="col-auto">
-<input class="form-control" id="search_keyword" placeholder="${langdata["KEYWORD"][lang_name]}">
+<input class="form-control" id="search_keyword" placeholder="${langdata["KEYWORD"][lang_name]}" autocomplete="off" autocapitalize="off" spellcheck="false">
 </div>
 <div class="col-auto">
 <button class="btn btn-primary" onclick="start_search()"> ${langdata["START_SEARCH"][lang_name]}</button>
@@ -296,29 +341,30 @@ function start_search_dialog() {
 </div>
   
   `;
+  document.getElementById("search_keyword").addEventListener('input', start_search);
 }
 function render_nav(isIndexPage) {
   //todo: fix router
   let nav_base = `<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" id="navbar">
-  <div class="container-fluid">
-    <a class="navbar-brand" id="navbar_title" href="./index.html" onclick="enter_indexPage();return false;">${blog["博客标题"]}</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar_items">
-        <li class="nav-item" id="navbar_article_list">
-          <a class="nav-link" href="./index.html?type=internal&function=article_list" onclick="enter_indexPage();return false;">${langdata["ARTICLE_LIST"][lang_name]}</a>
-        </li>
-        <li class="nav-item" id="navbar_archive_and_tags">
-          <a class="nav-link" href="./index.html?type=internal&function=archive_and_tags" onclick="enter_archive_and_tags();return false;">${langdata["ARCHIVE_AND_TAGS"][lang_name]}</a>
-        </li>
-      </ul>
-      <div class="d-flex" role="search">
-      <button class="btn btn-outline-light" onclick="start_search_dialog()"><i class="fa fa-search"></i> ${langdata["SEARCH_SOMETHING"][lang_name]}</button>
+<div class="container-fluid">
+<a class="navbar-brand" id="navbar_title" href="./index.html" onclick="enter_indexPage();return false;">${blog["博客标题"]}</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar_items">
+    <li class="nav-item" id="navbar_article_list">
+      <a class="nav-link" href="./index.html?type=internal&function=article_list" onclick="enter_indexPage();return false;">${langdata["ARTICLE_LIST"][lang_name]}</a>
+    </li>
+    <li class="nav-item" id="navbar_archive_and_tags">
+      <a class="nav-link" href="./index.html?type=internal&function=archive_and_tags" onclick="enter_archive_and_tags();return false;">${langdata["ARCHIVE_AND_TAGS"][lang_name]}</a>
+    </li>
+  </ul>
+  <div class="d-flex" role="search">
+      <button class="btn btn-outline-${blog["搜索按钮边框颜色设置为暗色"] ? "dark" : "light"}" onclick="start_search_dialog()"><i class="fa fa-search"></i> ${langdata["SEARCH_SOMETHING"][lang_name]}</button>
   </div>
-    </div>
-  </div>
+</div>
+</div>
 </nav>`;
   document.querySelector("#root").innerHTML += nav_base;
 
@@ -338,20 +384,20 @@ function render_nav(isIndexPage) {
     for (let i = 0; i < blog["页面列表"].length; i++) {
       if (blog["页面列表"][i]["是否显示在菜单中"]) {
         document.querySelector("#navbar_items").innerHTML += `
-                        <li class="nav-item" id="navbar_page_${i}">
-                            <a class="nav-link" href="./index.html?type=page&filename=${blog["页面列表"][i]["文件名"]}" onclick="enter_page(${i});return false;">${blog["页面列表"][i]["若显示在菜单中，则在菜单中显示为"]}</a>
-                        </li>
-                        `;
+                    <li class="nav-item" id="navbar_page_${i}">
+                        <a class="nav-link" href="./index.html?type=page&filename=${blog["页面列表"][i]["文件名"]}" onclick="enter_page(${i});return false;">${blog["页面列表"][i]["若显示在菜单中，则在菜单中显示为"]}</a>
+                    </li>
+                    `;
       }
     }
   }
 
   if (blog["启用内建友人帐页面"] === true) {
     document.querySelector("#navbar_items").innerHTML += `
-                        <li class="nav-item" id="navbar_friendbook">
-                            <a class="nav-link" href="./index.html?type=internal&function=friendbook" onclick="enter_friend_book();return false;">${langdata.FRIEND_BOOK[lang_name]}</a>
-                        </li>
-            `;
+                    <li class="nav-item" id="navbar_friendbook">
+                        <a class="nav-link" href="./index.html?type=internal&function=friendbook" onclick="enter_friend_book();return false;">${langdata.FRIEND_BOOK[lang_name]}</a>
+                    </li>
+        `;
 
   }
 
@@ -360,16 +406,16 @@ function render_nav(isIndexPage) {
     for (let i = 0; i < blog["菜单中的外部链接"].length; i++) {
       if (blog["菜单中的外部链接"][i]["是否在新标签页打开"]) {
         document.querySelector("#navbar_items").innerHTML += `
-                        <li class="nav-item">
-                            <a class="nav-link" target="_blank" href="${blog["菜单中的外部链接"][i]["url"]}">${blog["菜单中的外部链接"][i]["显示名称"]}</a>
-                        </li>
-                        `;
+                    <li class="nav-item">
+                        <a class="nav-link" target="_blank" href="${blog["菜单中的外部链接"][i]["url"]}">${blog["菜单中的外部链接"][i]["显示名称"]}</a>
+                    </li>
+                    `;
       } else {
         document.querySelector("#navbar_items").innerHTML += `
-                        <li class="nav-item">
-                            <a class="nav-link" href="${blog["菜单中的外部链接"][i]["url"]}">${blog["菜单中的外部链接"][i]["显示名称"]}</a>
-                        </li>
-                        `;
+                    <li class="nav-item">
+                        <a class="nav-link" href="${blog["菜单中的外部链接"][i]["url"]}">${blog["菜单中的外部链接"][i]["显示名称"]}</a>
+                    </li>
+                    `;
       }
     }
   }
@@ -407,17 +453,17 @@ function render_index_title_info() {
   document.querySelector(
     "#container"
   ).innerHTML += `<br /><h1 id="blog_index_title">${blog["博客标题"]}</h1><p id="blog_index_subtitle">${blog["博客描述（副标题）"]}</p><hr />
-        `;
+    `;
 
   if (blog["启用网站公告"] === true) {
     document.querySelector("#container").innerHTML += `
-          
-          <div class="article-item">
-          <h3><i class="fa fa-bullhorn" aria-hidden="true"></i> 网站公告</h3>
-          ${blog["网站公告"]}
-        
-        </div>
-          `
+      
+      <div class="article-item">
+      <h3><i class="fa fa-bullhorn" aria-hidden="true"></i> 网站公告</h3>
+      ${blog["网站公告"]}
+    
+    </div>
+      `
   }
 }
 
@@ -429,15 +475,26 @@ function changeArticleListPageOrderTo(page_order) {
 
 function render_article_list() {
   for (let i = 0; i < blog["文章列表"].length; i++) {
-    if (blog["文章列表"][i]["是否置顶"] && currentArticleListPageOrder === 1) {
+    if (blog["文章列表"][i]["是否置顶"] && currentArticleListPageOrder === 1 && blog["文章列表"][i]["是否是短文章"] === false) {
       document.querySelector("#container").innerHTML += `
-                    <div class="article-item" id="article-item-${i}">
-                        <div class="article-item-sub"><i class="fa fa-thumb-tack"></i> 置顶文章</div>
-                        <h2><a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}" onclick="enter_article(${i});return false;">${blog["文章列表"][i]["文章标题"]}</a></h2>
-                       
-                        
+                <div class="article-item" id="article-item-${i}">
+                    <div class="article-item-sub"><i class="fa fa-thumb-tack"></i> 置顶文章</div>
+                    <h2><a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}" onclick="enter_article(${i});return false;">${blog["文章列表"][i]["文章标题"]}</a></h2>
+                   
+                    
+                </div>
+                    `;
+    } else if (blog["文章列表"][i]["是否置顶"] && currentArticleListPageOrder === 1 && blog["文章列表"][i]["是否是短文章"] === true) {
+      document.querySelector("#container").innerHTML += `
+                <div class="article-item" id="article-item-${i}">
+                    <div class="article-item-sub"><i class="fa fa-thumb-tack"></i> 置顶文章</div>
+                    <h2>${blog["文章列表"][i]["文章标题"]}</h2>
+                   <div>
+                    ${marked.parse(blog["文章列表"][i]["文章内容"])}
                     </div>
-                        `;
+                    
+                </div>
+                    `;
     }
   }
 
@@ -452,38 +509,73 @@ function render_article_list() {
       blog["文章列表"][i]["是否置顶"]
     ) {
     } else {
-      document.querySelector("#container").innerHTML += `
-                    <div class="article-item" id="article-item-${i}">
-                        <h2><a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}" onclick="enter_article(${i});return false;">${blog["文章列表"][i]["文章标题"]}</a></h2>
-                       
-                        
-                    </div>
-                        `;
+
+      if (blog["文章列表"][i]["是否是短文章"]) {
+        document.querySelector("#container").innerHTML += `
+                <div class="article-item" id="article-item-${i}">
+                    <h2>${blog["文章列表"][i]["文章标题"]} <span class="badge bg-primary" style="font-size:16px">短文章</span></h2>
+                   
+                    
+                </div>
+                    `;
+
+      } else {
+        document.querySelector("#container").innerHTML += `
+                <div class="article-item" id="article-item-${i}">
+                    <h2><a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}" onclick="enter_article(${i});return false;">${blog["文章列表"][i]["文章标题"]}</a></h2>
+                   
+                    
+                </div>
+                    `;
+      }
+
 
       document.querySelector("#article-item-" + i).innerHTML += `
-                            <div class="article-item-sub" id="article-item-sub-${i}"></div>
-                            `;
+                        <div class="article-item-sub" id="article-item-sub-${i}"></div>
+                        `;
 
       document.querySelector("#article-item-sub-" + i).innerHTML += `
-                            <i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${blog["文章列表"][i]["创建日期"]}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${blog["文章列表"][i]["修改日期"]}<br />
+                        <i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${blog["文章列表"][i]["创建日期"]}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${blog["文章列表"][i]["修改日期"]}<br />
+                    `;
+
+      if (blog["不使用全站内容授权协议"] !== true && blog["文章列表"][i]["是否是短文章"]) {
+        document.querySelector("#article-item-sub-" + i).innerHTML += `
+                <i class="fa fa-copyright"></i> ${blogContentLicenseText}<br />
                         `;
+      }
+
 
       if (blog["文章列表"][i]["标签"].length === 0) {
       } else {
         document.querySelector("#article-item-sub-" + i).innerHTML += `
-                            <i class="fa fa-tags"></i> ${langdata["TAGS"][lang_name]}
-                            `;
+                        <i class="fa fa-tags"></i> ${langdata["TAGS"][lang_name]}
+                        `;
 
         for (let k = 0; k < blog["文章列表"][i]["标签"].length; k++) {
           document.querySelector("#article-item-sub-" + i).innerHTML += `
-                                <a class="btn btn-light btn-sm" href="./index.html?type=internal&function=tag&argument=${blog["文章列表"][i]["标签"][k]}" onclick="enter_tag('${blog["文章列表"][i]["标签"][k]}');return false;">${blog["文章列表"][i]["标签"][k]}</a>
-                                `;
+                            <a class="btn btn-light btn-sm" href="./index.html?type=internal&function=tag&argument=${blog["文章列表"][i]["标签"][k]}" onclick="enter_tag('${blog["文章列表"][i]["标签"][k]}');return false;">${blog["文章列表"][i]["标签"][k]}</a>
+                            `;
         }
       }
 
-      document.querySelector("#article-item-" + i).innerHTML += `
-                        <br /><p>${blog["文章列表"][i]["摘要"]}</p>
-                            `;
+
+      if (blog["文章列表"][i]["是否是短文章"]) {
+        document.querySelector("#article-item-" + i).innerHTML += `
+                    <br /><div>${marked.parse(blog["文章列表"][i]["文章内容"])}</div>
+                        `;
+      } else {
+        document.querySelector("#article-item-" + i).innerHTML += `
+                    <br /><p>${blog["文章列表"][i]["摘要"]}</p>
+                        `;
+      }
+
+
+      if (blog["文章列表"][i]["是否是短文章"] && blog["文章列表"][i]["启用评论"] && blog["全局评论设置"]["启用valine评论"]) {
+        document.querySelector("#article-item-" + i).innerHTML += `
+                <br /><a class="btn btn-sm btn-outline-primary" href="./index.html?type=short_article&id=${blog["文章列表"][i]["标识符"]}" onclick="enter_article(${i});return false;"> <i class="fa fa-comments-o"></i> 在此文章下查看和添加评论</a>
+                        `;
+      }
+
     }
   }
 
@@ -492,25 +584,25 @@ function render_article_list() {
     for (let i = 0; i < articleListPageLength; i++) {
       if (i + 1 === currentArticleListPageOrder) {
         document.getElementById("container").innerHTML += `
-          <button class="btn btn-primary btn-sm" onclick="changeArticleListPageOrderTo(${i + 1})">${i + 1}</button>
-          
-          `;
+      <button class="btn btn-primary btn-sm" onclick="changeArticleListPageOrderTo(${i + 1})">${i + 1}</button>
+      
+      `;
       } else {
         document.getElementById("container").innerHTML += `
-            
-            <button class="btn btn-secondary btn-sm" onclick="changeArticleListPageOrderTo(${i + 1})">${i + 1}</button>
-            
-            `;
+        
+        <button class="btn btn-secondary btn-sm" onclick="changeArticleListPageOrderTo(${i + 1})">${i + 1}</button>
+        
+        `;
       }
     }
 
     document.getElementById("container").innerHTML += `
-        <br /><br />
-        <p style="color:grey;" id="page_order_html">你当前正在浏览文章列表的第${currentArticleListPageOrder}页（共${articleListPageLength}页）。
+    <br /><br />
+    <p style="color:grey;" id="page_order_html">你当前正在浏览文章列表的第${currentArticleListPageOrder}页（共${articleListPageLength}页）。
 </p>
-        
-        
-        `;
+    
+    
+    `;
 
   }
 }
@@ -529,29 +621,29 @@ function render_article_content(article_id) {
 
   if (blog["启用网站公告"] === true && blog["网站公告仅在首页显示"] === false) {
     document.querySelector("#container").innerHTML += `
-          <div class="alert alert-primary">
+      <div class="alert alert-primary">
 
-            <i class="fa fa-bullhorn" aria-hidden="true"></i> 公告： ${blog["网站公告"]}
+        <i class="fa fa-bullhorn" aria-hidden="true"></i> 公告： ${blog["网站公告"]}
 </div>
-          `
+      `
   }
 
   document.querySelector("#container").innerHTML += `
-        
-        
-            <div class="article-content" id="article-content">
-                <h2> ${blog["文章列表"][article_id]["文章标题"]}</h2>
-                <div id="article-content-sub" class="article-content-sub">
-                    <i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${blog["文章列表"][article_id]["创建日期"]}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${blog["文章列表"][article_id]["修改日期"]}
-                </div>
+    
+    
+        <div class="article-content" id="article-content">
+            <h2 id="current_article_title"> ${blog["文章列表"][article_id]["文章标题"]}</h2>
+            <div id="article-content-sub" class="article-content-sub">
+                <i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${blog["文章列表"][article_id]["创建日期"]}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${blog["文章列表"][article_id]["修改日期"]}
             </div>
-            `;
+        </div>
+        `;
 
   if (blog["文章列表"][article_id]["标签"].length === 0) {
   } else {
     document.querySelector("#article-content-sub").innerHTML += `
-        <br /><i class="fa fa-tags"></i> ${langdata["TAGS"][lang_name]}
-        `;
+    <br /><i class="fa fa-tags"></i> ${langdata["TAGS"][lang_name]}
+    `;
 
     for (
       let k = 0;
@@ -560,8 +652,8 @@ function render_article_content(article_id) {
     ) {
       //todo:fix router 2
       document.querySelector("#article-content-sub").innerHTML += `
-            <a class="btn btn-light btn-sm" href="./index.html?type=internal&function=tag&argument=${blog["文章列表"][article_id]["标签"][k]}" onclick="enter_tag('${blog["文章列表"][article_id]["标签"][k]}');return false;">${blog["文章列表"][article_id]["标签"][k]}</a>
-            `;
+        <a class="btn btn-light btn-sm" href="./index.html?type=internal&function=tag&argument=${blog["文章列表"][article_id]["标签"][k]}" onclick="enter_tag('${blog["文章列表"][article_id]["标签"][k]}');return false;">${blog["文章列表"][article_id]["标签"][k]}</a>
+        `;
     }
   }
 
@@ -569,235 +661,650 @@ function render_article_content(article_id) {
     "#article-content-sub"
   ).innerHTML += `<br /><br />`;
 
-  axios
-    .get(
-      "./data/articles/" +
-      blog["文章列表"][article_id]["文件名"] +
-      "?timestamp=" +
-      Date.parse(new Date())
-    )
-    .then(function (response) {
-      document.querySelector("#article-content").innerHTML += `
-            <div id="article-content-html">${marked.parse(response.data)}</div>`;
+  if (blog["文章列表"][article_id]["是否是短文章"]) {
+    document.querySelector("#article-content").innerHTML += `
+        <div id="article-content-html">${marked.parse(blog["文章列表"][article_id]["文章内容"])}</div>`;
 
-      if (blog["提供文章文件下载"] || blog["提供复制全文到剪贴板的选项"]) {
-        document.getElementById("article-content").innerHTML += `
-            <br />
-            <div style="float:right;font-size:18px" id="article-bottom-bar">
-            
-              </div><br />
-            `
-      }
+    if (blog["提供文章文件下载"] || blog["提供复制全文到剪贴板的选项"]) {
+      document.getElementById("article-content").innerHTML += `
+        <br />
+        <div style="float:right;font-size:18px" id="article-bottom-bar">
+        
+          </div><br />
+        `
+    }
 
 
 
-      if (blog["提供文章文件下载"]) {
-        document.getElementById("article-bottom-bar").innerHTML += `
-              <a class="btn btn-primary" href="./data/articles/${blog["文章列表"][article_id]["文件名"]}" download="${blog["文章列表"][article_id]["文章标题"]}.md"><i class="fa fa-download"></i> 将该文章下载到你的计算机上</a>
-            `;
-      }
+    if (blog["提供文章文件下载"]) {
+      document.getElementById("article-bottom-bar").innerHTML += `
+          <a class="btn btn-primary" href="./data/articles/${blog["文章列表"][article_id]["文件名"]}" download="${blog["文章列表"][article_id]["文章标题"]}.md"><i class="fa fa-download"></i> 将该文章下载到你的计算机上</a>
+        `;
+    }
 
-      if (blog["提供复制全文到剪贴板的选项"]) {
-        document.getElementById("article-bottom-bar").innerHTML += `
-              <a class="btn btn-primary" id="copy_to_clipboard_button" onclick="copy_full_article_to_clipboard();"><i class="fa fa-clipboard"></i> 复制全文到剪贴板</a>
-            `;
-      }
+    if (blog["提供复制全文到剪贴板的选项"]) {
+      document.getElementById("article-bottom-bar").innerHTML += `
+          <a class="btn btn-primary" id="copy_to_clipboard_button" onclick="copy_full_article_to_clipboard();"><i class="fa fa-clipboard"></i> 复制全文到剪贴板</a>
+        `;
+    }
 
-      if (blog["不使用全站内容授权协议"] === false) {
-        document.querySelector(
-          "#article-content"
-        ).innerHTML += `<br />
-            <div class="alert alert-info" role="alert">
-              <h5 class="alert-heading">${langdata.COPYRIGHT_HINT[lang_name]}</h5>
-            <p class="mb-0">${blogContentLicenseText}</p>
-            </div>
-            
-            `;
-      }
+    if (blog["不使用全站内容授权协议"] === false) {
+      document.querySelector(
+        "#article-content"
+      ).innerHTML += `<br />
+        <div class="alert alert-info" role="alert">
+          <h5 class="alert-heading">${langdata.COPYRIGHT_HINT[lang_name]}</h5>
+        <p class="mb-0">${blogContentLicenseText}</p>
+        </div>
+        
+        `;
+    }
 
-      if (blog["文章页面显示上一篇下一篇文章导航按钮"]) {
+    if (blog["文章页面显示上一篇下一篇文章导航按钮"]) {
 
 
-        if (article_id === 0 && blog["文章列表"][article_id + 1] != undefined && blog["文章列表"][article_id + 1]["是否隐藏"] !== true) {
+      if (article_id === 0 && blog["文章列表"][article_id + 1] != undefined && blog["文章列表"][article_id + 1]["是否隐藏"] !== true) {
+        if (blog["文章列表"][article_id + 1]["是否是短文章"]) {
           document.getElementById("container").innerHTML += `
-              <div class="row">
-    <div class="col">
-      <div class="card articlebottomnav" style="float:left;width:100%">
-  <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
-    <h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id + 1]["文件名"]}" onclick="enter_article(${article_id + 1});return false;">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
-  </div>
+          <div class="row">
+<div class="col">
+  <div class="card articlebottomnav" style="float:left;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+<h5 class="card-title"><a href="./index.html?type=short_article&id=${blog["文章列表"][article_id + 1]["标识符"]}" onclick="enter_article(${article_id + 1});return false;">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
 </div>
-    </div>
-    <div class="col">
-      <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
-  <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
-    <h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
-  </div>
 </div>
-    </div>
-  </div>
-     
-            `
-        }
-
-        if (article_id === 0 && blog["文章列表"][article_id + 1] == undefined) {
+</div>
+<div class="col">
+  <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+<h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
+</div>
+</div>
+</div>
+</div>
+ 
+        `
+        } else {
           document.getElementById("container").innerHTML += `
-            <div class="row">
-    <div class="col">
-      <div class="card articlebottomnav" style="float:left;width:100%">
-  <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
-    <h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
-  </div>
+          <div class="row">
+<div class="col">
+  <div class="card articlebottomnav" style="float:left;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+<h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id + 1]["文件名"]}" onclick="enter_article(${article_id + 1});return false;">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
 </div>
-    </div>
-    <div class="col">
-      <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
-  <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
-    <h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
-  </div>
 </div>
-    </div>
-  </div>
-     
-            `
-        }
-
-        if (article_id !== 0 && blog["文章列表"][article_id + 1] == undefined && blog["文章列表"][article_id - 1]["是否隐藏"] !== true) {
-          document.getElementById("container").innerHTML += `
-              <div class="row">
-    <div class="col">
-      <div class="card articlebottomnav" style="float:left;width:100%">
-  <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
-    <h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
-  </div>
 </div>
-    </div>
-    <div class="col">
-      <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
-  <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
-    <h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id - 1]["文件名"]}" onclick="enter_article(${article_id - 1});return false;">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
-  </div>
+<div class="col">
+  <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+<h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
 </div>
-    </div>
-  </div>
-     
-            `
-        }
-
-        if (article_id !== 0 && blog["文章列表"][article_id + 1] != undefined && blog["文章列表"][article_id + 1]["是否隐藏"] !== true && blog["文章列表"][article_id - 1]["是否隐藏"] !== true) {
-          document.getElementById("container").innerHTML += `
-              <div class="row">
-    <div class="col">
-      <div class="card articlebottomnav" style="float:left;width:100%">
-  <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
-    <h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id + 1]["文件名"]}" onclick="enter_article(${article_id + 1});return false;">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
-  </div>
 </div>
-    </div>
-    <div class="col">
-      <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
-  <div class="card-body">
-    <h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
-    <h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id - 1]["文件名"]}" onclick="enter_article(${article_id - 1});return false;">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
-  </div>
 </div>
-    </div>
-  </div>
-     
-            `
+</div>
+ 
+        `
         }
 
       }
 
-
-
-
-      if (
-        blog["全局评论设置"]["启用valine评论"] &&
-        blog["文章列表"][article_id]["启用评论"]
-      ) {
-        document.querySelector(
-          "#container"
-        ).innerHTML += `<div class="bbg-comment-area"><h3><i class="fa fa-comments-o"></i> 在此文章 《${blog["文章列表"][article_id]["文章标题"]}》 下评论：</h3><br /><div id="vcomments"></div></div>`;
+      if (article_id === 0 && blog["文章列表"][article_id + 1] == undefined) {
+        document.getElementById("container").innerHTML += `
+        <div class="row">
+<div class="col">
+  <div class="card articlebottomnav" style="float:left;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+<h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
+</div>
+</div>
+</div>
+<div class="col">
+  <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+<h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
+</div>
+</div>
+</div>
+</div>
+ 
+        `
       }
 
-      render_bottom_information();
-      execute_custom_js();
+      if (article_id !== 0 && blog["文章列表"][article_id + 1] == undefined && blog["文章列表"][article_id - 1]["是否隐藏"] !== true) {
+        if (blog["文章列表"][article_id - 1]["是否是短文章"]) {
+          document.getElementById("container").innerHTML += `
+          <div class="row">
+<div class="col">
+  <div class="card articlebottomnav" style="float:left;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+<h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
+</div>
+</div>
+</div>
+<div class="col">
+  <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+<h5 class="card-title"><a href="./index.html?type=short_article&id=${blog["文章列表"][article_id - 1]["标识符"]}" onclick="enter_article(${article_id - 1});return false;">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+</div>
+ 
+        `
 
-      content_load_finished = true;
-      detect_whether_ui_load_finished();
-
-      if (
-        blog["全局评论设置"]["启用valine评论"] &&
-        blog["文章列表"][article_id]["启用评论"]
-      ) {
-        new Valine({
-          el: "#vcomments",
-          appId: blog["全局评论设置"]["valine设置"]["leancloud_appid"],
-          appKey: blog["全局评论设置"]["valine设置"]["leancloud_appkey"],
-          path:
-            comment_authcode +
-            "article=" +
-            blog["文章列表"][article_id]["文件名"],
-        });
-
-        preview_env_public_comment_fix();
+        } else {
+          document.getElementById("container").innerHTML += `
+          <div class="row">
+<div class="col">
+  <div class="card articlebottomnav" style="float:left;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+<h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
+</div>
+</div>
+</div>
+<div class="col">
+  <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+<h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id - 1]["文件名"]}" onclick="enter_article(${article_id - 1});return false;">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+</div>
+ 
+        `
+        }
 
       }
 
+      if (article_id !== 0 && blog["文章列表"][article_id + 1] != undefined && blog["文章列表"][article_id + 1]["是否隐藏"] !== true && blog["文章列表"][article_id - 1]["是否隐藏"] !== true) {
+        if (blog["文章列表"][article_id + 1]["是否是短文章"] && blog["文章列表"][article_id - 1]["是否是短文章"]) {
 
-    });
+          document.getElementById("container").innerHTML += `
+          <div class="row">
+<div class="col">
+  <div class="card articlebottomnav" style="float:left;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+<h5 class="card-title"><a href="./index.html?type=short_article&id=${blog["文章列表"][article_id + 1]["标识符"]}" onclick="enter_article(${article_id + 1});return false;">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+<div class="col">
+  <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+<h5 class="card-title"><a href="./index.html?type=short_article&id=${blog["文章列表"][article_id - 1]["标识符"]}" onclick="enter_article(${article_id - 1});return false;">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+</div>
+ 
+        `
+        } else if (blog["文章列表"][article_id + 1]["是否是短文章"] && blog["文章列表"][article_id - 1]["是否是短文章"] !== true) {
+          document.getElementById("container").innerHTML += `
+          <div class="row">
+<div class="col">
+  <div class="card articlebottomnav" style="float:left;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+<h5 class="card-title"><a href="./index.html?type=short_article&id=${blog["文章列表"][article_id + 1]["标识符"]}" onclick="enter_article(${article_id + 1});return false;">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+<div class="col">
+  <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+<h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id - 1]["文件名"]}" onclick="enter_article(${article_id - 1});return false;">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+</div>
+ 
+        `
+        } else if (blog["文章列表"][article_id + 1]["是否是短文章"] !== true && blog["文章列表"][article_id - 1]["是否是短文章"]) {
+          document.getElementById("container").innerHTML += `
+          <div class="row">
+<div class="col">
+  <div class="card articlebottomnav" style="float:left;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+<h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id + 1]["文件名"]}" onclick="enter_article(${article_id + 1});return false;">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+<div class="col">
+  <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+<h5 class="card-title"><a href="./index.html?type=short_article&id=${blog["文章列表"][article_id - 1]["标识符"]}" onclick="enter_article(${article_id - 1});return false;">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+</div>
+ 
+        `
+        } else if (blog["文章列表"][article_id + 1]["是否是短文章"] !== true && blog["文章列表"][article_id - 1]["是否是短文章"] !== true) {
+          document.getElementById("container").innerHTML += `
+          <div class="row">
+<div class="col">
+  <div class="card articlebottomnav" style="float:left;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+<h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id + 1]["文件名"]}" onclick="enter_article(${article_id + 1});return false;">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+<div class="col">
+  <div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+<h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id - 1]["标识符"]}" onclick="enter_article(${article_id - 1});return false;">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+</div>
+ 
+        `
+        }
+
+      }
+
+    }
+
+
+
+
+    if (
+      blog["全局评论设置"]["启用valine评论"] &&
+      blog["文章列表"][article_id]["启用评论"]
+    ) {
+      document.querySelector(
+        "#container"
+      ).innerHTML += `<div class="bbg-comment-area"><h3><i class="fa fa-comments-o"></i> 在此文章 《${blog["文章列表"][article_id]["文章标题"]}》 下评论：</h3><br /><div id="vcomments"></div></div>`;
+    }
+
+    render_bottom_information();
+    execute_custom_js();
+
+    content_load_finished = true;
+    detect_whether_ui_load_finished();
+
+    if (
+      blog["全局评论设置"]["启用valine评论"] &&
+      blog["文章列表"][article_id]["启用评论"]
+    ) {
+      new Valine({
+        el: "#vcomments",
+        appId: blog["全局评论设置"]["valine设置"]["leancloud_appid"],
+        appKey: blog["全局评论设置"]["valine设置"]["leancloud_appkey"],
+        path:
+          comment_authcode +
+          "short_article=" +
+          blog["文章列表"][article_id]["标识符"],
+      });
+
+      preview_env_public_comment_fix();
+    }
+  } else {
+    axios
+      .get(
+        "./data/articles/" +
+        blog["文章列表"][article_id]["文件名"] +
+        "?timestamp=" +
+        Date.parse(new Date())
+      )
+      .then(function (response) {
+        document.querySelector("#article-content").innerHTML += `
+        <div id="article-content-html">${marked.parse(response.data)}</div>`;
+
+        if (blog["提供文章文件下载"] || blog["提供复制全文到剪贴板的选项"]) {
+          document.getElementById("article-content").innerHTML += `
+        <br />
+        <div style="float:right;font-size:18px" id="article-bottom-bar">
+        
+          </div><br />
+        `
+        }
+
+
+
+        if (blog["提供文章文件下载"]) {
+          document.getElementById("article-bottom-bar").innerHTML += `
+          <a class="btn btn-primary" href="./data/articles/${blog["文章列表"][article_id]["文件名"]}" download="${blog["文章列表"][article_id]["文章标题"]}.md"><i class="fa fa-download"></i> 将该文章下载到你的计算机上</a>
+        `;
+        }
+
+        if (blog["提供复制全文到剪贴板的选项"]) {
+          document.getElementById("article-bottom-bar").innerHTML += `
+          <a class="btn btn-primary" id="copy_to_clipboard_button" onclick="copy_full_article_to_clipboard();"><i class="fa fa-clipboard"></i> 复制全文到剪贴板</a>
+        `;
+        }
+
+        if (blog["不使用全站内容授权协议"] === false) {
+          document.querySelector(
+            "#article-content"
+          ).innerHTML += `<br />
+        <div class="alert alert-info" role="alert">
+          <h5 class="alert-heading">${langdata.COPYRIGHT_HINT[lang_name]}</h5>
+        <p class="mb-0">${blogContentLicenseText}</p>
+        </div>
+        
+        `;
+        }
+
+        if (blog["文章页面显示上一篇下一篇文章导航按钮"]) {
+
+
+          if (article_id === 0 && blog["文章列表"][article_id + 1] != undefined && blog["文章列表"][article_id + 1]["是否隐藏"] !== true) {
+            if (blog["文章列表"][article_id + 1]["是否是短文章"]) {
+              document.getElementById("container").innerHTML += `
+<div class="row">
+<div class="col">
+<div class="card articlebottomnav" style="float:left;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+<h5 class="card-title"><a href="./index.html?type=short_article&id=${blog["文章列表"][article_id + 1]["标识符"]}" onclick="enter_article(${article_id + 1});return false;">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+<h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
+</div>
+</div>
+</div>
+</div>
+
+`
+            } else {
+              document.getElementById("container").innerHTML += `
+<div class="row">
+<div class="col">
+<div class="card articlebottomnav" style="float:left;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+<h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id + 1]["文件名"]}" onclick="enter_article(${article_id + 1});return false;">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+<h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
+</div>
+</div>
+</div>
+</div>
+
+`
+            }
+
+          }
+
+          if (article_id === 0 && blog["文章列表"][article_id + 1] == undefined) {
+            document.getElementById("container").innerHTML += `
+<div class="row">
+<div class="col">
+<div class="card articlebottomnav" style="float:left;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+<h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+<h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
+</div>
+</div>
+</div>
+</div>
+
+`
+          }
+
+          if (article_id !== 0 && blog["文章列表"][article_id + 1] == undefined && blog["文章列表"][article_id - 1]["是否隐藏"] !== true) {
+            if (blog["文章列表"][article_id - 1]["是否是短文章"]) {
+              document.getElementById("container").innerHTML += `
+<div class="row">
+<div class="col">
+<div class="card articlebottomnav" style="float:left;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+<h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+<h5 class="card-title"><a href="./index.html?type=short_article&id=${blog["文章列表"][article_id - 1]["标识符"]}" onclick="enter_article(${article_id - 1});return false;">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+</div>
+
+`
+
+            } else {
+              document.getElementById("container").innerHTML += `
+<div class="row">
+<div class="col">
+<div class="card articlebottomnav" style="float:left;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+<h5 class="card-title">${langdata.NOTHING[lang_name]}</h5>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+<h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id - 1]["文件名"]}" onclick="enter_article(${article_id - 1});return false;">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+</div>
+
+`
+            }
+
+          }
+
+          if (article_id !== 0 && blog["文章列表"][article_id + 1] != undefined && blog["文章列表"][article_id + 1]["是否隐藏"] !== true && blog["文章列表"][article_id - 1]["是否隐藏"] !== true) {
+            if (blog["文章列表"][article_id + 1]["是否是短文章"] && blog["文章列表"][article_id - 1]["是否是短文章"]) {
+
+              document.getElementById("container").innerHTML += `
+<div class="row">
+<div class="col">
+<div class="card articlebottomnav" style="float:left;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+<h5 class="card-title"><a href="./index.html?type=short_article&id=${blog["文章列表"][article_id + 1]["标识符"]}" onclick="enter_article(${article_id + 1});return false;">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+<h5 class="card-title"><a href="./index.html?type=short_article&id=${blog["文章列表"][article_id - 1]["标识符"]}" onclick="enter_article(${article_id - 1});return false;">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+</div>
+
+`
+            } else if (blog["文章列表"][article_id + 1]["是否是短文章"] && blog["文章列表"][article_id - 1]["是否是短文章"] !== true) {
+              document.getElementById("container").innerHTML += `
+<div class="row">
+<div class="col">
+<div class="card articlebottomnav" style="float:left;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+<h5 class="card-title"><a href="./index.html?type=short_article&id=${blog["文章列表"][article_id + 1]["标识符"]}" onclick="enter_article(${article_id + 1});return false;">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+<h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id - 1]["文件名"]}" onclick="enter_article(${article_id - 1});return false;">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+</div>
+
+`
+            } else if (blog["文章列表"][article_id + 1]["是否是短文章"] !== true && blog["文章列表"][article_id - 1]["是否是短文章"]) {
+              document.getElementById("container").innerHTML += `
+<div class="row">
+<div class="col">
+<div class="card articlebottomnav" style="float:left;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+<h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id + 1]["文件名"]}" onclick="enter_article(${article_id + 1});return false;">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+<h5 class="card-title"><a href="./index.html?type=short_article&id=${blog["文章列表"][article_id - 1]["标识符"]}" onclick="enter_article(${article_id - 1});return false;">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+</div>
+
+`
+            } else if (blog["文章列表"][article_id + 1]["是否是短文章"] !== true && blog["文章列表"][article_id - 1]["是否是短文章"] !== true) {
+              document.getElementById("container").innerHTML += `
+<div class="row">
+<div class="col">
+<div class="card articlebottomnav" style="float:left;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted"><i class="fa fa-arrow-left"></i> ${langdata.PREVIOUS_POST[lang_name]}</h6>
+<h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id + 1]["文件名"]}" onclick="enter_article(${article_id + 1});return false;">${blog["文章列表"][article_id + 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+<div class="col">
+<div class="card articlebottomnav" style="float:right;text-align:right;width:100%">
+<div class="card-body">
+<h6 class="card-subtitle mb-2 text-muted">${langdata.NEXT_POST[lang_name]} <i class="fa fa-arrow-right"></i></h6>
+<h5 class="card-title"><a href="./index.html?type=article&filename=${blog["文章列表"][article_id - 1]["标识符"]}" onclick="enter_article(${article_id - 1});return false;">${blog["文章列表"][article_id - 1]["文章标题"]}</a></h5>
+</div>
+</div>
+</div>
+</div>
+
+`
+            }
+
+          }
+
+        }
+
+
+
+
+        if (
+          blog["全局评论设置"]["启用valine评论"] &&
+          blog["文章列表"][article_id]["启用评论"]
+        ) {
+          document.querySelector(
+            "#container"
+          ).innerHTML += `<div class="bbg-comment-area"><h3><i class="fa fa-comments-o"></i> 在此文章 《${blog["文章列表"][article_id]["文章标题"]}》 下评论：</h3><br /><div id="vcomments"></div></div>`;
+        }
+
+        render_bottom_information();
+        execute_custom_js();
+
+        content_load_finished = true;
+        detect_whether_ui_load_finished();
+
+        if (
+          blog["全局评论设置"]["启用valine评论"] &&
+          blog["文章列表"][article_id]["启用评论"]
+        ) {
+          new Valine({
+            el: "#vcomments",
+            appId: blog["全局评论设置"]["valine设置"]["leancloud_appid"],
+            appKey: blog["全局评论设置"]["valine设置"]["leancloud_appkey"],
+            path:
+              comment_authcode +
+              "article=" +
+              blog["文章列表"][article_id]["文件名"],
+          });
+
+          preview_env_public_comment_fix();
+
+        }
+
+
+      })
+  }
 }
 
 function render_friend_book_friend(listid, name, url, icon, description) {
   document.getElementById(listid).innerHTML += `
-                <div class="card friend-card mb-3">
-                
-                <div class="row">
-    <div class="col-md-4" >
-      <img src="${icon}" class="friend-card-img">
-    </div>
-    <div class="col-md-8" >
-      <div class="card-body">
-        <h5 class="card-title"><a target="_blank" href="${url}">${name}</a></h5>
-        <p class="card-text">${description}</p>
-      </div>
-    </div>
-    
+            <div class="card friend-card mb-3">
+            
+            <div class="row">
+<div class="col-md-4" >
+  <img src="${icon}" class="friend-card-img">
+</div>
+<div class="col-md-8" >
+  <div class="card-body">
+    <h5 class="card-title"><a target="_blank" href="${url}">${name}</a></h5>
+    <p class="card-text">${description}</p>
   </div>
+</div>
+
+</div>
 <br />
-                
-                `;
+            
+            `;
 }
 
 function render_friend_book() {
   document.querySelector("#container").innerHTML += `
-            <div class="page-content">
-                <h2>${langdata.FRIEND_BOOK[lang_name]}</h2>
-                <hr />
-                <p>${blog["友人帐页面附加信息"]}</p>
-                
-                  <div class="row">
-    <div class="col" id="friend_book_list1">
-      
-    </div>
-    <div class="col" id="friend_book_list2">
-      
-    </div>
-    <div class="col" id="empty_friend_book_list">
-      
-    </div>
+        <div class="page-content">
+            <h2>${langdata.FRIEND_BOOK[lang_name]}</h2>
+            <hr />
+            <p>${blog["友人帐页面附加信息"]}</p>
+            
+              <div class="row">
+<div class="col" id="friend_book_list1">
+  
+</div>
+<div class="col" id="friend_book_list2">
+  
+</div>
 
-  </div>
-  </div>
-            `;
+</div>
+</div>
+        `;
 
   if (blog["友人帐来自json文件"] === true) {
     axios.get(blog["若友人帐来自json文件，则地址为"]).then(
@@ -881,25 +1388,35 @@ function render_tag_tree() {
       "#tag-content"
     ).innerHTML += `<h2 id="tag-content-of-tag-${Object.keys(tagtree)[i]}"><i class="fa fa-tags"></i> ${Object.keys(tagtree)[i]
     }</h2>`;
-    currentTagTreeArticleNumber = 0;
     for (let k = 0; k < tagtree[Object.keys(tagtree)[i]].length; k++) {
       // 遍历某个标签中的所有文章
+      currentTagTreeArticleNumber = 0;
       for (let j = 0; j < blog["文章列表"].length; j++) {
         // 遍历index.json中的所有文章object，与标签中的文章object相比较，
         // 这是为了取得标签中的文章object在index.json中的文章列表array中对应的下标。
         // 因为 enter_article函数的参数是index.json中的文章列表array的下标，因此必须要获取到。
         if (tagtree[Object.keys(tagtree)[i]][k] === blog["文章列表"][j] && blog["文章列表"][j]["是否隐藏"] === false) {
-          document.querySelector(
-            "#tag-content"
-          ).innerHTML += `<p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][j]["文件名"]}" onclick="enter_article(${j});return false;">${tagtree[Object.keys(tagtree)[i]][k]["文章标题"]
-          }</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${tagtree[Object.keys(tagtree)[i]][k]["创建日期"]
-            }，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${tagtree[Object.keys(tagtree)[i]][k]["修改日期"]
-            }）</p>`;
+          if (blog["文章列表"][j]["是否是短文章"]) {
+            document.querySelector(
+              "#tag-content"
+            ).innerHTML += `<p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=short_article&id=${blog["文章列表"][j]["标识符"]}" onclick="enter_article(${j});return false;">${tagtree[Object.keys(tagtree)[i]][k]["文章标题"]
+            }</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${tagtree[Object.keys(tagtree)[i]][k]["创建日期"]
+              }，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${tagtree[Object.keys(tagtree)[i]][k]["修改日期"]
+              }）</p>`;
+          } else {
+            document.querySelector(
+              "#tag-content"
+            ).innerHTML += `<p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][j]["文件名"]}" onclick="enter_article(${j});return false;">${tagtree[Object.keys(tagtree)[i]][k]["文章标题"]
+            }</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${tagtree[Object.keys(tagtree)[i]][k]["创建日期"]
+              }，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${tagtree[Object.keys(tagtree)[i]][k]["修改日期"]
+              }）</p>`;
+          }
+
+
           currentTagTreeArticleNumber++;
 
 
         }
-
         totalTagTreeArticleLength = totalTagTreeArticleLength + 1;
       }
       if (currentTagTreeArticleNumber === 0) {
@@ -910,57 +1427,96 @@ function render_tag_tree() {
 
   if (getTagTreeLength() === 0) {
     document.querySelector("#tag-content").innerHTML += `
-          <h3><i class="fa fa-tags"></i> 未分类文章</h3>
+      <h3><i class="fa fa-tags"></i> 未分类文章</h3>
 
-          `;
+      `;
 
     for (let i = 0; i < blog["文章列表"].length; i++) {
       if (blog["文章列表"][i]["是否隐藏"] === false) {
-        document.querySelector("#tag-content").innerHTML += `
-            <p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}">${blog["文章列表"][i]["文章标题"]}</a>
-              
-              （
-              <i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}
-              ${blog["文章列表"][i]["创建日期"]}，
-              <i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}
-              ${blog["文章列表"][i]["修改日期"]}
-              
-              ）
-              
-              </p>
+        if (blog["文章列表"][i]["是否是短文章"]) {
+          document.querySelector("#tag-content").innerHTML += `
+        <p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=short_article&filename=${blog["文章列表"][i]["标识符"]}">${blog["文章列表"][i]["文章标题"]}</a>
+          
+          （
+          <i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}
+          ${blog["文章列表"][i]["创建日期"]}，
+          <i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}
+          ${blog["文章列表"][i]["修改日期"]}
+          
+          ）
+          
+          </p>
 
-          `;
+      `;
+        } else {
+          document.querySelector("#tag-content").innerHTML += `
+        <p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}">${blog["文章列表"][i]["文章标题"]}</a>
+          
+          （
+          <i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}
+          ${blog["文章列表"][i]["创建日期"]}，
+          <i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}
+          ${blog["文章列表"][i]["修改日期"]}
+          
+          ）
+          
+          </p>
+
+      `;
+        }
+
       }
     }
   } else {
     if (totalTagTreeArticleLength < blog["文章列表"].length) {
       document.getElementById("tag-content").innerHTML += `
-            <h3><i class="fa fa-tags"></i> 未分类文章</h3>
-            `;
+        <h3><i class="fa fa-tags"></i> 未分类文章</h3>
+        `;
 
       for (let i = 0; i < blog["文章列表"].length; i++) {
         if (blog["文章列表"][i]["是否隐藏"] === false) {
-          if (blog["文章列表"][i]["标签"].length === 0 || blog["文章列表"][i]["标签"] === false || blog["文章列表"][i]["标签"] === "" || blog["文章列表"][i]["标签"] === undefined || blog["文章列表"][i]["标签"] === null) {
-            document.querySelector("#tag-content").innerHTML += `
-            <p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}">${blog["文章列表"][i]["文章标题"]}</a>
-              
-              （
-              <i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}
-              ${blog["文章列表"][i]["创建日期"]}，
-              <i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}
-              ${blog["文章列表"][i]["修改日期"]}
-              
-              ）
-              
-              </p>
+          if (blog["文章列表"][i]["是否是短文章"]) {
+            if (blog["文章列表"][i]["标签"].length === 0 || blog["文章列表"][i]["标签"] === false || blog["文章列表"][i]["标签"] === "" || blog["文章列表"][i]["标签"] === undefined || blog["文章列表"][i]["标签"] === null) {
+              document.querySelector("#tag-content").innerHTML += `
+        <p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=short_article&id=${blog["文章列表"][i]["标识符"]}">${blog["文章列表"][i]["文章标题"]}</a>
+          
+          （
+          <i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}
+          ${blog["文章列表"][i]["创建日期"]}，
+          <i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}
+          ${blog["文章列表"][i]["修改日期"]}
+          
+          ）
+          
+          </p>
 
-          `;
+      `;
+            }
+
+          } else {
+            if (blog["文章列表"][i]["标签"].length === 0 || blog["文章列表"][i]["标签"] === false || blog["文章列表"][i]["标签"] === "" || blog["文章列表"][i]["标签"] === undefined || blog["文章列表"][i]["标签"] === null) {
+              document.querySelector("#tag-content").innerHTML += `
+        <p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}">${blog["文章列表"][i]["文章标题"]}</a>
+          
+          （
+          <i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}
+          ${blog["文章列表"][i]["创建日期"]}，
+          <i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}
+          ${blog["文章列表"][i]["修改日期"]}
+          
+          ）
+          
+          </p>
+
+      `;
+            }
           }
+
         }
       }
     }
-  }
 
+  }
 }
 
 function render_tag(tagname) {
@@ -973,9 +1529,17 @@ function render_tag(tagname) {
   for (let i = 0; i < tagtree[tagname].length; i++) {
     for (let j = 0; j < blog["文章列表"].length; j++) {
       if (tagtree[tagname][i] === blog["文章列表"][j] && blog["文章列表"][j]["是否隐藏"] === false) {
-        document.querySelector(
-          "#tag-content"
-        ).innerHTML += `<p><i class="fa fa-file-text-o"></i> <a href="/index.html?type=article&filename=${blog["文章列表"][j]["文件名"]}" onclick="enter_article(${j});return false;">${tagtree[tagname][i]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${tagtree[tagname][i]["创建日期"]}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${tagtree[tagname][i]["修改日期"]}）</p>`;
+        if (blog["文章列表"][j]["是否是短文章"]) {
+          document.querySelector(
+            "#tag-content"
+          ).innerHTML += `<p><i class="fa fa-file-text-o"></i> <a href="/index.html?type=short_article&id=${blog["文章列表"][j]["标识符"]}" onclick="enter_article(${j});return false;">${tagtree[tagname][i]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${tagtree[tagname][i]["创建日期"]}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${tagtree[tagname][i]["修改日期"]}）</p>`;
+
+        } else {
+          document.querySelector(
+            "#tag-content"
+          ).innerHTML += `<p><i class="fa fa-file-text-o"></i> <a href="/index.html?type=article&filename=${blog["文章列表"][j]["文件名"]}" onclick="enter_article(${j});return false;">${tagtree[tagname][i]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${tagtree[tagname][i]["创建日期"]}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${tagtree[tagname][i]["修改日期"]}）</p>`;
+
+        }
       }
     }
   }
@@ -985,11 +1549,11 @@ function render_page(page_id) {
 
   if (blog["启用网站公告"] === true && blog["网站公告仅在首页显示"] === false) {
     document.querySelector("#container").innerHTML += `
-          <div class="alert alert-primary">
+      <div class="alert alert-primary">
 
-            <i class="fa fa-bullhorn" aria-hidden="true"></i> 公告： ${blog["网站公告"]}
+        <i class="fa fa-bullhorn" aria-hidden="true"></i> 公告： ${blog["网站公告"]}
 </div>
-          `
+      `
   }
 
   document.querySelector(
@@ -1011,12 +1575,12 @@ function render_page(page_id) {
       document.querySelector("#page-content").innerHTML += `<div id="page-content-html">${marked.parse(response.data)}</div>`;
       if (blog["不使用全站内容授权协议"] === false) {
         document.getElementById("page-content").innerHTML += `<br />
-            <div class="alert alert-info" role="alert">
-              <h5 class="alert-heading">${langdata.COPYRIGHT_HINT[lang_name]}</h5>
-              <p class="mb-0">${blogContentLicenseText}</p>
-            </div>
-            
-            `;
+        <div class="alert alert-info" role="alert">
+          <h5 class="alert-heading">${langdata.COPYRIGHT_HINT[lang_name]}</h5>
+          <p class="mb-0">${blogContentLicenseText}</p>
+        </div>
+        
+        `;
       }
 
       // 评论
@@ -1101,12 +1665,12 @@ function render_hitokoto() {
 
 function render_bottom_information() {
   document.getElementById("container").innerHTML += `
-            <hr />
-            <div style="color:grey" id="bottom_info_html">
-                ${marked.parse(blog["底部信息（格式为markdown）"])}
-            </div>
-            
-            `;
+        <hr />
+        <div style="color:grey" id="bottom_info_html">
+            ${marked.parse(blog["底部信息（格式为markdown）"])}
+        </div>
+        
+        `;
 }
 
 function execute_custom_js() {
@@ -1177,7 +1741,12 @@ function enter_indexPage() {
 }
 
 function enter_article(article_id) {
-  history.pushState({ type: "article", filename: blog["文章列表"][article_id]["文件名"] }, "", `./index.html?type=article&filename=${blog["文章列表"][article_id]["文件名"]}`);
+  if (blog["文章列表"][article_id]["是否是短文章"]) {
+    history.pushState({ type: "short_article", id: blog["文章列表"][article_id]["文章内容"] }, "", `./index.html?type=short_article&id=${blog["文章列表"][article_id]["标识符"]}`);
+
+  } else {
+    history.pushState({ type: "article", filename: blog["文章列表"][article_id]["文件名"] }, "", `./index.html?type=article&filename=${blog["文章列表"][article_id]["文件名"]}`);
+  }
   document.getElementsByTagName("title")[0].innerHTML = `${blog["文章列表"][article_id]["文章标题"]} - ${blog["博客标题"]} `;
   resetPage();
   render_nav(false);
@@ -1236,6 +1805,39 @@ axios
         blogContentLicenseText = `${blog["全站内容授权协议"]}`;
     }
 
+    if (blog["使版心宽度更窄（提高左右页边距）"]) {
+      document.getElementById("theme_settings").innerHTML += `
+      @media(min-width: 1000px){
+      .container{
+        padding-left: 12%;
+        padding-right: 12%;
+        padding-top: 0;
+        padding-bottom: 0
+      }
+    }
+      `;
+    }
+
+    if (blog["优先使用衬线字体"]) {
+      document.getElementById("theme_settings").innerHTML += `
+      * {
+        font-family: 'Noto Serif SC','Source Han Serif SC','Source Han Serif',source-han-serif-sc,'PT Serif','SongTi SC',serif;
+      }
+      `;
+    }
+
+    if (blog["全局主题设置"]["禁用导航栏的阴影效果"]) {
+      document.getElementById("theme_settings").innerHTML += `
+      nav {
+  opacity: 0.9;
+  box-shadow: none;
+  padding: 0 !important;
+}
+      `;
+    }
+
+
+
     let cdn_path = blog["CDN路径"];
 
     // js importing disabled due to execution order is inevitable, while css importing can safely operate.
@@ -1284,7 +1886,7 @@ axios
       ) {
         document.querySelector("#blogcss").innerHTML += `body:before{
 
-    background: url(https://api.paugram.com/wallpaper/) center/cover;
+background: url(https://api.paugram.com/wallpaper/) center/cover;
 }`;
       }
     }
@@ -1300,6 +1902,27 @@ axios
       let article_filename = getUrlArgs("filename");
       for (let i = 0; i < blog["文章列表"].length; i++) {
         if (blog["文章列表"][i]["文件名"] === article_filename) {
+          success_locate_article_id = true;
+          enter_article(i);
+        }
+      }
+      if (success_locate_article_id !== true) {
+        document.getElementById("root").setAttribute("style", "");
+        document.getElementById("loading").setAttribute("style", "display:none;");
+        document.getElementById("root").innerHTML = `
+        <div style="text-align:center">
+          <br />
+        <h3>此文章不存在或已被删除</h3>
+        <p>This article does not exist or has already been deleted.</p>
+        </div>
+        `;
+      }
+    }
+
+    if (getUrlArgs("type") === "short_article") {
+      let article_id = getUrlArgs("id");
+      for (let i = 0; i < blog["文章列表"].length; i++) {
+        if (blog["文章列表"][i]["标识符"] === article_id) {
           success_locate_article_id = true;
           enter_article(i);
         }
