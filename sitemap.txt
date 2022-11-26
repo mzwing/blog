@@ -1,4 +1,4 @@
-https://mzwing.eu.org/index.html?type=article&filename=some-question-forms.md
+https://mzwing.eu.org/index.html?type=article&filename=explore-nixos-1.md
 https://mzwing.eu.org/index.html?type=article&filename=install-archlinux-and-dde.md
 https://mzwing.eu.org/index.html?type=article&filename=some-old-things-about-me.md
 https://mzwing.eu.org/index.html?type=internal&function=friendbook
