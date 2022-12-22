@@ -1,7 +1,7 @@
 {
   "博客标题": "洛仙璃の幻梦",
   "博客描述（副标题）": "如光似幻，如影随形",
-  "博客程序版本（禁止修改此值，否则会导致跨版本升级异常）": 20221031,
+  "博客程序版本（禁止修改此值，否则会导致跨版本升级异常）": 20221202,
   "在菜单中添加归档和标签的入口": true,
   "在文章或页面的底部添加分享按钮，以便复制直链url": true,
   "菜单中的外部链接": [],
@@ -113,7 +113,7 @@
   "网站公告仅在首页显示": false,
   "网站公告": "",
   "启用内建友人帐页面": true,
-  "友人帐页面附加信息": "可以在评论区申请加入友链呀！<br/>\n以下是我的博客信息：<br/>\n名称：洛仙璃の幻梦<br/>\n链接：https://mzwing.eu.org<br/>\n图标：https://gravatar.loli.net/avatar/b740a96fe85051e07ed3fb9aa86d5202?d=mp&v=1.5.1<br/>\n简介：如光似幻，如影随形<br/>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
+  "友人帐页面附加信息": "可以在评论区申请加入友链呀！<br/>\n（不过，现在博主很懒（x）若可能最好直接在<a href=\"https://github.com/mzwing/friends\">@mzwing/friends</a>里面发起PR）（x）<br/>\n以下是我的博客信息：<br/>\n名称：洛仙璃の幻梦<br/>\n链接：https://mzwing.eu.org<br/>\n图标：https://gravatar.loli.net/avatar/b740a96fe85051e07ed3fb9aa86d5202?d=mp&v=1.5.1<br/>\n简介：如光似幻，如影随形<br/>\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n",
   "友人帐页面允许评论": true,
   "CDN选择": 1,
   "CDN路径": "https://unpkg.com",
@@ -135,5 +135,10 @@
   "提高JSON文件的可读性": true,
   "搜索按钮边框颜色设置为暗色": false,
   "使版心宽度更窄（提高左右页边距）": true,
-  "优先使用衬线字体": false
+  "优先使用衬线字体": false,
+  "Markdown渲染配置": {
+    "使用markdown文件所在目录作为baseurl": true,
+    "在用户点击图片时显示图片查看器": true,
+    "根据用户屏幕尺寸渲染图片尺寸": true
+  }
 }
