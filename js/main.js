@@ -4,10 +4,60 @@ marked.setOptions({
   }
 });
 
+const image_viewer_dialog = new bootstrap.Modal(document.getElementById('image_viewer_dialog'));
+
+markdown_renderer = new marked.Renderer();
+
+markdown_renderer.heading = (text, level, raw, slugger) => {
+  return `<h${level} style="border-bottom: solid 1px rgba(137,137,137,0.3);padding-bottom: 4px"><a href="javascript:void(0)">##</a> ${text}</h${level}>`;
+}
+
+markdown_renderer.link = (href, title, text) => {
+  return `<a href="${href}" title="${title}" style="text-decoration: underline"><i class="fa fa-external-link"></i> ${text}</a>`
+}
+
+marked.setOptions({
+  renderer: markdown_renderer
+})
+
+baseurl = "";
+
+String.prototype.hashCode = function () {
+  let hash = 0, i, chr;
+  if (this.length === 0) return hash;
+  for (i = 0; i < this.length; i++) {
+    chr = this.charCodeAt(i);
+    hash = ((hash << 5) - hash) + chr;
+    hash |= 0;
+  }
+  return hash;
+}
+
+function getTagColor(tagname) {
+  let color_list = ["#000099", "#330099", "#660099", "#990099", "#cc0099", "#ff0099", "#0000cc", "#3300cc", "#6600cc", "#9900cc"];
+  let color_id = parseInt(tagname.hashCode().toString().replace("-", "").slice(0, 1));
+  return color_list[color_id];
+}
+
 window.onpopstate = function () {
   if (window.location.href.indexOf("#top") === -1) {
     window.location.reload();
   }
+}
+
+function openImageViewer(url) {
+  document.querySelector("#image_viewer_dialog_body").innerHTML = `
+  <button onclick="window.open('${url.indexOf("https://") === -1 && url.indexOf("http://") === -1 ? baseurl : ""}${url}')" class="btn btn-success"><i class="fa fa-file-image-o"></i> 在新标签页打开此图像</button>
+  <br />
+  <br />
+  <img src="${url.indexOf("https://") === -1 && url.indexOf("http://") === -1 ? baseurl : ""}${url}" style="max-width: 100%" />
+  <br />
+  <br />
+  <button onclick="window.open('${url.indexOf("https://") === -1 && url.indexOf("http://") === -1 ? baseurl : ""}${url}')" class="btn btn-success"><i class="fa fa-file-image-o"></i> 在新标签页打开此图像</button>
+  <button onclick="image_viewer_dialog.hide()" class="btn btn-primary"><i class="fa fa-times"></i> 关闭此对话框</button>
+
+  `;
+  image_viewer_dialog.toggle();
 }
 
 function content_decrypt(content, password, verify = null) {
@@ -341,6 +391,7 @@ function start_search_dialog() {
 </div>
   
   `;
+  document.getElementById("search_keyword").focus();
   document.getElementById("search_keyword").addEventListener('input', start_search);
 }
 function render_nav(isIndexPage) {
@@ -348,8 +399,8 @@ function render_nav(isIndexPage) {
   let nav_base = `<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" id="navbar">
 <div class="container-fluid">
 <a class="navbar-brand" id="navbar_title" href="./index.html" onclick="enter_indexPage();return false;">${blog["博客标题"]}</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-  <span class="navbar-toggler-icon"></span>
+<button class="navbar-toggler" style="border:none;color:white;margin-left:2px" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="fa fa-bars"></i>
 </button>
 <div class="collapse navbar-collapse" id="navbarSupportedContent">
   <ul class="navbar-nav me-auto mb-2 mb-lg-0" id="navbar_items">
@@ -359,9 +410,13 @@ function render_nav(isIndexPage) {
     <li class="nav-item" id="navbar_archive_and_tags">
       <a class="nav-link" href="./index.html?type=internal&function=archive_and_tags" onclick="enter_archive_and_tags();return false;">${langdata["ARCHIVE_AND_TAGS"][lang_name]}</a>
     </li>
+
   </ul>
   <div class="d-flex" role="search">
       <button class="btn btn-outline-${blog["搜索按钮边框颜色设置为暗色"] ? "dark" : "light"}" onclick="start_search_dialog()"><i class="fa fa-search"></i> ${langdata["SEARCH_SOMETHING"][lang_name]}</button>
+  </div>
+  <div class="d-flex">
+     <div style="display:block;padding:2px"></div>
   </div>
 </div>
 </div>
@@ -553,7 +608,7 @@ function render_article_list() {
 
         for (let k = 0; k < blog["文章列表"][i]["标签"].length; k++) {
           document.querySelector("#article-item-sub-" + i).innerHTML += `
-                            <a class="btn btn-light btn-sm" href="./index.html?type=internal&function=tag&argument=${blog["文章列表"][i]["标签"][k]}" onclick="enter_tag('${blog["文章列表"][i]["标签"][k]}');return false;">${blog["文章列表"][i]["标签"][k]}</a>
+                            <a class="btn btn-dark btn-sm article_tag" style="background-color: ${getTagColor(blog["文章列表"][i]["标签"][k])}" href="./index.html?type=internal&function=tag&argument=${blog["文章列表"][i]["标签"][k]}" onclick="enter_tag('${blog["文章列表"][i]["标签"][k]}');return false;">${blog["文章列表"][i]["标签"][k]}</a>
                             `;
         }
       }
@@ -570,7 +625,7 @@ function render_article_list() {
       }
 
 
-      if (blog["文章列表"][i]["是否是短文章"] && blog["文章列表"][i]["启用评论"] && blog["全局评论设置"]["启用valine评论"]) {
+      if (blog["文章列表"][i]["是否是短文章"] && blog["文章列表"][i]["启用评论"] && blog["全局评论设置"]["启用valine评论"] || blog["文章列表"][i]["是否是短文章"] && blog["文章列表"][i]["启用评论"] && blog["全局评论设置"]["启用disqus评论"]) {
         document.querySelector("#article-item-" + i).innerHTML += `
                 <br /><a class="btn btn-sm btn-outline-primary" href="./index.html?type=short_article&id=${blog["文章列表"][i]["标识符"]}" onclick="enter_article(${i});return false;"> <i class="fa fa-comments-o"></i> 在此文章下查看和添加评论</a>
                         `;
@@ -619,6 +674,10 @@ function render_friend_book_list() {
 
 function render_article_content(article_id) {
 
+  if (blog["Markdown渲染配置"]["使用markdown文件所在目录作为baseurl"]) {
+    baseurl = "/data/articles/"
+  }
+
   if (blog["启用网站公告"] === true && blog["网站公告仅在首页显示"] === false) {
     document.querySelector("#container").innerHTML += `
       <div class="alert alert-primary">
@@ -652,7 +711,7 @@ function render_article_content(article_id) {
     ) {
       //todo:fix router 2
       document.querySelector("#article-content-sub").innerHTML += `
-        <a class="btn btn-light btn-sm" href="./index.html?type=internal&function=tag&argument=${blog["文章列表"][article_id]["标签"][k]}" onclick="enter_tag('${blog["文章列表"][article_id]["标签"][k]}');return false;">${blog["文章列表"][article_id]["标签"][k]}</a>
+        <a class="btn btn-dark btn-sm article_tag" style="background-color:${getTagColor(blog["文章列表"][article_id]["标签"][k])}" href="./index.html?type=internal&function=tag&argument=${blog["文章列表"][article_id]["标签"][k]}" onclick="enter_tag('${blog["文章列表"][article_id]["标签"][k]}');return false;">${blog["文章列表"][article_id]["标签"][k]}</a>
         `;
     }
   }
@@ -927,11 +986,13 @@ function render_article_content(article_id) {
 
     if (
       blog["全局评论设置"]["启用valine评论"] &&
+      blog["文章列表"][article_id]["启用评论"] ||
+      blog["全局评论设置"]["启用disqus评论"] &&
       blog["文章列表"][article_id]["启用评论"]
     ) {
       document.querySelector(
         "#container"
-      ).innerHTML += `<div class="bbg-comment-area"><h3><i class="fa fa-comments-o"></i> 在此文章 《${blog["文章列表"][article_id]["文章标题"]}》 下评论：</h3><br /><div id="vcomments"></div></div>`;
+      ).innerHTML += `<div class="bbg-comment-area"><h3><i class="fa fa-comments-o"></i> 在此文章 《${blog["文章列表"][article_id]["文章标题"]}》 下评论：</h3><br /><div id="vcomments"></div><div id="disqus_thread"></div></div>`;
     }
 
     render_bottom_information();
@@ -956,6 +1017,19 @@ function render_article_content(article_id) {
 
       preview_env_public_comment_fix();
     }
+
+    if (blog["全局评论设置"]["启用disqus评论"] &&
+      blog["文章列表"][article_id]["启用评论"]) {
+      let disqus_config = function () {
+        this.page.identifier = "short_article=" + blog["文章列表"][article_id]["标识符"];
+      };
+      (function () {
+        let d = document, s = d.createElement('script');
+        s.src = `https://${blog["全局评论设置"]["disqus设置"]["shortname"]}.disqus.com/embed.js`;
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+      })();
+    }
   } else {
     axios
       .get(
@@ -968,6 +1042,14 @@ function render_article_content(article_id) {
         document.querySelector("#article-content").innerHTML += `
         <div id="article-content-html">${marked.parse(response.data)}</div>`;
 
+        renderMathInElement(document.getElementById("article-content-html"), {
+          delimiters: [
+            { left: '$$$', right: '$$$', display: true },
+            { left: '$$', right: '$$', display: true },
+            { left: '$', right: '$', display: false },
+          ],
+          throwOnError: false
+        });
         if (blog["提供文章文件下载"] || blog["提供复制全文到剪贴板的选项"]) {
           document.getElementById("article-content").innerHTML += `
         <br />
@@ -1230,11 +1312,13 @@ function render_article_content(article_id) {
 
         if (
           blog["全局评论设置"]["启用valine评论"] &&
+          blog["文章列表"][article_id]["启用评论"] ||
+          blog["全局评论设置"]["启用disqus评论"] &&
           blog["文章列表"][article_id]["启用评论"]
         ) {
           document.querySelector(
             "#container"
-          ).innerHTML += `<div class="bbg-comment-area"><h3><i class="fa fa-comments-o"></i> 在此文章 《${blog["文章列表"][article_id]["文章标题"]}》 下评论：</h3><br /><div id="vcomments"></div></div>`;
+          ).innerHTML += `<div class="bbg-comment-area"><h3><i class="fa fa-comments-o"></i> 在此文章 《${blog["文章列表"][article_id]["文章标题"]}》 下评论：</h3><br /><div id="vcomments"></div><div id="disqus_thread"></div></div>`;
         }
 
         render_bottom_information();
@@ -1259,6 +1343,19 @@ function render_article_content(article_id) {
 
           preview_env_public_comment_fix();
 
+        }
+
+        if (blog["全局评论设置"]["启用disqus评论"] &&
+          blog["文章列表"][article_id]["启用评论"]) {
+          let disqus_config = function () {
+            this.page.identifier = "article=" + blog["文章列表"][article_id]["文件名"];
+          };
+          (function () {
+            let d = document, s = d.createElement('script');
+            s.src = `https://${blog["全局评论设置"]["disqus设置"]["shortname"]}.disqus.com/embed.js`;
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+          })();
         }
 
 
@@ -1318,11 +1415,13 @@ function render_friend_book() {
 
   if (
     blog["全局评论设置"]["启用valine评论"] &&
+    blog["友人帐页面允许评论"] ||
+    blog["全局评论设置"]["启用disqus评论"] &&
     blog["友人帐页面允许评论"]
   ) {
     document.querySelector(
       "#container"
-    ).innerHTML += `<div class="bbg-comment-area"><h3><i class="fa fa-comments-o"></i> 在友人帐中评论：</h3><br /><div id="vcomments"></div></div>`;
+    ).innerHTML += `<div class="bbg-comment-area"><h3><i class="fa fa-comments-o"></i> 在友人帐中评论：</h3><br /><div id="vcomments"></div><div id="disqus_thread"></div></div>`;
   }
   render_bottom_information();
   execute_custom_js();
@@ -1340,6 +1439,19 @@ function render_friend_book() {
     });
 
     preview_env_public_comment_fix();
+  }
+
+  if (blog["全局评论设置"]["启用disqus评论"] &&
+    blog["友人帐页面允许评论"]) {
+    let disqus_config = function () {
+      this.page.identifier = "friend_book";
+    };
+    (function () {
+      let d = document, s = d.createElement('script');
+      s.src = `https://${blog["全局评论设置"]["disqus设置"]["shortname"]}.disqus.com/embed.js`;
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
   }
 }
 
@@ -1386,8 +1498,8 @@ function render_tag_tree() {
     // 渲染标签名字
     document.querySelector(
       "#tag-content"
-    ).innerHTML += `<h2 id="tag-content-of-tag-${Object.keys(tagtree)[i]}"><i class="fa fa-tags"></i> ${Object.keys(tagtree)[i]
-    }</h2>`;
+    ).innerHTML += `<h2 id="tag-content-of-tag-${Object.keys(tagtree)[i]}"><i class="fa fa-tags"></i> <span style="color:${getTagColor(Object.keys(tagtree)[i])}">#${Object.keys(tagtree)[i]
+    }</span></h2>`;
     for (let k = 0; k < tagtree[Object.keys(tagtree)[i]].length; k++) {
       // 遍历某个标签中的所有文章
       currentTagTreeArticleNumber = 0;
@@ -1524,7 +1636,7 @@ function render_tag(tagname) {
   document.getElementById("container").innerHTML += `<div class="tag-content" id="tag-content"></div>`;
   document.querySelector(
     "#tag-content"
-  ).innerHTML += `<h2><i class="fa fa-tags"></i> 标签为 ${tagname} 下的文章</h2>`;
+  ).innerHTML += `<h2><i class="fa fa-tags"></i> 标签为  <span style="color:${getTagColor(tagname)}">#${tagname}</span> 下的文章</h2>`;
   let tagtree = getTagTree();
   for (let i = 0; i < tagtree[tagname].length; i++) {
     for (let j = 0; j < blog["文章列表"].length; j++) {
@@ -1546,6 +1658,10 @@ function render_tag(tagname) {
 }
 
 function render_page(page_id) {
+
+  if (blog["Markdown渲染配置"]["使用markdown文件所在目录作为baseurl"]) {
+    baseurl = "/data/pages/"
+  }
 
   if (blog["启用网站公告"] === true && blog["网站公告仅在首页显示"] === false) {
     document.querySelector("#container").innerHTML += `
@@ -1587,11 +1703,13 @@ function render_page(page_id) {
 
       if (
         blog["全局评论设置"]["启用valine评论"] &&
+        blog["页面列表"][page_id]["启用评论"] ||
+        blog["全局评论设置"]["启用disqus评论"] &&
         blog["页面列表"][page_id]["启用评论"]
       ) {
         document.querySelector(
           "#container"
-        ).innerHTML += `<div class="bbg-comment-area"><h3><i class="fa fa-comments-o"></i> 在此页面 《${blog["页面列表"][page_id]["页面标题"]}》 下评论：</h3><br /><div id="vcomments"></div></div>`;
+        ).innerHTML += `<div class="bbg-comment-area"><h3><i class="fa fa-comments-o"></i> 在此页面 《${blog["页面列表"][page_id]["页面标题"]}》 下评论：</h3><br /><div id="vcomments"></div><div id="disqus_thread"></div></div>`;
       }
       render_bottom_information();
       execute_custom_js();
@@ -1614,6 +1732,19 @@ function render_page(page_id) {
         });
 
         preview_env_public_comment_fix();
+      }
+
+      if (blog["全局评论设置"]["启用disqus评论"] &&
+        blog["页面列表"][page_id]["启用评论"]) {
+        let disqus_config = function () {
+          this.page.identifier = "page=" + blog["页面列表"][page_id]["文件名"];
+        };
+        (function () {
+          let d = document, s = d.createElement('script');
+          s.src = `https://${blog["全局评论设置"]["disqus设置"]["shortname"]}.disqus.com/embed.js`;
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+        })();
       }
     });
 }
@@ -1803,6 +1934,46 @@ axios
         break;
       default:
         blogContentLicenseText = `${blog["全站内容授权协议"]}`;
+    }
+
+    if (blog["Markdown渲染配置"]["根据用户屏幕尺寸渲染图片尺寸"] && blog["Markdown渲染配置"]["在用户点击图片时显示图片查看器"]) {
+
+      markdown_renderer.image = function (src, title, alt) {
+        return `<img style="max-width:100%;max-height:400px; border-style:solid; border-width: 2px; border-color: #66ccff; border-radius: 6px" onclick="openImageViewer('${src}')" src="${src.indexOf("https://") === -1 && src.indexOf("http://") === -1 ? baseurl : ""}${src}" alt="${alt}" title="${title ? title : ''}" />
+        `
+      }
+
+      marked.setOptions({
+        renderer: markdown_renderer
+      });
+    } else if (blog["Markdown渲染配置"]["根据用户屏幕尺寸渲染图片尺寸"] === true && blog["Markdown渲染配置"]["在用户点击图片时显示图片查看器"] === false) {
+
+      markdown_renderer.image = function (src, title, alt) {
+        return `<img style="max-width:100%;max-height:400px; border-style:solid; border-width: 2px; border-color: #66ccff; border-radius: 6px" src="${src.indexOf("https://") === -1 && src.indexOf("http://") === -1 ? baseurl : ""}${src}" alt="${alt}" title="${title ? title : ''}" />
+        `
+      }
+
+      marked.setOptions({
+        renderer: markdown_renderer
+      });
+    } else if (blog["Markdown渲染配置"]["根据用户屏幕尺寸渲染图片尺寸"] === false && blog["Markdown渲染配置"]["在用户点击图片时显示图片查看器"] === true) {
+      markdown_renderer.image = function (src, title, alt) {
+        return `<img onclick="openImageViewer('${src}')" src="${src.indexOf("https://") === -1 && src.indexOf("http://") === -1 ? baseurl : ""}${src}" alt="${alt}" title="${title ? title : ''}" />
+        `
+      }
+
+      marked.setOptions({
+        renderer: markdown_renderer
+      });
+    } else if (blog["Markdown渲染配置"]["使用markdown文件所在目录作为baseurl"]) {
+      markdown_renderer.image = function (src, title, alt) {
+        return `<img src="${src.indexOf("https://") === -1 && src.indexOf("http://") === -1 ? baseurl : ""}${src}" alt="${alt}" title="${title ? title : ''}" />
+        `
+      }
+
+      marked.setOptions({
+        renderer: markdown_renderer
+      });
     }
 
     if (blog["使版心宽度更窄（提高左右页边距）"]) {
