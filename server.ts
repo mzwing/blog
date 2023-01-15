@@ -7,8 +7,8 @@ const serveFiles = (req: Request) =>
     respondWith: (r: Response) => r,
   });
 
-const certFile = "../../../../cer/mzwing.gq.cer",
-  keyFile = "../../../../cer/mzwing.gq.key";
+const certFile = "../../../cer/mzwing.gq.cer",
+  keyFile = "../../../cer/mzwing.gq.key";
 
 await serveTls((req) => serveFiles(req), {
   certFile: certFile,
