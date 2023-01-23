@@ -1,12 +1,10 @@
-import { serve, staticFiles } from "./deps.ts";
+import { serve, serveDir } from "./deps.ts";
 
-const serveFiles = (req: Request) =>
-  staticFiles("./")({
-    request: req,
-    respondWith: (r: Response) => r,
-  });
-
-await serve((req) => serveFiles(req), {
+await serve((req) => {
+  return serveDir(req, {
+    fsRoot: "./",
+  })
+}, {
   onListen: ({ hostname, port }) => {
     console.log(`Server is running at ${hostname}:${port}`);
   },
