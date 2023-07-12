@@ -6,6 +6,5 @@ body:before {
   z-index: -1;
   content: "";
   position: fixed;
-  background: rgba(0, 0, 0, 0.449) center/cover;
   opacity: 0.3;
 }

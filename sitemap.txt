@@ -1,4 +1,12 @@
-https://mzwing.eu.org/index.html?type=article&filename=explore-nixos-1.md
+https://mzwing.eu.org/index.html?type=article&filename=sing-box-try.md
+https://mzwing.eu.org/index.html?type=article&filename=nixos-explore-install.md
+https://mzwing.eu.org/index.html?type=article&filename=win-v2a-cfst-3proxy-speed-cdn.md
+https://mzwing.eu.org/index.html?type=article&filename=sth-about-netease-grey-music-unlock.md
+https://mzwing.eu.org/index.html?type=article&filename=free-warp-plus-key.md
+https://mzwing.eu.org/index.html?type=article&filename=latest-vscode-on-win7.md
+https://mzwing.eu.org/index.html?type=article&filename=latest-nodejs-on-win7.md
+https://mzwing.eu.org/index.html?type=article&filename=some-feeling-about-sprb.md
+https://mzwing.eu.org/index.html?type=article&filename=win11-install-local-account.md
 https://mzwing.eu.org/index.html?type=article&filename=install-archlinux-and-dde.md
 https://mzwing.eu.org/index.html?type=article&filename=some-old-things-about-me.md
 https://mzwing.eu.org/index.html?type=internal&function=friendbook

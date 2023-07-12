@@ -3,20 +3,84 @@
     <subtitle>如光似幻，如影随形</subtitle>
     <link href="https://mzwing.eu.org/atom.xml" rel="self"/>
     <link href="https://mzwing.eu.org"/>
-    <updated>2022-11-06T10:48:00.000Z</updated>
+    <updated>2023-07-02T22:25:00.000Z</updated>
     <id>https://mzwing.eu.org</id>
     <author>
         <name>洛仙璃の幻梦</name>
     </author>
     <generator uri="https://bbg.nekomoe.xyz">Baiyuanneko's Blog Generator</generator>
     <entry>
-      <title>NixOS探索（一）：前置知识</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=explore-nixos-1.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=explore-nixos-1.md</id>
+      <title>sing-box尝鲜</title>
+      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=sing-box-try.md"/>
+      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=sing-box-try.md</id>
       <content type="html">
-          有关NixOS安装安装镜像的选择与nix语言的基础知识
+          尝试使用sing-box的时候遇到了很多问题……
       </content>
-      <summary type="html">有关NixOS安装安装镜像的选择与nix语言的基础知识</summary>
+      <summary type="html">尝试使用sing-box的时候遇到了很多问题……</summary>
+      </entry><entry>
+      <title>NixOS初探-安装篇</title>
+      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=nixos-explore-install.md"/>
+      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=nixos-explore-install.md</id>
+      <content type="html">
+          NixOS可创了，可好玩了（）
+      </content>
+      <summary type="html">NixOS可创了，可好玩了（）</summary>
+      </entry><entry>
+      <title>Windows下用v2A+3proxy+CloudflareSpeedTest加速海外cdn</title>
+      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=win-v2a-cfst-3proxy-speed-cdn.md"/>
+      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=win-v2a-cfst-3proxy-speed-cdn.md</id>
+      <content type="html">
+          说起来好像这个方案对加速pxy一点都没用的样子（
+      </content>
+      <summary type="html">说起来好像这个方案对加速pxy一点都没用的样子（</summary>
+      </entry><entry>
+      <title>对网易云音乐灰色歌曲解锁的小小吐槽</title>
+      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=sth-about-netease-grey-music-unlock.md"/>
+      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=sth-about-netease-grey-music-unlock.md</id>
+      <content type="html">
+          花了我一天，杰伦的歌还不是放不了……（恼
+      </content>
+      <summary type="html">花了我一天，杰伦的歌还不是放不了……（恼</summary>
+      </entry><entry>
+      <title>白嫖WARP+的24PB密钥</title>
+      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=free-warp-plus-key.md"/>
+      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=free-warp-plus-key.md</id>
+      <content type="html">
+          其实只是为了水篇文章（x
+      </content>
+      <summary type="html">其实只是为了水篇文章（x</summary>
+      </entry><entry>
+      <title>在Windows7上使用最新版的VSCode</title>
+      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=latest-vscode-on-win7.md"/>
+      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=latest-vscode-on-win7.md</id>
+      <content type="html">
+          VSCode这个家伙……Electron都还支持Win7呢（
+      </content>
+      <summary type="html">VSCode这个家伙……Electron都还支持Win7呢（</summary>
+      </entry><entry>
+      <title>在Windows7上使用最新版的Node.js</title>
+      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=latest-nodejs-on-win7.md"/>
+      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=latest-nodejs-on-win7.md</id>
+      <content type="html">
+          为了用上Node.js 20.x……
+      </content>
+      <summary type="html">为了用上Node.js 20.x……</summary>
+      </entry><entry>
+      <title>推了Summer Pockets REFLECTION BLUE之后的一些感想</title>
+      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=some-feeling-about-sprb.md"/>
+      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=some-feeling-about-sprb.md</id>
+      <content type="html">
+          由于感触实在是太深因此专门写一篇（
+      </content>
+      <summary type="html">由于感触实在是太深因此专门写一篇（</summary>
+      </entry><entry>
+      <title>Windows11装机注册本地账户目前通用解法</title>
+      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=win11-install-local-account.md"/>
+      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=win11-install-local-account.md</id>
+      <content type="html">
+          备忘（x
+      </content>
+      <summary type="html">备忘（x</summary>
       </entry><entry>
       <title>安装ArchLinux+DDE</title>
       <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=install-archlinux-and-dde.md"/>
