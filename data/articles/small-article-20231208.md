@@ -39,7 +39,23 @@ db：**你那也算多？**
 下面是无法从vnc获取的资源：
 
 ```txt
+https://alist.mzwing.gq/d/Onedrive/mzwing-lockinwize/Public/Game%20%E6%B8%B8%E6%88%8F/%EF%BC%88%E9%83%A8%E5%88%86English%EF%BC%89%E6%88%91%E7%9A%84%E5%A5%B3%E5%8F%8B%E6%98%AF%E6%81%B6%E9%9C%B8/My%20Bully%20is%20My%20Lover.7z
 
+https://alist.mzwing.gq/d/Onedrive/mzwing-lockinwize/Public/Game%20%E6%B8%B8%E6%88%8F/%EF%BC%88%E9%83%A8%E5%88%86English%EF%BC%89%E6%88%91%E7%9A%84%E5%A5%B3%E5%8F%8B%E6%98%AF%E6%81%B6%E9%9C%B8/MyBullyIsMyLover-Ch.1_Ep.3-pc.7z
+
+https://alist.mzwing.gq/d/Onedrive/mzwing-lockinwize/Public/Game%20%E6%B8%B8%E6%88%8F/%EF%BC%88%E9%9D%9EGalgame%EF%BC%89%E6%AD%BB%E4%BA%A1%E7%BB%86%E8%83%9E/Dead.Cells.Boss.Rush.7z
+
+https://alist.mzwing.gq/d/Onedrive/mzwing-lockinwize/Public/Game%20%E6%B8%B8%E6%88%8F/%EF%BC%88%E7%94%9F%E8%82%89%EF%BC%89%E5%A4%8F%E6%97%A5%E4%BA%91%E6%82%A0%E6%82%A0/%E3%81%AA%E3%81%A4%E3%81%8F%E3%82%82%E3%82%86%E3%82%8B%E3%82%8B.7z
+
+https://alist.mzwing.gq/d/Onedrive/mzwing-lockinwize/Public/Game%20%E6%B8%B8%E6%88%8F/%E7%A2%A7%E6%B5%B7%E6%99%B4%E7%A9%BA%E3%80%81%E5%BD%BC%E5%B2%B8%E7%9B%B8%E8%BF%9E/%E7%A9%BA%E3%81%A8%E6%B5%B7%E3%81%8C%E3%80%81%E3%81%B5%E3%82%8C%E3%81%82%E3%81%86%E5%BD%BC%E6%96%B9.7z
+
+https://alist.mzwing.gq/d/Onedrive/mzwing-lockinwize/Public/Game%20%E6%B8%B8%E6%88%8F/%E6%98%A5%E5%BC%80%EF%BC%8C%E6%84%8F%E9%81%A5%E9%81%A5/%E3%81%AF%E3%82%8B%E3%81%BE%E3%81%A7%E3%80%81%E3%81%8F%E3%82%8B%E3%82%8B%E3%80%82.7z
+
+https://alist.mzwing.gq/d/Onedrive/mzwing-lockinwize/Public/Game%20%E6%B8%B8%E6%88%8F/%E7%BE%8E%E5%A5%BD%E7%9A%84%E6%AF%8F%E4%B8%80%E5%A4%A9%EF%BD%9E%E4%B8%8D%E8%BF%9E%E7%BB%AD%E7%9A%84%E5%AD%98%E5%9C%A8%EF%BD%9E/%E7%B4%A0%E6%99%B4%E3%82%89%E3%81%97%E3%81%8D%E6%97%A5%E3%80%85%EF%BD%9E%E4%B8%8D%E9%80%A3%E7%B6%9A%E5%AD%98%E5%9C%A8%EF%BD%9E_ONS.7z
+
+https://alist.mzwing.gq/d/Onedrive/mzwing-lockinwize/Public/Game%20%E6%B8%B8%E6%88%8F/%E4%B8%8E%E9%9D%92%E6%A2%85%E7%AB%B9%E9%A9%AC%E5%A4%A7%E5%B0%8F%E5%A7%90%E7%94%9C%E5%AF%86%E6%80%A7%E7%A6%8F%E7%9A%84%E5%90%8C%E5%B1%85%E7%94%9F%E6%B4%BB/%E5%B9%BC%E3%81%AA%E3%81%98%E3%81%BF%E3%81%8A%E5%AC%A2%E6%A7%98%E3%81%A8%EF%BC%A8%E3%81%A7%E3%83%92%E3%83%9F%E3%83%84%E3%81%AA%E5%90%8C%E6%A3%B2%E7%94%9F%E6%B4%BB.7z
+
+https://alist.mzwing.gq/d/Onedrive/mzwing-lockinwize/Public/Game%20%E6%B8%B8%E6%88%8F/%E6%97%A0%E6%B3%95%E5%BF%8D%E8%80%90%E7%9A%84%E5%A4%84%E7%94%B7%E5%93%A5%E5%93%A5%E5%92%8C%E4%B8%8D%E7%9B%B4%E7%8E%87%E7%9A%84%E5%8F%9B%E9%80%86%E5%A6%B9%E5%A6%B9/%E3%82%AC%E3%83%9E%E3%83%B3%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E7%AB%A5%E8%B2%9E%E5%85%84%E3%82%AD%E3%81%A8%E3%80%81%E3%82%B9%E3%83%8A%E3%82%AA%E3%81%AB%E3%81%AA%E3%82%8C%E3%81%AA%E3%81%84%E5%8F%8D%E6%8A%97%E5%A6%B9.7z
 ```
 
 如果可以，也请替我做一份磁力链保存起来，万分感谢。我自己家里用流量，学校是无法打洞且有防火墙的锥形NAT，bt只能拜托你们了。
@@ -70,7 +86,7 @@ db：**你那也算多？**
 
 ## Part 8
 
-AI杰也出了很多新奇玩意儿。
+AI界也出了很多新奇玩意儿。
 
 太多了随便讲讲好了。
 
@@ -90,9 +106,9 @@ mzw一贯的多坑，现在几乎都写满一个本子了。
 
 mzw的域名多了几个。
 
-<mzwing.link>估计大家都知道了吧，不过目前这上面只有一个<friends.mzwing.link>。BTW，没有首页，404属于正常现象。
+`mzwing.link`估计大家都知道了吧，不过目前这上面只有一个<https://friends.mzwing.link>。BTW，没有首页，404属于正常现象。
 
-多了一个<official.free.hr>，目前这上面什么都没有，可能以后会建一个类似<https://cloudflare-status.com>一样的好玩的网站，对我来说用就是没什么用的了，要是你们有替我想到用处的欢迎评论，要是想拿走玩玩的也可以告诉我（
+多了一个`official.free.hr`，目前这上面什么都没有，可能以后会建一个类似<https://cloudflare-status.com>一样的好玩的网站，对我来说用就是没什么用的了，要是你们有替我想到用处的欢迎评论，要是想拿走玩玩的也可以告诉我（
 
 ## 以上
 
