@@ -18,33 +18,34 @@
       "若将某个url作为背景图像，这个url是": "",
       "将网站根目录下的background.webp作为背景图像": false
     },
-    "是否使用第三方主题": true,
+    "是否使用第三方主题": false,
     "若使用第三方主题，是否来自本地文件": false,
-    "若使用来自主题商店的第三方主题，则主题名为": "官方主题v2",
-    "若使用来自主题商店的第三方主题，则主题的更新发布日期为": 20221130,
-    "第三方主题版本": "v2",
-    "第三方主题文件内容": [
-      "index.html",
-      "css/",
-      "css/blogcss.css",
-      "css/style.css",
-      "css/body_opacity.css",
-      "js/",
-      "js/main.js"
-    ],
+    "若使用来自主题商店的第三方主题，则主题名为": "",
+    "若使用来自主题商店的第三方主题，则主题的更新发布日期为": "",
+    "第三方主题版本": "",
+    "第三方主题文件内容": [],
     "禁用导航栏的阴影效果": false,
     "链接颜色": "#0d6efd"
   },
   "全局评论设置": {
-    "启用valine评论": true,
+    "启用valine评论": false,
     "valine设置": {
-      "leancloud_appid": "SykuVs4qcWMkl4RUtKEUlmog-gzGzoHsz",
-      "leancloud_appkey": "0jowkR4ct0lJbWcvocymEkKw",
+      "leancloud_appid": "",
+      "leancloud_appkey": "",
       "记录评论者ip": true,
       "记录访问量": true,
       "评论区占位符（提示文字）": "",
       "评论者填写邮箱为qq邮箱时使用qq昵称和头像代替gravatar头像": true,
-      "是否使用bbg公共评论服务": true
+      "是否使用bbg公共评论服务": false
+    },
+    "启用disqus评论": false,
+    "disqus设置": {
+      "shortname": ""
+    },
+    "启用waline评论": true,
+    "waline设置": {
+      "serverurl": "https://waline.mzwing.eu.org",
+      "turnstileKey":"0x4AAAAAAAOzDoiu8wH3vHpS"
     }
   },
   "一言设置": {
