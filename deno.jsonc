@@ -2,5 +2,8 @@
   "tasks": {
     "run": "deno run --allow-read=. --allow-net main.ts",
     "dev": "deno run --allow-read=. --allow-net --watch main.ts"
+  },
+  "imports": {
+    "@std/http": "jsr:@std/http@^1.0.12"
   }
 }
