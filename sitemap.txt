@@ -1,3 +1,4 @@
+https://mzwing.eu.org/index.html?type=article&filename=wave-to-my-future-self.md
 https://mzwing.eu.org/index.html?type=article&filename=small-article-20231209.md
 https://mzwing.eu.org/index.html?type=article&filename=small-article-20231208.md
 https://mzwing.eu.org/index.html?type=article&filename=sing-box-try.md
@@ -11,5 +12,7 @@ https://mzwing.eu.org/index.html?type=article&filename=some-feeling-about-sprb.m
 https://mzwing.eu.org/index.html?type=article&filename=win11-install-local-account.md
 https://mzwing.eu.org/index.html?type=article&filename=install-archlinux-and-dde.md
 https://mzwing.eu.org/index.html?type=article&filename=some-old-things-about-me.md
+https://mzwing.eu.org/index.html?type=article&filename=some-thoughts-about-liteblog.md
+https://mzwing.eu.org/index.html?type=article&filename=announcement.md
 https://mzwing.eu.org/index.html?type=internal&function=friendbook
 https://mzwing.eu.org/index.html?type=internal&function=archive_and_tags

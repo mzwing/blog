@@ -3,7 +3,7 @@
     <subtitle>如光似幻，如影随形</subtitle>
     <link href="https://mzwing.eu.org/atom.xml" rel="self"/>
     <link href="https://mzwing.eu.org"/>
-    <updated>2024-12-31T16:18:05.480Z</updated>
+    <updated>2025-01-01T03:31:39.849Z</updated>
     <id>https://mzwing.eu.org</id>
     <author>
         <name>洛仙璃の幻梦</name>
@@ -67,6 +67,7 @@
 <ul>
 <li><a href="https://blog.chihuo2104.dev/posts/goodbye-2024">chihuo2104の部落格 - 2024年度总结</a></li>
 <li><a href="https://sekaimoe.dpkg123.site/posts/end-of-2024/">二葉琉璃の自留地 - 二葉琉璃的 2024</a></li>
+<li><a href="https://blog.awaae001.top/posts/57024.html">呓语梦轩 - 再见2024 · 共赴一场烟火绚烂</a></li>
 </ul>
 <p>其他朋友的会在看到更新之后尽快（？）加上（</p>
 
@@ -74,8 +75,8 @@
         ]]>
       </content>
       <summary type="html">又是一年。还是一年。 </summary>
-      <updated>2024-12-31T00:00:00.000Z</updated>
-      <published>2024-12-25T00:00:00.000Z</published>
+      <updated>2024-12-31T01:26:00.000Z</updated>
+      <published>2024-12-25T13:32:00.000Z</published>
       </entry><entry>
       <title>小碎记20231209</title>
       <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=small-article-20231209.md"/>
@@ -738,4 +739,56 @@ reboot # 重启
       <summary type="html"></summary>
       <updated>2022-01-26T00:00:00.000Z</updated>
       <published>2022-01-26T00:00:00.000Z</published>
+      </entry><entry>
+      <title>some-thoughts-about-liteblog</title>
+      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=some-thoughts-about-liteblog.md"/>
+      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=some-thoughts-about-liteblog.md</id>
+      <content type="html">
+        <![CDATA[
+          <h1>LiteBlog的开发设想</h1>
+<h2>名称</h2>
+<p>LiteBlog</p>
+<h2>构思</h2>
+<ul>
+<li><p>PWA的支持（最近我才发现PWA和Service Worker的能力强得离谱，直接把SPA路由的问题搞定了）</p>
+</li>
+<li><p>使用Web Components（前身即是Google Chrome大名鼎鼎的HTML Import），将插件、markdown、XML全部当成组件去渲染（从Dev Tools看起来，比自己解析文档再插入节点好得多）。或许这也是个语义化的好办法？</p>
+</li>
+<li><p>直接使用RSS来读取文章信息并在首页输出（虽然有点怪，但直接实现了RSS的支持）</p>
+</li>
+<li><p>XML大概会用Web Components的形式（就是Templete标签打头的那种），虽然看起来很像Vue文件，但这是Web Components的原生语法！）</p>
+</li>
+</ul>
+<h2>其他的乱想</h2>
+<p>个人认为其实这个框架不应该只局限于Blog这样的一个小圈子，它应该可以发挥更大的作用……比如说Docs、Dashboard什么的都可以用这一套来搞定（话说我是不是太自恋了？）</p>
+
+
+        ]]>
+      </content>
+      <summary type="html">有关LiteBlog的一些小设想</summary>
+      <updated>2022-01-14T03:12:09.534Z</updated>
+      <published>2022-01-14T03:12:09.534Z</published>
+      </entry><entry>
+      <title>公告</title>
+      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=announcement.md"/>
+      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=announcement.md</id>
+      <content type="html">
+        <![CDATA[
+          <h1>公告</h1>
+<h2>博客更新</h2>
+<p>目前博客改为托管在<a href="https://pages.dev">Cloudflare Pages</a>中，源码在<a href="https://github.com/mzwing/homepage-bbg">Github</a>上能找到</p>
+<h2>开发计划</h2>
+<p>目前不会再搞什么大的东西了，LiteBlog这个项目或许只能无限期搁浅（当然如果我有时间我会着手更新的）</p>
+<p>有关LiteBlog的开发设想我会在另一篇文章中细谈</p>
+<h2>小抱怨</h2>
+<p>初三真的好累啊……</p>
+<h2>最后</h2>
+<p>祝各位春节快乐，感谢各位的支持</p>
+
+
+        ]]>
+      </content>
+      <summary type="html">简要的博客更新</summary>
+      <updated>2022-01-14T03:12:09.534Z</updated>
+      <published>2022-01-14T03:12:09.534Z</published>
       </entry></feed>
