@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://unpkg.com/katex@0.16.3/dist/katex.min.css">
   <link rel='stylesheet' href="https://unpkg.com/@waline/client@2.15.8/dist/waline.css">
-  <link href="https://google-fonts.mirrors.sjtug.sjtu.edu.cn/css?family=Noto+Sans+SC" rel="stylesheet">
 </head>
 
 <body>
@@ -29,10 +28,6 @@
     }
   </style>
   <style id="blogcss">
-    * {
-      font-family: 'Noto Sans SC', sans-serif, 'KaTeX_Main', 'Times New Roman', serif;
-    }
-
     .article-item,
     .article-content,
     .bbg-comment-area,
@@ -114,7 +109,7 @@
       border-left: #ae2105 solid 2px;
     }
 
-    .article-content {
+    .article-content, .page-content {
       word-break: break-all;
     }
 
@@ -170,7 +165,7 @@
     }
 
     .title_that_should_not_have_underline {
-      text-decoration: none!important;
+      text-decoration: none !important;
     }
 
     @media (max-width: 1050px) {
@@ -236,6 +231,10 @@
       padding-bottom: 10px;
       font-size: 16px;
       font-weight: bolder;
+    }
+
+    .archive-nav-item {
+       background-color: white !important;
     }
 
 
@@ -318,107 +317,156 @@
     }
 
     #back_to_top_btn * i {
-      width: 0.7em;
+      width: 0.8em;
     }
 
-    @media (prefers-color-scheme: dark) {
-      body {
-        background-color: #000000c7;
+    #setting_theme_btn {
+      position: fixed;
+      z-index: 99;
+      right: 20px;
+      bottom: 80px;
+    }
 
-      }
+    #setting_theme_btn * i {
+      width: 0.8em;
+    }
+  </style>
+  <style id="theme_css">
 
-      .blog_title_jumbotron, .bg-light {
-        background-color: #363232!important;
-      }
+  </style>
+  <style id="dark_mode">
+    body {
+      background-color: #000000c7;
 
-      .copyright_hint {
-        color: white;
-      }
+    }
 
-      #blog_index_title,
-      #blog_index_subtitle,
-      .article-content h2,
-      .page-content h2,
-      #article-content-html p,
-      #page-content-html p {
-        color: white;
-      }
+    info-hint, warning-hint, success-hint, danger-hint {
+      background-color: #000000f4;
+    }
 
-      .article-item,
-      .article-content,
-      .page-content {
-        background-color: #000000a8
-      }
+    .hint-heading {
+      color: white!important;
+    }
 
-      .article-item p,
-      .article-item-sub,
-      .article-content-sub,
-      #page_order_html,
-      #bottom_info_html {
-        color: lightgrey !important;
-      }
+    .blog_title_jumbotron,
+    .bg-light {
+      background-color: #363232 !important;
+    }
 
-      .card,
-      #tag-content {
-        background-color: black;
-        color: white
-      }
+    .copyright_hint {
+      color: white;
+    }
 
-      ul,
-      ol,
-      li,
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      th,
-      td,
-      .vcontent *,
-      #veditor {
-        color: white
-      }
+    #blog_index_title,
+    #blog_index_subtitle,
+    .article-content h2,
+    .page-content h2,
+    #article-content-html p,
+    #page-content-html p {
+      color: white;
+    }
 
-      .vcontent p,
-      .vnick,
-      .vlink,
-      .vmail,
-      .vinput,
-      .vsubmit {
-        color: white !important
-      }
+    .article-item,
+    .article-content,
+    .page-content {
+      background-color: #000000a8
+    }
 
-      .vcontent * {
-        background-color: black !important;
-      }
+    .article-item p,
+    .article-item-sub,
+    .article-content-sub,
+    #page_order_html,
+    #bottom_info_html {
+      color: lightgrey !important;
+    }
 
-      .expand::after {
-        background: black !important;
-        color: white !important;
-      }
+    .card,
+    .tag-content {
+      background-color: black;
+      color: white
+    }
 
-      .expand::before {
-        background: rgba(0, 0, 0, 0.5) !important
-      }
+    ul,
+    ol,
+    li,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    th,
+    td,
+    .vcontent *,
+    #veditor {
+      color: white
+    }
 
-      pre,
-      code,
-      kbd,
-      samp {
-        border-radius: 4px;
-        background-color: black !important;
-        padding-top: 4px;
-        padding-bottom: 4px;
-        padding-left: 12px;
-        padding-right: 12px;
-        display: inline-block;
-      }
+    .vcontent p,
+    .vnick,
+    .vlink,
+    .vmail,
+    .vinput,
+    .vsubmit {
+      color: white !important
+    }
 
-      .bbg-comment-area {
-        background-color: black;
-        color: white
-      }
+    .vcontent * {
+      background-color: black !important;
+    }
+
+    .expand::after {
+      background: black !important;
+      color: white !important;
+    }
+
+    .expand::before {
+      background: rgba(0, 0, 0, 0.5) !important
+    }
+
+    a {
+      color: rgb(148, 187, 255);
+    }
+
+    pre,
+    code,
+    kbd,
+    samp {
+      border-radius: 4px;
+      background-color: black !important;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      padding-left: 12px;
+      padding-right: 12px;
+      display: inline-block;
+      color: white!important
+    }
+
+    code * {
+      color: white!important
+    }
+
+    .bbg-comment-area {
+      background-color: black;
+      color: white
+    }
+    
+    .modal-header, .modal-body {
+      background-color: rgb(139, 132, 132)!important;
+      color: white;
+    }
+
+    .archive-nav {
+       border-bottom: 1px solid var(--bs-dark);
+    }
+
+    .archive-nav-item {
+       background-color: black !important;
+    }
+
+    .archive-nav-link {
+       background-color: unset !important;
+       border-color: var(--bs-dark) var(--bs-dark) #000 !important;
     }
   </style>
   <style id="highlight_css">
@@ -437,6 +485,9 @@
 
   <div id="top"></div>
   <div id="root" style="display:none;"></div>
+  <div id="setting_theme_btn">
+    <a href="javascript:toggle_theme_setting();" class="btn btn-secondary"><i class="fa fa-cog"></i></a>
+  </div>
   <div id="back_to_top_btn">
     <a href="javascript:scrollTo(0,0);" class="btn btn-secondary"><i class="fa fa-angle-up"></i></a>
   </div>
@@ -467,8 +518,22 @@
     </div>
   </div>
 
+  <div class="modal fade" tabindex="-1" id="theme_setting_dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="theme_setting_dialog_title"></h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="theme_setting_dialog_body">
+          
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <script src="https://unpkg.com/marked/marked.min.js"></script>
+
+  <script src="https://unpkg.com/marked@7.0.5/marked.min.js"></script>
   <script src="https://unpkg.com/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/axios@0.21.1/dist/axios.min.js"></script>
   <script src="https://unpkg.com/valine@1.5.1/dist/Valine.min.js"></script>
@@ -478,14 +543,79 @@
   <script src="https://unpkg.com/katex@0.16.3/dist/katex.min.js"></script>
   <script src="https://unpkg.com/katex@0.16.3/dist/contrib/auto-render.min.js"></script>
   <script>
-
-    marked.setOptions({
-      highlight: function (code) {
-        return hljs.highlightAuto(code).value;
-      }
-    });
-
     const image_viewer_dialog = new bootstrap.Modal(document.getElementById('image_viewer_dialog'));
+    const theme_setting_dialog = new bootstrap.Modal(document.getElementById('theme_setting_dialog'));
+
+    function toggle_theme_setting() {
+      theme_setting_dialog.toggle();
+      loadThemeSettingsDialog();
+    }
+
+    function hook_after_dark_mode_setting_has_been_modified(){
+      const dark_mode_setting = document.querySelector("#selection_dark_mode_setting").value;
+      localStorage.setItem("dark_mode_setting", dark_mode_setting);
+      reload_dark_mode_setting();
+    }
+
+    function hook_after_use_serif_font_setting_has_been_modified(){
+      const use_serif_font = document.querySelector("#use_serif_font").checked;
+      localStorage.setItem("use_serif_font", use_serif_font?"true":"false");
+      reload_serif_font_setting();
+    }
+
+
+    function reload_dark_mode_setting(){
+      switch (localStorage.getItem("dark_mode_setting")) {
+          case "light_mode":
+            switch_night_mode("light");
+            break;
+          case "dark_mode":
+            switch_night_mode("dark");
+            break;
+          default:
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+              switch_night_mode("dark");
+            } else {
+              switch_night_mode("light");
+            }
+        }
+    }
+
+    function loadThemeSettingsDialog() {
+      document.getElementById("theme_setting_dialog_title").innerHTML = `<i class="fa fa-cog"></i> 主题设置`;
+      document.getElementById("theme_setting_dialog_body").innerHTML = `<h4><i class="fa fa-moon-o"></i> 暗色模式设置</h4>
+          <select class="form-select" onchange="hook_after_dark_mode_setting_has_been_modified()" id="selection_dark_mode_setting">
+            <option value="auto_switch">跟随系统</option>
+            <option value="light_mode">亮色模式</option>
+            <option value="dark_mode">暗色模式</option>
+          </select>
+          <br />
+          <h4><i class="fa fa-font"></i> 字体</h4>
+          <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="use_serif_font" onchange="hook_after_use_serif_font_setting_has_been_modified();">
+            <label class="form-check-label" for="use_serif_font">使用衬线字体</label>
+          </div>`;
+
+          
+      if(localStorage.getItem("dark_mode_setting") === null){
+        localStorage.setItem("dark_mode_setting", "auto_switch");
+      }
+
+      if(localStorage.getItem("use_serif_font") === null){
+        localStorage.setItem("use_serif_font", "false");
+      }
+
+      document.getElementById("selection_dark_mode_setting").value = localStorage.getItem("dark_mode_setting");
+      document.getElementById("use_serif_font").checked = localStorage.getItem("use_serif_font") === "true";
+    }
+
+    function reload_serif_font_setting(){
+      if(localStorage.getItem("use_serif_font") === "true"){
+        document.body.style.fontFamily = "serif";
+      }else{
+        document.body.style.fontFamily = "sans-serif";
+      }
+    }
 
     markdown_renderer = new marked.Renderer();
 
@@ -497,8 +627,13 @@
       return `<a href="${href}" ${title === null || title === undefined || title === "" ? "" : `title="${title}"`} style="text-decoration: underline">${text} <i class="fa fa-external-link"></i></a>`
     }
 
+    var highlightFunc = function (code) {
+        return hljs.highlightAuto(code).value;
+    }
+
     marked.setOptions({
-      renderer: markdown_renderer
+      renderer: markdown_renderer,
+      highlight: highlightFunc
     })
 
     baseurl = "";
@@ -804,7 +939,7 @@
 
       </ul>
       <div class="d-flex" role="search">
-	  <button class="btn btn-outline-${blog["搜索按钮边框颜色设置为暗色"] ? "dark" : "light"}" onclick="start_search_dialog()" style="color: ${blog["全局主题设置"]["标题栏文字颜色"]}"><i class="fa fa-search"></i> ${langdata["SEARCH_SOMETHING"][lang_name]}</button>
+         <button class="btn btn-outline-${blog["搜索按钮边框颜色设置为暗色"] ? "dark" : "light"}" onclick="start_search_dialog()" style="color: ${blog["全局主题设置"]["标题栏文字颜色"]}"><i class="fa fa-search"></i> ${langdata["SEARCH_SOMETHING"][lang_name]}</button>
       </div>
       <div class="d-flex">
          <div style="display:block;padding:2px"></div>
@@ -890,6 +1025,19 @@
       enter_indexPage();
     }
 
+    function convertTimeStampToLocalTime(timestamp) {
+      if(blog["网站语言"] === "简体中文"){
+        let dateObj = new Date(timestamp);
+        return dateObj.getFullYear() + "年" + (dateObj.getMonth() + 1) + "月" + dateObj.getDate() + "日 " + ((dateObj.getHours() <= 12) ? "上午" : "下午") + ((dateObj.getHours() <= 12) ? dateObj.getHours() : (dateObj.getHours() - 12))  + ":" + ((dateObj.getMinutes().toString().length === 1) ? "0" : "") + dateObj.getMinutes();
+      }else if(blog["网站语言"] === "English"){
+        return new Date(timestamp).toLocaleString("en-US", {hour12: true});
+      }else if(blog["网站语言"] === "日本語"){
+        return new Date(timestamp).toLocaleString("ja-JP", {hour12: true});
+      }else{
+        return new Date(timestamp).toISOString();
+      }
+    }
+
     function render_article_list() {
       for (let i = 0; i < blog["文章列表"].length; i++) {
         if (blog["文章列表"][i]["是否置顶"] && currentArticleListPageOrder === 1) {
@@ -902,32 +1050,32 @@
       let currentArticleListFromOrder = (currentArticleListPageOrder - 1) * blog["文章列表中每页的文章数为"] + 1;
       let currentArticleListToOrder = currentArticleListPageOrder * blog["文章列表中每页的文章数为"];
 
-      for (let i = currentArticleListFromOrder - 1; i < currentArticleListToOrder && i < blog["文章列表"].length; i++) {
+      for (let i = currentArticleListFromOrder - 1; i < currentArticleListToOrder && i < visible_articles.length; i++) {
         if (
-          blog["文章列表"][i]["是否隐藏"] ||
-          blog["文章列表"][i]["是否置顶"]
+          visible_articles[i]["是否隐藏"] ||
+          visible_articles[i]["是否置顶"]
         ) {
         } else {
 
-          document.querySelector("#container").insertAdjacentHTML("beforeend", `<div class="article-item" id="article-item-${i}"><h2><a class="underline-animation" href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}" onclick="enter_article(${i});return false;">${blog["文章列表"][i]["文章标题"]}</a></h2></div>`);
+          document.querySelector("#container").insertAdjacentHTML("beforeend", `<div class="article-item" id="article-item-${i}"><h2><a class="underline-animation" href="./index.html?type=article&filename=${visible_articles[i]["文件名"]}" onclick="enter_article(${i}, true);return false;">${visible_articles[i]["文章标题"]}</a></h2></div>`);
 
 
           document.querySelector("#article-item-" + i).insertAdjacentHTML("beforeend", `<div class="article-item-sub" id="article-item-sub-${i}"></div>`);
 
-          document.querySelector("#article-item-sub-" + i).insertAdjacentHTML("beforeend", `<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]} <span class="article-item-sub-dotted">${blog["文章列表"][i]["创建日期"]}</span> <div class="small_empty_inline"></div> | <div class="small_empty_inline"></div> <i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]} <span class="article-item-sub-dotted">${blog["文章列表"][i]["修改日期"]}</span> <br /><div class="small_empty_between_lines"></div>`);
+          document.querySelector("#article-item-sub-" + i).insertAdjacentHTML("beforeend", `<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]} <span class="article-item-sub-dotted" title="${new Date(visible_articles[i]["创建时间（时间戳）"]).toISOString()}">${convertTimeStampToLocalTime(visible_articles[i]["创建时间（时间戳）"])}</span> <div class="small_empty_inline"></div> | <div class="small_empty_inline"></div> <i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]} <span class="article-item-sub-dotted" title="${new Date(visible_articles[i]["修改时间（时间戳）"]).toISOString()}">${convertTimeStampToLocalTime(visible_articles[i]["修改时间（时间戳）"])}</span> <br /><div class="small_empty_between_lines"></div>`);
 
 
-          if (blog["文章列表"][i]["标签"].length === 0) {
+          if (visible_articles[i]["标签"].length === 0) {
           } else {
             document.querySelector("#article-item-sub-" + i).insertAdjacentHTML("beforeend", `<i class="fa fa-tags"></i> ${langdata["TAGS"][lang_name]}`);
 
-            for (let k = 0; k < blog["文章列表"][i]["标签"].length; k++) {
-              document.querySelector("#article-item-sub-" + i).insertAdjacentHTML("beforeend", `<a class="article-tag-underlined" style="color: ${getTagColor(blog["文章列表"][i]["标签"][k])}" href="./index.html?type=internal&function=tag&argument=${blog["文章列表"][i]["标签"][k]}" onclick="enter_tag('${blog["文章列表"][i]["标签"][k]}');return false;">#${blog["文章列表"][i]["标签"][k]}</a>`);
+            for (let k = 0; k < visible_articles[i]["标签"].length; k++) {
+              document.querySelector("#article-item-sub-" + i).insertAdjacentHTML("beforeend", `<a class="article-tag-underlined" style="color: ${getTagColor(visible_articles[i]["标签"][k])}" href="./index.html?type=internal&function=tag&argument=${visible_articles[i]["标签"][k]}" onclick="enter_tag('${visible_articles[i]["标签"][k]}');return false;">#${visible_articles[i]["标签"][k]}</a>`);
             }
           }
 
 
-          document.querySelector("#article-item-" + i).insertAdjacentHTML("beforeend", `<br /><p>${blog["文章列表"][i]["摘要"]}</p>`);
+          document.querySelector("#article-item-" + i).insertAdjacentHTML("beforeend", `<br /><p>${visible_articles[i]["摘要"]}</p>`);
 
         }
       }
@@ -936,9 +1084,9 @@
 
         for (let i = 0; i < articleListPageLength; i++) {
           if (i + 1 === currentArticleListPageOrder) {
-            document.getElementById("container").insertAdjacentHTML("beforeend", `<button class="btn btn-primary btn-sm" onclick="changeArticleListPageOrderTo(${i + 1})">${i + 1}</button>`);
+            document.getElementById("container").insertAdjacentHTML("beforeend", `<button class="btn btn-secondary btn-sm" onclick="changeArticleListPageOrderTo(${i + 1})">${i + 1}</button> `);
           } else {
-            document.getElementById("container").insertAdjacentHTML("beforeend", `<button class="btn btn-secondary btn-sm" onclick="changeArticleListPageOrderTo(${i + 1})">${i + 1}</button>`);
+            document.getElementById("container").insertAdjacentHTML("beforeend", `<button class="btn btn-link btn-sm" onclick="changeArticleListPageOrderTo(${i + 1})">${i + 1}</button>`);
           }
         }
 
@@ -953,7 +1101,7 @@
       }
     }
 
-    function render_article_content(article_id) {
+    function render_article_content(article_id, visible) {
 
       if (blog["Markdown渲染配置"]["使用markdown文件所在目录作为baseurl"]) {
         baseurl = "/data/articles/"
@@ -967,7 +1115,7 @@
 
       document.querySelector(
         "#root"
-      ).insertAdjacentHTML("afterbegin", `<div class="bg-light"><br /><br /><br /><br /><div class="container blog_title_jumbotron"><h1 id="current_article_title" style="font-size:50px;">${blog["文章列表"][article_id]["文章标题"]}</h1><div id="article-content-sub" class="article-content-sub"><i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]} <span class="article-item-sub-dotted">${blog["文章列表"][article_id]["创建日期"]}</span> <div class="small_empty_inline"></div> | <div class="small_empty_inline"></div> <i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]} <span class="article-item-sub-dotted">${blog["文章列表"][article_id]["修改日期"]}</span> <br /><div class="small_empty_between_lines"></div></div></div><br /></div>`);
+      ).insertAdjacentHTML("afterbegin", `<div class="bg-light" style="opacity: 0.9"><br /><br /><br /><br /><div class="container blog_title_jumbotron"><h1 id="current_article_title" style="font-size:50px;">${blog["文章列表"][article_id]["文章标题"]}</h1><div id="article-content-sub" class="article-content-sub"><i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]} <span class="article-item-sub-dotted" title="${new Date(blog["文章列表"][article_id]["创建时间（时间戳）"]).toISOString()}">${convertTimeStampToLocalTime(blog["文章列表"][article_id]["创建时间（时间戳）"])}</span> <div class="small_empty_inline"></div> | <div class="small_empty_inline"></div> <i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]} <span class="article-item-sub-dotted" title="${new Date(blog["文章列表"][article_id]["修改时间（时间戳）"]).toISOString()}">${convertTimeStampToLocalTime(blog["文章列表"][article_id]["修改时间（时间戳）"])}</span> <br /><div class="small_empty_between_lines"></div></div></div><br /></div>`);
 
       // start
 
@@ -997,24 +1145,30 @@
         )
         .then(function (response) {
           document.getElementById("loading_article_or_page_content").remove();
-          if(blog["文章列表"][article_id]["是否加密"]){
+          if (blog["文章列表"][article_id]["是否加密"]) {
             document.querySelector("#article-content").insertAdjacentHTML("beforeend", `<div id="article-content-html"><div id="passwordRequiredArea">此文章被密码加密。请输入密码以查看文章内容。<div class="mb-3">
     <label class="form-label"><i class="fa fa-password"></i> 请输入密码</label>
     <input class="form-control" placeholder="请输入密码" value="" id="article_password_modal_value">
     <button class="btn btn-outline-primary" id="viewContentAfterInputPasswordBtn">查看内容</button>
   </div></div></div>`);
 
-            document.getElementById("viewContentAfterInputPasswordBtn").onclick = ()=>{
+            document.getElementById("viewContentAfterInputPasswordBtn").onclick = () => {
               try {
                 const decryptedContent = content_decrypt(JSON.stringify(response.data), document.getElementById("article_password_modal_value").value);
                 document.getElementById("passwordRequiredArea").innerHTML = marked.parse(decryptedContent);
-                
               } catch (error) {
                 alert("密码错误。");
               }
             }
 
           } else {
+            if(blog["文章列表"][article_id]["ai生成的摘要"] !== null && blog["文章列表"][article_id]["ai生成的摘要"] !== undefined && blog["文章列表"][article_id]["ai生成的摘要"] !== ""){
+              document.querySelector("#article-content").insertAdjacentHTML("beforeend", `<div class="alert alert-primary" style="padding-left:40px;padding-right:40px;padding-top:15px;padding-bottom:5px; border-radius: 30px; margin-bottom:30px!important" role="alert">
+  <h4 class="alert-heading"><i class="fa fa-newspaper-o" style="margin-right:4px"></i> AI 生成的摘要 <span style="display:inline-block; margin-right: 4px"></span> <button class="btn btn-sm btn-outline-secondary" style="font-size: 12px" disabled>此摘要并非实时生成</button></h4>
+  <div style="margin-top:17px"></div>
+  <p>${blog["文章列表"][article_id]["ai生成的摘要"]}</p>
+</div>`);
+            }
             document.querySelector("#article-content").insertAdjacentHTML("beforeend", `<div id="article-content-html">${marked.parse(response.data)}</div>`);
           }
 
@@ -1038,11 +1192,11 @@
 
 
           if (blog["提供文章文件下载"]) {
-            document.getElementById("article-bottom-bar").insertAdjacentHTML("beforeend", `<a class="btn btn-primary" href="./data/articles/${blog["文章列表"][article_id]["文件名"]}" download="${blog["文章列表"][article_id]["文章标题"]}.md"><i class="fa fa-download"></i> 将该文章下载到你的计算机上</a>`);
+            document.getElementById("article-bottom-bar").insertAdjacentHTML("beforeend", `<a class="btn btn-outline-primary" href="./data/articles/${blog["文章列表"][article_id]["文件名"]}" download="${blog["文章列表"][article_id]["文章标题"]}.md"><i class="fa fa-download"></i> 将该文章下载到你的计算机上</a> `);
           }
 
           if (blog["提供复制全文到剪贴板的选项"]) {
-            document.getElementById("article-bottom-bar").insertAdjacentHTML("beforeend", `<a class="btn btn-primary" id="copy_to_clipboard_button" onclick="copy_full_article_to_clipboard();"><i class="fa fa-clipboard"></i> 复制全文到剪贴板</a>`);
+            document.getElementById("article-bottom-bar").insertAdjacentHTML("beforeend", `<a class="btn btn-outline-primary" id="copy_to_clipboard_button" onclick="copy_full_article_to_clipboard();"><i class="fa fa-clipboard"></i> 复制全文到剪贴板</a>`);
           }
 
           if (blog["不使用全站内容授权协议"] === false) {
@@ -1076,13 +1230,12 @@
 
           }
 
-
-
+          if (visible) blog["文章列表"] = visible_articles; // This is needed, though idk why???
 
           if (
             (blog["全局评论设置"]["启用valine评论"] ||
-            blog["全局评论设置"]["启用disqus评论"] ||
-            blog["全局评论设置"]["启用waline评论"]) &&
+              blog["全局评论设置"]["启用disqus评论"] ||
+              blog["全局评论设置"]["启用waline评论"]) &&
             blog["文章列表"][article_id]["启用评论"]
           ) {
             document.querySelector(
@@ -1137,7 +1290,6 @@
               path:
                 "article=" +
                 blog["文章列表"][article_id]["文件名"],
-              turnstileKey: blog["全局评论设置"]["waline设置"]["turnstileKey"],
             });
           }
 
@@ -1170,8 +1322,8 @@
 
       if (
         (blog["全局评论设置"]["启用valine评论"] ||
-        blog["全局评论设置"]["启用disqus评论"] ||
-        blog["全局评论设置"]["启用waline评论"]) &&
+          blog["全局评论设置"]["启用disqus评论"] ||
+          blog["全局评论设置"]["启用waline评论"]) &&
         blog["友人帐页面允许评论"]
       ) {
         document.querySelector(
@@ -1248,6 +1400,20 @@
       return Object.keys(getTagTree()).length;
     }
 
+    function archive_and_tags_switch_to_archive() {
+      document.querySelector("#tag-content").setAttribute("style", "display:none");
+      document.querySelector("#archive-content").setAttribute("style", "display:block");
+      document.getElementById("archive_and_tags_nav_by_tags").setAttribute("class", "nav-link archive-nav-link");
+      document.getElementById("archive_and_tags_nav_by_time").setAttribute("class", "nav-link active archive-nav-link");
+    }
+
+    function archive_and_tags_switch_to_tags() {
+      document.querySelector("#tag-content").setAttribute("style", "display:block");
+      document.querySelector("#archive-content").setAttribute("style", "display:none");
+      document.getElementById("archive_and_tags_nav_by_tags").setAttribute("class", "nav-link active archive-nav-link");
+      document.getElementById("archive_and_tags_nav_by_time").setAttribute("class", "nav-link archive-nav-link");
+    }
+
     function render_tag_tree() {
       //todo：考虑没有任何标签的情况
 
@@ -1255,7 +1421,37 @@
 
       let tagtree = getTagTree();
 
-      document.getElementById("container").insertAdjacentHTML("beforeend", `<div class="tag-content" id="tag-content"></div>`);
+      document.getElementById("container").insertAdjacentHTML("beforeend", `<br /><br /><ul class="nav nav-tabs archive-nav">
+  <li class="nav-item archive-nav-item">
+    <a class="nav-link active archive-nav-link" href="javascript:archive_and_tags_switch_to_tags()" id="archive_and_tags_nav_by_tags">按标签检索</a>
+  </li>
+  <li class="nav-item archive-nav-item">
+    <a class="nav-link archive-nav-link" href="javascript:archive_and_tags_switch_to_archive()" id="archive_and_tags_nav_by_time">按年份检索</a>
+  </li>
+</ul><div class="tag-content" id="tag-content"></div><div class="tag-content" id="archive-content" style="display:none;"></div>`);
+
+      let archiveObj = new Object();
+
+      for (let i = 0; i < blog["文章列表"].length; i++) {
+        if (blog["文章列表"][i]["是否隐藏"] === false) {
+          let year = new Date(blog["文章列表"][i]["创建时间（时间戳）"]).getFullYear();
+          if (typeof archiveObj[year] === "undefined") {
+            archiveObj[year] = new Array();
+          }
+          archiveObj[year].push(i);
+        }
+      }
+
+      for (let i = 0; i < Object.keys(archiveObj).length; i++) {
+        document.querySelector(
+          "#archive-content"
+        ).insertAdjacentHTML("beforeend", `<h2 id="archive-content-of-year-${Object.keys(archiveObj)[i]}"><i class="fa fa-calendar"></i> <span>${Object.keys(archiveObj)[i]}</span></h2>`);
+        for (let k = 0; k < archiveObj[Object.keys(archiveObj)[i]].length; k++) {
+          document.querySelector(
+            "#archive-content"
+          ).insertAdjacentHTML("beforeend", `<p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][archiveObj[Object.keys(archiveObj)[i]][k]]["文件名"]}" onclick="enter_article(${archiveObj[Object.keys(archiveObj)[i]][k]});return false;">${blog["文章列表"][archiveObj[Object.keys(archiveObj)[i]][k]]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${convertTimeStampToLocalTime(blog["文章列表"][archiveObj[Object.keys(archiveObj)[i]][k]]["创建时间（时间戳）"])}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${convertTimeStampToLocalTime(blog["文章列表"][archiveObj[Object.keys(archiveObj)[i]][k]]["修改时间（时间戳）"])}）</p>`);
+        }
+      }
 
       document.querySelector(
         "#root"
@@ -1280,7 +1476,7 @@
             if (tagtree[Object.keys(tagtree)[i]][k] === blog["文章列表"][j] && blog["文章列表"][j]["是否隐藏"] === false) {
               document.querySelector(
                 "#tag-content"
-              ).insertAdjacentHTML("beforeend", `<p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][j]["文件名"]}" onclick="enter_article(${j});return false;">${tagtree[Object.keys(tagtree)[i]][k]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${tagtree[Object.keys(tagtree)[i]][k]["创建日期"]}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${tagtree[Object.keys(tagtree)[i]][k]["修改日期"]}）</p>`);
+              ).insertAdjacentHTML("beforeend", `<p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][j]["文件名"]}" onclick="enter_article(${j});return false;">${tagtree[Object.keys(tagtree)[i]][k]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${convertTimeStampToLocalTime(tagtree[Object.keys(tagtree)[i]][k]["创建时间（时间戳）"])}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${convertTimeStampToLocalTime(tagtree[Object.keys(tagtree)[i]][k]["修改时间（时间戳）"])}）</p>`);
 
 
               currentTagTreeArticleNumber++;
@@ -1300,7 +1496,7 @@
 
         for (let i = 0; i < blog["文章列表"].length; i++) {
           if (blog["文章列表"][i]["是否隐藏"] === false) {
-            document.querySelector("#tag-content").insertAdjacentHTML("beforeend", `<p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}">${blog["文章列表"][i]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${blog["文章列表"][i]["创建日期"]}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${blog["文章列表"][i]["修改日期"]}）</p>`);
+            document.querySelector("#tag-content").insertAdjacentHTML("beforeend", `<p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}">${blog["文章列表"][i]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${convertTimeStampToLocalTime(blog["文章列表"][i]["创建时间（时间戳）"])}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${blog["文章列表"][i]["修改日期"]}）</p>`);
 
           }
         }
@@ -1311,7 +1507,7 @@
           for (let i = 0; i < blog["文章列表"].length; i++) {
             if (blog["文章列表"][i]["是否隐藏"] === false) {
               if (blog["文章列表"][i]["标签"].length === 0 || blog["文章列表"][i]["标签"] === false || blog["文章列表"][i]["标签"] === "" || blog["文章列表"][i]["标签"] === undefined || blog["文章列表"][i]["标签"] === null) {
-                document.querySelector("#tag-content").insertAdjacentHTML("beforeend", `<p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}">${blog["文章列表"][i]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${blog["文章列表"][i]["创建日期"]}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${blog["文章列表"][i]["修改日期"]}）</p>`);
+                document.querySelector("#tag-content").insertAdjacentHTML("beforeend", `<p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}">${blog["文章列表"][i]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${convertTimeStampToLocalTime(blog["文章列表"][i]["创建时间（时间戳）"])}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${blog["文章列表"][i]["修改日期"]}）</p>`);
               }
 
             }
@@ -1334,7 +1530,7 @@
           if (tagtree[tagname][i] === blog["文章列表"][j] && blog["文章列表"][j]["是否隐藏"] === false) {
             document.querySelector(
               "#tag-content"
-            ).insertAdjacentHTML("beforeend", `<p><i class="fa fa-file-text-o"></i> <a href="/index.html?type=article&filename=${blog["文章列表"][j]["文件名"]}" onclick="enter_article(${j});return false;">${tagtree[tagname][i]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${tagtree[tagname][i]["创建日期"]}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${tagtree[tagname][i]["修改日期"]}）</p>`);
+            ).insertAdjacentHTML("beforeend", `<p><i class="fa fa-file-text-o"></i> <a href="/index.html?type=article&filename=${blog["文章列表"][j]["文件名"]}" onclick="enter_article(${j});return false;">${tagtree[tagname][i]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${convertTimeStampToLocalTime(tagtree[tagname][i]["创建时间（时间戳）"])}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${convertTimeStampToLocalTime(tagtree[tagname][i]["修改时间（时间戳）"])}）</p>`);
 
           }
         }
@@ -1376,8 +1572,8 @@
 
           if (
             (blog["全局评论设置"]["启用valine评论"] ||
-            blog["全局评论设置"]["启用disqus评论"] ||
-            blog["全局评论设置"]["启用waline评论"]) &&
+              blog["全局评论设置"]["启用disqus评论"] ||
+              blog["全局评论设置"]["启用waline评论"]) &&
             blog["页面列表"][page_id]["启用评论"]
           ) {
             document.querySelector(
@@ -1562,13 +1758,16 @@
       }, 1);
     }
 
-    function enter_article(article_id) {
+    function enter_article(article_id, visible = false) {
+      let article_list = blog["文章列表"];
+      if (visible) blog["文章列表"] = visible_articles;
       history.pushState({ type: "article", filename: blog["文章列表"][article_id]["文件名"] }, "", `./index.html?type=article&filename=${blog["文章列表"][article_id]["文件名"]}`);
       document.getElementsByTagName("title")[0].innerHTML = `${blog["文章列表"][article_id]["文章标题"]} - ${blog["博客标题"]} `;
       resetPage();
       render_nav(false);
       render_container();
-      render_article_content(article_id);
+      render_article_content(article_id, visible);
+      blog["文章列表"] = article_list;
 
       setTimeout(() => {
         scrollTo(0, 0);
@@ -1606,11 +1805,65 @@
         })
     }
 
+    function switch_night_mode(mode) {
+      // https://developer.mozilla.org/zh-CN/docs/Web/API/StyleSheet/disabled
+      const darkModeElement = document.getElementById("dark_mode");
+
+      switch (mode) {
+        case "light":
+          darkModeElement.disabled = true;
+          break;
+        case "dark":
+          darkModeElement.disabled = false;
+          break;
+        default:
+          darkModeElement.disabled = !darkModeElement.disabled;
+      }
+    }
+
     axios
       .get("./data/index.json?timestamp=" + Date.parse(new Date()))
       .then(function (response) {
         blog = response.data;
         lang_name = blog["网站语言"];
+
+        reload_dark_mode_setting();
+
+        if (typeof(blog["站点主题"])!=="undefined"){
+          if(blog["站点主题"] === "Solarized_Pink"){
+            blog["全局主题设置"]["标题栏背景颜色"] = "#6699cc";
+            blog["全局主题设置"]["链接颜色"] = "#993366";
+            document.querySelector("#theme_css").innerHTML = `
+              .bg-light {
+                background-color: #fffff240!important;
+                border-bottom: 1px solid #6699cc;
+                margin-bottom: 35px
+              }
+
+              body {
+                background-color:#ffffe2;
+              }
+
+              .article-item, .article-content, .page-content, .articlebottomnav, .tag-content, .bbg-comment-area {
+                border: 1px solid #874342;
+                background: #fffff2a0;
+                box-shadow: none;
+              }
+
+              #blog_index_title, #current_article_title, .blog_title_jumbotron h1 {
+                color: #206c89;
+              }
+
+              code, pre {
+                background-color: #ffffe0;
+                color: #993366;
+                border-radius: 8px;
+              }
+              
+            `;
+          }
+        }
+
 
         switch (blog["全站内容授权协议"]) {
           case "reserved":
@@ -1640,7 +1893,8 @@
           }
 
           marked.setOptions({
-            renderer: markdown_renderer
+            renderer: markdown_renderer,
+            highlight: highlightFunc
           });
         } else if (blog["Markdown渲染配置"]["根据用户屏幕尺寸渲染图片尺寸"] === true && blog["Markdown渲染配置"]["在用户点击图片时显示图片查看器"] === false) {
 
@@ -1650,7 +1904,8 @@
           }
 
           marked.setOptions({
-            renderer: markdown_renderer
+            renderer: markdown_renderer,
+            highlight: highlightFunc
           });
         } else if (blog["Markdown渲染配置"]["根据用户屏幕尺寸渲染图片尺寸"] === false && blog["Markdown渲染配置"]["在用户点击图片时显示图片查看器"] === true) {
           markdown_renderer.image = function (src, title, alt) {
@@ -1659,7 +1914,8 @@
           }
 
           marked.setOptions({
-            renderer: markdown_renderer
+            renderer: markdown_renderer,
+            highlight: highlightFunc
           });
         } else if (blog["Markdown渲染配置"]["使用markdown文件所在目录作为baseurl"]) {
           markdown_renderer.image = function (src, title, alt) {
@@ -1668,7 +1924,8 @@
           }
 
           marked.setOptions({
-            renderer: markdown_renderer
+            renderer: markdown_renderer,
+            highlight: highlightFunc
           });
         }
 
@@ -1696,7 +1953,10 @@
 
 
 
-        articleListPageLength = Math.ceil(blog["文章列表"].length / blog["文章列表中每页的文章数为"]); // 从1开始数
+        // 总之先这么用着……之后有更好的写法再说吧
+        visible_articles = blog["文章列表"].filter(a => !a["是否隐藏"]);
+
+        articleListPageLength = Math.ceil(visible_articles.length / blog["文章列表中每页的文章数为"]); // 从1开始数
 
         if (blog["全局评论设置"]["valine设置"]["是否使用bbg公共评论服务"]) {
           if (window.location.href.indexOf("?") === -1) {
@@ -1758,17 +2018,17 @@
           r = parseInt(r);
           g = parseInt(g);
           b = parseInt(b);
-          if (r + 30<255){
+          if (r + 30 < 255) {
             r += 30;
           } else {
             r = 255;
           }
-          if(b+30<255){
+          if (b + 30 < 255) {
             b += 30;
           } else {
             b = 255;
           }
-          if(g+30<255){
+          if (g + 30 < 255) {
             g += 30;
           } else {
             g = 255;
@@ -1776,11 +2036,11 @@
           return `rgb(${r}, ${g}, ${b})`;
         }
 
-        function processed_color_for_nav_item_hover_css(color){
-          if(color.includes("rgb") === true && color.includes("rgba") === false){
+        function processed_color_for_nav_item_hover_css(color) {
+          if (color.includes("rgb") === true && color.includes("rgba") === false) {
             // is rgb color
             return rgbAdjustmentInNavItemCss(color);
-          } else if(color.includes("#") === true){
+          } else if (color.includes("#") === true) {
             // is hex color
             return rgbAdjustmentInNavItemCss(hexToRgbInNavItemCss(color));
           } else {
@@ -1789,11 +2049,65 @@
           }
         }
 
-        document.getElementById("blogcss").insertAdjacentHTML("beforeend", `.nav-item {background-color:${blog["全局主题设置"]["标题栏背景颜色"]}!important}.nav-item:hover{background-color:${processed_color_for_nav_item_hover_css(blog["全局主题设置"]["标题栏背景颜色"])}!important;transition: background-color 0.1s;}`);
+        document.getElementById("blogcss").insertAdjacentHTML("beforeend", `.nav-item {background-color:${blog["全局主题设置"]["标题栏背景颜色"]}}.nav-item:hover{background-color:${processed_color_for_nav_item_hover_css(blog["全局主题设置"]["标题栏背景颜色"])};transition: background-color 0.1s;}`);
 
         // load custom link color
 
         document.getElementById("blogcss").insertAdjacentHTML("beforeend", `a{color:${blog["全局主题设置"]["链接颜色"]}}a:hover{color:${processed_color_for_nav_item_hover_css(blog["全局主题设置"]["链接颜色"])}}a:active{${processed_color_for_nav_item_hover_css(blog["全局主题设置"]["链接颜色"])}}.underline-animation {position: relative;text-decoration: none;}.underline-animation::before {content: "";position: absolute;display: block;width: 100%;height: 2px;bottom: 0;left: 0;background-color: ${blog["全局主题设置"]["链接颜色"]};transform: scaleX(0);transition: transform 0.3s ease;}.underline-animation:hover::before{transform: scaleX(1);}`);
+
+        function live2d_res_load(url, type) {
+          return new Promise((resolve, reject) => {
+            let tag;
+
+            switch(type){
+              case "js":
+                tag = document.createElement("script");
+                tag.src = url;
+                tag.type = "text/javascript";
+                break;
+              case "css":
+                tag = document.createElement("link");
+                tag.rel = "stylesheet";
+                tag.href = url;
+                break;
+            }
+
+            if (tag) {
+              tag.onload = () => resolve(url);
+              tag.onerror = () => reject(url);
+              document.head.appendChild(tag);
+            }
+          });
+        }
+
+        const live2d_enabled = blog["全局主题设置"]["是否启用live2d-widget"];
+
+        if (live2d_enabled === true) {
+          const live2d_path = blog["全局主题设置"]["live2d-widget设置"]["widget路径"];
+          const live2d_tips_path = blog["全局主题设置"]["live2d-widget设置"]["tips路径"];
+          const live2d_api_path = blog["全局主题设置"]["live2d-widget设置"]["api路径"];
+          let live2d_tools = [];
+          for(let live2d_tool of Object.keys(blog["全局主题设置"]["live2d-widget设置"]["功能设置"])){
+            if(blog["全局主题设置"]["live2d-widget设置"]["功能设置"][live2d_tool] === true){
+              live2d_tools.push(live2d_tool);
+            }
+          }
+          if(screen.width >= 768){
+            Promise.all([
+              live2d_res_load(`${live2d_path}waifu.css`, "css"),
+              live2d_res_load(`${live2d_path}live2d.min.js`, "js"),
+              live2d_res_load(`${live2d_path}waifu-tips.js`, "js")
+            ]).then(()=>{
+              initWidget({
+                waifuPath: live2d_tips_path,
+                cdnPath: live2d_api_path,
+                tools: live2d_tools
+              });
+            });
+          }
+
+        }
+
 
         // 自定义css载入
 
