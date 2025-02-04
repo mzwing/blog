@@ -3,13 +3,26 @@
     <subtitle>如光似幻，如影随形</subtitle>
     <link href="https://mzwing.eu.org/atom.xml" rel="self"/>
     <link href="https://mzwing.eu.org"/>
-    <updated>2025-01-01T03:31:39.849Z</updated>
+    <updated>2025-02-04T14:09:53.869Z</updated>
     <id>https://mzwing.eu.org</id>
     <author>
         <name>洛仙璃の幻梦</name>
     </author>
     <generator uri="https://bbg.nekomoe.xyz">Baiyuanneko's Blog Generator</generator>
     <entry>
+      <title>碎记·RWKV的邪典量化（llama.cpp only）</title>
+      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=rwkv_gguf_quantization.md"/>
+      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=rwkv_gguf_quantization.md</id>
+      <content type="html">
+        <![CDATA[
+          
+
+        ]]>
+      </content>
+      <summary type="html">在量化RWKV系列模型中遇到的一些奇奇怪怪的问题以及略显诡异的解决方案……</summary>
+      <updated>2025-02-04T09:27:00.000Z</updated>
+      <published>2025-02-04T09:27:00.000Z</published>
+      </entry><entry>
       <title>碎记•向明年的自己招个手</title>
       <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=wave-to-my-future-self.md"/>
       <id>https://mzwing.eu.org/index.html?type=article&amp;filename=wave-to-my-future-self.md</id>

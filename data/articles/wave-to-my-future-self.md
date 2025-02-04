@@ -84,8 +84,13 @@ Andnid这浑水得实在是……
 
 ## See also
 
-- [chihuo2104の部落格 - 2024年度总结](https://blog.chihuo2104.dev/posts/goodbye-2024)
-- [二葉琉璃の自留地 - 二葉琉璃的 2024](https://sekaimoe.dpkg123.site/posts/end-of-2024/)
-- [呓语梦轩 - 再见2024 · 共赴一场烟火绚烂](https://blog.awaae001.top/posts/57024.html)
+- [2024年度总结 - chihuo2104の部落格](https://blog.chihuo2104.dev/posts/goodbye-2024)
+- [二葉琉璃的 2024 - 二葉琉璃の自留地](https://sekaimoe.dpkg123.site/posts/end-of-2024/)
+- [再见2024 · 共赴一场烟火绚烂 - 呓语梦轩](https://blog.awaae001.top/posts/57024.html)
+- [2024 年终总结 - 柏园猫のBlog](https://nekomoe.xyz/index.html?type=article&filename=2024-summary.md)
+- [我的 2024 年终总结 - 無意識の桜](https://koishi514.moe/blog/bbg/index.html?type=article&filename=8YkDYKfG5wDN.md)
+- [Y2025班次冬日列车 - 反応蒸留](https://blog.mjt.asia/posts/bc0e860c/)
+- [2024年终总结 - zzjzxq33's blog](https://blog.akuamar1n.com/2024/12/31/2024-summary/)
+- [辞旧迎新：Ray 的 2024 年终总结 - Ray's xLog](https://xlog.mk1.io/goodbye-2024)
 
 其他朋友的会在看到更新之后尽快（？）加上（
