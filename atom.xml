@@ -3,7 +3,7 @@
     <subtitle>如光似幻，如影随形</subtitle>
     <link href="https://mzwing.eu.org/atom.xml" rel="self"/>
     <link href="https://mzwing.eu.org"/>
-    <updated>2025-02-04T14:09:53.869Z</updated>
+    <updated>2025-02-05T02:33:21.080Z</updated>
     <id>https://mzwing.eu.org</id>
     <author>
         <name>洛仙璃の幻梦</name>
@@ -15,7 +15,314 @@
       <id>https://mzwing.eu.org/index.html?type=article&amp;filename=rwkv_gguf_quantization.md</id>
       <content type="html">
         <![CDATA[
-          
+          <h1>碎记·RWKV的邪典量化（llama.cpp only）</h1>
+<h2>环境准备喵</h2>
+<p>我水，就硬水（x</p>
+<p>也不想细说了，直接上代码更有效（</p>
+<pre><code>#!/usr/bin/sh
+
+llama_cpp_version=&amp;quot;b4519&amp;quot;
+
+user=&amp;quot;mzwing&amp;quot;
+
+# Create necessary folders
+mkdir -p /home/$user/AI/repo/
+mkdir -p /home/$user/AI/runner/
+mkdir -p /home/$user/AI/model/
+
+# Install llama.cpp repo
+cd /home/$user/AI/repo/
+git clone https://github.com/ggerganov/llama.cpp.git --depth 1
+rye init llama_cpp
+cd ./llama_cpp/
+rye add numpy sentencepiece transformers gguf protobuf torch
+
+# Install llama.cpp binary
+cd /home/$user/AI/runner/
+mkdir -p ./llama.cpp/
+cd ./llama.cpp/
+aria2c -c -x16 &amp;quot;https://github.com/MZWNET/actions/releases/download/llama_cpp-$llama_cpp_version/llama-$llama_cpp_version-bin-linux-avx2-intel-mkl-x64.zip&amp;quot;
+unzip &amp;quot;llama-$llama_cpp_version-bin-linux-avx2-intel-mkl-x64.zip&amp;quot;
+rm -rf &amp;quot;llama-$llama_cpp_version-bin-linux-avx2-intel-mkl-x64.zip&amp;quot;
+aria2c -c -x16 https://gist.github.com/bartowski1182/eb213dccb3571f863da82e99418f81e8/raw/b2869d80f5c16fd7082594248e80144677736635/calibration_datav3.txt
+
+# Install Huggingface CLI
+cd /home/$user/AI/repo/
+rye init huggingface_cli
+cd ./huggingface_cli/
+rye add huggingface_hub[hf_transfer]
+
+# Install RWKV related environment
+cd /home/$user/AI/repo/
+rye init rwkv
+cd ./rwkv/
+rye add torch numpy
+
+# Back to home
+cd /home/$user/
+</code></pre>
+<p>什么？为什么要用<code>$user</code>？下文揭晓（（（</p>
+<p>到这里各位应该已经对我的石山代码有了心理预期了，别急，下面更石（x</p>
+<p>简单说一下吧，之所以不直接在<code>llama.cpp</code>中执行<code>rye init</code>是因为<code>llama.cpp</code>官方用的是<code>poetry</code>，然而创出天际的mzw怎么可能乖乖遵循官方建议呢（x），所以直接新建了一个目录，继续用我的<code>rye</code>去！（x</p>
+<p>用<code>venv</code>安装HF CLI是因为<code>rye install huggingface_hub[hf_transfer]</code>是不会出现<code>huggingface-cli</code>这个command的（恼，屑<code>rye</code></p>
+<h2>然后……差点就没有然后了</h2>
+<p>接下来遇到的问题堪称重量级……搜索了很久也找不到怎么把RWKV转换成Huggingface Format或是直接从pth转换为gguf。明明RWKV官方和Transformers一块推出过一个转换脚本，结果这脚本居然运行不了（也是服了，什么草台班子）。这下算是陷入困境了，找了大概两三天，都快放弃了。</p>
+<p>甚至一度想过让Deepseek写一个，然而显然Deepseek并不清楚RWKV6的结构，搁那一通乱写，遂作罢。</p>
+<p>最后实在忍不住了！跑去btaskel大佬那里发了个<a href="https://huggingface.co/btaskel/RWKV6-3B-Chn-UnlimitedRP-mini-chat-GGUF/discussions/1">Discussion</a>（用工地英语和人家交流（x）），自己也尝试了一些别的解决方案，最后才终于找到了最优解……Thanks btakel佬 very much!</p>
+<p>用到的脚本大概长这样：</p>
+<pre><code># convert_rwkv6_to_hf.py
+# Original code from &amp;lt;https://rwkv.cn/llamacpp#appendix-code&amp;gt;
+# Edited by mzwing&amp;lt;mzwing@mzwing.eu.org&amp;gt;
+# Convert the model for the pytoch_model.bin
+import sys
+import torch
+
+if len(sys.argv) != 3:
+    print(f&amp;quot;Convert RWKV6.0 pth (non-huggingface) checkpoint to Huggingface format&amp;quot;)
+    print(&amp;quot;Usage: python convert_rwkv6_to_hf.py SOURCE_MODEL TARGET_MODEL&amp;quot;)
+    exit()
+
+SOURCE_MODEL = sys.argv[1]
+TARGET_MODEL = sys.argv[2]
+
+# delete target model
+import os
+
+if os.path.exists(TARGET_MODEL):
+    os.remove(TARGET_MODEL)
+
+model = torch.load(SOURCE_MODEL, mmap=True, map_location=&amp;quot;cpu&amp;quot;)
+
+# Rename all the keys, to include &amp;quot;rwkv.&amp;quot;
+new_model = {}
+for key in model.keys():
+
+    # If the keys start with &amp;quot;blocks&amp;quot;
+    if key.startswith(&amp;quot;blocks.&amp;quot;):
+        new_key = &amp;quot;rwkv.&amp;quot; + key
+        # Replace .att. with .attention.
+        new_key = new_key.replace(&amp;quot;.att.&amp;quot;, &amp;quot;.attention.&amp;quot;)
+        # Replace .ffn. with .feed_forward.
+        new_key = new_key.replace(&amp;quot;.ffn.&amp;quot;, &amp;quot;.feed_forward.&amp;quot;)
+        # Replace `0.ln0.` with `0.pre_ln.`
+        new_key = new_key.replace(&amp;quot;0.ln0.&amp;quot;, &amp;quot;0.pre_ln.&amp;quot;)
+    else:
+        # No rename needed
+        new_key = key
+
+        # Rename `emb.weight` to `rwkv.embeddings.weight`
+        if key == &amp;quot;emb.weight&amp;quot;:
+            new_key = &amp;quot;rwkv.embeddings.weight&amp;quot;
+
+        # Rename the `ln_out.x` to `rwkv.ln_out.x
+        if key.startswith(&amp;quot;ln_out.&amp;quot;):
+            new_key = &amp;quot;rwkv.&amp;quot; + key
+
+    print(&amp;quot;Renaming key:&amp;quot;, key, &amp;quot;--to--&amp;gt;&amp;quot;, new_key)
+    new_model[new_key] = model[key]
+
+# Save the new model
+print(&amp;quot;Saving the new model to:&amp;quot;, TARGET_MODEL)
+torch.save(new_model, TARGET_MODEL)
+</code></pre>
+<pre><code>#!/usr/bin/sh
+
+author=&amp;quot;Seikaijyu&amp;quot;
+model=&amp;quot;RWKV6-7B-v3-porn-chat&amp;quot;
+suffix=&amp;quot;&amp;quot;
+size=&amp;quot;7B&amp;quot;
+
+user=&amp;quot;mzwing&amp;quot;
+
+# Create necessary folders
+mkdir -p /home/$user/AI/model/$model$suffix-original/
+mkdir -p /home/$user/AI/model/$model$suffix/
+
+# Download the original model
+aria2c -c -x16 &amp;quot;https://huggingface.co/$author/$model/resolve/main/$model$suffix.pth?download=true&amp;quot; -d /home/$user/AI/model/$model$suffix-original/ -o $model$suffix.pth
+
+# Download RWKV6 config file
+GIT_LFS_SKIP_SMUDGE=1 git clone https://huggingface.co/RWKV/v6-Finch-$size-HF /home/$user/AI/model/$model$suffix/
+rm -rf /home/$user/AI/model/$model$suffix/*.bin
+rm -rf /home/$user/AI/model/$model$suffix/*.safetensors
+
+# Convert the original model to HF format
+source /home/$user/AI/repo/rwkv/.venv/bin/activate
+python /home/$user/convert_rwkv6_to_hf.py /home/$user/AI/model/$model$suffix-original/$model$suffix.pth /home/$user/AI/model/$model$suffix/pytorch_model.bin
+
+# Clean up
+rm -rf /home/$user/AI/model/$model$suffix-original/
+</code></pre>
+<p><code>author</code>和<code>model</code>是用来控制要量化的模型的，<code>suffix</code>则是用来控制像<a href="https://huggingface.co/Seikaijyu/RWKV6-7B-v3-porn-chat">Seikaijyu/RWKV6-7B-v3-porn-chat</a>下的<code>RWKV6-7B-v3-porn-chat-pro.pth</code>那种一个仓库下面放一些变体的情况。</p>
+<p><code>size</code>对应的是你要转换的模型的参数量，比如<code>1B6</code>之类（确切地说是基底模型的，然而一般而言偏差都不会太大的啦（x</p>
+<p>链接那里自己改改罢，我石山不想碰（x</p>
+<p>此处邪典可以说是点满了……我真的万万想不到居然这么玩，直接clone原模型的config下来然后替换<code>pytorch_model.bin</code>就完成了HF格式化……</p>
+<p>另外记得即使是RWKV v6 world系列模型也请使用RWKV普通模型的HF config，否则下面的<code>llama.cpp</code>转换会失败！会告诉你缺少<code>vocab</code>。（疑似是RWKV v6 llama.cpp PR实现的时候并没有考虑world模型，结果最后一看world也能用，行吧那就这样了，于是就出现了这么个诡异情况……）</p>
+<h2>终于可以<code>convert_hf_to_gguf.py</code>启动了……</h2>
+<pre><code># Convert the model into gguf F16 format
+mkdir -p /home/$user/AI/model/$model$suffix-GGUF/
+source /home/$user/AI/repo/llama_cpp/.venv/bin/activate
+cd /home/$user/AI/repo/llama.cpp/
+python ./convert_hf_to_gguf.py --outtype f16 --outfile /home/$user/AI/model/$model$suffix-GGUF/$model$suffix.F16.gguf /home/$user/AI/model/$model$suffix/
+
+# Clean up
+rm -rf /home/$user/AI/model/$model$suffix/
+
+# Back to home
+cd /home/$user/
+</code></pre>
+<p>这里不用我多说了罢（x）就标准的<code>llama.cpp</code>转换流程（（（</p>
+<h2>量化，启动</h2>
+<p>做了一个小脚本自动量化（问就是懒）</p>
+<pre><code>#!/usr/bin/sh
+
+model=&amp;quot;RWKV6-7B-v3-porn-chat&amp;quot;
+suffix=&amp;quot;&amp;quot;
+HF_TOKEN=&amp;quot;xxx&amp;quot;
+
+user=&amp;quot;mzwing&amp;quot;
+
+cd /home/$user/AI/runner/llama.cpp/
+
+# Login
+source /home/$user/AI/repo/huggingface_cli/.venv/bin/activate
+huggingface-cli login --token $HF_TOKEN
+
+# Upload F16 model
+HF_HUB_ENABLE_HF_TRANSFER=1 huggingface-cli upload --repo-type model --commit-message &amp;quot;GGUF model commit (made with llama.cpp $llama_cpp_version)&amp;quot; &amp;quot;$model$suffix-GGUF&amp;quot; &amp;quot;/home/$user/AI/model/$model$suffix-GGUF/$model$suffix.F16.gguf&amp;quot;
+
+# generate imatrix
+echo -e &amp;quot;Generating imatrix ...\n&amp;quot;
+./llama-imatrix -m &amp;quot;/home/$user/AI/model/$model$suffix-GGUF/$model$suffix.F16.gguf&amp;quot; -f ./calibration_datav3.txt -o &amp;quot;/home/$user/AI/model/$model$suffix-GGUF/$model$suffix.imatrix&amp;quot;
+HF_HUB_ENABLE_HF_TRANSFER=1 huggingface-cli upload --repo-type model --commit-message &amp;quot;GGUF model commit (made with llama.cpp $llama_cpp_version)&amp;quot; &amp;quot;$model$suffix-GGUF&amp;quot; &amp;quot;/home/$user/AI/model/$model$suffix-GGUF/$model$suffix.imatrix&amp;quot;
+
+# quantize
+params=( &amp;quot;Q8_0&amp;quot; &amp;quot;Q6_K&amp;quot; &amp;quot;Q5_K_M&amp;quot; &amp;quot;Q5_K_S&amp;quot; &amp;quot;Q5_1&amp;quot; &amp;quot;Q5_0&amp;quot; &amp;quot;Q4_K_M&amp;quot; &amp;quot;Q4_K_S&amp;quot; &amp;quot;Q4_1&amp;quot; &amp;quot;Q4_0&amp;quot; &amp;quot;Q3_K_L&amp;quot; &amp;quot;Q3_K_M&amp;quot; &amp;quot;Q3_K_S&amp;quot; &amp;quot;Q2_K_S&amp;quot; &amp;quot;Q2_K&amp;quot; &amp;quot;IQ4_XS&amp;quot; &amp;quot;IQ4_NL&amp;quot; &amp;quot;IQ3_XS&amp;quot; &amp;quot;IQ3_M&amp;quot; &amp;quot;IQ3_S&amp;quot; &amp;quot;IQ3_XXS&amp;quot; &amp;quot;IQ2_M&amp;quot; &amp;quot;IQ2_S&amp;quot; &amp;quot;IQ2_XS&amp;quot; &amp;quot;IQ2_XXS&amp;quot; &amp;quot;IQ1_M&amp;quot; &amp;quot;IQ1_S&amp;quot; &amp;quot;TQ2_0&amp;quot; &amp;quot;TQ1_0&amp;quot; )
+for param in &amp;quot;${params[@]}&amp;quot;; do
+    echo -e &amp;quot;Converting to $param ...\n&amp;quot;
+    ./llama-quantize --imatrix &amp;quot;/home/$user/AI/model/$model$suffix-GGUF/$model$suffix.imatrix&amp;quot; &amp;quot;/home/$user/AI/model/$model$suffix-GGUF/$model$suffix.F16.gguf&amp;quot; &amp;quot;/home/$user/AI/model/$model$suffix-GGUF/$model$suffix.$param.gguf&amp;quot; $param $(nproc)
+    HF_HUB_ENABLE_HF_TRANSFER=1 huggingface-cli upload --repo-type model --commit-message &amp;quot;GGUF model commit (made with llama.cpp $llama_cpp_version)&amp;quot; &amp;quot;$model$suffix-GGUF&amp;quot; &amp;quot;/home/$user/AI/model/$model$suffix-GGUF/$model$suffix.$param.gguf&amp;quot;
+    rm -rf &amp;quot;/home/$user/AI/model/$model$suffix-GGUF/$model$suffix.$param.gguf&amp;quot;
+done
+
+# Clean up
+rm -rf /home/$user/AI/model/$model$suffix-GGUF/
+
+# Back to home
+cd /home/$user/
+</code></pre>
+<p>为什么要login呢？下一节谈（x</p>
+<p>imatrix那里折腾了我好久（忘记RTFM导致的），我此前就是因为没搞明白imatrix才暂时退坑AI量化的。我此前以为<a href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87%E5%96%B5">环境准备</a>那里下载的<code>calibration_datav3.txt</code>能直接给<code>llama-quantize</code>用，而且我一直以为只有<code>I-Quants</code>才会用到<code>imatrix</code>（谁让这玩意首字母都是I呢（强行解释（难视）））。这次算是被好好上了一课了：<code>imatrix</code>是用来校准量化差的<code>重要性矩阵</code>（<code>Importance Matrix</code>），除了<code>F16</code>/<code>F32</code>/<code>BF16</code>之外的量化都能从中受益（提高质量）。可以参考：<a href="https://qwen.readthedocs.io/zh-cn/stable/quantization/llama.cpp.html#quantizing-the-gguf-with-importance-matrix">Qwen Docs中关于llama.cpp量化的描述</a>（然而我在写这篇文章的时候才发现这个好东西，悲）。</p>
+<p>此处的代码中我跟随<a href="https://huggingface.co/bartowski">bartowski</a>（AI量化真佬）的规范，用了他的<code>calibration_datav3.txt</code>数据集（真·万金油）进行<code>imatrix</code>生成。</p>
+<p>另外提一嘴，个人认为只要生成<code>imatrix</code>用的数据集涵盖的方面够全、够长，就可以实现重要性矩阵的作用。当然更贴近AI训练数据的校准数据集当然是更好的，但是直接用万金油效果其实也大差不差（因为又不是给人看的，直接保存token，那无论LLM输出了什么逆天回答，最终校准也应该是差不多的。灵感来源：Hackergame 2023小型大语言模型星球的官方题解。当然我的想法没有任何数据支撑，欢迎各位大佬指出我的错误（））</p>
+<p>此处我还量化了<code>T-Quants</code>，然而根据我搜索<code>llama.cpp</code>的GitHub repo得到的资料，<code>T-Quants</code>仍然处于早期阶段，暂时对<code>llama.cpp</code>的<code>master</code>分支而言，<code>T-Quants</code>对于带AVX2加速的CPU有很好的加速作用，其他则表现一般；对GPU的支持则仍然处于未合并的PR阶段。</p>
+<h2>白嫖的下场</h2>
+<p>然而众所周知，mzwing一贯热爱白嫖，所以这次量化是在Huggingface Space上运行的（用的code-server），结果不出意外的出意外了：量化到一半space自动重启了……导致我此前辛辛苦苦完成的量化，咚咚咚</p>
+<p>为此我给上面的<code>llama_cpp_quantize.sh</code>加上了每完成一步就自动上传结果，并且写出了个<code>resume_quantization.sh</code>（靠石山打败石山（乱雾））。</p>
+<p><del>（什么？让我放弃白嫖？不可能的.webp）</del></p>
+<p>目前的估计是如果在Huggingface Space中自定义Dockerfile且长时间高占用CPU（我量化的时候直接给<code>llama-quantize</code>设置<code>$(nproc)</code>了（心虚））的话，space就会自动重启，导致保存在非持久性存储的进度丢失。暂时的话配合着<code>resume_quantization.sh</code>也能用。由于过于石山且大家都能猜到怎么写的，就不放出来了（（（</p>
+<p>实验成果：</p>
+<ul>
+<li><a href="https://huggingface.co/mzwing/RWKV6-3B-Chn-UnlimitedRP-mini-chat-GGUF">https://huggingface.co/mzwing/RWKV6-3B-Chn-UnlimitedRP-mini-chat-GGUF</a></li>
+<li><a href="https://huggingface.co/mzwing/RWKV6-7B-v3-porn-chat-GGUF">https://huggingface.co/mzwing/RWKV6-7B-v3-porn-chat-GGUF</a></li>
+<li><a href="https://huggingface.co/mzwing/RWKV6-7B-v3-porn-chat-pro-GGUF">https://huggingface.co/mzwing/RWKV6-7B-v3-porn-chat-pro-GGUF</a></li>
+</ul>
+<h2>惯例的挖坑</h2>
+<p>总算可以填掉<a href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87%E5%96%B5">环境准备</a>那里挖的坑力！（x</p>
+<p>目前打算做一个名为<code>autoggufy</code>的项目实现自动量化+自动恢复量化进度，然而AI写的<code>v(-1)</code>（什么neta v0（x）并不能达到我想要的效果，我又没有那么多时间自己写（悲）</p>
+<h2>你以为这就结束了？（x</h2>
+<p>没想到吧，我还能水！.jpg（x</p>
+<p>在<a href="#%E7%84%B6%E5%90%8E%E5%B7%AE%E7%82%B9%E5%B0%B1%E6%B2%A1%E6%9C%89%E7%84%B6%E5%90%8E%E4%BA%86">第二部分</a>搜索的时候意外发现了<a href="https://github.com/BBuf/RWKV-World-HF-Tokenizer">BBuf/RWKV-World-HF-Tokenizer</a>，本来是打算搜不到别的办法的话就用这个有点草台班子的py小脚本将rwkv6转换为HF Format算了（详见其<code>README.md</code>），还好btaskel大佬给我提供了一个相对完美的方案（</p>
+<p>然而，这个仓库里面有一个妙妙脚本！</p>
+<pre><code># convert_rwkv5_to_6.py
+# Original code from &amp;lt;https://github.com/BBuf/RWKV-World-HF-Tokenizer/blob/main/scripts/convert5to6.py&amp;gt;
+import sys
+import math
+import torch
+from collections import OrderedDict
+import re
+
+if len(sys.argv) != 3:
+    print(f&amp;quot;Converts RWKV5.2 pth (non-huggingface) checkpoint to RWKV6.0&amp;quot;)
+    print(&amp;quot;Usage: python convert5to6.py in_file out_file&amp;quot;)
+    exit()
+
+model_path = sys.argv[1]
+
+print(&amp;quot;Loading file...&amp;quot;)
+state_dict = torch.load(model_path, map_location=&amp;#39;cpu&amp;#39;)
+
+def convert_state_dict(state_dict):
+    n_layer = 0
+    n_embd = 0
+    dim_att = 0
+
+    state_dict_keys = list(state_dict.keys())
+    for name in state_dict_keys:
+        weight = state_dict.pop(name)
+
+        # convert time_decay from (self.n_head, self.head_size) to (1,1,args.dim_att)
+        if &amp;#39;.att.time_decay&amp;#39; in name:
+            weight = weight.view(1,1,weight.size(0)*weight.size(1))
+            n_embd = dim_att = weight.size(-1) 
+        # convert time_mix_k, v, r, g into time_maa for both TimeMix and FFN
+        if &amp;#39;.time_mix_&amp;#39; in name:
+            name = name[:-5] + &amp;#39;maa_&amp;#39; + name[-1:]
+            weight = 1.0 - weight
+
+        if name.startswith(&amp;#39;blocks.&amp;#39;):
+            layer_id_match = re.search(r&amp;quot;blocks\.(\d+)\.att&amp;quot;, name)
+            if layer_id_match is not None:
+                n_layer = max(n_layer, int(layer_id_match.group(1)) + 1)
+
+        state_dict[name] = weight
+
+    # add in new params not in 5.2
+    for layer_id in range(n_layer):
+        layer_name = f&amp;#39;blocks.{layer_id}.att&amp;#39;
+
+        ratio_0_to_1 = layer_id / (n_layer - 1)  # 0 to 1
+        ratio_1_to_almost0 = 1.0 - (layer_id / n_layer)  # 1 to ~0
+        ddd = torch.ones(1, 1, n_embd)
+        for i in range(n_embd):
+            ddd[0, 0, i] = i / n_embd
+
+        state_dict[layer_name + &amp;#39;.time_maa_x&amp;#39;] = (1.0 - torch.pow(ddd, ratio_1_to_almost0))
+        state_dict[layer_name + &amp;#39;.time_maa_w&amp;#39;] = (1.0 - torch.pow(ddd, ratio_1_to_almost0))
+
+        TIME_MIX_EXTRA_DIM = 32 # generate TIME_MIX for w,k,v,r,g
+        state_dict[layer_name + &amp;#39;.time_maa_w1&amp;#39;] = (torch.zeros(n_embd, TIME_MIX_EXTRA_DIM*5).uniform_(-1e-4, 1e-4))
+        state_dict[layer_name + &amp;#39;.time_maa_w2&amp;#39;] = (torch.zeros(5, TIME_MIX_EXTRA_DIM, n_embd).uniform_(-1e-4, 1e-4))
+
+        TIME_DECAY_EXTRA_DIM = 64
+        state_dict[layer_name + &amp;#39;.time_decay_w1&amp;#39;] = (torch.zeros(n_embd, TIME_DECAY_EXTRA_DIM).uniform_(-1e-4, 1e-4))
+        state_dict[layer_name + &amp;#39;.time_decay_w2&amp;#39;] = (torch.zeros(TIME_DECAY_EXTRA_DIM, dim_att).uniform_(-1e-4, 1e-4))
+
+    print(f&amp;quot;n_layer: {n_layer}\nn_embd: {n_embd}&amp;quot;)
+
+    return state_dict
+
+state_dict = convert_state_dict(state_dict)
+
+torch.save(state_dict,sys.argv[2])
+print(&amp;quot;DONE. File written.&amp;quot;)
+</code></pre>
+<pre><code># Download the original model
+aria2c -c -x16 &amp;quot;https://huggingface.co/$author/$model/resolve/main/$model$suffix.pth?download=true&amp;quot; -d /home/$user/AI/model/$model$suffix-original/ -o $model$suffix-5.pth
+
+# Convert RWKV5 to RWKV6
+source /home/$user/AI/repo/rwkv/.venv/bin/activate
+python /home/$user/convert_rwkv5_to_6.py /home/$user/AI/model/$model$suffix-original/$model$suffix-5.pth /home/$user/AI/model/$model$suffix-original/$model$suffix.pth
+rm -rf /home/$user/AI/model/$model$suffix-original/$model$suffix-5.pth
+</code></pre>
+<p>神奇……居然能将RWKV 5.2转换为RWKV 6.0……</p>
+<p>于是果断开始实验，结果还被我干成功了？<a href="https://huggingface.co/mzwing/RWKV-5.2-3B-NSFW-Role-16k-GGUF">实验成果</a></p>
+<h2>后记</h2>
+<p>总之这就是RWKV的诡异量化方式了……也算是做个备忘吧。现在高三了还搞这些也是顶了不少的压力。</p>
+<p>另外本文我刚开始是打算让Deepseek代劳的，结果<del>不出意外的出意外了</del>（VSCode的自动补全如是说道（x））Deepseek与我的文风差距过大，不得已决定自己动手完成这篇文章，也算是对<del>年更博主</del>的一个交代吧（</p>
+<p>本文出现的代码与文章遵循同样的开源协议（引用的代码部分则遵循其代码库的开源协议）。</p>
+<p>谢谢你看到这里（</p>
+
 
         ]]>
       </content>
@@ -78,9 +385,14 @@
 </blockquote>
 <h2>See also</h2>
 <ul>
-<li><a href="https://blog.chihuo2104.dev/posts/goodbye-2024">chihuo2104の部落格 - 2024年度总结</a></li>
-<li><a href="https://sekaimoe.dpkg123.site/posts/end-of-2024/">二葉琉璃の自留地 - 二葉琉璃的 2024</a></li>
-<li><a href="https://blog.awaae001.top/posts/57024.html">呓语梦轩 - 再见2024 · 共赴一场烟火绚烂</a></li>
+<li><a href="https://blog.chihuo2104.dev/posts/goodbye-2024">2024年度总结 - chihuo2104の部落格</a></li>
+<li><a href="https://sekaimoe.dpkg123.site/posts/end-of-2024/">二葉琉璃的 2024 - 二葉琉璃の自留地</a></li>
+<li><a href="https://blog.awaae001.top/posts/57024.html">再见2024 · 共赴一场烟火绚烂 - 呓语梦轩</a></li>
+<li><a href="https://nekomoe.xyz/index.html?type=article&amp;filename=2024-summary.md">2024 年终总结 - 柏园猫のBlog</a></li>
+<li><a href="https://koishi514.moe/blog/bbg/index.html?type=article&amp;filename=8YkDYKfG5wDN.md">我的 2024 年终总结 - 無意識の桜</a></li>
+<li><a href="https://blog.mjt.asia/posts/bc0e860c/">Y2025班次冬日列车 - 反応蒸留</a></li>
+<li><a href="https://blog.akuamar1n.com/2024/12/31/2024-summary/">2024年终总结 - zzjzxq33&amp;#39;s blog</a></li>
+<li><a href="https://xlog.mk1.io/goodbye-2024">辞旧迎新：Ray 的 2024 年终总结 - Ray&amp;#39;s xLog</a></li>
 </ul>
 <p>其他朋友的会在看到更新之后尽快（？）加上（</p>
 
