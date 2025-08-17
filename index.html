@@ -6,15 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="shortcut icon" href="./favicon.ico" />
   <title></title>
-  <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/katex@0.16.3/dist/katex.min.css">
-  <link rel='stylesheet' href="https://unpkg.com/@waline/client@2.15.8/dist/waline.css">
+  <link rel="stylesheet" href="https://unpkg.com/font-awesome@4.7.0/css/font-awesome.min.css" media="print"
+    onload="this.media='all'">
+  <link rel="stylesheet" href="https://unpkg.com/katex@0.16.3/dist/katex.min.css" media="print"
+    onload="this.media='all'">
+  <link rel='stylesheet' href="https://unpkg.com/@waline/client@2.15.8/dist/waline.css" media="print"
+    onload="this.media='all'">
+  <link rel="stylesheet" href="https://unpkg.com/highlight.js@9.12.0/styles/tomorrow.css" media="print"
+    onload="this.media='all'">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.0.2/dist/css/bootstrap.min.css">
 </head>
 
 <body>
-  <style id="bootstrap_css">
-
-  </style>
   <style id="body_opacity">
     body:before {
       top: 0;
@@ -117,7 +120,8 @@
       border-left: #ae2105 solid 2px;
     }
 
-    .article-content, .page-content {
+    .article-content,
+    .page-content {
       word-break: break-all;
     }
 
@@ -242,7 +246,7 @@
     }
 
     .archive-nav-item {
-       background-color: white !important;
+      background-color: white !important;
     }
 
 
@@ -348,12 +352,15 @@
 
     }
 
-    info-hint, warning-hint, success-hint, danger-hint {
+    info-hint,
+    warning-hint,
+    success-hint,
+    danger-hint {
       background-color: #000000f4;
     }
 
     .hint-heading {
-      color: white!important;
+      color: white !important;
     }
 
     .blog_title_jumbotron,
@@ -447,34 +454,35 @@
       padding-left: 12px;
       padding-right: 12px;
       display: inline-block;
-      color: white!important
+      color: white !important
     }
 
     code * {
-      color: white!important
+      color: white !important
     }
 
     .bbg-comment-area {
       background-color: black;
       color: white
     }
-    
-    .modal-header, .modal-body {
-      background-color: rgb(139, 132, 132)!important;
+
+    .modal-header,
+    .modal-body {
+      background-color: rgb(139, 132, 132) !important;
       color: white;
     }
 
     .archive-nav {
-       border-bottom: 1px solid var(--bs-dark);
+      border-bottom: 1px solid var(--bs-dark);
     }
 
     .archive-nav-item {
-       background-color: black !important;
+      background-color: black !important;
     }
 
     .archive-nav-link {
-       background-color: unset !important;
-       border-color: var(--bs-dark) var(--bs-dark) #000 !important;
+      background-color: unset !important;
+      border-color: var(--bs-dark) var(--bs-dark) #000 !important;
     }
   </style>
   <style id="highlight_css">
@@ -534,59 +542,147 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body" id="theme_setting_dialog_body">
-          
+
         </div>
       </div>
     </div>
   </div>
 
-
   <script src="https://unpkg.com/marked@7.0.5/marked.min.js"></script>
-  <script src="https://unpkg.com/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/axios@0.21.1/dist/axios.min.js"></script>
-  <script src="https://unpkg.com/valine@1.5.1/dist/Valine.min.js"></script>
-  <script src="https://unpkg.com/@waline/client@2.15.8/dist/waline.js"></script>
   <script src="https://unpkg.com/@highlightjs/cdn-assets@11.5.1/highlight.min.js"></script>
-  <script src="https://unpkg.com/sjcl@1.0.8/sjcl.js"></script>
-  <script src="https://unpkg.com/katex@0.16.3/dist/katex.min.js"></script>
-  <script src="https://unpkg.com/katex@0.16.3/dist/contrib/auto-render.min.js"></script>
   <script>
-    const image_viewer_dialog = new bootstrap.Modal(document.getElementById('image_viewer_dialog'));
-    const theme_setting_dialog = new bootstrap.Modal(document.getElementById('theme_setting_dialog'));
+    // https://www.rfc-editor.org/rfc/rfc3986
+    mapList = [
+      [" ", "%20"],
+      ["+", "%2B"],
+      ["&", "%26"],
+      ["=", "%3D"],
+      ["<", "%3C"],
+      [">", "%3E"],
+      ["\"", "%22"],
+      ["#", "%23"],
+      [",", "%2C"],
+      ["%", "%25"],
+      ["{", "%7B"],
+      ["}", "%7D"],
+      ["|", "%7C"],
+      ["\\", "%5C"],
+      ["^", "%5E"],
+      ["~", "%7E"],
+      ["[", "%5B"],
+      ["]", "%5D"],
+      ["`", "%60"],
+      [";", "%3B"],
+      ["/", "%2F"],
+      ["?", "%3F"],
+      [":", "%3A"],
+      ["@", "%40"],
+      ["$", "%24"],
+    ];
+
+    function encode_filename(filename) {
+      mapList.forEach(item => {
+        filename = filename.replaceAll(item[0], item[1]);
+      });
+      return filename;
+    }
+
+    function decode_filename(filename) {
+      mapList.forEach(item => {
+        filename = filename.replaceAll(item[1], item[0]);
+      });
+      return filename;
+    }
+
+    function loadJsDeferred(url, onload = () => { }) {
+      const script = document.createElement('script');
+      script.onload = onload;
+      script.src = url;
+      script.defer = true;
+      document.head.appendChild(script);
+    }
+
+    let image_viewer_dialog;
+    let theme_setting_dialog;
+
+    loadJsDeferred("https://unpkg.com/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js", () => {
+      image_viewer_dialog = new bootstrap.Modal(document.getElementById('image_viewer_dialog'));
+      theme_setting_dialog = new bootstrap.Modal(document.getElementById('theme_setting_dialog'));
+    })
+
+    loadJsDeferred("https://unpkg.com/sjcl@1.0.8/sjcl.js");
+
+    let isMathRenderingReady = false;
+    let isKatexReady = false;
+    let isKatexAutoRenderReady = false;
+    const mathRenderingReady = new CustomEvent("mathRenderingReady");
+
+    loadJsDeferred("https://unpkg.com/katex@0.16.3/dist/katex.min.js", () => {
+      isKatexReady = true;
+      if (isKatexReady && isKatexAutoRenderReady) {
+        isMathRenderingReady = true;
+        window.dispatchEvent(mathRenderingReady);
+      }
+    });
+
+    loadJsDeferred("https://unpkg.com/katex@0.16.3/dist/contrib/auto-render.min.js", () => {
+      isKatexAutoRenderReady = true;
+      if (isKatexReady && isKatexAutoRenderReady) {
+        isMathRenderingReady = true;
+        window.dispatchEvent(mathRenderingReady);
+      }
+    });
+
+    let isValineReady = false;
+    const valineReady = new CustomEvent("valineReady");
+
+    loadJsDeferred("https://unpkg.com/valine@1.5.1/dist/Valine.min.js", () => {
+      isValineReady = true;
+      window.dispatchEvent(valineReady);
+    })
+
+    let isWalineReady = false;
+    const walineReady = new CustomEvent("walineReady");
+
+    loadJsDeferred("https://unpkg.com/@waline/client@2.15.8/dist/waline.js", () => {
+      isWalineReady = true;
+      window.dispatchEvent(walineReady);
+    })
+
 
     function toggle_theme_setting() {
       theme_setting_dialog.toggle();
       loadThemeSettingsDialog();
     }
 
-    function hook_after_dark_mode_setting_has_been_modified(){
+    function hook_after_dark_mode_setting_has_been_modified() {
       const dark_mode_setting = document.querySelector("#selection_dark_mode_setting").value;
       localStorage.setItem("dark_mode_setting", dark_mode_setting);
       reload_dark_mode_setting();
     }
 
-    function hook_after_use_serif_font_setting_has_been_modified(){
+    function hook_after_use_serif_font_setting_has_been_modified() {
       const use_serif_font = document.querySelector("#use_serif_font").checked;
-      localStorage.setItem("use_serif_font", use_serif_font?"true":"false");
+      localStorage.setItem("use_serif_font", use_serif_font ? "true" : "false");
       reload_serif_font_setting();
     }
 
 
-    function reload_dark_mode_setting(){
+    function reload_dark_mode_setting() {
       switch (localStorage.getItem("dark_mode_setting")) {
-          case "light_mode":
-            switch_night_mode("light");
-            break;
-          case "dark_mode":
+        case "light_mode":
+          switch_night_mode("light");
+          break;
+        case "dark_mode":
+          switch_night_mode("dark");
+          break;
+        default:
+          if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
             switch_night_mode("dark");
-            break;
-          default:
-            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-              switch_night_mode("dark");
-            } else {
-              switch_night_mode("light");
-            }
-        }
+          } else {
+            switch_night_mode("light");
+          }
+      }
     }
 
     function loadThemeSettingsDialog() {
@@ -604,12 +700,12 @@
             <label class="form-check-label" for="use_serif_font">使用衬线字体</label>
           </div>`;
 
-          
-      if(localStorage.getItem("dark_mode_setting") === null){
+
+      if (localStorage.getItem("dark_mode_setting") === null) {
         localStorage.setItem("dark_mode_setting", "auto_switch");
       }
 
-      if(localStorage.getItem("use_serif_font") === null){
+      if (localStorage.getItem("use_serif_font") === null) {
         localStorage.setItem("use_serif_font", "false");
       }
 
@@ -617,10 +713,10 @@
       document.getElementById("use_serif_font").checked = localStorage.getItem("use_serif_font") === "true";
     }
 
-    function reload_serif_font_setting(){
-      if(localStorage.getItem("use_serif_font") === "true"){
+    function reload_serif_font_setting() {
+      if (localStorage.getItem("use_serif_font") === "true") {
         document.body.style.fontFamily = "serif";
-      }else{
+      } else {
         document.body.style.fontFamily = "sans-serif";
       }
     }
@@ -636,7 +732,7 @@
     }
 
     var highlightFunc = function (code) {
-        return hljs.highlightAuto(code).value;
+      return hljs.highlightAuto(code).value;
     }
 
     marked.setOptions({
@@ -684,7 +780,7 @@
     success_locate_page_id = false;
 
     function detect_whether_ui_load_finished() {
-      if (bootstrap_css_import_finished === true && content_load_finished === true) {
+      if (content_load_finished === true) {
         document.getElementById("root").setAttribute("style", "");
         document.getElementById("loading").setAttribute("style", "display:none");
       }
@@ -695,9 +791,7 @@
       document.getElementById("copy_to_clipboard_button").innerHTML = `<i class="fa fa-check"></i> 已复制！`;
     }
 
-    bootstrap_css_import_finished = false;
     content_load_finished = false;
-    highlight_css_import_finished = false;
 
     let langdata = {
       "ARCHIVE_AND_TAGS": {
@@ -1034,14 +1128,14 @@
     }
 
     function convertTimeStampToLocalTime(timestamp) {
-      if(blog["网站语言"] === "简体中文"){
+      if (blog["网站语言"] === "简体中文") {
         let dateObj = new Date(timestamp);
-        return dateObj.getFullYear() + "年" + (dateObj.getMonth() + 1) + "月" + dateObj.getDate() + "日 " + ((dateObj.getHours() <= 12) ? "上午" : "下午") + ((dateObj.getHours() <= 12) ? dateObj.getHours() : (dateObj.getHours() - 12))  + ":" + ((dateObj.getMinutes().toString().length === 1) ? "0" : "") + dateObj.getMinutes();
-      }else if(blog["网站语言"] === "English"){
-        return new Date(timestamp).toLocaleString("en-US", {hour12: true});
-      }else if(blog["网站语言"] === "日本語"){
-        return new Date(timestamp).toLocaleString("ja-JP", {hour12: true});
-      }else{
+        return dateObj.getFullYear() + "年" + (dateObj.getMonth() + 1) + "月" + dateObj.getDate() + "日 " + ((dateObj.getHours() <= 12) ? "上午" : "下午") + ((dateObj.getHours() <= 12) ? dateObj.getHours() : (dateObj.getHours() - 12)) + ":" + ((dateObj.getMinutes().toString().length === 1) ? "0" : "") + dateObj.getMinutes();
+      } else if (blog["网站语言"] === "English") {
+        return new Date(timestamp).toLocaleString("en-US", { hour12: true });
+      } else if (blog["网站语言"] === "日本語") {
+        return new Date(timestamp).toLocaleString("ja-JP", { hour12: true });
+      } else {
         return new Date(timestamp).toISOString();
       }
     }
@@ -1049,7 +1143,8 @@
     function render_article_list() {
       for (let i = 0; i < blog["文章列表"].length; i++) {
         if (blog["文章列表"][i]["是否置顶"] && currentArticleListPageOrder === 1) {
-          document.querySelector("#container").insertAdjacentHTML("beforeend", `<div class="article-item article-item-top" id="article-item-${i}"><div class="article-item-inner"><div class="article-item-sub"><i class="fa fa-thumb-tack"></i> 置顶文章</div><h2><a class="underline-animation" href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}" onclick="enter_article(${i});return false;">${blog["文章列表"][i]["文章标题"]}</a></h2></div></div>`);
+          let filename = encode_filename(blog["文章列表"][i]["文件名"]);
+          document.querySelector("#container").insertAdjacentHTML("beforeend", `<div class="article-item article-item-top" id="article-item-${i}"><div class="article-item-inner"><div class="article-item-sub"><i class="fa fa-thumb-tack"></i> 置顶文章</div><h2><a class="underline-animation" href="./index.html?type=article&filename=${filename}" onclick="enter_article(${i});return false;">${blog["文章列表"][i]["文章标题"]}</a></h2></div></div>`);
         }
       }
 
@@ -1064,8 +1159,8 @@
           blog["文章列表"][i]["是否置顶"]
         ) {
         } else {
-
-          document.querySelector("#container").insertAdjacentHTML("beforeend", `<div class="article-item" id="article-item-${i}" style="display:flex;"><div id="article-item-inner-${i}" class="article-item-inner"><h2><a class="underline-animation articletitle" href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}" onclick="enter_article(${i});return false;">${blog["文章列表"][i]["文章标题"]}</a></h2></div></div>`);
+          let filename = encode_filename(blog["文章列表"][i]["文件名"]);
+          document.querySelector("#container").insertAdjacentHTML("beforeend", `<div class="article-item" id="article-item-${i}" style="display:flex;"><div id="article-item-inner-${i}" class="article-item-inner"><h2><a class="underline-animation articletitle" href="./index.html?type=article&filename=${filename}" onclick="enter_article(${i});return false;">${blog["文章列表"][i]["文章标题"]}</a></h2></div></div>`);
 
 
           document.querySelector("#article-item-inner-" + i).insertAdjacentHTML("beforeend", `<div class="article-item-sub" id="article-item-sub-${i}"></div>`);
@@ -1100,43 +1195,6 @@
 
         document.getElementById("container").insertAdjacentHTML("beforeend", `<br /><br /><p style="color:grey;" id="page_order_html">你当前正在浏览文章列表的第${currentArticleListPageOrder}页（共${articleListPageLength}页）。</p>`);
 
-      }
-
-      // [site theme]
-
-      if (typeof (blog["站点主题"]) !== "undefined") {
-        if (blog["站点主题"] === "Miracle") {
-
-          document.querySelectorAll(".article-item").forEach((element) => {
-            try {
-              element.querySelector(".article-item-inner").style.width = "47%"
-              element.insertAdjacentHTML("afterbegin", `
-              
-              <div style="background-image: url(https://www.loliapi.com/acg/pc/?${Math.floor(Math.random() * 1000)}); flex: 1; background-size: cover; background-position: center center;background-repeat: no-repeat;"></div>
-              <div style="width:3%"></div>
-              `)
-              const createdat = element.querySelector(".article_createdat").innerText;
-              const updatedat = element.querySelector(".article_updatedat").innerText;
-              const tags = element.querySelectorAll(".article-tag-underlined");
-              element.querySelector(".article_createdat").remove();
-              element.querySelector(".article_updatedat").remove();
-              element.querySelector(".article-item-sub").remove();
-              element.querySelector(".article-item-inner").insertAdjacentHTML("beforeend", `
-                <div style="color:grey">
-                <i class="fa fa-tag"></i> 
-                ${Array.from(tags).map(tag => `<a style="text-decoration: none" href="./index.html?type=internal&function=tag&argument=${tag.textContent.slice(1)}" onclick="enter_tag('${tag.textContent.slice(1)}'); return false;">${tag.textContent}</a>`).join(', ')}&nbsp;&nbsp;
-                <i class="fa fa-clock-o"></i> ${updatedat}
-                <br /><br />
-                <div style="text-align: right">
-                <button class="btn btn-outline-secondary" style="border-radius: 48px; color: black; border: 3px solid lightgrey;padding: 10px 20px" href="${document.querySelector('.articletitle').getAttribute('href')}" onclick="${element.querySelector('.articletitle').getAttribute('onclick')}">阅读全文</button>
-                </div></div>
-              `)
-            } catch (error) {
-              console.log(error);
-            }
-
-          });
-        }
       }
 
     }
@@ -1182,19 +1240,19 @@
       document.querySelector(
         "#article-content-sub"
       ).insertAdjacentHTML("beforeend", `<br /><br />`);
-      axios
-        .get(
-          "./data/articles/" +
-          blog["文章列表"][article_id]["文件名"] +
-          "?timestamp=" +
-          Date.parse(new Date())
-        )
+      fetch(
+        "./data/articles/" +
+        blog["文章列表"][article_id]["文件名"] +
+        "?timestamp=" +
+        Date.parse(new Date())
+      )
+        .then(repsonse => repsonse.text())
         .then(function (response) {
           try {
-            
-          document.getElementById("loading_article_or_page_content").remove();
+
+            document.getElementById("loading_article_or_page_content").remove();
           } catch (error) {
-            
+
           }
           if (blog["文章列表"][article_id]["是否加密"]) {
             document.querySelector("#article-content").insertAdjacentHTML("beforeend", `<div id="article-content-html"><div id="passwordRequiredArea">此文章被密码加密。请输入密码以查看文章内容。<div class="mb-3">
@@ -1205,7 +1263,7 @@
 
             document.getElementById("viewContentAfterInputPasswordBtn").onclick = () => {
               try {
-                const decryptedContent = content_decrypt(JSON.stringify(response.data), document.getElementById("article_password_modal_value").value);
+                const decryptedContent = content_decrypt(JSON.stringify(response), document.getElementById("article_password_modal_value").value);
                 document.getElementById("passwordRequiredArea").innerHTML = marked.parse(decryptedContent);
               } catch (error) {
                 alert("密码错误。");
@@ -1213,28 +1271,42 @@
             }
 
           } else {
-            if(blog["文章列表"][article_id]["ai生成的摘要"] !== null && blog["文章列表"][article_id]["ai生成的摘要"] !== undefined && blog["文章列表"][article_id]["ai生成的摘要"] !== ""){
+            if (blog["文章列表"][article_id]["ai生成的摘要"] !== null && blog["文章列表"][article_id]["ai生成的摘要"] !== undefined && blog["文章列表"][article_id]["ai生成的摘要"] !== "") {
               document.querySelector("#article-content").insertAdjacentHTML("beforeend", `<div class="alert alert-primary" style="padding-left:40px;padding-right:40px;padding-top:15px;padding-bottom:5px; border-radius: 30px; margin-bottom:30px!important" role="alert">
   <h4 class="alert-heading"><i class="fa fa-newspaper-o" style="margin-right:4px"></i> AI 生成的摘要 <span style="display:inline-block; margin-right: 4px"></span> <button class="btn btn-sm btn-outline-secondary" style="font-size: 12px" disabled>此摘要并非实时生成</button></h4>
   <div style="margin-top:17px"></div>
   <p>${blog["文章列表"][article_id]["ai生成的摘要"]}</p>
 </div>`);
             }
-            document.querySelector("#article-content").insertAdjacentHTML("beforeend", `<div id="article-content-html">${marked.parse(response.data)}</div>`);
+            document.querySelector("#article-content").insertAdjacentHTML("beforeend", `<div id="article-content-html">${marked.parse(response)}</div>`);
           }
 
 
           render_ref_tags();
           render_hint_tags();
 
-          renderMathInElement(document.getElementById("article-content-html"), {
-            delimiters: [
-              { left: '$$$', right: '$$$', display: true },
-              { left: '$$', right: '$$', display: true },
-              { left: '$', right: '$', display: false },
-            ],
-            throwOnError: false
-          });
+          const render_math = () => {
+            try {
+              renderMathInElement(document.getElementById("article-content-html"), {
+                delimiters: [
+                  { left: '$$$', right: '$$$', display: true },
+                  { left: '$$', right: '$$', display: true },
+                  { left: '$', right: '$', display: false },
+                ],
+                throwOnError: false
+              });
+            } catch (error) {
+
+            }
+
+          }
+
+          if (isMathRenderingReady) {
+            render_math();
+          } else {
+            window.addEventListener("mathRenderingReady", render_math);
+          }
+
           // test
           if (blog["提供文章文件下载"] || blog["提供复制全文到剪贴板的选项"]) {
             document.getElementById("article-content").insertAdjacentHTML("beforeend", `<br /><div style="float:right;font-size:18px" id="article-bottom-bar"></div><br />`)
@@ -1305,17 +1377,26 @@
             blog["全局评论设置"]["启用valine评论"] &&
             blog["文章列表"][article_id]["启用评论"]
           ) {
-            new Valine({
-              el: "#vcomments",
-              appId: blog["全局评论设置"]["valine设置"]["leancloud_appid"],
-              appKey: blog["全局评论设置"]["valine设置"]["leancloud_appkey"],
-              path:
-                comment_authcode +
-                "article=" +
-                blog["文章列表"][article_id]["文件名"],
-            });
 
-            preview_env_public_comment_fix();
+            const loadComment = () => {
+              new Valine({
+                el: "#vcomments",
+                appId: blog["全局评论设置"]["valine设置"]["leancloud_appid"],
+                appKey: blog["全局评论设置"]["valine设置"]["leancloud_appkey"],
+                path:
+                  comment_authcode +
+                  "article=" +
+                  blog["文章列表"][article_id]["文件名"],
+              });
+
+              preview_env_public_comment_fix();
+            }
+
+            if (isValineReady) {
+              loadComment()
+            } else {
+              window.addEventListener("valineReady", loadComment);
+            }
 
           }
 
@@ -1336,14 +1417,23 @@
             blog["全局评论设置"]["启用waline评论"] &&
             blog["文章列表"][article_id]["启用评论"]
           ) {
-            Waline.init({
-              el: "#vcomments",
-              serverURL: blog["全局评论设置"]["waline设置"]["serverurl"],
-              path:
-                "article=" +
-                blog["文章列表"][article_id]["文件名"],
-              turnstileKey: blog["全局评论设置"]["waline设置"]["turnstileKey"],
-            });
+            const loadComment = () => {
+              Waline.init({
+                el: "#vcomments",
+                serverURL: blog["全局评论设置"]["waline设置"]["serverurl"],
+                path:
+                  "article=" +
+                  blog["文章列表"][article_id]["文件名"],
+                turnstileKey: blog["全局评论设置"]["waline设置"]["turnstileKey"],
+              });
+            }
+
+            if (isWalineReady) {
+              loadComment();
+            } else {
+              window.addEventListener("walineReady", loadComment);
+            }
+
           }
 
 
@@ -1364,11 +1454,13 @@
       document.querySelector("#container").insertAdjacentHTML("beforeend", `<div class="page-content"><p>${blog["友人帐页面附加信息"]}</p><div id="friend_book_list"></div></div>`);
 
       if (blog["友人帐来自json文件"] === true) {
-        axios.get(blog["若友人帐来自json文件，则地址为"]).then(
-          function (response) {
-            blog["友人帐"] = response.data["友人帐"];
-            render_friend_book_list();
-          })
+        fetch(blog["若友人帐来自json文件，则地址为"])
+          .then(response => response.json())
+          .then(
+            function (response) {
+              blog["友人帐"] = response["友人帐"];
+              render_friend_book_list();
+            })
       } else {
         render_friend_book_list();
       }
@@ -1389,16 +1481,24 @@
         blog["全局评论设置"]["启用valine评论"] &&
         blog["友人帐页面允许评论"]
       ) {
-        new Valine({
-          el: "#vcomments",
-          appId: blog["全局评论设置"]["valine设置"]["leancloud_appid"],
-          appKey: blog["全局评论设置"]["valine设置"]["leancloud_appkey"],
-          path:
-            comment_authcode +
-            "internal=friendbook"
-        });
+        const loadComment = () => {
+          new Valine({
+            el: "#vcomments",
+            appId: blog["全局评论设置"]["valine设置"]["leancloud_appid"],
+            appKey: blog["全局评论设置"]["valine设置"]["leancloud_appkey"],
+            path:
+              comment_authcode +
+              "internal=friendbook"
+          });
 
-        preview_env_public_comment_fix();
+          preview_env_public_comment_fix();
+        }
+        if (isValineReady) {
+          loadComment();
+        } else {
+          window.addEventListener("valineReady", loadComment);
+        }
+
       }
 
       if (blog["全局评论设置"]["启用disqus评论"] &&
@@ -1418,11 +1518,20 @@
         blog["全局评论设置"]["启用waline评论"] &&
         blog["友人帐页面允许评论"]
       ) {
-        Waline.init({
-          el: "#vcomments",
-          serverURL: blog["全局评论设置"]["waline设置"]["serverurl"],
-          path: "internal=friendbook"
-        });
+        const loadComment = () => {
+          Waline.init({
+            el: "#vcomments",
+            serverURL: blog["全局评论设置"]["waline设置"]["serverurl"],
+            path: "internal=friendbook",
+            turnstileKey: blog["全局评论设置"]["waline设置"]["turnstileKey"],
+          });
+        }
+
+        if (isWalineReady) {
+          loadComment();
+        } else {
+          window.addEventListener("walineReady", loadComment);
+        }
       }
     }
 
@@ -1547,7 +1656,8 @@
 
         for (let i = 0; i < blog["文章列表"].length; i++) {
           if (blog["文章列表"][i]["是否隐藏"] === false) {
-            document.querySelector("#tag-content").insertAdjacentHTML("beforeend", `<p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}">${blog["文章列表"][i]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${convertTimeStampToLocalTime(blog["文章列表"][i]["创建时间（时间戳）"])}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${blog["文章列表"][i]["修改日期"]}）</p>`);
+            let filename = encode_filename(blog["文章列表"][i]["文件名"]);
+            document.querySelector("#tag-content").insertAdjacentHTML("beforeend", `<p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${filename}">${blog["文章列表"][i]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${convertTimeStampToLocalTime(blog["文章列表"][i]["创建时间（时间戳）"])}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${blog["文章列表"][i]["修改日期"]}）</p>`);
 
           }
         }
@@ -1558,7 +1668,8 @@
           for (let i = 0; i < blog["文章列表"].length; i++) {
             if (blog["文章列表"][i]["是否隐藏"] === false) {
               if (blog["文章列表"][i]["标签"].length === 0 || blog["文章列表"][i]["标签"] === false || blog["文章列表"][i]["标签"] === "" || blog["文章列表"][i]["标签"] === undefined || blog["文章列表"][i]["标签"] === null) {
-                document.querySelector("#tag-content").insertAdjacentHTML("beforeend", `<p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${blog["文章列表"][i]["文件名"]}">${blog["文章列表"][i]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${convertTimeStampToLocalTime(blog["文章列表"][i]["创建时间（时间戳）"])}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${blog["文章列表"][i]["修改日期"]}）</p>`);
+                let filename = encode_filename(blog["文章列表"][i]["文件名"]);
+                document.querySelector("#tag-content").insertAdjacentHTML("beforeend", `<p><i class="fa fa-file-text-o"></i> <a href="./index.html?type=article&filename=${filename}">${blog["文章列表"][i]["文章标题"]}</a>（<i class="fa fa-calendar"></i> ${langdata["ARTICLE_CREATEDAT"][lang_name]}${convertTimeStampToLocalTime(blog["文章列表"][i]["创建时间（时间戳）"])}，<i class="fa fa-clock-o"></i> ${langdata["LASTMODIFIEDAT"][lang_name]}${blog["文章列表"][i]["修改日期"]}）</p>`);
               }
 
             }
@@ -1606,15 +1717,15 @@
         "#container"
       ).insertAdjacentHTML("beforeend", `<div class="page-content" id="page-content"></div>`)
 
-      axios
-        .get(
-          "./data/pages/" +
-          blog["页面列表"][page_id]["文件名"] +
-          "?timestamp=" +
-          Date.parse(new Date())
-        )
+      fetch(
+        "./data/pages/" +
+        blog["页面列表"][page_id]["文件名"] +
+        "?timestamp=" +
+        Date.parse(new Date())
+      )
+        .then(repsonse => repsonse.text())
         .then(function (response) {
-          document.querySelector("#page-content").insertAdjacentHTML("beforeend", `<div id="page-content-html">${marked.parse(response.data)}</div>`);
+          document.querySelector("#page-content").insertAdjacentHTML("beforeend", `<div id="page-content-html">${marked.parse(response)}</div>`);
           if (blog["不使用全站内容授权协议"] === false) {
             document.getElementById("page-content").insertAdjacentHTML("beforeend", `<br /><div class="copyright_hint"><h5>${langdata.COPYRIGHT_HINT[lang_name]}</h5><p class="mb-0">${blogContentLicenseText}</p></div>`);
           }
@@ -1641,17 +1752,26 @@
             blog["全局评论设置"]["启用valine评论"] &&
             blog["页面列表"][page_id]["启用评论"]
           ) {
-            new Valine({
-              el: "#vcomments",
-              appId: blog["全局评论设置"]["valine设置"]["leancloud_appid"],
-              appKey: blog["全局评论设置"]["valine设置"]["leancloud_appkey"],
-              path:
-                comment_authcode +
-                "page=" +
-                blog["页面列表"][page_id]["文件名"],
-            });
+            const loadComment = () => {
+              new Valine({
+                el: "#vcomments",
+                appId: blog["全局评论设置"]["valine设置"]["leancloud_appid"],
+                appKey: blog["全局评论设置"]["valine设置"]["leancloud_appkey"],
+                path:
+                  comment_authcode +
+                  "page=" +
+                  blog["页面列表"][page_id]["文件名"],
+              });
 
-            preview_env_public_comment_fix();
+              preview_env_public_comment_fix();
+            }
+
+            if (isValineReady) {
+              loadComment();
+            } else {
+              window.addEventListener("valineReady", loadComment);
+            }
+
           }
 
           if (blog["全局评论设置"]["启用disqus评论"] &&
@@ -1671,13 +1791,23 @@
             blog["全局评论设置"]["启用waline评论"] &&
             blog["页面列表"][page_id]["启用评论"]
           ) {
-            Waline.init({
-              el: "#vcomments",
-              serverURL: blog["全局评论设置"]["waline设置"]["serverurl"],
-              path:
-                "page=" +
-                blog["页面列表"][page_id]["文件名"],
-            });
+            const loadComment = () => {
+              Waline.init({
+                el: "#vcomments",
+                serverURL: blog["全局评论设置"]["waline设置"]["serverurl"],
+                path:
+                  "page=" +
+                  blog["页面列表"][page_id]["文件名"],
+                turnstileKey: blog["全局评论设置"]["waline设置"]["turnstileKey"],
+              });
+            }
+
+            if (isWalineReady) {
+              loadComment();
+            } else {
+              window.addEventListener("walineReady", loadComment);
+            }
+
           }
         });
     }
@@ -1713,7 +1843,7 @@
     }
 
     function render_bottom_information() {
-      document.getElementById("container").insertAdjacentHTML("beforeend", `<hr /><div style="color:grey" id="bottom_info_html">${marked.parse(blog["底部信息（格式为markdown）"])}</div>`);
+      document.getElementById("container").insertAdjacentHTML("beforeend", `<hr /><div style="color:grey" id="bottom_info_html">${marked.parse(blog["底部信息（格式为markdown）"])}<div style="margin-bottom: 400px"></div></div>`);
     }
 
     function execute_custom_js() {
@@ -1811,7 +1941,8 @@
     }
 
     function enter_article(article_id) {
-      history.pushState({ type: "article", filename: blog["文章列表"][article_id]["文件名"] }, "", `./index.html?type=article&filename=${blog["文章列表"][article_id]["文件名"]}`);
+      let filename = encode_filename(blog["文章列表"][article_id]["文件名"]);
+      history.pushState({ type: "article", filename: blog["文章列表"][article_id]["文件名"] }, "", `./index.html?type=article&filename=${filename}`);
       document.getElementsByTagName("title")[0].innerHTML = `${blog["文章列表"][article_id]["文章标题"]} - ${blog["博客标题"]} `;
       resetPage();
       render_nav(false);
@@ -1835,25 +1966,6 @@
       return false;
     }
 
-    function importBootstrapCSSFile(uri) {
-      axios
-        .get(uri)
-        .then(function (response) {
-          document.getElementById("bootstrap_css").insertAdjacentHTML("beforeend", response.data);
-          bootstrap_css_import_finished = true;
-          detect_whether_ui_load_finished();
-        })
-    }
-
-
-    function importHighlightCSSFile(uri) {
-      axios
-        .get(uri)
-        .then(function (response) {
-          document.getElementById("highlight_css").insertAdjacentHTML("beforeend", response.data);
-        })
-    }
-
     function switch_night_mode(mode) {
       // https://developer.mozilla.org/zh-CN/docs/Web/API/StyleSheet/disabled
       const darkModeElement = document.getElementById("dark_mode");
@@ -1869,164 +1981,15 @@
           darkModeElement.disabled = !darkModeElement.disabled;
       }
 
-      // [site theme]
-      if (typeof(blog["站点主题"]) !== "undefined"){
-        if (blog["站点主题"] === "Miracle"){
-          darkModeElement.disabled = true;
-        }
-      }
     }
 
-    axios
-      .get("./data/index.json?timestamp=" + Date.parse(new Date()))
+    fetch("./data/index.json?timestamp=" + Date.parse(new Date()))
+      .then(repsonse => repsonse.json())
       .then(function (response) {
-        blog = response.data;
+        blog = response;
         lang_name = blog["网站语言"];
 
         reload_dark_mode_setting();
-
-        if (typeof(blog["站点主题"])!=="undefined"){
-          if(blog["站点主题"] === "Solarized_Pink"){
-            blog["全局主题设置"]["标题栏背景颜色"] = "#6699cc";
-            blog["全局主题设置"]["链接颜色"] = "#993366";
-            document.querySelector("#theme_css").innerHTML = `
-              .bg-light {
-                background-color: #fffff240!important;
-                border-bottom: 1px solid #6699cc;
-                margin-bottom: 35px
-              }
-
-              body {
-                background-color:#ffffe2;
-              }
-
-              .article-item, .article-content, .page-content, .articlebottomnav, .tag-content, .bbg-comment-area {
-                border: 1px solid #874342;
-                background: #fffff2a0;
-                box-shadow: none;
-              }
-
-              #blog_index_title, #current_article_title, .blog_title_jumbotron h1 {
-                color: #206c89;
-              }
-
-              code, pre {
-                background-color: #ffffe0;
-                color: #993366;
-                border-radius: 8px;
-              }
-              
-            `;
-          } else if (blog["站点主题"] === "Miracle"){
-
-            blog["全局主题设置"]["标题栏背景颜色"] = "white";
-            blog["全局主题设置"]["标题栏文字颜色"] = "black";
-            blog["全局主题设置"]["链接颜色"] = "black";
-            blog["底部信息（格式为markdown）"] += `<br /> 主题参考自 <a href="https://github.com/BigCoke233/miracles">Miracles</a> 主题 <br />`
-
-            switch_night_mode("light");
-
-            document.querySelector("#theme_css").innerHTML = /* css */`
-              #navbar {
-                height: 65px;
-              }
-
-            #navbar_title {
-              margin-left:40px;
-              font-weight: normal;
-              font-size: 17px
-            }
-
-            .nav-link {
-                font-weight: 300;
-                font-size: 17px;
-            }
-
-            .fa-bars {
-              color: black
-            }
-            
-            @media (max-width: 1000px){
-              #navbarSupportedContent {
-                background-color: white;
-                border-radius: 8px;
-                box-shadow: 0 0 10px rgba(0,0,0,0.1);
-                padding: 10px;
-                margin-top: 10px;
-              }
-            }
-
-            .titleinfo {
-              position: relative;
-              padding-top: 40px;
-              padding-bottom: 40px;
-              background: url("https://www.loliapi.com/acg/pc/") no-repeat center center / cover;
-              color: white;
-            }
-
-            .titleinfo > * {
-              z-index: 1;
-              position: relative;
-            }
-
-            .titleinfo::before {
-              content: '';
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              background-color: rgba(0,0,0, 0.3); /* 半透明白色覆盖层 */
-              z-index: 0;
-            }
-
-            #navbar.bg-light {
-              background: white
-            }
-
-            #container {
-              margin-top: -80px;
-            }
-
-            #blog_index_title {
-              font-weight: normal;
-            }           
-            
-            .article-item, .article-content, .page-content {
-              background-color: rgb(255,255,255)!important;
-              opacity: 0.95!important;
-              border-radius: 4px
-            }
-
-            h1, h2, h3, h4, h5, h6 {
-              font-weight: 300
-            }
-
-            p {
-              font-weight: 300
-            }
-
-            .articlebottomnav {
-              display: none;
-            }
-
-            @media(min-width: 1000px){
-              .container{padding-left: 16%!important;padding-right: 16%!important;padding-top: 0;padding-bottom: 0}
-              
-              #blog_title_jumbotron {padding-left: 16%;padding-right: 16%;}
-            }
-
-
-            #article-content-sub {
-              color: white
-            }
-
-            .archive-nav-item {
-              z-index: 2
-            }
-            `;
-          }
-        }
 
         switch (blog["全站内容授权协议"]) {
           case "reserved":
@@ -2107,14 +2070,6 @@
 
 
         let cdn_path = blog["CDN路径"];
-
-        // js importing disabled due to execution order is inevitable, while css importing can safely operate.
-
-        importBootstrapCSSFile(cdn_path + "/bootstrap@5.0.2/dist/css/bootstrap.min.css");
-
-        importHighlightCSSFile(cdn_path + "/highlight.js@9.12.0/styles/tomorrow.css");
-
-
 
         // 总之先这么用着……之后有更好的写法再说吧
         visible_articles = blog["文章列表"].filter(a => !a["是否隐藏"]);
@@ -2222,7 +2177,7 @@
           return new Promise((resolve, reject) => {
             let tag;
 
-            switch(type){
+            switch (type) {
               case "js":
                 tag = document.createElement("script");
                 tag.src = url;
@@ -2250,17 +2205,17 @@
           const live2d_tips_path = blog["全局主题设置"]["live2d-widget设置"]["tips路径"];
           const live2d_api_path = blog["全局主题设置"]["live2d-widget设置"]["api路径"];
           let live2d_tools = [];
-          for(let live2d_tool of Object.keys(blog["全局主题设置"]["live2d-widget设置"]["功能设置"])){
-            if(blog["全局主题设置"]["live2d-widget设置"]["功能设置"][live2d_tool] === true){
+          for (let live2d_tool of Object.keys(blog["全局主题设置"]["live2d-widget设置"]["功能设置"])) {
+            if (blog["全局主题设置"]["live2d-widget设置"]["功能设置"][live2d_tool] === true) {
               live2d_tools.push(live2d_tool);
             }
           }
-          if(screen.width >= 768){
+          if (screen.width >= 768) {
             Promise.all([
               live2d_res_load(`${live2d_path}waifu.css`, "css"),
               live2d_res_load(`${live2d_path}live2d.min.js`, "js"),
               live2d_res_load(`${live2d_path}waifu-tips.js`, "js")
-            ]).then(()=>{
+            ]).then(() => {
               initWidget({
                 waifuPath: live2d_tips_path,
                 cdnPath: live2d_api_path,
@@ -2280,7 +2235,7 @@
 
 
         if (getUrlArgs("type") === "article") {
-          let article_filename = getUrlArgs("filename");
+          let article_filename = decode_filename(decodeURIComponent(getUrlArgs("filename")));
           for (let i = 0; i < blog["文章列表"].length; i++) {
             if (blog["文章列表"][i]["文件名"] === article_filename) {
               success_locate_article_id = true;
@@ -2310,7 +2265,7 @@
         }
 
         if (getUrlArgs("type") === "page") {
-          let page_filename = getUrlArgs("filename");
+          let page_filename = decodeURIComponent(getUrlArgs("filename"));
           for (let i = 0; i < blog["页面列表"].length; i++) {
             if (blog["页面列表"][i]["文件名"] === page_filename) {
               success_locate_page_id = true;
