@@ -1,3 +1,12 @@
+---
+title: 碎记·让你的国行OnePlus 13用上OxygenOS吧！
+tags:
+  - 碎记
+  - 教程
+created: 2025-08-17T07:36:00.000Z
+excerpt: 本文记录了一点对于最近折腾OnePlus 13的经历（创
+---
+
 # 碎记·让你的国行OnePlus 13用上OxygenOS吧！
 
 ## 前言

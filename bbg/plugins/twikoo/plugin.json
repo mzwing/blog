@@ -1,0 +1,11 @@
+{
+  "name": "twikoo",
+  "version": "0.1.0",
+  "extensions": [],
+  "dependencies": {},
+  "requiredOptions": [
+    "envId"
+  ],
+  "configurable": true,
+  "assets": []
+}

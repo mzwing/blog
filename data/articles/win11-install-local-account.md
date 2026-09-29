@@ -1,3 +1,12 @@
+---
+title: Windows11装机注册本地账户目前通用解法
+tags:
+  - 教程
+  - Windows11
+created: 2023-03-31T00:00:00.000Z
+excerpt: 备忘（x
+---
+
 # Windows11装机注册本地账户目前通用解法
 
 1. `Shift`+`F10`启动cmd，输入`devmgmt.msc`启动设备管理器

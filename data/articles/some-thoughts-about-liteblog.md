@@ -1,3 +1,9 @@
+---
+title: some-thoughts-about-liteblog
+created: 2022-01-14T03:12:09.534Z
+excerpt: 有关LiteBlog的一些小设想
+---
+
 # LiteBlog的开发设想
 
 ## 名称

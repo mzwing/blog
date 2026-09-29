@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "site": {
+    "title": "洛仙璃の幻梦",
+    "description": "如光似幻，如影随形",
+    "lang": "zh-CN",
+    "footer": "(ɔ) 2021 - Now 洛仙璃の幻梦 No rights reserved.\n\n除特别声明外，本博客上的内容属于公有领域，这意味着你可以不受限制地使用和加工它们。\n\n[萌ICP备20220295号](https://icp.gov.moe/?keyword=20220295)\n\n[使用 RSS 订阅本站](https://mzwing.eu.org/atom.xml)",
+    "theme": "default-theme",
+    "articlesPerPage": 10,
+    "router": {
+      "mode": "path",
+      "base": "/"
+    },
+    "url": "https://mzwing.eu.org",
+    "atom": true,
+    "sitemap": true,
+    "plugins": [
+      "legacy-routes",
+      "friends",
+      "image-viewer",
+      "highlight",
+      "twikoo"
+    ]
+  },
+  "theme": {
+    "name": "default-theme",
+    "version": "0.1.0",
+    "hasConfig": true
+  },
+  "plugins": [
+    {
+      "name": "legacy-routes",
+      "version": "0.1.0",
+      "extensions": [],
+      "dependencies": {},
+      "hasConfig": true
+    },
+    {
+      "name": "friends",
+      "version": "0.1.0",
+      "extensions": [],
+      "dependencies": {},
+      "hasConfig": false
+    },
+    {
+      "name": "image-viewer",
+      "version": "0.1.0",
+      "extensions": [],
+      "dependencies": {},
+      "hasConfig": false
+    },
+    {
+      "name": "highlight",
+      "version": "0.1.0",
+      "extensions": [],
+      "dependencies": {
+        "markdown": "^1.0.0"
+      },
+      "hasConfig": false
+    },
+    {
+      "name": "twikoo",
+      "version": "0.1.0",
+      "extensions": [],
+      "dependencies": {},
+      "hasConfig": true
+    }
+  ],
+  "articles": [
+    {
+      "file": "2026.md",
+      "created": 1767158160000,
+      "slug": "2026",
+      "title": "碎记 · 一个简单的2025总结",
+      "tags": [
+        "碎记",
+        "年终总结"
+      ],
+      "updated": 1767158160000,
+      "pinned": false,
+      "excerpt": "一个平平无奇而且很敷衍的总结罢了",
+      "comments": true
+    },
+    {
+      "file": "use_oxygen_os_in_oplus13_pjz110.md",
+      "created": 1755416160000,
+      "slug": "use_oxygen_os_in_oplus13_pjz110",
+      "title": "碎记·让你的国行OnePlus 13用上OxygenOS吧！",
+      "tags": [
+        "碎记",
+        "教程"
+      ],
+      "updated": 1755416160000,
+      "pinned": false,
+      "excerpt": "本文记录了一点对于最近折腾OnePlus 13的经历（创",
+      "comments": true
+    },
+    {
+      "file": "rwkv_gguf_quantization.md",
+      "created": 1738661220000,
+      "slug": "rwkv_gguf_quantization",
+      "title": "碎记·RWKV的邪典量化（llama.cpp only）",
+      "tags": [
+        "碎记",
+        "教程",
+        "llama.cpp"
+      ],
+      "updated": 1738661220000,
+      "pinned": false,
+      "excerpt": "在量化RWKV系列模型中遇到的一些奇奇怪怪的问题以及略显诡异的解决方案……",
+      "comments": true
+    },
+    {
+      "file": "wave-to-my-future-self.md",
+      "created": 1735133520000,
+      "slug": "wave-to-my-future-self",
+      "title": "碎记•向明年的自己招个手",
+      "tags": [
+        "碎记",
+        "年终总结"
+      ],
+      "updated": 1735608360000,
+      "pinned": false,
+      "excerpt": "又是一年。还是一年。",
+      "comments": true
+    },
+    {
+      "file": "small-article-20231209.md",
+      "created": 1702080000000,
+      "slug": "small-article-20231209",
+      "title": "小碎记20231209",
+      "tags": [
+        "碎记"
+      ],
+      "updated": 1702080000000,
+      "pinned": false,
+      "excerpt": "没错，是万恶的分割商法（逃",
+      "comments": true
+    },
+    {
+      "file": "small-article-20231208.md",
+      "created": 1701993600000,
+      "slug": "small-article-20231208",
+      "title": "小碎记20231208",
+      "tags": [
+        "碎记"
+      ],
+      "updated": 1701993600000,
+      "pinned": false,
+      "excerpt": "一如既往的杂乱无章",
+      "comments": true
+    },
+    {
+      "file": "nixos-explore-install.md",
+      "created": 1689033600000,
+      "slug": "nixos-explore-install",
+      "title": "NixOS初探-安装篇",
+      "tags": [
+        "NixOS",
+        "教程"
+      ],
+      "updated": 1689033600000,
+      "pinned": false,
+      "excerpt": "NixOS可创了，可好玩了（）",
+      "comments": true
+    },
+    {
+      "file": "free-warp-plus-key.md",
+      "created": 1680220800000,
+      "slug": "free-warp-plus-key",
+      "title": "白嫖WARP+的24PB密钥",
+      "tags": [
+        "教程"
+      ],
+      "updated": 1680220800000,
+      "pinned": false,
+      "excerpt": "其实只是为了水篇文章（x",
+      "comments": true
+    },
+    {
+      "file": "latest-nodejs-on-win7.md",
+      "created": 1680220800000,
+      "slug": "latest-nodejs-on-win7",
+      "title": "在Windows7上使用最新版的Node.js",
+      "tags": [
+        "教程",
+        "Windows7"
+      ],
+      "updated": 1680220800000,
+      "pinned": false,
+      "excerpt": "为了用上Node.js 20.x……",
+      "comments": true
+    },
+    {
+      "file": "latest-vscode-on-win7.md",
+      "created": 1680220800000,
+      "slug": "latest-vscode-on-win7",
+      "title": "在Windows7上使用最新版的VSCode",
+      "tags": [
+        "教程",
+        "Windows7"
+      ],
+      "updated": 1680220800000,
+      "pinned": false,
+      "excerpt": "VSCode这个家伙……Electron都还支持Win7呢（",
+      "comments": true
+    },
+    {
+      "file": "some-feeling-about-sprb.md",
+      "created": 1680220800000,
+      "slug": "some-feeling-about-sprb",
+      "title": "推了Summer Pockets REFLECTION BLUE之后的一些感想",
+      "tags": [
+        "Galgame",
+        "Key社"
+      ],
+      "updated": 1680220800000,
+      "pinned": false,
+      "excerpt": "由于感触实在是太深因此专门写一篇（",
+      "comments": true
+    },
+    {
+      "file": "sth-about-netease-grey-music-unlock.md",
+      "created": 1680220800000,
+      "slug": "sth-about-netease-grey-music-unlock",
+      "title": "对网易云音乐灰色歌曲解锁的小小吐槽",
+      "tags": [
+        "吐槽"
+      ],
+      "updated": 1680220800000,
+      "pinned": false,
+      "excerpt": "花了我一天，杰伦的歌还不是放不了……（恼",
+      "comments": true
+    },
+    {
+      "file": "win-v2a-cfst-3proxy-speed-cdn.md",
+      "created": 1680220800000,
+      "slug": "win-v2a-cfst-3proxy-speed-cdn",
+      "title": "Windows下用v2A+3proxy+CloudflareSpeedTest加速海外cdn",
+      "tags": [
+        "教程",
+        "pxy"
+      ],
+      "updated": 1680220800000,
+      "pinned": false,
+      "excerpt": "说起来好像这个方案对加速pxy一点都没用的样子（",
+      "comments": true
+    },
+    {
+      "file": "win11-install-local-account.md",
+      "created": 1680220800000,
+      "slug": "win11-install-local-account",
+      "title": "Windows11装机注册本地账户目前通用解法",
+      "tags": [
+        "教程",
+        "Windows11"
+      ],
+      "updated": 1680220800000,
+      "pinned": false,
+      "excerpt": "备忘（x",
+      "comments": true
+    },
+    {
+      "file": "install-archlinux-and-dde.md",
+      "created": 1654473600000,
+      "slug": "install-archlinux-and-dde",
+      "title": "安装ArchLinux+DDE",
+      "tags": [
+        "教程"
+      ],
+      "updated": 1654473600000,
+      "pinned": false,
+      "excerpt": "由于安装过程中踩了一些坑，因此记录一下",
+      "comments": true
+    },
+    {
+      "file": "some-old-things-about-me.md",
+      "created": 1643155200000,
+      "slug": "some-old-things-about-me",
+      "title": "碎记 · 从前的自己",
+      "tags": [
+        "碎记"
+      ],
+      "updated": 1643155200000,
+      "pinned": false,
+      "excerpt": "翻看旧的笔记本，不禁莞尔一笑。",
+      "comments": true
+    },
+    {
+      "file": "announcement.md",
+      "created": 1642129929534,
+      "slug": "announcement",
+      "title": "公告",
+      "tags": [],
+      "updated": 1642129929534,
+      "pinned": false,
+      "excerpt": "简要的博客更新",
+      "comments": true
+    },
+    {
+      "file": "some-thoughts-about-liteblog.md",
+      "created": 1642129929534,
+      "slug": "some-thoughts-about-liteblog",
+      "title": "some-thoughts-about-liteblog",
+      "tags": [],
+      "updated": 1642129929534,
+      "pinned": false,
+      "excerpt": "有关LiteBlog的一些小设想",
+      "comments": true
+    }
+  ],
+  "hidden": [
+    {
+      "file": "sing-box-try.md",
+      "created": 1689033600000,
+      "slug": "sing-box-try",
+      "title": "sing-box尝鲜",
+      "tags": [
+        "sing-box",
+        "教程"
+      ],
+      "updated": 1689033600000,
+      "pinned": false,
+      "excerpt": "尝试使用sing-box的时候遇到了很多问题……",
+      "comments": true
+    }
+  ],
+  "pages": [
+    {
+      "file": "friends.md",
+      "slug": "friends",
+      "title": "友人帐",
+      "updated": 0,
+      "showInNav": true,
+      "navLabel": "友人帐",
+      "comments": true
+    }
+  ]
+}

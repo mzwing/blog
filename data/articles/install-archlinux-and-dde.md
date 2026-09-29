@@ -1,3 +1,11 @@
+---
+title: 安装ArchLinux+DDE
+tags:
+  - 教程
+created: 2022-06-06T00:00:00.000Z
+excerpt: 由于安装过程中踩了一些坑，因此记录一下
+---
+
 # 安装ArchLinux+DDE
 
 ## 安装ArchLinux

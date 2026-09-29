@@ -1,3 +1,13 @@
+---
+title: sing-box尝鲜
+tags:
+  - sing-box
+  - 教程
+created: 2023-07-11T00:00:00.000Z
+hidden: true
+excerpt: 尝试使用sing-box的时候遇到了很多问题……
+---
+
 # sing-box尝鲜
 
 ## 前言

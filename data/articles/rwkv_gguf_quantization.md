@@ -1,3 +1,13 @@
+---
+title: 碎记·RWKV的邪典量化（llama.cpp only）
+tags:
+  - 碎记
+  - 教程
+  - llama.cpp
+created: 2025-02-04T09:27:00.000Z
+excerpt: 在量化RWKV系列模型中遇到的一些奇奇怪怪的问题以及略显诡异的解决方案……
+---
+
 # 碎记·RWKV的邪典量化（llama.cpp only）
 
 ## 环境准备喵

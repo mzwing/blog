@@ -1,3 +1,12 @@
+---
+title: 推了Summer Pockets REFLECTION BLUE之后的一些感想
+tags:
+  - Galgame
+  - Key社
+created: 2023-03-31T00:00:00.000Z
+excerpt: 由于感触实在是太深因此专门写一篇（
+---
+
 # 推了Summer Pockets REFLECTION BLUE之后的一些感想
 
 ## 总结写前头（x

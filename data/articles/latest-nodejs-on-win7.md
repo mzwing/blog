@@ -1,3 +1,12 @@
+---
+title: 在Windows7上使用最新版的Node.js
+tags:
+  - 教程
+  - Windows7
+created: 2023-03-31T00:00:00.000Z
+excerpt: 为了用上Node.js 20.x……
+---
+
 # 在Windows7上使用最新版的Node.js
 
 1. 请下压缩包，不要下载安装程序

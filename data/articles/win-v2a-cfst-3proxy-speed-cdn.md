@@ -1,3 +1,12 @@
+---
+title: Windows下用v2A+3proxy+CloudflareSpeedTest加速海外cdn
+tags:
+  - 教程
+  - pxy
+created: 2023-03-31T00:00:00.000Z
+excerpt: 说起来好像这个方案对加速pxy一点都没用的样子（
+---
+
 # Windows下用v2A+3proxy+CloudflareSpeedTest加速海外cdn
 
 ## 前言

@@ -1,160 +1,156 @@
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <title>洛仙璃の幻梦</title>
-    <subtitle>如光似幻，如影随形</subtitle>
-    <link href="https://mzwing.eu.org/atom.xml" rel="self"/>
-    <link href="https://mzwing.eu.org"/>
-    <updated>2025-12-31T07:58:13.942Z</updated>
-    <id>https://mzwing.eu.org</id>
-    <author>
-        <name>洛仙璃の幻梦</name>
-    </author>
-    <generator uri="https://bbg.nekomoe.xyz">Baiyuanneko's Blog Generator</generator>
-    <entry>
-      <title>碎记 · 一个简单的2025总结</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=2026.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=2026.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>碎记 · 一个简单的2025总结</h1>
-<p>好困啊😪</p>
-<p>本想着还有时间慢慢来不急，一转眼就31号了呢……</p>
-<p>那就敷衍地写一下吧，也算对自己有个交代。</p>
-<hr>
-<p>2025算是变化相当大的一年。</p>
-<p>高考、综合评价、上大学、现在又到了期末周。</p>
-<p>获得了新的电脑、手机和平板。</p>
-<p>代码主要在11月12月集中在爆肝。</p>
-<p>水群感觉比以前多很多（</p>
-<p>然后加入了sysu的M记和MSC，感谢师兄看得上我这种fw🙏里面的氛围终于让我有动力重新开始肝代码了（</p>
-<hr>
-<p>高考结束之后也算是打开了一个心结吧，在那之后基本是报仇雪恨般地摸鱼（写代码也算在内）。</p>
-<p>去了旅游去了AOSCC和子兰meetup，很开心，希望还能有（</p>
-<hr>
-<p>实体书今年没怎么读了，果然我还是会倾向于电子书啊。不过可能以后还是划定个时间来看书会比较好</p>
-<hr>
-<p>一如既往的不想上课。</p>
-<p>在大学尝试逃课并且获得了成功，在那之后我就基本上只去会点名的课了，当然其实偶尔还是会去一下的。</p>
-<p>嘛，也理所应当的学不明白，但是自己开心了就足够了。</p>
-<hr>
-<p>自然，也是一如既往的不想复习。</p>
-<p>高考前一天晚上我还搁那用备考室的课室的电脑看unsloth文档呢。到了大学也没有改变，老师在上面复习我在下面写代码聊天啥的。总之我这个人是比较讨厌复习的，但是其实自己也学不明白，唉不上不下了。</p>
-<p>时间规划能力其实也是一如既往的差，在大学已经下了5次决心要00:00前睡觉了，但是除了生病的日子之外没有一天是做到的。</p>
-<p>任务规划能力一样，压根分不清哪个高优先级哪个低，反正自己记起来什么就做什么，喜欢做什么就做什么。所以一直都是游走在DDL边沿然后疯狂垂死挣扎。也吃了挺多苦头的吧就是。</p>
-<hr>
-<p>今年下半年主要是在赶任务和填自己以前挖的坑。</p>
-<p>再来一次感谢M记和MSC，终于给了我重新开始写代码的动力</p>
-<p>目前直到年底在做的项目有：</p>
-<ul>
-<li>class-calender-generator</li>
-<li>bbg-next</li>
-<li>一个内核构建的actions仓库</li>
-<li>LiteQuantize</li>
-</ul>
-<p>另外感觉换了Macbook Pro之后有了工作动力+300%的效果，这玩意不会含有SCP-1011吧（x）以前用Legion的时候一天到晚只想聊天和玩游戏（</p>
-<hr>
-<p>嗯来记录一下设备的变动吧。</p>
-<p>首先是从AOSCC 2025回来之后因为无法忍受iPhone 8的卡顿，润到了OnePlus 13。</p>
-<p>然后因为要上大学在muji的推荐下购入了Samsung Galaxy Tab S9 Wi-Fi。</p>
-<p>上大学之后Legion在期中后的某个周六因为风扇异常+主板电容故障直接烧了，后面换了mbp，感谢gztime师兄和另一位师兄（</p>
-<p>最后是复活了Xiaomi Mi Max 2，不过因为我的主力机变成了OP 13所以它已经不常用了，只是偶尔玩玩。</p>
-<p>唉写了设备变动才发现欠了好多文章呢。想写我这个三星板子怎么在不解锁BL的情况下切换到国外固件（谢谢db的指导）、更新那篇OP 13 PJZ110切换到OOS的教程、写OP 13切换到LOS 23并且做优化的教程（好吧其实自己也还在探索着）、写入门向的KSU内核编译的教程……</p>
-<hr>
-<p>最近混安卓圈子了，先膜拜一下Ray和db两位佬佬！</p>
-<p>Root方案从 Magisk -&amp;gt; APatch -&amp;gt; YAPatch -&amp;gt; SukiSU Ultra -&amp;gt; Magisk Alpha -&amp;gt; KowSU -&amp;gt; ReSukiSU （只是从探索的时间来划分，不都是在同一台机子搞的）。暂时是稳定在主力机和三星板子用的KowSU LKM，Mi Max 2用的自己编译的ReSukiSU NonGKI内核了。</p>
-<p>也算是用Frozen + ReKernel + Thanox情景模式（酷安上的多开后台管家）实现了极限的省电（目前好像是OP 13极限可以用1天6小时）。</p>
-<p>还想玩很多东西，还想继续在安卓圈子折腾……菜菜捞捞呜呜</p>
-<hr>
-<p>高强度vibe coding中……</p>
-<p>今年没有太关注量化，而是去体验了很多vibe coding和AI Agent，尝试把自己的学习和生活更深程度地接入AI。说到这就不得不感慨还是安卓好啊，苹果的话我几乎就没有尝试的空间了。</p>
-<p>嗯不过LiteQuantize这个WebUI在写了，敬请期待吧。</p>
-<p>在最后骂一下GLM 4.7和MiniMax 2.1，端出来的什么玩意也敢吹。</p>
-<hr>
-<p>哦对有个大乌龙。</p>
-<p>今年英语四级忘记参加了😇这么重要的考试能睡过头（睡到9:01醒）我也是神人了，我要不把我id改成5个字算了（）</p>
-<p>也罢和还没考的朋友一起考吧，可能感觉也不错（</p>
-<hr>
-<p>好吧其实写到这里已经不太想写了（）</p>
-<p>那就祝看到这篇文章的各位，2026新年快乐，心想事成啦。</p>
-<blockquote>
-<p>完笔于20251231 15:54</p>
-</blockquote>
-<h2>See also</h2>
-<p>Wait for editing...</p>
-
-
-        ]]>
-      </content>
-      <summary type="html">一个平平无奇而且很敷衍的总结罢了</summary>
-      <updated>2025-12-31T05:16:00.000Z</updated>
-      <published>2025-12-31T05:16:00.000Z</published>
-      </entry><entry>
-      <title>碎记·让你的国行OnePlus 13用上OxygenOS吧！</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=use_oxygen_os_in_oplus13_pjz110.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=use_oxygen_os_in_oplus13_pjz110.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>碎记·让你的国行OnePlus 13用上OxygenOS吧！</h1>
-<h2>前言</h2>
-<p>mzw最近换了船新设备：OnePlus 13国行版，抛弃了此前那台已经服役好久的iPhone 8（</p>
-<p>既然到手安卓（而且还是一加！），那当然不创是不可能的！到手前就已经抱着XDAForums一通乱查了（（</p>
-<p>更换Oxygen OS的原因是mzw打死不会用Color OS那个丑得逆天的设计的！！！Oxygen OS倒还合我心意（虽然被db说是Color OS换皮但是我不在乎（x），反正没广告&amp;amp;设计比Color OS好）</p>
-<p>当然也是喜闻乐见地被创似了好多回（倒地</p>
-<p>被创似的情况会在 &amp;lt;##后记&amp;gt; 中记载</p>
-<p>本文部分地方略有离题，主要目的还是记录一下自己的折腾经历</p>
-<h2>准备工作</h2>
-<ol>
-<li>一台正常的OnePlus 13国行版</li>
-<li>电脑（当然我估计安卓配termux也能用，别自己调试自己就行）（由于mzw的系统是Arch Linux，因此只会描述Arch下的方案（））</li>
-<li>能正常使用的<code>adb</code>, <code>fastboot</code></li>
-<li>会一点计算机知识（比如会用终端，知道绝对路径是什么，文件扩展名在哪里，知道在哪里找可执行文件，知道怎么找GitHub资源等等）</li>
-<li>访问某些神奇网络资源的条件（比如Telegram，GitHub，XDAForums，SourceForge等）</li>
-<li>阅读英语的能力</li>
-<li>功能健全的脑子</li>
-<li>不会乱抖的一双手.bb</li>
-</ol>
-<h2>警告</h2>
-<p>本文仅表述一种可能的方案，并且不对可能对手机造成的任何损害（包括但不限于变砖等）负责。使用者风险自负</p>
-<p>刷机有风险，请备份好所有的重要数据，并做好要去官方售后救手机的心理准备</p>
-<p>本文所述从Color OS 15转到Oxygen OS 15的方法必须root且需要支持magisk模块的root方案，否则你将会面临包括但不限于以下的问题：</p>
-<ol>
-<li>使用中国大陆电话卡完全无信号</li>
-<li>OTA之后Bootloop</li>
-</ol>
-<h2>下载并准备所需资源</h2>
-<p>下载以下所指向的国行版专用的Oxygen OS 831/832（本文只记载831版本，更高/其他地区的版本（840以上）请自行查看参考链接）这些线刷包：</p>
-<ul>
-<li>全球版（GLO）: <a href="https://sourceforge.net/projects/oneplus13flashers/files/Oneplus%2013/Super%20Flashers/Global/Super%20Flasher%20Global%20831.zip/download">https://sourceforge.net/projects/oneplus13flashers/files/Oneplus%2013/Super%20Flashers/Global/Super%20Flasher%20Global%20831.zip/download</a></li>
-<li>欧洲版（EU）: <a href="https://sourceforge.net/projects/oneplus13flashers/files/Oneplus%2013/Super%20Flashers/EU/Super%20Flasher%20EU%20831.zip/download">https://sourceforge.net/projects/oneplus13flashers/files/Oneplus%2013/Super%20Flashers/EU/Super%20Flasher%20EU%20831.zip/download</a></li>
-<li>印度版（IN）: <a href="https://roms.danielspringer.at/download.php?file=Files%2FOneplus+13%2FSuper+Flashers%2FIN%2FSuperHybrid+Flasher+IN+840.zip&amp;download=true">https://roms.danielspringer.at/download.php?file=Files%2FOneplus+13%2FSuper+Flashers%2FIN%2FSuperHybrid+Flasher+IN+840.zip&amp;amp;download=true</a></li>
-</ul>
-<p>然后需要下载修补过的dtbo（通用）：<a href="https://xdaforums.com/attachments/patched_oos_831_dtbo-img.6235925/?hash=216b8c4abc1b4c43aec310af5b3c6651">https://xdaforums.com/attachments/patched_oos_831_dtbo-img.6235925/?hash=216b8c4abc1b4c43aec310af5b3c6651</a></p>
-<blockquote>
-<p>警告：不下载并刷入修补过的dtbo将导致bootloop</p>
-<p>刷入参考链接中的840及以上版本可以无视本警告，因为修补过的dtbo已经包含在那里面了</p>
-</blockquote>
-<blockquote>
-<p>警告：禁止回锁BL，即使你宁可不OTA也不怕中国大陆电话卡没有信号，因为修补过的dtbo是未签名的，系统将会拒绝启动并bootloop（惨痛的教训）</p>
-</blockquote>
-<blockquote>
-<p>实测通过本方法是可以实现降级的，所以不必担心自己原系统比831高的情况下不能用这个方法</p>
-</blockquote>
-<p>由于我只刷了GLO版，因此本文所述方案只记录GLO版的折腾过程，其他版本请自行参照解决</p>
-<p>下载完毕后解压zip，然后把下载的dtbo文件重命名为<code>dtbo.img</code>，并放入zip解压出来的<code>OOS_FILES_HERE</code>文件夹中（会弹出替换，你可以选择直接替换，也可以选择备份文件夹里面的dtbo之后再替换）</p>
-<h2>开始刷机</h2>
-<blockquote>
-<p>警告：这些步骤会清除你的所有数据，请提前做好重要数据的备份，并做好可能变砖要润去售后的准备</p>
-</blockquote>
-<p>打开OnePlus的系统设置 -&amp;gt; 关于本机 -&amp;gt; 版本信息，一直点击版本号直到提示“处于开发者模式”</p>
-<p>然后回到设置的首页，进入 系统与功能 -&amp;gt; 开发者选项，打开<code>OEM解锁</code>和<code>USB调试</code>（如果OEM解锁那个选项是灰色的，重启再看应该就能选择了）</p>
-<p>然后使用USB线（建议原厂线）连接电脑，打开终端看看<code>adb devices</code>有没有对应手机的输出（手机弹出授权窗口就点允许）</p>
-<p>Windows下上面这一步有问题的话估计是没有安装一加手机的adb驱动，请自行寻找官网安装</p>
-<p>接下来，在终端输入命令<code>adb reboot bootloader</code>并回车，手机应重启到Bootloader</p>
-<p>然后在终端输入<code>fastboot devices</code>看看有没有对应手机的输出，有的话下一步</p>
-<p>然后解锁BL！终端输入<code>fastboot flashing unlock</code>，手机应自动重启并清除一切数据，接着重复开发者模式那步一直到<code>fastboot devices</code>那一步即可</p>
-<p>再接下来，就正式进入刷机环节了！</p>
-<p>Windows用户请使用刷机包内自带的<code>Regional_Flasher.bat</code>进行刷机</p>
-<p>Linux用户（我仅测试了Arch Linux）请使用下面的脚本（记得保存为文件并放置在和<code>Regional_Flasher.bat</code>同一目录并<code>chmod +x</code>哦）</p>
-<pre><code># Regional_Flasher.sh
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="zh-CN">
+<title>洛仙璃の幻梦</title>
+<subtitle>如光似幻，如影随形</subtitle>
+<link rel="self" href="https://mzwing.eu.org/atom.xml"/>
+<link href="https://mzwing.eu.org/"/>
+<id>https://mzwing.eu.org/</id>
+<updated>2025-12-31T05:16:00.000Z</updated>
+<author><name>洛仙璃の幻梦</name></author>
+<generator>bbg-next</generator>
+<entry>
+<title>碎记 · 一个简单的2025总结</title>
+<link href="https://mzwing.eu.org/article/2026/"/>
+<id>https://mzwing.eu.org/article/2026/</id>
+<published>2025-12-31T05:16:00.000Z</published>
+<updated>2025-12-31T05:16:00.000Z</updated>
+<summary>一个平平无奇而且很敷衍的总结罢了</summary>
+<content type="html">&lt;h1 id=&quot;碎记-·-一个简单的2025总结&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/2026/#%E7%A2%8E%E8%AE%B0-%C2%B7-%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%842025%E6%80%BB%E7%BB%93&quot; aria-labelledby=&quot;碎记-·-一个简单的2025总结&quot;&gt;&lt;/a&gt;碎记 · 一个简单的2025总结&lt;/h1&gt;
+&lt;p&gt;好困啊😪&lt;/p&gt;
+&lt;p&gt;本想着还有时间慢慢来不急，一转眼就31号了呢……&lt;/p&gt;
+&lt;p&gt;那就敷衍地写一下吧，也算对自己有个交代。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;2025算是变化相当大的一年。&lt;/p&gt;
+&lt;p&gt;高考、综合评价、上大学、现在又到了期末周。&lt;/p&gt;
+&lt;p&gt;获得了新的电脑、手机和平板。&lt;/p&gt;
+&lt;p&gt;代码主要在11月12月集中在爆肝。&lt;/p&gt;
+&lt;p&gt;水群感觉比以前多很多（&lt;/p&gt;
+&lt;p&gt;然后加入了sysu的M记和MSC，感谢师兄看得上我这种fw🙏里面的氛围终于让我有动力重新开始肝代码了（&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;高考结束之后也算是打开了一个心结吧，在那之后基本是报仇雪恨般地摸鱼（写代码也算在内）。&lt;/p&gt;
+&lt;p&gt;去了旅游去了AOSCC和子兰meetup，很开心，希望还能有（&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;实体书今年没怎么读了，果然我还是会倾向于电子书啊。不过可能以后还是划定个时间来看书会比较好&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;一如既往的不想上课。&lt;/p&gt;
+&lt;p&gt;在大学尝试逃课并且获得了成功，在那之后我就基本上只去会点名的课了，当然其实偶尔还是会去一下的。&lt;/p&gt;
+&lt;p&gt;嘛，也理所应当的学不明白，但是自己开心了就足够了。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;自然，也是一如既往的不想复习。&lt;/p&gt;
+&lt;p&gt;高考前一天晚上我还搁那用备考室的课室的电脑看unsloth文档呢。到了大学也没有改变，老师在上面复习我在下面写代码聊天啥的。总之我这个人是比较讨厌复习的，但是其实自己也学不明白，唉不上不下了。&lt;/p&gt;
+&lt;p&gt;时间规划能力其实也是一如既往的差，在大学已经下了5次决心要00:00前睡觉了，但是除了生病的日子之外没有一天是做到的。&lt;/p&gt;
+&lt;p&gt;任务规划能力一样，压根分不清哪个高优先级哪个低，反正自己记起来什么就做什么，喜欢做什么就做什么。所以一直都是游走在DDL边沿然后疯狂垂死挣扎。也吃了挺多苦头的吧就是。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;今年下半年主要是在赶任务和填自己以前挖的坑。&lt;/p&gt;
+&lt;p&gt;再来一次感谢M记和MSC，终于给了我重新开始写代码的动力&lt;/p&gt;
+&lt;p&gt;目前直到年底在做的项目有：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;class-calender-generator&lt;/li&gt;
+&lt;li&gt;bbg-next&lt;/li&gt;
+&lt;li&gt;一个内核构建的actions仓库&lt;/li&gt;
+&lt;li&gt;LiteQuantize&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;另外感觉换了Macbook Pro之后有了工作动力+300%的效果，这玩意不会含有SCP-1011吧（x）以前用Legion的时候一天到晚只想聊天和玩游戏（&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;嗯来记录一下设备的变动吧。&lt;/p&gt;
+&lt;p&gt;首先是从AOSCC 2025回来之后因为无法忍受iPhone 8的卡顿，润到了OnePlus 13。&lt;/p&gt;
+&lt;p&gt;然后因为要上大学在muji的推荐下购入了Samsung Galaxy Tab S9 Wi-Fi。&lt;/p&gt;
+&lt;p&gt;上大学之后Legion在期中后的某个周六因为风扇异常+主板电容故障直接烧了，后面换了mbp，感谢gztime师兄和另一位师兄（&lt;/p&gt;
+&lt;p&gt;最后是复活了Xiaomi Mi Max 2，不过因为我的主力机变成了OP 13所以它已经不常用了，只是偶尔玩玩。&lt;/p&gt;
+&lt;p&gt;唉写了设备变动才发现欠了好多文章呢。想写我这个三星板子怎么在不解锁BL的情况下切换到国外固件（谢谢db的指导）、更新那篇OP 13 PJZ110切换到OOS的教程、写OP 13切换到LOS 23并且做优化的教程（好吧其实自己也还在探索着）、写入门向的KSU内核编译的教程……&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;最近混安卓圈子了，先膜拜一下Ray和db两位佬佬！&lt;/p&gt;
+&lt;p&gt;Root方案从 Magisk -&amp;gt; APatch -&amp;gt; YAPatch -&amp;gt; SukiSU Ultra -&amp;gt; Magisk Alpha -&amp;gt; KowSU -&amp;gt; ReSukiSU （只是从探索的时间来划分，不都是在同一台机子搞的）。暂时是稳定在主力机和三星板子用的KowSU LKM，Mi Max 2用的自己编译的ReSukiSU NonGKI内核了。&lt;/p&gt;
+&lt;p&gt;也算是用Frozen + ReKernel + Thanox情景模式（酷安上的多开后台管家）实现了极限的省电（目前好像是OP 13极限可以用1天6小时）。&lt;/p&gt;
+&lt;p&gt;还想玩很多东西，还想继续在安卓圈子折腾……菜菜捞捞呜呜&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;高强度vibe coding中……&lt;/p&gt;
+&lt;p&gt;今年没有太关注量化，而是去体验了很多vibe coding和AI Agent，尝试把自己的学习和生活更深程度地接入AI。说到这就不得不感慨还是安卓好啊，苹果的话我几乎就没有尝试的空间了。&lt;/p&gt;
+&lt;p&gt;嗯不过LiteQuantize这个WebUI在写了，敬请期待吧。&lt;/p&gt;
+&lt;p&gt;在最后骂一下GLM 4.7和MiniMax 2.1，端出来的什么玩意也敢吹。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;哦对有个大乌龙。&lt;/p&gt;
+&lt;p&gt;今年英语四级忘记参加了😇这么重要的考试能睡过头（睡到9:01醒）我也是神人了，我要不把我id改成5个字算了（）&lt;/p&gt;
+&lt;p&gt;也罢和还没考的朋友一起考吧，可能感觉也不错（&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;好吧其实写到这里已经不太想写了（）&lt;/p&gt;
+&lt;p&gt;那就祝看到这篇文章的各位，2026新年快乐，心想事成啦。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;完笔于20251231 15:54&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;See-also&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/2026/#See-also&quot; aria-labelledby=&quot;See-also&quot;&gt;&lt;/a&gt;See also&lt;/h2&gt;
+&lt;p&gt;Wait for editing...&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>碎记·让你的国行OnePlus 13用上OxygenOS吧！</title>
+<link href="https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/"/>
+<id>https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/</id>
+<published>2025-08-17T07:36:00.000Z</published>
+<updated>2025-08-17T07:36:00.000Z</updated>
+<summary>本文记录了一点对于最近折腾OnePlus 13的经历（创</summary>
+<content type="html">&lt;h1 id=&quot;碎记·让你的国行OnePlus-13用上OxygenOS吧！&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E7%A2%8E%E8%AE%B0%C2%B7%E8%AE%A9%E4%BD%A0%E7%9A%84%E5%9B%BD%E8%A1%8COnePlus-13%E7%94%A8%E4%B8%8AOxygenOS%E5%90%A7%EF%BC%81&quot; aria-labelledby=&quot;碎记·让你的国行OnePlus-13用上OxygenOS吧！&quot;&gt;&lt;/a&gt;碎记·让你的国行OnePlus 13用上OxygenOS吧！&lt;/h1&gt;
+&lt;h2 id=&quot;前言&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E5%89%8D%E8%A8%80&quot; aria-labelledby=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;
+&lt;p&gt;mzw最近换了船新设备：OnePlus 13国行版，抛弃了此前那台已经服役好久的iPhone 8（&lt;/p&gt;
+&lt;p&gt;既然到手安卓（而且还是一加！），那当然不创是不可能的！到手前就已经抱着XDAForums一通乱查了（（&lt;/p&gt;
+&lt;p&gt;更换Oxygen OS的原因是mzw打死不会用Color OS那个丑得逆天的设计的！！！Oxygen OS倒还合我心意（虽然被db说是Color OS换皮但是我不在乎（x），反正没广告&amp;amp;设计比Color OS好）&lt;/p&gt;
+&lt;p&gt;当然也是喜闻乐见地被创似了好多回（倒地&lt;/p&gt;
+&lt;p&gt;被创似的情况会在 &amp;lt;##后记&amp;gt; 中记载&lt;/p&gt;
+&lt;p&gt;本文部分地方略有离题，主要目的还是记录一下自己的折腾经历&lt;/p&gt;
+&lt;h2 id=&quot;准备工作&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C&quot; aria-labelledby=&quot;准备工作&quot;&gt;&lt;/a&gt;准备工作&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;一台正常的OnePlus 13国行版&lt;/li&gt;
+&lt;li&gt;电脑（当然我估计安卓配termux也能用，别自己调试自己就行）（由于mzw的系统是Arch Linux，因此只会描述Arch下的方案（））&lt;/li&gt;
+&lt;li&gt;能正常使用的&lt;code&gt;adb&lt;/code&gt;, &lt;code&gt;fastboot&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;会一点计算机知识（比如会用终端，知道绝对路径是什么，文件扩展名在哪里，知道在哪里找可执行文件，知道怎么找GitHub资源等等）&lt;/li&gt;
+&lt;li&gt;访问某些神奇网络资源的条件（比如Telegram，GitHub，XDAForums，SourceForge等）&lt;/li&gt;
+&lt;li&gt;阅读英语的能力&lt;/li&gt;
+&lt;li&gt;功能健全的脑子&lt;/li&gt;
+&lt;li&gt;不会乱抖的一双手.bb&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;警告&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E8%AD%A6%E5%91%8A&quot; aria-labelledby=&quot;警告&quot;&gt;&lt;/a&gt;警告&lt;/h2&gt;
+&lt;p&gt;本文仅表述一种可能的方案，并且不对可能对手机造成的任何损害（包括但不限于变砖等）负责。使用者风险自负&lt;/p&gt;
+&lt;p&gt;刷机有风险，请备份好所有的重要数据，并做好要去官方售后救手机的心理准备&lt;/p&gt;
+&lt;p&gt;本文所述从Color OS 15转到Oxygen OS 15的方法必须root且需要支持magisk模块的root方案，否则你将会面临包括但不限于以下的问题：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;使用中国大陆电话卡完全无信号&lt;/li&gt;
+&lt;li&gt;OTA之后Bootloop&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;下载并准备所需资源&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E4%B8%8B%E8%BD%BD%E5%B9%B6%E5%87%86%E5%A4%87%E6%89%80%E9%9C%80%E8%B5%84%E6%BA%90&quot; aria-labelledby=&quot;下载并准备所需资源&quot;&gt;&lt;/a&gt;下载并准备所需资源&lt;/h2&gt;
+&lt;p&gt;下载以下所指向的国行版专用的Oxygen OS 831/832（本文只记载831版本，更高/其他地区的版本（840以上）请自行查看参考链接）这些线刷包：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;全球版（GLO）: &lt;a href=&quot;https://sourceforge.net/projects/oneplus13flashers/files/Oneplus%2013/Super%20Flashers/Global/Super%20Flasher%20Global%20831.zip/download&quot;&gt;https://sourceforge.net/projects/oneplus13flashers/files/Oneplus 13/Super Flashers/Global/Super Flasher Global 831.zip/download&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;欧洲版（EU）: &lt;a href=&quot;https://sourceforge.net/projects/oneplus13flashers/files/Oneplus%2013/Super%20Flashers/EU/Super%20Flasher%20EU%20831.zip/download&quot;&gt;https://sourceforge.net/projects/oneplus13flashers/files/Oneplus 13/Super Flashers/EU/Super Flasher EU 831.zip/download&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;印度版（IN）: &lt;a href=&quot;https://roms.danielspringer.at/download.php?file=Files%2FOneplus+13%2FSuper+Flashers%2FIN%2FSuperHybrid+Flasher+IN+840.zip&amp;amp;download=true&quot;&gt;https://roms.danielspringer.at/download.php?file=Files%2FOneplus+13%2FSuper+Flashers%2FIN%2FSuperHybrid+Flasher+IN+840.zip&amp;amp;download=true&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;然后需要下载修补过的dtbo（通用）：&lt;a href=&quot;https://xdaforums.com/attachments/patched_oos_831_dtbo-img.6235925/?hash=216b8c4abc1b4c43aec310af5b3c6651&quot;&gt;https://xdaforums.com/attachments/patched_oos_831_dtbo-img.6235925/?hash=216b8c4abc1b4c43aec310af5b3c6651&lt;/a&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;警告：不下载并刷入修补过的dtbo将导致bootloop&lt;/p&gt;
+&lt;p&gt;刷入参考链接中的840及以上版本可以无视本警告，因为修补过的dtbo已经包含在那里面了&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;警告：禁止回锁BL，即使你宁可不OTA也不怕中国大陆电话卡没有信号，因为修补过的dtbo是未签名的，系统将会拒绝启动并bootloop（惨痛的教训）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;实测通过本方法是可以实现降级的，所以不必担心自己原系统比831高的情况下不能用这个方法&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;由于我只刷了GLO版，因此本文所述方案只记录GLO版的折腾过程，其他版本请自行参照解决&lt;/p&gt;
+&lt;p&gt;下载完毕后解压zip，然后把下载的dtbo文件重命名为&lt;code&gt;dtbo.img&lt;/code&gt;，并放入zip解压出来的&lt;code&gt;OOS_FILES_HERE&lt;/code&gt;文件夹中（会弹出替换，你可以选择直接替换，也可以选择备份文件夹里面的dtbo之后再替换）&lt;/p&gt;
+&lt;h2 id=&quot;开始刷机&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E5%BC%80%E5%A7%8B%E5%88%B7%E6%9C%BA&quot; aria-labelledby=&quot;开始刷机&quot;&gt;&lt;/a&gt;开始刷机&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;警告：这些步骤会清除你的所有数据，请提前做好重要数据的备份，并做好可能变砖要润去售后的准备&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;打开OnePlus的系统设置 -&amp;gt; 关于本机 -&amp;gt; 版本信息，一直点击版本号直到提示“处于开发者模式”&lt;/p&gt;
+&lt;p&gt;然后回到设置的首页，进入 系统与功能 -&amp;gt; 开发者选项，打开&lt;code&gt;OEM解锁&lt;/code&gt;和&lt;code&gt;USB调试&lt;/code&gt;（如果OEM解锁那个选项是灰色的，重启再看应该就能选择了）&lt;/p&gt;
+&lt;p&gt;然后使用USB线（建议原厂线）连接电脑，打开终端看看&lt;code&gt;adb devices&lt;/code&gt;有没有对应手机的输出（手机弹出授权窗口就点允许）&lt;/p&gt;
+&lt;p&gt;Windows下上面这一步有问题的话估计是没有安装一加手机的adb驱动，请自行寻找官网安装&lt;/p&gt;
+&lt;p&gt;接下来，在终端输入命令&lt;code&gt;adb reboot bootloader&lt;/code&gt;并回车，手机应重启到Bootloader&lt;/p&gt;
+&lt;p&gt;然后在终端输入&lt;code&gt;fastboot devices&lt;/code&gt;看看有没有对应手机的输出，有的话下一步&lt;/p&gt;
+&lt;p&gt;然后解锁BL！终端输入&lt;code&gt;fastboot flashing unlock&lt;/code&gt;，手机应自动重启并清除一切数据，接着重复开发者模式那步一直到&lt;code&gt;fastboot devices&lt;/code&gt;那一步即可&lt;/p&gt;
+&lt;p&gt;再接下来，就正式进入刷机环节了！&lt;/p&gt;
+&lt;p&gt;Windows用户请使用刷机包内自带的&lt;code&gt;Regional_Flasher.bat&lt;/code&gt;进行刷机&lt;/p&gt;
+&lt;p&gt;Linux用户（我仅测试了Arch Linux）请使用下面的脚本（记得保存为文件并放置在和&lt;code&gt;Regional_Flasher.bat&lt;/code&gt;同一目录并&lt;code&gt;chmod +x&lt;/code&gt;哦）&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Shell&quot;&gt;# Regional_Flasher.sh
 #!/bin/env bash
 
 fastboot --set-active=a
@@ -216,7 +212,7 @@ if [ &amp;quot;$root_choice&amp;quot; = &amp;quot;n&amp;quot; ] || [ &amp;quot;$
     fastboot flash my_region &amp;quot;COS_FILES_HERE/my_region.img&amp;quot;
 else
     echo &amp;quot;***** No signal files flashed *****&amp;quot;
-    echo &amp;quot;***** After rooting, you must flash @greg44f&amp;#39;s module to get signal back *****&amp;quot;
+    echo &amp;quot;***** After rooting, you must flash @greg44f&#39;s module to get signal back *****&amp;quot;
 fi
 
 # 询问是否从 ColorOS 刷机或想要擦除数据
@@ -236,182 +232,179 @@ elif [ &amp;quot;$wipe_data_choice&amp;quot; = &amp;quot;y&amp;quot; ] || [ &amp
     echo &amp;quot;Wipe data by tapping Format Data on the screen, enter the code, and press format data.&amp;quot;
     echo &amp;quot;Phone will automatically reboot into Android after wipe is done.&amp;quot;
 fi
-</code></pre>
-<p>脚本通过Kimi-K2 + Roo Code从bat转换而来，有部分代码可能有漏洞/执行逻辑错误，欢迎指出（</p>
-<p>当某个瞬间（对应<code>fastboot reboot fastboot</code>）的时候，你会看到手机重启并进入了fastbootd模式，只需要用音量键选中简体中文（或者你喜欢的语言）并按开关机键进行确认，然后等待直到脚本运行完毕，选中手机上的清除数据，输入安全码（照着手机的提示做就是），等数据清除完毕后手机就会自动重启到我们刷入的Oxygen OS啦！</p>
-<p>是否准备root那里应该只能写<code>y</code>（问就是那个zip包压根没有<code>COS_FILES_HERE</code>这个文件夹）</p>
-<p>脚本执行需要一点时间，保持耐心等待完成即可</p>
-<p>刷完开机之后手机里的中国大陆电话卡没有信号（但是能识别出来）是正常现象，在下面的步骤中我们会进行修复（所以下面的步骤应该在有wifi网络/手机能通过某种方式获得网络连接的情况下进行）</p>
-<p>另外记得关闭系统的自动更新功能，下面的步骤中我们会处理OTA更新</p>
-<h2>Root</h2>
-<h3>Magisk</h3>
-<p>安装magisk应用（建议在F-Droid或者GitHub Release进行安装）</p>
-<p>从电脑上的zip解压出来的<code>OOS_FILES_HERE</code>文件夹中找到<code>init_boot.img</code>并传输到手机</p>
-<p>选择安装 -&amp;gt; 修补文件 -&amp;gt; 传入<code>init_boot.img</code> -&amp;gt; 把得到的文件传回电脑 -&amp;gt; 按照上面打开开发者设置和USB调试的步骤来一次 -&amp;gt; <code>adb reboot bootloader</code> -&amp;gt; <code>fastboot flash init_boot ${刚刚你传回电脑的img文件的绝对路径}</code> -&amp;gt; <code>fastboot reboot</code></p>
-<p>然后手机会重启，打开magisk，你的root应该就好了</p>
-<h3>KernelSU（及其变体）</h3>
-<p>有两个版本可选，请自行选择：</p>
-<ul>
-<li>XDA上的大佬<a href="https://xdaforums.com/m/epicmann24.12171003/">epicmann24</a>编译的内核：<a href="https://xdaforums.com/t/kernel-open-beta-epicmann24s-sm8750-kernel-sukisu-ksun-susfs.4719831/">https://xdaforums.com/t/kernel-open-beta-epicmann24s-sm8750-kernel-sukisu-ksun-susfs.4719831/</a> （开源地址：<a href="https://github.com/epicmann24/android_kernel_common_oneplus_sm8750">https://github.com/epicmann24/android_kernel_common_oneplus_sm8750</a>）</li>
-<li>酷安上的大佬BrokeStar编译的内核：<a href="https://www.brokestar.top:5244/%E6%9C%AC%E5%9C%B0/%E6%90%9E%E6%9C%BA/%E5%86%85%E6%A0%B8/%E4%B8%80%E5%8A%A0/13">https://www.brokestar.top:5244/%E6%9C%AC%E5%9C%B0/%E6%90%9E%E6%9C%BA/%E5%86%85%E6%A0%B8/%E4%B8%80%E5%8A%A0/13</a> （开源地址：<a href="https://github.com/brokestar233/android_kernel_common_oneplus_sm8750/tree/v7">https://github.com/brokestar233/android_kernel_common_oneplus_sm8750/tree/v7</a>）</li>
-</ul>
-<p>请自行选择，由于我不使用KSU及其变体，因此我不能给出任何意见（</p>
-<h3>APatch</h3>
-<p>我目前在使用这个root方案</p>
-<p>在手机上安装APatch应用</p>
-<blockquote>
-<p>警告：目前APatch的GitHub Release最新stable版疑似存在丢失超级用户权限应用列表与排除应用列表的问题，建议使用<a href="https://t.me/APatch_CI/231">https://t.me/APatch_CI/231</a>的版本（也即版本&amp;gt;=11115），或是直接使用官方仓库中GitHub Actions构建出的最新版本</p>
-</blockquote>
-<p>然后，为了更好地隐藏Root，我们需要下载两个kpm（内核模块）并传输到手机：</p>
-<ul>
-<li>NoHello: <a href="https://t.me/apatch_discuss/298387">https://t.me/apatch_discuss/298387</a></li>
-<li>CherishPeekaboo: <a href="https://t.me/apatch_discuss/286194">https://t.me/apatch_discuss/286194</a></li>
-</ul>
-<p>接下来就开始愉快地安装APatch吧！</p>
-<p>首先，在电脑上那个zip解压出来的<code>OOS_FILES_HERE</code>这个文件夹里面找到<code>boot.img</code>并传输到手机</p>
-<p>选择安装（右上角最靠左边那个图案） -&amp;gt; 选择要修补的启动映像文件 -&amp;gt; 选择刚刚传输到手机的<code>boot.img</code> -&amp;gt; 选择那两个kpm -&amp;gt; 输入你喜欢的超级密钥（其实就是密码） -&amp;gt; 安装 -&amp;gt; 然后你会得到一个img文件，传回电脑 -&amp;gt; 按照上面打开开发者设置和USB调试的步骤来一次 -&amp;gt; <code>adb reboot bootloader</code> -&amp;gt; <code>fastboot flash boot ${刚刚你传回电脑的img文件的绝对路径}</code> -&amp;gt; <code>fastboot reboot</code></p>
-<p>然后手机会重启，打开手机上的APatch，输入刚刚你写的超级密钥，再点击安装系统补丁，你的root应该就好了！</p>
-<h3>需要/建议/按需刷入的模块（APatch叫系统模块）</h3>
-<p><del>仙 之 人 兮 列 如 麻</del>（雾</p>
-<p>里面的很多模块都需要Zygisk功能，请注意</p>
-<ul>
-<li>修复信号模块：<a href="https://github.com/K58/fix-signal-oneplus13/releases">https://github.com/K58/fix-signal-oneplus13/releases</a>，这个模块对于防止OTA Bootloop和修复中国大陆电话卡的信号很关键</li>
-<li>启用OnePlus 13外版专属的Wi-Fi 7 (6GHz)功能：<a href="https://github.com/AndroPlus-org/magisk-module-wifi7/releases">https://github.com/AndroPlus-org/magisk-module-wifi7/releases</a></li>
-<li>关闭Widevine的OEMCrypto：<a href="https://github.com/hzy132/liboemcryptodisabler/releases">https://github.com/hzy132/liboemcryptodisabler/releases</a>，这个模块可以帮助你在OnePlus 13上面看Netflix, Disney+, Amazon Prime Video等等国外的流媒体软件 (Only SD Res)</li>
-<li>Tricky Store：<a href="https://github.com/5ec1cff/TrickyStore/releases">https://github.com/5ec1cff/TrickyStore/releases</a>，过Google Play Integrity Check用</li>
-<li>Tricky Store Addon：<a href="https://github.com/KOWX712/Tricky-Addon-Update-Target-List/releases">https://github.com/KOWX712/Tricky-Addon-Update-Target-List/releases</a>，用于通过WebUI配置TrickyStore，依赖TrickyStore</li>
-<li>PIF-NEXT：<a href="https://github.com/EricInacio01/PlayIntegrityFix-NEXT/releases">https://github.com/EricInacio01/PlayIntegrityFix-NEXT/releases</a>，过Google Play Integrity Check用，依赖TrickyStore（不先安装TrickyStore就装不了，安装前请确保你的手机打开了代理并且能正常访问Android Developer Site）</li>
-<li>Fingerprint Pay（按需）（安装QQ和微信的版本即可）：<a href="https://github.com/eritpchy/FingerprintPay/releases">https://github.com/eritpchy/FingerprintPay/releases</a>，用于强行启用微信和QQ的指纹支付功能（请详细查阅该项目的README以获取更多说明）（其他的所有支付软件实测均支持Oxygen OS的指纹，因此不必安装，减少风险）</li>
-<li>Zygisk Next（建议在Magisk上使用）：<a href="https://github.com/Dr-TSNG/ZygiskNext/releases">https://github.com/Dr-TSNG/ZygiskNext/releases</a>，提供Zygisk功能（使用后请不要打开Magisk自带的Zygisk功能）</li>
-<li>Shamiko（建议在Magisk上使用）：<a href="https://github.com/LSPosed/LSPosed.github.io/releases">https://github.com/LSPosed/LSPosed.github.io/releases</a>，隐藏Root</li>
-<li>ReZygisk（建议在APatch上使用）：<a href="https://github.com/PerformanC/ReZygisk/releases">https://github.com/PerformanC/ReZygisk/releases</a>，提供Zygisk功能</li>
-<li>Treat Wheel（建议在APatch上使用）：<a href="https://t.me/ThePedr002/4">https://t.me/ThePedr002/4</a>，隐藏Root</li>
-<li>Nohello_compat（建议在APatch上使用）：<a href="https://t.me/BlankAssistance/142/62675">https://t.me/BlankAssistance/142/62675</a>，隐藏Root</li>
-</ul>
-<p>我是Android新手，如有不对/欠缺考虑的地方希望大佬指出QwQ</p>
-<p>（按需）安装完这些模块之后，重启手机，你应该就能看到自己的中国大陆电话卡信号回来了！</p>
-<h3>隐藏Root&amp;amp;一些坑点</h3>
-<h4>Magisk</h4>
-<p>在Magisk的排除列表手动选择所有国内软件&amp;amp;会检测Root的软件（比如支付软件等），然后在Zygisk Next的页面中（如果你安装了TrickyStoreAddon模块，应该能在Launcher上看见一个KSUWebUI的软件，打开就能看见Zygisk Next的页面了），选择遵守排除列表，这样应该就能实现较为不错的Root隐藏了</p>
-<p>唯一的例外是数字人民币，那么怎么pass数字人民币的Root检测呢？</p>
-<p>先杀掉数字人民币的后台进程</p>
-<p>Termux用户请<code>sudo -i</code>，adb用户请<code>su root</code>，然后：</p>
-<pre><code>echo &amp;quot;r=0&amp;quot; &amp;gt; /data/user/0/cn.gov.pbc.dcep/envc.push
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;脚本通过Kimi-K2 + Roo Code从bat转换而来，有部分代码可能有漏洞/执行逻辑错误，欢迎指出（&lt;/p&gt;
+&lt;p&gt;当某个瞬间（对应&lt;code&gt;fastboot reboot fastboot&lt;/code&gt;）的时候，你会看到手机重启并进入了fastbootd模式，只需要用音量键选中简体中文（或者你喜欢的语言）并按开关机键进行确认，然后等待直到脚本运行完毕，选中手机上的清除数据，输入安全码（照着手机的提示做就是），等数据清除完毕后手机就会自动重启到我们刷入的Oxygen OS啦！&lt;/p&gt;
+&lt;p&gt;是否准备root那里应该只能写&lt;code&gt;y&lt;/code&gt;（问就是那个zip包压根没有&lt;code&gt;COS_FILES_HERE&lt;/code&gt;这个文件夹）&lt;/p&gt;
+&lt;p&gt;脚本执行需要一点时间，保持耐心等待完成即可&lt;/p&gt;
+&lt;p&gt;刷完开机之后手机里的中国大陆电话卡没有信号（但是能识别出来）是正常现象，在下面的步骤中我们会进行修复（所以下面的步骤应该在有wifi网络/手机能通过某种方式获得网络连接的情况下进行）&lt;/p&gt;
+&lt;p&gt;另外记得关闭系统的自动更新功能，下面的步骤中我们会处理OTA更新&lt;/p&gt;
+&lt;h2 id=&quot;Root&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#Root&quot; aria-labelledby=&quot;Root&quot;&gt;&lt;/a&gt;Root&lt;/h2&gt;
+&lt;h3 id=&quot;Magisk&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#Magisk&quot; aria-labelledby=&quot;Magisk&quot;&gt;&lt;/a&gt;Magisk&lt;/h3&gt;
+&lt;p&gt;安装magisk应用（建议在F-Droid或者GitHub Release进行安装）&lt;/p&gt;
+&lt;p&gt;从电脑上的zip解压出来的&lt;code&gt;OOS_FILES_HERE&lt;/code&gt;文件夹中找到&lt;code&gt;init_boot.img&lt;/code&gt;并传输到手机&lt;/p&gt;
+&lt;p&gt;选择安装 -&amp;gt; 修补文件 -&amp;gt; 传入&lt;code&gt;init_boot.img&lt;/code&gt; -&amp;gt; 把得到的文件传回电脑 -&amp;gt; 按照上面打开开发者设置和USB调试的步骤来一次 -&amp;gt; &lt;code&gt;adb reboot bootloader&lt;/code&gt; -&amp;gt; &lt;code&gt;fastboot flash init_boot ${刚刚你传回电脑的img文件的绝对路径}&lt;/code&gt; -&amp;gt; &lt;code&gt;fastboot reboot&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后手机会重启，打开magisk，你的root应该就好了&lt;/p&gt;
+&lt;h3 id=&quot;KernelSU（及其变体）&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#KernelSU%EF%BC%88%E5%8F%8A%E5%85%B6%E5%8F%98%E4%BD%93%EF%BC%89&quot; aria-labelledby=&quot;KernelSU（及其变体）&quot;&gt;&lt;/a&gt;KernelSU（及其变体）&lt;/h3&gt;
+&lt;p&gt;有两个版本可选，请自行选择：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;XDA上的大佬&lt;a href=&quot;https://xdaforums.com/m/epicmann24.12171003/&quot;&gt;epicmann24&lt;/a&gt;编译的内核：&lt;a href=&quot;https://xdaforums.com/t/kernel-open-beta-epicmann24s-sm8750-kernel-sukisu-ksun-susfs.4719831/&quot;&gt;https://xdaforums.com/t/kernel-open-beta-epicmann24s-sm8750-kernel-sukisu-ksun-susfs.4719831/&lt;/a&gt; （开源地址：&lt;a href=&quot;https://github.com/epicmann24/android_kernel_common_oneplus_sm8750&quot;&gt;https://github.com/epicmann24/android_kernel_common_oneplus_sm8750&lt;/a&gt;）&lt;/li&gt;
+&lt;li&gt;酷安上的大佬BrokeStar编译的内核：&lt;a href=&quot;https://www.brokestar.top:5244/%E6%9C%AC%E5%9C%B0/%E6%90%9E%E6%9C%BA/%E5%86%85%E6%A0%B8/%E4%B8%80%E5%8A%A0/13&quot;&gt;https://www.brokestar.top:5244/本地/搞机/内核/一加/13&lt;/a&gt; （开源地址：&lt;a href=&quot;https://github.com/brokestar233/android_kernel_common_oneplus_sm8750/tree/v7&quot;&gt;https://github.com/brokestar233/android_kernel_common_oneplus_sm8750/tree/v7&lt;/a&gt;）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;请自行选择，由于我不使用KSU及其变体，因此我不能给出任何意见（&lt;/p&gt;
+&lt;h3 id=&quot;APatch&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#APatch&quot; aria-labelledby=&quot;APatch&quot;&gt;&lt;/a&gt;APatch&lt;/h3&gt;
+&lt;p&gt;我目前在使用这个root方案&lt;/p&gt;
+&lt;p&gt;在手机上安装APatch应用&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;警告：目前APatch的GitHub Release最新stable版疑似存在丢失超级用户权限应用列表与排除应用列表的问题，建议使用&lt;a href=&quot;https://t.me/APatch_CI/231&quot;&gt;https://t.me/APatch_CI/231&lt;/a&gt;的版本（也即版本&amp;gt;=11115），或是直接使用官方仓库中GitHub Actions构建出的最新版本&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;然后，为了更好地隐藏Root，我们需要下载两个kpm（内核模块）并传输到手机：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;NoHello: &lt;a href=&quot;https://t.me/apatch_discuss/298387&quot;&gt;https://t.me/apatch_discuss/298387&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;CherishPeekaboo: &lt;a href=&quot;https://t.me/apatch_discuss/286194&quot;&gt;https://t.me/apatch_discuss/286194&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;接下来就开始愉快地安装APatch吧！&lt;/p&gt;
+&lt;p&gt;首先，在电脑上那个zip解压出来的&lt;code&gt;OOS_FILES_HERE&lt;/code&gt;这个文件夹里面找到&lt;code&gt;boot.img&lt;/code&gt;并传输到手机&lt;/p&gt;
+&lt;p&gt;选择安装（右上角最靠左边那个图案） -&amp;gt; 选择要修补的启动映像文件 -&amp;gt; 选择刚刚传输到手机的&lt;code&gt;boot.img&lt;/code&gt; -&amp;gt; 选择那两个kpm -&amp;gt; 输入你喜欢的超级密钥（其实就是密码） -&amp;gt; 安装 -&amp;gt; 然后你会得到一个img文件，传回电脑 -&amp;gt; 按照上面打开开发者设置和USB调试的步骤来一次 -&amp;gt; &lt;code&gt;adb reboot bootloader&lt;/code&gt; -&amp;gt; &lt;code&gt;fastboot flash boot ${刚刚你传回电脑的img文件的绝对路径}&lt;/code&gt; -&amp;gt; &lt;code&gt;fastboot reboot&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然后手机会重启，打开手机上的APatch，输入刚刚你写的超级密钥，再点击安装系统补丁，你的root应该就好了！&lt;/p&gt;
+&lt;h3 id=&quot;需要建议按需刷入的模块（APatch叫系统模块）&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E9%9C%80%E8%A6%81%E5%BB%BA%E8%AE%AE%E6%8C%89%E9%9C%80%E5%88%B7%E5%85%A5%E7%9A%84%E6%A8%A1%E5%9D%97%EF%BC%88APatch%E5%8F%AB%E7%B3%BB%E7%BB%9F%E6%A8%A1%E5%9D%97%EF%BC%89&quot; aria-labelledby=&quot;需要建议按需刷入的模块（APatch叫系统模块）&quot;&gt;&lt;/a&gt;需要/建议/按需刷入的模块（APatch叫系统模块）&lt;/h3&gt;
+&lt;p&gt;&lt;s&gt;仙 之 人 兮 列 如 麻&lt;/s&gt;（雾&lt;/p&gt;
+&lt;p&gt;里面的很多模块都需要Zygisk功能，请注意&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;修复信号模块：&lt;a href=&quot;https://github.com/K58/fix-signal-oneplus13/releases&quot;&gt;https://github.com/K58/fix-signal-oneplus13/releases&lt;/a&gt;，这个模块对于防止OTA Bootloop和修复中国大陆电话卡的信号很关键&lt;/li&gt;
+&lt;li&gt;启用OnePlus 13外版专属的Wi-Fi 7 (6GHz)功能：&lt;a href=&quot;https://github.com/AndroPlus-org/magisk-module-wifi7/releases&quot;&gt;https://github.com/AndroPlus-org/magisk-module-wifi7/releases&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;关闭Widevine的OEMCrypto：&lt;a href=&quot;https://github.com/hzy132/liboemcryptodisabler/releases&quot;&gt;https://github.com/hzy132/liboemcryptodisabler/releases&lt;/a&gt;，这个模块可以帮助你在OnePlus 13上面看Netflix, Disney+, Amazon Prime Video等等国外的流媒体软件 (Only SD Res)&lt;/li&gt;
+&lt;li&gt;Tricky Store：&lt;a href=&quot;https://github.com/5ec1cff/TrickyStore/releases&quot;&gt;https://github.com/5ec1cff/TrickyStore/releases&lt;/a&gt;，过Google Play Integrity Check用&lt;/li&gt;
+&lt;li&gt;Tricky Store Addon：&lt;a href=&quot;https://github.com/KOWX712/Tricky-Addon-Update-Target-List/releases&quot;&gt;https://github.com/KOWX712/Tricky-Addon-Update-Target-List/releases&lt;/a&gt;，用于通过WebUI配置TrickyStore，依赖TrickyStore&lt;/li&gt;
+&lt;li&gt;PIF-NEXT：&lt;a href=&quot;https://github.com/EricInacio01/PlayIntegrityFix-NEXT/releases&quot;&gt;https://github.com/EricInacio01/PlayIntegrityFix-NEXT/releases&lt;/a&gt;，过Google Play Integrity Check用，依赖TrickyStore（不先安装TrickyStore就装不了，安装前请确保你的手机打开了代理并且能正常访问Android Developer Site）&lt;/li&gt;
+&lt;li&gt;Fingerprint Pay（按需）（安装QQ和微信的版本即可）：&lt;a href=&quot;https://github.com/eritpchy/FingerprintPay/releases&quot;&gt;https://github.com/eritpchy/FingerprintPay/releases&lt;/a&gt;，用于强行启用微信和QQ的指纹支付功能（请详细查阅该项目的README以获取更多说明）（其他的所有支付软件实测均支持Oxygen OS的指纹，因此不必安装，减少风险）&lt;/li&gt;
+&lt;li&gt;Zygisk Next（建议在Magisk上使用）：&lt;a href=&quot;https://github.com/Dr-TSNG/ZygiskNext/releases&quot;&gt;https://github.com/Dr-TSNG/ZygiskNext/releases&lt;/a&gt;，提供Zygisk功能（使用后请不要打开Magisk自带的Zygisk功能）&lt;/li&gt;
+&lt;li&gt;Shamiko（建议在Magisk上使用）：&lt;a href=&quot;https://github.com/LSPosed/LSPosed.github.io/releases&quot;&gt;https://github.com/LSPosed/LSPosed.github.io/releases&lt;/a&gt;，隐藏Root&lt;/li&gt;
+&lt;li&gt;ReZygisk（建议在APatch上使用）：&lt;a href=&quot;https://github.com/PerformanC/ReZygisk/releases&quot;&gt;https://github.com/PerformanC/ReZygisk/releases&lt;/a&gt;，提供Zygisk功能&lt;/li&gt;
+&lt;li&gt;Treat Wheel（建议在APatch上使用）：&lt;a href=&quot;https://t.me/ThePedr002/4&quot;&gt;https://t.me/ThePedr002/4&lt;/a&gt;，隐藏Root&lt;/li&gt;
+&lt;li&gt;Nohello_compat（建议在APatch上使用）：&lt;a href=&quot;https://t.me/BlankAssistance/142/62675&quot;&gt;https://t.me/BlankAssistance/142/62675&lt;/a&gt;，隐藏Root&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;我是Android新手，如有不对/欠缺考虑的地方希望大佬指出QwQ&lt;/p&gt;
+&lt;p&gt;（按需）安装完这些模块之后，重启手机，你应该就能看到自己的中国大陆电话卡信号回来了！&lt;/p&gt;
+&lt;h3 id=&quot;隐藏Root一些坑点&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E9%9A%90%E8%97%8FRoot%E4%B8%80%E4%BA%9B%E5%9D%91%E7%82%B9&quot; aria-labelledby=&quot;隐藏Root一些坑点&quot;&gt;&lt;/a&gt;隐藏Root&amp;amp;一些坑点&lt;/h3&gt;
+&lt;h4 id=&quot;Magisk-2&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#Magisk-2&quot; aria-labelledby=&quot;Magisk-2&quot;&gt;&lt;/a&gt;Magisk&lt;/h4&gt;
+&lt;p&gt;在Magisk的排除列表手动选择所有国内软件&amp;amp;会检测Root的软件（比如支付软件等），然后在Zygisk Next的页面中（如果你安装了TrickyStoreAddon模块，应该能在Launcher上看见一个KSUWebUI的软件，打开就能看见Zygisk Next的页面了），选择遵守排除列表，这样应该就能实现较为不错的Root隐藏了&lt;/p&gt;
+&lt;p&gt;唯一的例外是数字人民币，那么怎么pass数字人民币的Root检测呢？&lt;/p&gt;
+&lt;p&gt;先杀掉数字人民币的后台进程&lt;/p&gt;
+&lt;p&gt;Termux用户请&lt;code&gt;sudo -i&lt;/code&gt;，adb用户请&lt;code&gt;su root&lt;/code&gt;，然后：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-Shell&quot;&gt;echo &amp;quot;r=0&amp;quot; &amp;gt; /data/user/0/cn.gov.pbc.dcep/envc.push
 chattr +i /data/user/0/cn.gov.pbc.dcep/envc.push
-</code></pre>
-<p>如果你的数字人民币是安装在炼妖壶的壶中界或是安卓的多用户模式中的其他用户里面，请将<code>/data/user/0/</code>中的<code>0</code>替换为那个用户的id（壶中界的id是<code>10</code>）</p>
-<p>重新打开数字人民币，Root检测就能顺利通过了！</p>
-<h4>APatch</h4>
-<p>APatch在安装了推荐的内核模块和系统模块之后应该不会被检测到（我自己实测是除了<code>Holmes</code>和<code>Memory Detector</code>这两个Root检测软件），对于绝大多数应用来说够用了</p>
-<p>但是，从Magisk转投APatch的需要注意，APatch是不会主动暴露<code>su</code>的，所以必须手动在软件中授予超级用户权限！</p>
-<p>并且APatch不能像Magisk那样分进程进行授权，只能整个应用整个应用地授权</p>
-<p>还有，APatch的排除列表功能藏在了超级用户菜单里面，点击对应的应用（别点开关就行）就可以看见<code>排除修改</code>选项啦！（虽然我是压根没用这个功能……因为APatch安装这些隐藏模块之后对于向支付应用等等隐藏Root而言已经完全足够了</p>
-<h2>过Play Integrity Check</h2>
-<p>确保你的手机能正常访问Android Developer Site</p>
-<p>在模块/系统模块界面找到PIF-NEXT，点执行，按照手机上log的提示（纯英文）操作（keybox.xml应该是必须替换的，idk why）</p>
-<p>完毕后找到Tricky Store，点打开，右上角可以换语言，下方的菜单中点击<code>全选</code>（或者对应的英文，下同） -&amp;gt; <code>取消选择非必要应用</code> -&amp;gt; <code>设置有效密钥</code> -&amp;gt; <code>设置安全补丁</code> -&amp;gt; <code>获取安全补丁日期</code> -&amp;gt; 左下角log提示通过就点<code>保存</code>，不通过请排查你的网络/代理情况 -&amp;gt; 点击位于屏幕下方的<code>保存</code>，然后退出设置页面</p>
-<p>重启手机，去Google Play下载Intergrity Checker，确保能正常访问Google的情况下点击CHECK，一段时间后检查完成，应该是三个全部是绿色的✅，这个时候，Play Integrity Check就完成了！</p>
-<h2>刷入OrangeFox</h2>
-<p>如果想要安装F-Droid的特权扩展，那么它应该是必须的？</p>
-<blockquote>
-<p>警告：OnePlus 13目前尚未出现官方版的OrangeFox，此处介绍的是非官方版的OrangeFox Recovery，请自行决定是否使用，风险自负</p>
-</blockquote>
-<p>从<a href="https://github.com/koaaN/android_device_oplus_13-orangefox/releases">https://github.com/koaaN/android_device_oplus_13-orangefox/releases</a>下载最新版的OrangeFox Build</p>
-<h3>使用ADB刷入</h3>
-<ol>
-<li><code>adb reboot bootloader</code></li>
-<li><code>fastboot flash recovery ${你下载的img文件路径}</code></li>
-<li><code>fastboot reboot</code></li>
-</ol>
-<h3>使用其他软件（如Scene）刷入</h3>
-<p>自行将下载的img文件刷入到Recovery分区即可</p>
-<h2>OTA</h2>
-<p>不要使用官方的系统升级功能</p>
-<p>有两种下载OTA更新的方式：</p>
-<ol>
-<li>在Google Play中下载Oxygen Updater（有广告）（似乎需要Root），它会自动识别你的系统并自行寻找可用更新。你可以在设置中切换下载全量包/incremental包/Beta版本（目前为Android 16 Developer通道），下载结果放置在Internal Storage/内部共享存储空间初始目录里面</li>
-<li>在<a href="https://xdaforums.com/t/rom-ota-repository-of-oxygenos-coloros-full-otas-oxygenos-15-0-0-850-coloros-15-0-0-850.4718692/">https://xdaforums.com/t/rom-ota-repository-of-oxygenos-coloros-full-otas-oxygenos-15-0-0-850-coloros-15-0-0-850.4718692/</a>中下载对应的全量包</li>
-</ol>
-<p>下载完成后，打开系统的官方更新界面，点击右上角三个点，找到本地安装，选择刚刚下载的安装包（如果选不中Oxygen Updater下载的文件，请将它移动到Download目录再选择），然后开始更新</p>
-<p>如果提示“更新失败，请重试”，并且你确认你下载的包是完整的，那么打开飞行模式，在系统设置中找到<code>软件更新</code>应用，点击进去清除数据，然后保持飞行模式再次打开系统更新界面，再次选择本地安装，应该就能开始更新了</p>
-<p>更新完毕后请不要重启，打开Magisk/APatch（KSU及其变体用户请自行寻找方案……因为我不用），点击安装按钮，选择`修补另一槽位内核（用于OTA之后），然后一路执行下去，接着<strong>不要</strong>重启</p>
-<p>然后打开模块/系统模块界面，找到<code>Fixes for OnePlus 13</code>/上面所说的<code>修复信号模块</code>，点击<code>Action</code>/<code>执行</code>，它就会自动修补OTA之后的dtbo</p>
-<p>然后回到系统更新界面，点击重启。重启完毕后，OTA应该就顺利完成了！</p>
-<h2>已知问题</h2>
-<h3>一加钱包APP无法使用</h3>
-<p>虽然有<a href="https://github.com/geniucker-dev/WalletFix4OOS">https://github.com/geniucker-dev/WalletFix4OOS</a>这种解决方案，但是我发现仍然无法使用，相关情况请查阅<a href="https://github.com/geniucker-dev/WalletFix4OOS/issues/6">https://github.com/geniucker-dev/WalletFix4OOS/issues/6</a></p>
-<p>db也给了我另一个方案：直接用Magisk模块伪装机型成PJZ110（国行版）（因为按照本教程刷入了Oxygen OS之后的机型会改变成对应的外版），虽然是能正常进入部分WalletFix4OOS模块进不去的地方，但是仍然是什么东西都不能正常使用……并且会导致一打开钱包一加账户就在后台疯狂耗电（似乎是因为不成功的轮询请求？）</p>
-<h3>微信和QQ的指纹支付功能无法使用</h3>
-<p>原因未知，猜测是因为Oxygen OS没过也不太可能会去做tx家的指纹支付安全性验证</p>
-<p>目前用Fingerprint Pay模块可以<strong>近似</strong>解决（建议打开这个模块的Biometrics功能，更接近这两个软件的原生指纹支付体验）</p>
-<p>云闪付、支付宝等软件的指纹支付功能实测不需要模块也正常</p>
-<h3>部分AI功能无法正常使用</h3>
-<p>有部分AI功能在你正确地设置了代理之后是可以使用的</p>
-<p>但是，在我升级到840版本之后，我发现840新增的记忆仓AI功能即使在设置了代理之后也是无法使用的（存疑，也有可能是我不停折腾把840配坏了），还有一些侧边栏提供的AI功能也不能使用</p>
-<p>现在我重新回到了831版本，开着代理的情况下目前Oxygen OS提供的所有AI功能正常</p>
-<p>另外既然用了Oxygen OS就要有不能用国区Color OS那花样繁多的AI功能的觉悟（虽然我也不馋它的AI功能，Gemini的功能不比它们都好用吗）</p>
-<h3>840版本打开部分应用时异常耗电</h3>
-<p>目前我实测出现此问题的应用有Hiddify（46.47%）和炼妖壶（26.51%）</p>
-<p>Ray也和我说了类似的问题，并且同样发现831版本没有这个问题。因此我们认为这是840版本的系统问题，写在这里仅为提醒与警告</p>
-<h3>840版本无法安装SunOS(Nameless)等类原生</h3>
-<p>根据db提供的信息，840版本的系统分区似乎有一定的变动，导致SunOS无法安装</p>
-<p>需要安装类原生/未来有意愿刷类原生的用户请保持831及以下版本</p>
-<h2>后记</h2>
-<p>通过以上这些步骤，你就拥有了一台能正常使用的运行Oxygen OS的OnePlus 13了！</p>
-<p>那么现在来记录一下相对比较完整的mzw的折腾过程吧（x</p>
-<p>拿到一加13的时候当天晚上我就开始准备刷Nameless了，结果Root发现没有705版本的包，找不到<code>init_boot.img</code>，不备份字库刷实在是危险，然后我发现XDA上面有840版本的全量包，于是下载了下来并开始系统更新到840版本……于是直接掉进了上面所述的坑</p>
-<p>之后db查阅资料之后告诉我840刷不了类原生，于是我们开始讨论怎么降级。打算用Color OS官方的系统更新（本地安装功能）降级，结果Color OS告诉我解锁了BL的情况下禁止本地更新？？于是……</p>
-<p><strong>我直接回锁了BL，完全忘记了我Root的<code>init_boot.img</code>都没丢……</strong></p>
-<p>好嘛于是砖了。还好过几天我就去肇庆了，在肇庆的官方售后店里工程师帮我救了回来，并且在我的要求下他帮我刷了Color OS 831版本，谢谢这位好心的工程师！</p>
-<p>然后我去安装Oxygen OS 831，发现好像还挺好看的（（</p>
-<p>接下来安装Magisk并尝试隐藏Root，结果很多都过不了……最后还是感谢猫猫帮我找到了正解！（见上文）</p>
-<p>然后我自己继续Nameless的刷入，这次刷入Nameless那堆img镜像一路顺利，直到我开始<code>adb sideload</code>……现在我也记不清具体的报错了，总之sideload连1%都没跑完就直接<code>kDownloadError</code>了（感觉我怎么老是跟<code>adb sideload</code>过不去，之前给Mi Max 2刷Lineage OS的时候也是一到<code>adb sideload</code>就失败）</p>
-<p>最后烦了不要类原生了，直接刷回了Oxygen OS 831然后OTA成840并且发现相当舒服于是不想动了（x</p>
-<p>然而Ray向我推荐了APatch，之后由于卸载了Magisk模块导致信号丢失等等一堆事情（当然刷完APatch并且启用信号修复模块之后又好了），后来不知道怎么PIF-NEXT的过Play Integrity Check又掉了，变成了三个❌</p>
-<blockquote>
-<p>此处特别警告一下，部分PIF的教程里面有说过不了的话就先强行停止Play服务，然后系统设置里面清除Play服务的数据。这样做除了让你的Google Play再也登陆不上谷歌账号，时不时就会弹出<code>Google Play屡次停止运行</code>和一打开Google Play搜索就会直接闪退之外一点用没有！</p>
-</blockquote>
-<p>最后随着我重刷Oxygen OS 831一切都好了（）</p>
-<p>现在也在用Oxygen OS 831！（（</p>
-<h2>特别感谢</h2>
-<p>dabao1955，db不辞辛劳地帮了我很多很多的忙，指导我刷SunOS、折腾APatch和折腾一加钱包，也告诉了我很多的Android好用的软件！super thx db！</p>
-<p>Ray，Ray向我推荐了APatch Root方案！还给了我很多隐藏Root的模块，这下不用为Root检测烦恼啦！</p>
-<p>猫猫，猫猫帮我解决了用Magisk的时候shamiko过不了检测的问题！（其实就是打开Enforce强制遵守排除列表（x））</p>
-<p>非常感谢香子兰群的朋友们&amp;amp;我的频道订户！愿意看我折腾过程中的疯狂灌氵（x</p>
-<p>最后非常感谢愿意看这篇长篇大论的朋友们！</p>
-<h2>参考链接</h2>
-<ol>
-<li><a href="https://xdaforums.com/f/oneplus-13.12893/">XDA Forums - OnePlus 13</a></li>
-<li><a href="https://xdaforums.com/t/pjz110-13-aug-coloros-to-oxygenos-in-850-glo-eu-840-na-832.4707431/">XDA Forums - [How To Guide] [PJZ110][13 Aug] ColorOS to OxygenOS [IN .850][GLO,EU .840][NA .832]</a></li>
-<li><a href="https://xdaforums.com/t/rom-ota-repository-of-oxygenos-coloros-full-otas-oxygenos-15-0-0-850-coloros-15-0-0-850.4718692/">XDA Forums - [General] [ROM][OTA] Repository of OxygenOS &amp;amp; ColorOS FULL OTA&amp;#39;s [OxygenOS 15.0.0.850][ColorOS 15.0.0.850]</a></li>
-<li><a href="https://github.com/eritpchy/FingerprintPay/">GitHub - eritpchy/FingerprintPay</a></li>
-<li><a href="https://blog.s13est.com/2023/09/%E5%85%B3%E4%BA%8E%E6%89%8B%E6%9C%BAroot%E5%90%8E%E5%A6%82%E4%BD%95%E6%AC%A2%E5%BF%AB%E4%BD%BF%E7%94%A8%E6%95%B0%E5%AD%97%E4%BA%BA%E6%B0%91%E5%B8%81app/">Jeffreys&amp;#39; Blog - 关于手机root后如何欢快使用数字人民币app</a></li>
-<li><a href="https://www.bilibili.com/opus/813374125027360848">Bilibili - 使用Magisk Delta获取小米(MIUI14)root权限</a></li>
-<li><a href="https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection">GitHub - yashaswee-exe/AndroidGuides - Fix integrity and root detection</a></li>
-<li><a href="https://xdaforums.com/t/recovery-unofficial-1-0-3-orangefox-recovery-r11-3.4751927/">XDA Forums - [Development] [Recovery][Unofficial][1.0.3] OrangeFox Recovery R11.3</a></li>
-<li><a href="https://github.com/koaaN/android_device_oplus_13-orangefox/">GitHub - koaaN/android_device_oplus_13-orangefox</a></li>
-<li><a href="https://github.com/geniucker-dev/WalletFix4OOS">GitHub - geniucker-dev/WalletFix4OOS</a></li>
-<li><a href="https://www.nameless.wiki/getting-started/downloads/oneplus/dodge">Nameless CLO - Download - OnePlus 13</a></li>
-<li><a href="https://www.nameless.wiki/getting-started/flash-instructions/oneplus/dodge">Nameless CLO - Flash Instrutions - OnePlus 13</a></li>
-</ol>
-
-
-        ]]>
-      </content>
-      <summary type="html">本文记录了一点对于最近折腾OnePlus 13的经历（创</summary>
-      <updated>2025-08-17T07:36:00.000Z</updated>
-      <published>2025-08-17T07:36:00.000Z</published>
-      </entry><entry>
-      <title>碎记·RWKV的邪典量化（llama.cpp only）</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=rwkv_gguf_quantization.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=rwkv_gguf_quantization.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>碎记·RWKV的邪典量化（llama.cpp only）</h1>
-<h2>环境准备喵</h2>
-<p>我水，就硬水（x</p>
-<p>也不想细说了，直接上代码更有效（</p>
-<pre><code>#!/usr/bin/sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果你的数字人民币是安装在炼妖壶的壶中界或是安卓的多用户模式中的其他用户里面，请将&lt;code&gt;/data/user/0/&lt;/code&gt;中的&lt;code&gt;0&lt;/code&gt;替换为那个用户的id（壶中界的id是&lt;code&gt;10&lt;/code&gt;）&lt;/p&gt;
+&lt;p&gt;重新打开数字人民币，Root检测就能顺利通过了！&lt;/p&gt;
+&lt;h4 id=&quot;APatch-2&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#APatch-2&quot; aria-labelledby=&quot;APatch-2&quot;&gt;&lt;/a&gt;APatch&lt;/h4&gt;
+&lt;p&gt;APatch在安装了推荐的内核模块和系统模块之后应该不会被检测到（我自己实测是除了&lt;code&gt;Holmes&lt;/code&gt;和&lt;code&gt;Memory Detector&lt;/code&gt;这两个Root检测软件），对于绝大多数应用来说够用了&lt;/p&gt;
+&lt;p&gt;但是，从Magisk转投APatch的需要注意，APatch是不会主动暴露&lt;code&gt;su&lt;/code&gt;的，所以必须手动在软件中授予超级用户权限！&lt;/p&gt;
+&lt;p&gt;并且APatch不能像Magisk那样分进程进行授权，只能整个应用整个应用地授权&lt;/p&gt;
+&lt;p&gt;还有，APatch的排除列表功能藏在了超级用户菜单里面，点击对应的应用（别点开关就行）就可以看见&lt;code&gt;排除修改&lt;/code&gt;选项啦！（虽然我是压根没用这个功能……因为APatch安装这些隐藏模块之后对于向支付应用等等隐藏Root而言已经完全足够了&lt;/p&gt;
+&lt;h2 id=&quot;过Play-Integrity-Check&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E8%BF%87Play-Integrity-Check&quot; aria-labelledby=&quot;过Play-Integrity-Check&quot;&gt;&lt;/a&gt;过Play Integrity Check&lt;/h2&gt;
+&lt;p&gt;确保你的手机能正常访问Android Developer Site&lt;/p&gt;
+&lt;p&gt;在模块/系统模块界面找到PIF-NEXT，点执行，按照手机上log的提示（纯英文）操作（keybox.xml应该是必须替换的，idk why）&lt;/p&gt;
+&lt;p&gt;完毕后找到Tricky Store，点打开，右上角可以换语言，下方的菜单中点击&lt;code&gt;全选&lt;/code&gt;（或者对应的英文，下同） -&amp;gt; &lt;code&gt;取消选择非必要应用&lt;/code&gt; -&amp;gt; &lt;code&gt;设置有效密钥&lt;/code&gt; -&amp;gt; &lt;code&gt;设置安全补丁&lt;/code&gt; -&amp;gt; &lt;code&gt;获取安全补丁日期&lt;/code&gt; -&amp;gt; 左下角log提示通过就点&lt;code&gt;保存&lt;/code&gt;，不通过请排查你的网络/代理情况 -&amp;gt; 点击位于屏幕下方的&lt;code&gt;保存&lt;/code&gt;，然后退出设置页面&lt;/p&gt;
+&lt;p&gt;重启手机，去Google Play下载Intergrity Checker，确保能正常访问Google的情况下点击CHECK，一段时间后检查完成，应该是三个全部是绿色的✅，这个时候，Play Integrity Check就完成了！&lt;/p&gt;
+&lt;h2 id=&quot;刷入OrangeFox&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E5%88%B7%E5%85%A5OrangeFox&quot; aria-labelledby=&quot;刷入OrangeFox&quot;&gt;&lt;/a&gt;刷入OrangeFox&lt;/h2&gt;
+&lt;p&gt;如果想要安装F-Droid的特权扩展，那么它应该是必须的？&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;警告：OnePlus 13目前尚未出现官方版的OrangeFox，此处介绍的是非官方版的OrangeFox Recovery，请自行决定是否使用，风险自负&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;从&lt;a href=&quot;https://github.com/koaaN/android_device_oplus_13-orangefox/releases&quot;&gt;https://github.com/koaaN/android_device_oplus_13-orangefox/releases&lt;/a&gt;下载最新版的OrangeFox Build&lt;/p&gt;
+&lt;h3 id=&quot;使用ADB刷入&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E4%BD%BF%E7%94%A8ADB%E5%88%B7%E5%85%A5&quot; aria-labelledby=&quot;使用ADB刷入&quot;&gt;&lt;/a&gt;使用ADB刷入&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;adb reboot bootloader&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fastboot flash recovery ${你下载的img文件路径}&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fastboot reboot&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;使用其他软件（如Scene）刷入&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E4%BD%BF%E7%94%A8%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6%EF%BC%88%E5%A6%82Scene%EF%BC%89%E5%88%B7%E5%85%A5&quot; aria-labelledby=&quot;使用其他软件（如Scene）刷入&quot;&gt;&lt;/a&gt;使用其他软件（如Scene）刷入&lt;/h3&gt;
+&lt;p&gt;自行将下载的img文件刷入到Recovery分区即可&lt;/p&gt;
+&lt;h2 id=&quot;OTA&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#OTA&quot; aria-labelledby=&quot;OTA&quot;&gt;&lt;/a&gt;OTA&lt;/h2&gt;
+&lt;p&gt;不要使用官方的系统升级功能&lt;/p&gt;
+&lt;p&gt;有两种下载OTA更新的方式：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在Google Play中下载Oxygen Updater（有广告）（似乎需要Root），它会自动识别你的系统并自行寻找可用更新。你可以在设置中切换下载全量包/incremental包/Beta版本（目前为Android 16 Developer通道），下载结果放置在Internal Storage/内部共享存储空间初始目录里面&lt;/li&gt;
+&lt;li&gt;在&lt;a href=&quot;https://xdaforums.com/t/rom-ota-repository-of-oxygenos-coloros-full-otas-oxygenos-15-0-0-850-coloros-15-0-0-850.4718692/&quot;&gt;https://xdaforums.com/t/rom-ota-repository-of-oxygenos-coloros-full-otas-oxygenos-15-0-0-850-coloros-15-0-0-850.4718692/&lt;/a&gt;中下载对应的全量包&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;下载完成后，打开系统的官方更新界面，点击右上角三个点，找到本地安装，选择刚刚下载的安装包（如果选不中Oxygen Updater下载的文件，请将它移动到Download目录再选择），然后开始更新&lt;/p&gt;
+&lt;p&gt;如果提示“更新失败，请重试”，并且你确认你下载的包是完整的，那么打开飞行模式，在系统设置中找到&lt;code&gt;软件更新&lt;/code&gt;应用，点击进去清除数据，然后保持飞行模式再次打开系统更新界面，再次选择本地安装，应该就能开始更新了&lt;/p&gt;
+&lt;p&gt;更新完毕后请不要重启，打开Magisk/APatch（KSU及其变体用户请自行寻找方案……因为我不用），点击安装按钮，选择`修补另一槽位内核（用于OTA之后），然后一路执行下去，接着&lt;strong&gt;不要&lt;/strong&gt;重启&lt;/p&gt;
+&lt;p&gt;然后打开模块/系统模块界面，找到&lt;code&gt;Fixes for OnePlus 13&lt;/code&gt;/上面所说的&lt;code&gt;修复信号模块&lt;/code&gt;，点击&lt;code&gt;Action&lt;/code&gt;/&lt;code&gt;执行&lt;/code&gt;，它就会自动修补OTA之后的dtbo&lt;/p&gt;
+&lt;p&gt;然后回到系统更新界面，点击重启。重启完毕后，OTA应该就顺利完成了！&lt;/p&gt;
+&lt;h2 id=&quot;已知问题&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E5%B7%B2%E7%9F%A5%E9%97%AE%E9%A2%98&quot; aria-labelledby=&quot;已知问题&quot;&gt;&lt;/a&gt;已知问题&lt;/h2&gt;
+&lt;h3 id=&quot;一加钱包APP无法使用&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E4%B8%80%E5%8A%A0%E9%92%B1%E5%8C%85APP%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8&quot; aria-labelledby=&quot;一加钱包APP无法使用&quot;&gt;&lt;/a&gt;一加钱包APP无法使用&lt;/h3&gt;
+&lt;p&gt;虽然有&lt;a href=&quot;https://github.com/geniucker-dev/WalletFix4OOS&quot;&gt;https://github.com/geniucker-dev/WalletFix4OOS&lt;/a&gt;这种解决方案，但是我发现仍然无法使用，相关情况请查阅&lt;a href=&quot;https://github.com/geniucker-dev/WalletFix4OOS/issues/6&quot;&gt;https://github.com/geniucker-dev/WalletFix4OOS/issues/6&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;db也给了我另一个方案：直接用Magisk模块伪装机型成PJZ110（国行版）（因为按照本教程刷入了Oxygen OS之后的机型会改变成对应的外版），虽然是能正常进入部分WalletFix4OOS模块进不去的地方，但是仍然是什么东西都不能正常使用……并且会导致一打开钱包一加账户就在后台疯狂耗电（似乎是因为不成功的轮询请求？）&lt;/p&gt;
+&lt;h3 id=&quot;微信和QQ的指纹支付功能无法使用&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E5%BE%AE%E4%BF%A1%E5%92%8CQQ%E7%9A%84%E6%8C%87%E7%BA%B9%E6%94%AF%E4%BB%98%E5%8A%9F%E8%83%BD%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8&quot; aria-labelledby=&quot;微信和QQ的指纹支付功能无法使用&quot;&gt;&lt;/a&gt;微信和QQ的指纹支付功能无法使用&lt;/h3&gt;
+&lt;p&gt;原因未知，猜测是因为Oxygen OS没过也不太可能会去做tx家的指纹支付安全性验证&lt;/p&gt;
+&lt;p&gt;目前用Fingerprint Pay模块可以&lt;strong&gt;近似&lt;/strong&gt;解决（建议打开这个模块的Biometrics功能，更接近这两个软件的原生指纹支付体验）&lt;/p&gt;
+&lt;p&gt;云闪付、支付宝等软件的指纹支付功能实测不需要模块也正常&lt;/p&gt;
+&lt;h3 id=&quot;部分AI功能无法正常使用&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E9%83%A8%E5%88%86AI%E5%8A%9F%E8%83%BD%E6%97%A0%E6%B3%95%E6%AD%A3%E5%B8%B8%E4%BD%BF%E7%94%A8&quot; aria-labelledby=&quot;部分AI功能无法正常使用&quot;&gt;&lt;/a&gt;部分AI功能无法正常使用&lt;/h3&gt;
+&lt;p&gt;有部分AI功能在你正确地设置了代理之后是可以使用的&lt;/p&gt;
+&lt;p&gt;但是，在我升级到840版本之后，我发现840新增的记忆仓AI功能即使在设置了代理之后也是无法使用的（存疑，也有可能是我不停折腾把840配坏了），还有一些侧边栏提供的AI功能也不能使用&lt;/p&gt;
+&lt;p&gt;现在我重新回到了831版本，开着代理的情况下目前Oxygen OS提供的所有AI功能正常&lt;/p&gt;
+&lt;p&gt;另外既然用了Oxygen OS就要有不能用国区Color OS那花样繁多的AI功能的觉悟（虽然我也不馋它的AI功能，Gemini的功能不比它们都好用吗）&lt;/p&gt;
+&lt;h3 id=&quot;840版本打开部分应用时异常耗电&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#840%E7%89%88%E6%9C%AC%E6%89%93%E5%BC%80%E9%83%A8%E5%88%86%E5%BA%94%E7%94%A8%E6%97%B6%E5%BC%82%E5%B8%B8%E8%80%97%E7%94%B5&quot; aria-labelledby=&quot;840版本打开部分应用时异常耗电&quot;&gt;&lt;/a&gt;840版本打开部分应用时异常耗电&lt;/h3&gt;
+&lt;p&gt;目前我实测出现此问题的应用有Hiddify（46.47%）和炼妖壶（26.51%）&lt;/p&gt;
+&lt;p&gt;Ray也和我说了类似的问题，并且同样发现831版本没有这个问题。因此我们认为这是840版本的系统问题，写在这里仅为提醒与警告&lt;/p&gt;
+&lt;h3 id=&quot;840版本无法安装SunOSNameless等类原生&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#840%E7%89%88%E6%9C%AC%E6%97%A0%E6%B3%95%E5%AE%89%E8%A3%85SunOSNameless%E7%AD%89%E7%B1%BB%E5%8E%9F%E7%94%9F&quot; aria-labelledby=&quot;840版本无法安装SunOSNameless等类原生&quot;&gt;&lt;/a&gt;840版本无法安装SunOS(Nameless)等类原生&lt;/h3&gt;
+&lt;p&gt;根据db提供的信息，840版本的系统分区似乎有一定的变动，导致SunOS无法安装&lt;/p&gt;
+&lt;p&gt;需要安装类原生/未来有意愿刷类原生的用户请保持831及以下版本&lt;/p&gt;
+&lt;h2 id=&quot;后记&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E5%90%8E%E8%AE%B0&quot; aria-labelledby=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h2&gt;
+&lt;p&gt;通过以上这些步骤，你就拥有了一台能正常使用的运行Oxygen OS的OnePlus 13了！&lt;/p&gt;
+&lt;p&gt;那么现在来记录一下相对比较完整的mzw的折腾过程吧（x&lt;/p&gt;
+&lt;p&gt;拿到一加13的时候当天晚上我就开始准备刷Nameless了，结果Root发现没有705版本的包，找不到&lt;code&gt;init_boot.img&lt;/code&gt;，不备份字库刷实在是危险，然后我发现XDA上面有840版本的全量包，于是下载了下来并开始系统更新到840版本……于是直接掉进了上面所述的坑&lt;/p&gt;
+&lt;p&gt;之后db查阅资料之后告诉我840刷不了类原生，于是我们开始讨论怎么降级。打算用Color OS官方的系统更新（本地安装功能）降级，结果Color OS告诉我解锁了BL的情况下禁止本地更新？？于是……&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;我直接回锁了BL，完全忘记了我Root的&lt;code&gt;init_boot.img&lt;/code&gt;都没丢……&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;好嘛于是砖了。还好过几天我就去肇庆了，在肇庆的官方售后店里工程师帮我救了回来，并且在我的要求下他帮我刷了Color OS 831版本，谢谢这位好心的工程师！&lt;/p&gt;
+&lt;p&gt;然后我去安装Oxygen OS 831，发现好像还挺好看的（（&lt;/p&gt;
+&lt;p&gt;接下来安装Magisk并尝试隐藏Root，结果很多都过不了……最后还是感谢猫猫帮我找到了正解！（见上文）&lt;/p&gt;
+&lt;p&gt;然后我自己继续Nameless的刷入，这次刷入Nameless那堆img镜像一路顺利，直到我开始&lt;code&gt;adb sideload&lt;/code&gt;……现在我也记不清具体的报错了，总之sideload连1%都没跑完就直接&lt;code&gt;kDownloadError&lt;/code&gt;了（感觉我怎么老是跟&lt;code&gt;adb sideload&lt;/code&gt;过不去，之前给Mi Max 2刷Lineage OS的时候也是一到&lt;code&gt;adb sideload&lt;/code&gt;就失败）&lt;/p&gt;
+&lt;p&gt;最后烦了不要类原生了，直接刷回了Oxygen OS 831然后OTA成840并且发现相当舒服于是不想动了（x&lt;/p&gt;
+&lt;p&gt;然而Ray向我推荐了APatch，之后由于卸载了Magisk模块导致信号丢失等等一堆事情（当然刷完APatch并且启用信号修复模块之后又好了），后来不知道怎么PIF-NEXT的过Play Integrity Check又掉了，变成了三个❌&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;此处特别警告一下，部分PIF的教程里面有说过不了的话就先强行停止Play服务，然后系统设置里面清除Play服务的数据。这样做除了让你的Google Play再也登陆不上谷歌账号，时不时就会弹出&lt;code&gt;Google Play屡次停止运行&lt;/code&gt;和一打开Google Play搜索就会直接闪退之外一点用没有！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;最后随着我重刷Oxygen OS 831一切都好了（）&lt;/p&gt;
+&lt;p&gt;现在也在用Oxygen OS 831！（（&lt;/p&gt;
+&lt;h2 id=&quot;特别感谢&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E7%89%B9%E5%88%AB%E6%84%9F%E8%B0%A2&quot; aria-labelledby=&quot;特别感谢&quot;&gt;&lt;/a&gt;特别感谢&lt;/h2&gt;
+&lt;p&gt;dabao1955，db不辞辛劳地帮了我很多很多的忙，指导我刷SunOS、折腾APatch和折腾一加钱包，也告诉了我很多的Android好用的软件！super thx db！&lt;/p&gt;
+&lt;p&gt;Ray，Ray向我推荐了APatch Root方案！还给了我很多隐藏Root的模块，这下不用为Root检测烦恼啦！&lt;/p&gt;
+&lt;p&gt;猫猫，猫猫帮我解决了用Magisk的时候shamiko过不了检测的问题！（其实就是打开Enforce强制遵守排除列表（x））&lt;/p&gt;
+&lt;p&gt;非常感谢香子兰群的朋友们&amp;amp;我的频道订户！愿意看我折腾过程中的疯狂灌氵（x&lt;/p&gt;
+&lt;p&gt;最后非常感谢愿意看这篇长篇大论的朋友们！&lt;/p&gt;
+&lt;h2 id=&quot;参考链接&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/use_oxygen_os_in_oplus13_pjz110/#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5&quot; aria-labelledby=&quot;参考链接&quot;&gt;&lt;/a&gt;参考链接&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://xdaforums.com/f/oneplus-13.12893/&quot;&gt;XDA Forums - OnePlus 13&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://xdaforums.com/t/pjz110-13-aug-coloros-to-oxygenos-in-850-glo-eu-840-na-832.4707431/&quot;&gt;XDA Forums - [How To Guide] [PJZ110][13 Aug] ColorOS to OxygenOS [IN .850][GLO,EU .840][NA .832]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://xdaforums.com/t/rom-ota-repository-of-oxygenos-coloros-full-otas-oxygenos-15-0-0-850-coloros-15-0-0-850.4718692/&quot;&gt;XDA Forums - [General] [ROM][OTA] Repository of OxygenOS &amp;amp; ColorOS FULL OTA&#39;s [OxygenOS 15.0.0.850][ColorOS 15.0.0.850]&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/eritpchy/FingerprintPay/&quot;&gt;GitHub - eritpchy/FingerprintPay&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.s13est.com/2023/09/%E5%85%B3%E4%BA%8E%E6%89%8B%E6%9C%BAroot%E5%90%8E%E5%A6%82%E4%BD%95%E6%AC%A2%E5%BF%AB%E4%BD%BF%E7%94%A8%E6%95%B0%E5%AD%97%E4%BA%BA%E6%B0%91%E5%B8%81app/&quot;&gt;Jeffreys&#39; Blog - 关于手机root后如何欢快使用数字人民币app&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.bilibili.com/opus/813374125027360848&quot;&gt;Bilibili - 使用Magisk Delta获取小米(MIUI14)root权限&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/yashaswee-exe/AndroidGuides/wiki/Fix-integrity-and-root-detection&quot;&gt;GitHub - yashaswee-exe/AndroidGuides - Fix integrity and root detection&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://xdaforums.com/t/recovery-unofficial-1-0-3-orangefox-recovery-r11-3.4751927/&quot;&gt;XDA Forums - [Development] [Recovery][Unofficial][1.0.3] OrangeFox Recovery R11.3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/koaaN/android_device_oplus_13-orangefox/&quot;&gt;GitHub - koaaN/android_device_oplus_13-orangefox&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/geniucker-dev/WalletFix4OOS&quot;&gt;GitHub - geniucker-dev/WalletFix4OOS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.nameless.wiki/getting-started/downloads/oneplus/dodge&quot;&gt;Nameless CLO - Download - OnePlus 13&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.nameless.wiki/getting-started/flash-instructions/oneplus/dodge&quot;&gt;Nameless CLO - Flash Instrutions - OnePlus 13&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+</entry>
+<entry>
+<title>碎记·RWKV的邪典量化（llama.cpp only）</title>
+<link href="https://mzwing.eu.org/article/rwkv_gguf_quantization/"/>
+<id>https://mzwing.eu.org/article/rwkv_gguf_quantization/</id>
+<published>2025-02-04T09:27:00.000Z</published>
+<updated>2025-02-04T09:27:00.000Z</updated>
+<summary>在量化RWKV系列模型中遇到的一些奇奇怪怪的问题以及略显诡异的解决方案……</summary>
+<content type="html">&lt;h1 id=&quot;碎记·RWKV的邪典量化（llama.cpp-only）&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/rwkv_gguf_quantization/#%E7%A2%8E%E8%AE%B0%C2%B7RWKV%E7%9A%84%E9%82%AA%E5%85%B8%E9%87%8F%E5%8C%96%EF%BC%88llama.cpp-only%EF%BC%89&quot; aria-labelledby=&quot;碎记·RWKV的邪典量化（llama.cpp-only）&quot;&gt;&lt;/a&gt;碎记·RWKV的邪典量化（llama.cpp only）&lt;/h1&gt;
+&lt;h2 id=&quot;环境准备喵&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/rwkv_gguf_quantization/#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87%E5%96%B5&quot; aria-labelledby=&quot;环境准备喵&quot;&gt;&lt;/a&gt;环境准备喵&lt;/h2&gt;
+&lt;p&gt;我水，就硬水（x&lt;/p&gt;
+&lt;p&gt;也不想细说了，直接上代码更有效（&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;#!/usr/bin/sh
 
 llama_cpp_version=&amp;quot;b4519&amp;quot;
 
@@ -452,17 +445,17 @@ rye add torch numpy
 
 # Back to home
 cd /home/$user/
-</code></pre>
-<p>什么？为什么要用<code>$user</code>？下文揭晓（（（</p>
-<p>到这里各位应该已经对我的石山代码有了心理预期了，别急，下面更石（x</p>
-<p>简单说一下吧，之所以不直接在<code>llama.cpp</code>中执行<code>rye init</code>是因为<code>llama.cpp</code>官方用的是<code>poetry</code>，然而创出天际的mzw怎么可能乖乖遵循官方建议呢（x），所以直接新建了一个目录，继续用我的<code>rye</code>去！（x</p>
-<p>用<code>venv</code>安装HF CLI是因为<code>rye install huggingface_hub[hf_transfer]</code>是不会出现<code>huggingface-cli</code>这个command的（恼，屑<code>rye</code></p>
-<h2>然后……差点就没有然后了</h2>
-<p>接下来遇到的问题堪称重量级……搜索了很久也找不到怎么把RWKV转换成Huggingface Format或是直接从pth转换为gguf。明明RWKV官方和Transformers一块推出过一个转换脚本，结果这脚本居然运行不了（也是服了，什么草台班子）。这下算是陷入困境了，找了大概两三天，都快放弃了。</p>
-<p>甚至一度想过让Deepseek写一个，然而显然Deepseek并不清楚RWKV6的结构，搁那一通乱写，遂作罢。</p>
-<p>最后实在忍不住了！跑去btaskel大佬那里发了个<a href="https://huggingface.co/btaskel/RWKV6-3B-Chn-UnlimitedRP-mini-chat-GGUF/discussions/1">Discussion</a>（用工地英语和人家交流（x）），自己也尝试了一些别的解决方案，最后才终于找到了最优解……Thanks btakel佬 very much!</p>
-<p>用到的脚本大概长这样：</p>
-<pre><code># convert_rwkv6_to_hf.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;什么？为什么要用&lt;code&gt;$user&lt;/code&gt;？下文揭晓（（（&lt;/p&gt;
+&lt;p&gt;到这里各位应该已经对我的石山代码有了心理预期了，别急，下面更石（x&lt;/p&gt;
+&lt;p&gt;简单说一下吧，之所以不直接在&lt;code&gt;llama.cpp&lt;/code&gt;中执行&lt;code&gt;rye init&lt;/code&gt;是因为&lt;code&gt;llama.cpp&lt;/code&gt;官方用的是&lt;code&gt;poetry&lt;/code&gt;，然而创出天际的mzw怎么可能乖乖遵循官方建议呢（x），所以直接新建了一个目录，继续用我的&lt;code&gt;rye&lt;/code&gt;去！（x&lt;/p&gt;
+&lt;p&gt;用&lt;code&gt;venv&lt;/code&gt;安装HF CLI是因为&lt;code&gt;rye install huggingface_hub[hf_transfer]&lt;/code&gt;是不会出现&lt;code&gt;huggingface-cli&lt;/code&gt;这个command的（恼，屑&lt;code&gt;rye&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;然后……差点就没有然后了&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/rwkv_gguf_quantization/#%E7%84%B6%E5%90%8E%E2%80%A6%E2%80%A6%E5%B7%AE%E7%82%B9%E5%B0%B1%E6%B2%A1%E6%9C%89%E7%84%B6%E5%90%8E%E4%BA%86&quot; aria-labelledby=&quot;然后……差点就没有然后了&quot;&gt;&lt;/a&gt;然后……差点就没有然后了&lt;/h2&gt;
+&lt;p&gt;接下来遇到的问题堪称重量级……搜索了很久也找不到怎么把RWKV转换成Huggingface Format或是直接从pth转换为gguf。明明RWKV官方和Transformers一块推出过一个转换脚本，结果这脚本居然运行不了（也是服了，什么草台班子）。这下算是陷入困境了，找了大概两三天，都快放弃了。&lt;/p&gt;
+&lt;p&gt;甚至一度想过让Deepseek写一个，然而显然Deepseek并不清楚RWKV6的结构，搁那一通乱写，遂作罢。&lt;/p&gt;
+&lt;p&gt;最后实在忍不住了！跑去btaskel大佬那里发了个&lt;a href=&quot;https://huggingface.co/btaskel/RWKV6-3B-Chn-UnlimitedRP-mini-chat-GGUF/discussions/1&quot;&gt;Discussion&lt;/a&gt;（用工地英语和人家交流（x）），自己也尝试了一些别的解决方案，最后才终于找到了最优解……Thanks btakel佬 very much!&lt;/p&gt;
+&lt;p&gt;用到的脚本大概长这样：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# convert_rwkv6_to_hf.py
 # Original code from &amp;lt;https://rwkv.cn/llamacpp#appendix-code&amp;gt;
 # Edited by mzwing&amp;lt;mzwing@mzwing.eu.org&amp;gt;
 # Convert the model for the pytoch_model.bin
@@ -516,8 +509,9 @@ for key in model.keys():
 # Save the new model
 print(&amp;quot;Saving the new model to:&amp;quot;, TARGET_MODEL)
 torch.save(new_model, TARGET_MODEL)
-</code></pre>
-<pre><code>#!/usr/bin/sh
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;#!/usr/bin/sh
 
 author=&amp;quot;Seikaijyu&amp;quot;
 model=&amp;quot;RWKV6-7B-v3-porn-chat&amp;quot;
@@ -544,14 +538,14 @@ python /home/$user/convert_rwkv6_to_hf.py /home/$user/AI/model/$model$suffix-ori
 
 # Clean up
 rm -rf /home/$user/AI/model/$model$suffix-original/
-</code></pre>
-<p><code>author</code>和<code>model</code>是用来控制要量化的模型的，<code>suffix</code>则是用来控制像<a href="https://huggingface.co/Seikaijyu/RWKV6-7B-v3-porn-chat">Seikaijyu/RWKV6-7B-v3-porn-chat</a>下的<code>RWKV6-7B-v3-porn-chat-pro.pth</code>那种一个仓库下面放一些变体的情况。</p>
-<p><code>size</code>对应的是你要转换的模型的参数量，比如<code>1B6</code>之类（确切地说是基底模型的，然而一般而言偏差都不会太大的啦（x</p>
-<p>链接那里自己改改罢，我石山不想碰（x</p>
-<p>此处邪典可以说是点满了……我真的万万想不到居然这么玩，直接clone原模型的config下来然后替换<code>pytorch_model.bin</code>就完成了HF格式化……</p>
-<p>另外记得即使是RWKV v6 world系列模型也请使用RWKV普通模型的HF config，否则下面的<code>llama.cpp</code>转换会失败！会告诉你缺少<code>vocab</code>。（疑似是RWKV v6 llama.cpp PR实现的时候并没有考虑world模型，结果最后一看world也能用，行吧那就这样了，于是就出现了这么个诡异情况……）</p>
-<h2>终于可以<code>convert_hf_to_gguf.py</code>启动了……</h2>
-<pre><code># Convert the model into gguf F16 format
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;&lt;code&gt;author&lt;/code&gt;和&lt;code&gt;model&lt;/code&gt;是用来控制要量化的模型的，&lt;code&gt;suffix&lt;/code&gt;则是用来控制像&lt;a href=&quot;https://huggingface.co/Seikaijyu/RWKV6-7B-v3-porn-chat&quot;&gt;Seikaijyu/RWKV6-7B-v3-porn-chat&lt;/a&gt;下的&lt;code&gt;RWKV6-7B-v3-porn-chat-pro.pth&lt;/code&gt;那种一个仓库下面放一些变体的情况。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;size&lt;/code&gt;对应的是你要转换的模型的参数量，比如&lt;code&gt;1B6&lt;/code&gt;之类（确切地说是基底模型的，然而一般而言偏差都不会太大的啦（x&lt;/p&gt;
+&lt;p&gt;链接那里自己改改罢，我石山不想碰（x&lt;/p&gt;
+&lt;p&gt;此处邪典可以说是点满了……我真的万万想不到居然这么玩，直接clone原模型的config下来然后替换&lt;code&gt;pytorch_model.bin&lt;/code&gt;就完成了HF格式化……&lt;/p&gt;
+&lt;p&gt;另外记得即使是RWKV v6 world系列模型也请使用RWKV普通模型的HF config，否则下面的&lt;code&gt;llama.cpp&lt;/code&gt;转换会失败！会告诉你缺少&lt;code&gt;vocab&lt;/code&gt;。（疑似是RWKV v6 llama.cpp PR实现的时候并没有考虑world模型，结果最后一看world也能用，行吧那就这样了，于是就出现了这么个诡异情况……）&lt;/p&gt;
+&lt;h2 id=&quot;终于可以convert_hf_to_gguf.py启动了……&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/rwkv_gguf_quantization/#%E7%BB%88%E4%BA%8E%E5%8F%AF%E4%BB%A5convert_hf_to_gguf.py%E5%90%AF%E5%8A%A8%E4%BA%86%E2%80%A6%E2%80%A6&quot; aria-labelledby=&quot;终于可以convert_hf_to_gguf.py启动了……&quot;&gt;&lt;/a&gt;终于可以&lt;code&gt;convert_hf_to_gguf.py&lt;/code&gt;启动了……&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;# Convert the model into gguf F16 format
 mkdir -p /home/$user/AI/model/$model$suffix-GGUF/
 source /home/$user/AI/repo/llama_cpp/.venv/bin/activate
 cd /home/$user/AI/repo/llama.cpp/
@@ -562,11 +556,11 @@ rm -rf /home/$user/AI/model/$model$suffix/
 
 # Back to home
 cd /home/$user/
-</code></pre>
-<p>这里不用我多说了罢（x）就标准的<code>llama.cpp</code>转换流程（（（</p>
-<h2>量化，启动</h2>
-<p>做了一个小脚本自动量化（问就是懒）</p>
-<pre><code>#!/usr/bin/sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这里不用我多说了罢（x）就标准的&lt;code&gt;llama.cpp&lt;/code&gt;转换流程（（（&lt;/p&gt;
+&lt;h2 id=&quot;量化，启动&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/rwkv_gguf_quantization/#%E9%87%8F%E5%8C%96%EF%BC%8C%E5%90%AF%E5%8A%A8&quot; aria-labelledby=&quot;量化，启动&quot;&gt;&lt;/a&gt;量化，启动&lt;/h2&gt;
+&lt;p&gt;做了一个小脚本自动量化（问就是懒）&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;#!/usr/bin/sh
 
 model=&amp;quot;RWKV6-7B-v3-porn-chat&amp;quot;
 suffix=&amp;quot;&amp;quot;
@@ -602,31 +596,31 @@ rm -rf /home/$user/AI/model/$model$suffix-GGUF/
 
 # Back to home
 cd /home/$user/
-</code></pre>
-<p>为什么要login呢？下一节谈（x</p>
-<p>imatrix那里折腾了我好久（忘记RTFM导致的），我此前就是因为没搞明白imatrix才暂时退坑AI量化的。我此前以为<a href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87%E5%96%B5">环境准备</a>那里下载的<code>calibration_datav3.txt</code>能直接给<code>llama-quantize</code>用，而且我一直以为只有<code>I-Quants</code>才会用到<code>imatrix</code>（谁让这玩意首字母都是I呢（强行解释（难视）））。这次算是被好好上了一课了：<code>imatrix</code>是用来校准量化差的<code>重要性矩阵</code>（<code>Importance Matrix</code>），除了<code>F16</code>/<code>F32</code>/<code>BF16</code>之外的量化都能从中受益（提高质量）。可以参考：<a href="https://qwen.readthedocs.io/zh-cn/stable/quantization/llama.cpp.html#quantizing-the-gguf-with-importance-matrix">Qwen Docs中关于llama.cpp量化的描述</a>（然而我在写这篇文章的时候才发现这个好东西，悲）。</p>
-<p>此处的代码中我跟随<a href="https://huggingface.co/bartowski">bartowski</a>（AI量化真佬）的规范，用了他的<code>calibration_datav3.txt</code>数据集（真·万金油）进行<code>imatrix</code>生成。</p>
-<p>另外提一嘴，个人认为只要生成<code>imatrix</code>用的数据集涵盖的方面够全、够长，就可以实现重要性矩阵的作用。当然更贴近AI训练数据的校准数据集当然是更好的，但是直接用万金油效果其实也大差不差（因为又不是给人看的，直接保存token，那无论LLM输出了什么逆天回答，最终校准也应该是差不多的。灵感来源：Hackergame 2023小型大语言模型星球的官方题解。当然我的想法没有任何数据支撑，欢迎各位大佬指出我的错误（））</p>
-<p>此处我还量化了<code>T-Quants</code>，然而根据我搜索<code>llama.cpp</code>的GitHub repo得到的资料，<code>T-Quants</code>仍然处于早期阶段，暂时对<code>llama.cpp</code>的<code>master</code>分支而言，<code>T-Quants</code>对于带AVX2加速的CPU有很好的加速作用，其他则表现一般；对GPU的支持则仍然处于未合并的PR阶段。</p>
-<h2>白嫖的下场</h2>
-<p>然而众所周知，mzwing一贯热爱白嫖，所以这次量化是在Huggingface Space上运行的（用的code-server），结果不出意外的出意外了：量化到一半space自动重启了……导致我此前辛辛苦苦完成的量化，咚咚咚</p>
-<p>为此我给上面的<code>llama_cpp_quantize.sh</code>加上了每完成一步就自动上传结果，并且写出了个<code>resume_quantization.sh</code>（靠石山打败石山（乱雾））。</p>
-<p><del>（什么？让我放弃白嫖？不可能的.webp）</del></p>
-<p>目前的估计是如果在Huggingface Space中自定义Dockerfile且长时间高占用CPU（我量化的时候直接给<code>llama-quantize</code>设置<code>$(nproc)</code>了（心虚））的话，space就会自动重启，导致保存在非持久性存储的进度丢失。暂时的话配合着<code>resume_quantization.sh</code>也能用。由于过于石山且大家都能猜到怎么写的，就不放出来了（（（</p>
-<p>实验成果：</p>
-<ul>
-<li><a href="https://huggingface.co/mzwing/RWKV6-3B-Chn-UnlimitedRP-mini-chat-GGUF">https://huggingface.co/mzwing/RWKV6-3B-Chn-UnlimitedRP-mini-chat-GGUF</a></li>
-<li><a href="https://huggingface.co/mzwing/RWKV6-7B-v3-porn-chat-GGUF">https://huggingface.co/mzwing/RWKV6-7B-v3-porn-chat-GGUF</a></li>
-<li><a href="https://huggingface.co/mzwing/RWKV6-7B-v3-porn-chat-pro-GGUF">https://huggingface.co/mzwing/RWKV6-7B-v3-porn-chat-pro-GGUF</a></li>
-</ul>
-<h2>惯例的挖坑</h2>
-<p>总算可以填掉<a href="#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87%E5%96%B5">环境准备</a>那里挖的坑力！（x</p>
-<p>目前打算做一个名为<code>autoggufy</code>的项目实现自动量化+自动恢复量化进度，然而AI写的<code>v(-1)</code>（什么neta v0（x）并不能达到我想要的效果，我又没有那么多时间自己写（悲）</p>
-<h2>你以为这就结束了？（x</h2>
-<p>没想到吧，我还能水！.jpg（x</p>
-<p>在<a href="#%E7%84%B6%E5%90%8E%E5%B7%AE%E7%82%B9%E5%B0%B1%E6%B2%A1%E6%9C%89%E7%84%B6%E5%90%8E%E4%BA%86">第二部分</a>搜索的时候意外发现了<a href="https://github.com/BBuf/RWKV-World-HF-Tokenizer">BBuf/RWKV-World-HF-Tokenizer</a>，本来是打算搜不到别的办法的话就用这个有点草台班子的py小脚本将rwkv6转换为HF Format算了（详见其<code>README.md</code>），还好btaskel大佬给我提供了一个相对完美的方案（</p>
-<p>然而，这个仓库里面有一个妙妙脚本！</p>
-<pre><code># convert_rwkv5_to_6.py
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;为什么要login呢？下一节谈（x&lt;/p&gt;
+&lt;p&gt;imatrix那里折腾了我好久（忘记RTFM导致的），我此前就是因为没搞明白imatrix才暂时退坑AI量化的。我此前以为&lt;a href=&quot;https://mzwing.eu.org/article/rwkv_gguf_quantization/#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87%E5%96%B5&quot;&gt;环境准备&lt;/a&gt;那里下载的&lt;code&gt;calibration_datav3.txt&lt;/code&gt;能直接给&lt;code&gt;llama-quantize&lt;/code&gt;用，而且我一直以为只有&lt;code&gt;I-Quants&lt;/code&gt;才会用到&lt;code&gt;imatrix&lt;/code&gt;（谁让这玩意首字母都是I呢（强行解释（难视）））。这次算是被好好上了一课了：&lt;code&gt;imatrix&lt;/code&gt;是用来校准量化差的&lt;code&gt;重要性矩阵&lt;/code&gt;（&lt;code&gt;Importance Matrix&lt;/code&gt;），除了&lt;code&gt;F16&lt;/code&gt;/&lt;code&gt;F32&lt;/code&gt;/&lt;code&gt;BF16&lt;/code&gt;之外的量化都能从中受益（提高质量）。可以参考：&lt;a href=&quot;https://qwen.readthedocs.io/zh-cn/stable/quantization/llama.cpp.html#quantizing-the-gguf-with-importance-matrix&quot;&gt;Qwen Docs中关于llama.cpp量化的描述&lt;/a&gt;（然而我在写这篇文章的时候才发现这个好东西，悲）。&lt;/p&gt;
+&lt;p&gt;此处的代码中我跟随&lt;a href=&quot;https://huggingface.co/bartowski&quot;&gt;bartowski&lt;/a&gt;（AI量化真佬）的规范，用了他的&lt;code&gt;calibration_datav3.txt&lt;/code&gt;数据集（真·万金油）进行&lt;code&gt;imatrix&lt;/code&gt;生成。&lt;/p&gt;
+&lt;p&gt;另外提一嘴，个人认为只要生成&lt;code&gt;imatrix&lt;/code&gt;用的数据集涵盖的方面够全、够长，就可以实现重要性矩阵的作用。当然更贴近AI训练数据的校准数据集当然是更好的，但是直接用万金油效果其实也大差不差（因为又不是给人看的，直接保存token，那无论LLM输出了什么逆天回答，最终校准也应该是差不多的。灵感来源：Hackergame 2023小型大语言模型星球的官方题解。当然我的想法没有任何数据支撑，欢迎各位大佬指出我的错误（））&lt;/p&gt;
+&lt;p&gt;此处我还量化了&lt;code&gt;T-Quants&lt;/code&gt;，然而根据我搜索&lt;code&gt;llama.cpp&lt;/code&gt;的GitHub repo得到的资料，&lt;code&gt;T-Quants&lt;/code&gt;仍然处于早期阶段，暂时对&lt;code&gt;llama.cpp&lt;/code&gt;的&lt;code&gt;master&lt;/code&gt;分支而言，&lt;code&gt;T-Quants&lt;/code&gt;对于带AVX2加速的CPU有很好的加速作用，其他则表现一般；对GPU的支持则仍然处于未合并的PR阶段。&lt;/p&gt;
+&lt;h2 id=&quot;白嫖的下场&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/rwkv_gguf_quantization/#%E7%99%BD%E5%AB%96%E7%9A%84%E4%B8%8B%E5%9C%BA&quot; aria-labelledby=&quot;白嫖的下场&quot;&gt;&lt;/a&gt;白嫖的下场&lt;/h2&gt;
+&lt;p&gt;然而众所周知，mzwing一贯热爱白嫖，所以这次量化是在Huggingface Space上运行的（用的code-server），结果不出意外的出意外了：量化到一半space自动重启了……导致我此前辛辛苦苦完成的量化，咚咚咚&lt;/p&gt;
+&lt;p&gt;为此我给上面的&lt;code&gt;llama_cpp_quantize.sh&lt;/code&gt;加上了每完成一步就自动上传结果，并且写出了个&lt;code&gt;resume_quantization.sh&lt;/code&gt;（靠石山打败石山（乱雾））。&lt;/p&gt;
+&lt;p&gt;&lt;s&gt;（什么？让我放弃白嫖？不可能的.webp）&lt;/s&gt;&lt;/p&gt;
+&lt;p&gt;目前的估计是如果在Huggingface Space中自定义Dockerfile且长时间高占用CPU（我量化的时候直接给&lt;code&gt;llama-quantize&lt;/code&gt;设置&lt;code&gt;$(nproc)&lt;/code&gt;了（心虚））的话，space就会自动重启，导致保存在非持久性存储的进度丢失。暂时的话配合着&lt;code&gt;resume_quantization.sh&lt;/code&gt;也能用。由于过于石山且大家都能猜到怎么写的，就不放出来了（（（&lt;/p&gt;
+&lt;p&gt;实验成果：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://huggingface.co/mzwing/RWKV6-3B-Chn-UnlimitedRP-mini-chat-GGUF&quot;&gt;https://huggingface.co/mzwing/RWKV6-3B-Chn-UnlimitedRP-mini-chat-GGUF&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://huggingface.co/mzwing/RWKV6-7B-v3-porn-chat-GGUF&quot;&gt;https://huggingface.co/mzwing/RWKV6-7B-v3-porn-chat-GGUF&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://huggingface.co/mzwing/RWKV6-7B-v3-porn-chat-pro-GGUF&quot;&gt;https://huggingface.co/mzwing/RWKV6-7B-v3-porn-chat-pro-GGUF&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;惯例的挖坑&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/rwkv_gguf_quantization/#%E6%83%AF%E4%BE%8B%E7%9A%84%E6%8C%96%E5%9D%91&quot; aria-labelledby=&quot;惯例的挖坑&quot;&gt;&lt;/a&gt;惯例的挖坑&lt;/h2&gt;
+&lt;p&gt;总算可以填掉&lt;a href=&quot;https://mzwing.eu.org/article/rwkv_gguf_quantization/#%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87%E5%96%B5&quot;&gt;环境准备&lt;/a&gt;那里挖的坑力！（x&lt;/p&gt;
+&lt;p&gt;目前打算做一个名为&lt;code&gt;autoggufy&lt;/code&gt;的项目实现自动量化+自动恢复量化进度，然而AI写的&lt;code&gt;v(-1)&lt;/code&gt;（什么neta v0（x）并不能达到我想要的效果，我又没有那么多时间自己写（悲）&lt;/p&gt;
+&lt;h2 id=&quot;你以为这就结束了？（x&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/rwkv_gguf_quantization/#%E4%BD%A0%E4%BB%A5%E4%B8%BA%E8%BF%99%E5%B0%B1%E7%BB%93%E6%9D%9F%E4%BA%86%EF%BC%9F%EF%BC%88x&quot; aria-labelledby=&quot;你以为这就结束了？（x&quot;&gt;&lt;/a&gt;你以为这就结束了？（x&lt;/h2&gt;
+&lt;p&gt;没想到吧，我还能水！.jpg（x&lt;/p&gt;
+&lt;p&gt;在&lt;a href=&quot;https://mzwing.eu.org/article/rwkv_gguf_quantization/#%E7%84%B6%E5%90%8E%E5%B7%AE%E7%82%B9%E5%B0%B1%E6%B2%A1%E6%9C%89%E7%84%B6%E5%90%8E%E4%BA%86&quot;&gt;第二部分&lt;/a&gt;搜索的时候意外发现了&lt;a href=&quot;https://github.com/BBuf/RWKV-World-HF-Tokenizer&quot;&gt;BBuf/RWKV-World-HF-Tokenizer&lt;/a&gt;，本来是打算搜不到别的办法的话就用这个有点草台班子的py小脚本将rwkv6转换为HF Format算了（详见其&lt;code&gt;README.md&lt;/code&gt;），还好btaskel大佬给我提供了一个相对完美的方案（&lt;/p&gt;
+&lt;p&gt;然而，这个仓库里面有一个妙妙脚本！&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-python&quot;&gt;# convert_rwkv5_to_6.py
 # Original code from &amp;lt;https://github.com/BBuf/RWKV-World-HF-Tokenizer/blob/main/scripts/convert5to6.py&amp;gt;
 import sys
 import math
@@ -642,7 +636,7 @@ if len(sys.argv) != 3:
 model_path = sys.argv[1]
 
 print(&amp;quot;Loading file...&amp;quot;)
-state_dict = torch.load(model_path, map_location=&amp;#39;cpu&amp;#39;)
+state_dict = torch.load(model_path, map_location=&#39;cpu&#39;)
 
 def convert_state_dict(state_dict):
     n_layer = 0
@@ -654,15 +648,15 @@ def convert_state_dict(state_dict):
         weight = state_dict.pop(name)
 
         # convert time_decay from (self.n_head, self.head_size) to (1,1,args.dim_att)
-        if &amp;#39;.att.time_decay&amp;#39; in name:
+        if &#39;.att.time_decay&#39; in name:
             weight = weight.view(1,1,weight.size(0)*weight.size(1))
             n_embd = dim_att = weight.size(-1) 
         # convert time_mix_k, v, r, g into time_maa for both TimeMix and FFN
-        if &amp;#39;.time_mix_&amp;#39; in name:
-            name = name[:-5] + &amp;#39;maa_&amp;#39; + name[-1:]
+        if &#39;.time_mix_&#39; in name:
+            name = name[:-5] + &#39;maa_&#39; + name[-1:]
             weight = 1.0 - weight
 
-        if name.startswith(&amp;#39;blocks.&amp;#39;):
+        if name.startswith(&#39;blocks.&#39;):
             layer_id_match = re.search(r&amp;quot;blocks\.(\d+)\.att&amp;quot;, name)
             if layer_id_match is not None:
                 n_layer = max(n_layer, int(layer_id_match.group(1)) + 1)
@@ -671,7 +665,7 @@ def convert_state_dict(state_dict):
 
     # add in new params not in 5.2
     for layer_id in range(n_layer):
-        layer_name = f&amp;#39;blocks.{layer_id}.att&amp;#39;
+        layer_name = f&#39;blocks.{layer_id}.att&#39;
 
         ratio_0_to_1 = layer_id / (n_layer - 1)  # 0 to 1
         ratio_1_to_almost0 = 1.0 - (layer_id / n_layer)  # 1 to ~0
@@ -679,16 +673,16 @@ def convert_state_dict(state_dict):
         for i in range(n_embd):
             ddd[0, 0, i] = i / n_embd
 
-        state_dict[layer_name + &amp;#39;.time_maa_x&amp;#39;] = (1.0 - torch.pow(ddd, ratio_1_to_almost0))
-        state_dict[layer_name + &amp;#39;.time_maa_w&amp;#39;] = (1.0 - torch.pow(ddd, ratio_1_to_almost0))
+        state_dict[layer_name + &#39;.time_maa_x&#39;] = (1.0 - torch.pow(ddd, ratio_1_to_almost0))
+        state_dict[layer_name + &#39;.time_maa_w&#39;] = (1.0 - torch.pow(ddd, ratio_1_to_almost0))
 
         TIME_MIX_EXTRA_DIM = 32 # generate TIME_MIX for w,k,v,r,g
-        state_dict[layer_name + &amp;#39;.time_maa_w1&amp;#39;] = (torch.zeros(n_embd, TIME_MIX_EXTRA_DIM*5).uniform_(-1e-4, 1e-4))
-        state_dict[layer_name + &amp;#39;.time_maa_w2&amp;#39;] = (torch.zeros(5, TIME_MIX_EXTRA_DIM, n_embd).uniform_(-1e-4, 1e-4))
+        state_dict[layer_name + &#39;.time_maa_w1&#39;] = (torch.zeros(n_embd, TIME_MIX_EXTRA_DIM*5).uniform_(-1e-4, 1e-4))
+        state_dict[layer_name + &#39;.time_maa_w2&#39;] = (torch.zeros(5, TIME_MIX_EXTRA_DIM, n_embd).uniform_(-1e-4, 1e-4))
 
         TIME_DECAY_EXTRA_DIM = 64
-        state_dict[layer_name + &amp;#39;.time_decay_w1&amp;#39;] = (torch.zeros(n_embd, TIME_DECAY_EXTRA_DIM).uniform_(-1e-4, 1e-4))
-        state_dict[layer_name + &amp;#39;.time_decay_w2&amp;#39;] = (torch.zeros(TIME_DECAY_EXTRA_DIM, dim_att).uniform_(-1e-4, 1e-4))
+        state_dict[layer_name + &#39;.time_decay_w1&#39;] = (torch.zeros(n_embd, TIME_DECAY_EXTRA_DIM).uniform_(-1e-4, 1e-4))
+        state_dict[layer_name + &#39;.time_decay_w2&#39;] = (torch.zeros(TIME_DECAY_EXTRA_DIM, dim_att).uniform_(-1e-4, 1e-4))
 
     print(f&amp;quot;n_layer: {n_layer}\nn_embd: {n_embd}&amp;quot;)
 
@@ -698,181 +692,175 @@ state_dict = convert_state_dict(state_dict)
 
 torch.save(state_dict,sys.argv[2])
 print(&amp;quot;DONE. File written.&amp;quot;)
-</code></pre>
-<pre><code># Download the original model
+&lt;/code&gt;&lt;/pre&gt;
+&lt;pre&gt;&lt;code class=&quot;language-sh&quot;&gt;# Download the original model
 aria2c -c -x16 &amp;quot;https://huggingface.co/$author/$model/resolve/main/$model$suffix.pth?download=true&amp;quot; -d /home/$user/AI/model/$model$suffix-original/ -o $model$suffix-5.pth
 
 # Convert RWKV5 to RWKV6
 source /home/$user/AI/repo/rwkv/.venv/bin/activate
 python /home/$user/convert_rwkv5_to_6.py /home/$user/AI/model/$model$suffix-original/$model$suffix-5.pth /home/$user/AI/model/$model$suffix-original/$model$suffix.pth
 rm -rf /home/$user/AI/model/$model$suffix-original/$model$suffix-5.pth
-</code></pre>
-<p>神奇……居然能将RWKV 5.2转换为RWKV 6.0……</p>
-<p>于是果断开始实验，结果还被我干成功了？<a href="https://huggingface.co/mzwing/RWKV-5.2-3B-NSFW-Role-16k-GGUF">实验成果</a></p>
-<h2>后记</h2>
-<p>总之这就是RWKV的诡异量化方式了……也算是做个备忘吧。现在高三了还搞这些也是顶了不少的压力。</p>
-<p>另外本文我刚开始是打算让Deepseek代劳的，结果<del>不出意外的出意外了</del>（VSCode的自动补全如是说道（x））Deepseek与我的文风差距过大，不得已决定自己动手完成这篇文章，也算是对<del>年更博主</del>的一个交代吧（</p>
-<p>本文出现的代码与文章遵循同样的开源协议（引用的代码部分则遵循其代码库的开源协议）。</p>
-<p>谢谢你看到这里（</p>
-
-
-        ]]>
-      </content>
-      <summary type="html">在量化RWKV系列模型中遇到的一些奇奇怪怪的问题以及略显诡异的解决方案……</summary>
-      <updated>2025-02-04T09:27:00.000Z</updated>
-      <published>2025-02-04T09:27:00.000Z</published>
-      </entry><entry>
-      <title>碎记•向明年的自己招个手</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=wave-to-my-future-self.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=wave-to-my-future-self.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>碎记•向明年的自己招个手</h1>
-<blockquote>
-<p>起：20241225 Wed. 21:32</p>
-</blockquote>
-<p>一年就这么过去了。
-又是多事的一年。</p>
-<p>这一年主要调了一下心理状态，也不能说没有收获吧。然而真的调节好了吗？（疑）<br>懒得写小标题了，分隔线凑合着看吧。</p>
-<p>这一年也是没怎么动（正经的）代码，倒是下半年瞎鼓捣AI让AI代劳写了点小玩意儿（暂时还是v0（）），要是时间充足可能年后开源了。<br>番倒是想看不少，然而一部都没开始就搁浅了……<br>Gal也几乎没动，就玩了一个黄油，还中（中）途（道）抛（崩）弃（殂）了（XP不对冲不动（））</p>
-<p>很多文章写完了就不想打字了（多数是在学校写的，积压的文章到目前为止已经超过两个A5笔记本了），导致我blog已经1年没更新了，这里说句抱歉。<br>TG也是，很多信息想看也没时间，错过了很多和群友的良性互动（悲）</p>
-<p>AI量化也少维护了，明年注意（）</p>
-<p>另外，<del>泻药@sci</del>（什么知乎体（x），尝试了下Gal翻译，虽然只做了一点点就因时间不够放下了，但明年会继续的（）  </p>
-<blockquote>
-<p>题外话：香子兰翻译同好会的各位都好强！我菜菜（日本語本当苦手）呜呜鸣（雾）</p>
-</blockquote>
-<p>现在在生病，重感冒，有点烦。<br>时间就像海绵里的水，挤挤总是会干的。消失的课间，踩点的我，愠怒的老师。也许，我从未适应过高三的生活。也可能，我所习惯的氛围，和这里格格不入。<br><em>我从没觉得上高三有意思过。</em></p>
-<blockquote>
-<p>续笔于20241231 07:48</p>
-</blockquote>
-<p>病稍好一点了，继续写。关于病的情况，建议直接看我TG chan。</p>
-<p>今年的心理状况比较不对，但愿明年会好一点吧。</p>
-<p>本打算在年终做点事情，然而一场（确切地说是两场）病就轻易粉碎了我的计划，让我什么都做不成。</p>
-<p>最近又听起了天依的歌。然而感觉最近的新曲都比较一般，只留下了几首。（从十二周年开始筛的）</p>
-<p>对低内存本地AI推理的前景稍微有点失望了，这个以后再谈。</p>
-<p>Mi Max 2由于Frsty eSIM的缘故被我折腾来折腾去，最后因为TWRP与它的Lineage OS(unofficial build)配合不好而切了Pixel Experience 13 Plus Edition，还算舒服，然而电量日常平地摔，而且电量统计似乎并不怎么准（40%电量直接猝死，重启就5%，关机充电又瞬间暴涨到40%）。</p>
-<p>Firsty……唉，为了这玩意我已经投入了过多的精力了……只能说，实在是有点得不偿失。</p>
-<p>Andnid这浑水得实在是……</p>
-<p>纯音乐歌单也没有扩充，混乱的文件和书房也没有整理。游戏也玩不成，书也看不完。</p>
-<p>唉。</p>
-<p>阅读这方面倒是进展神速。速通了《战国策》和东野圭吾的几本推理小说，然后开始刷《资治通鉴》，然而只完成了1/13（当然了我从12月才开始看）。同时以电子书形式刷了 《明朝那些事儿》（看了一半）和《惊惊乐园》（上半年看完的）。还有很多，不再一一列出（懒）。</p>
-<p>然而想看的书远远多于已看的书，希望明年继续推进吧。</p>
-<p>我有时候都羡慕AI能超高速读完一本书……</p>
-<hr>
-<p>希望自己和祝愿所有今年高考的朋友们都能鱼跃龙门，拔得头筹，奔赴自己所爱的大学和专业。特别祝福@chihuo2104，愿他在浙江首考中旗开得胜。</p>
-<p>愿自己伤痕累累的心能在新的一年里重被修复。</p>
-<p>愿自己做到计划中所期望的目标。</p>
-<p>愿自己的病能好（</p>
-<p>愿自己能产出一些高质量的代码。</p>
-<p>希望明年暑假的香子兰meetup能最终成行。</p>
-<hr>
-<p>还有很多。写前千言，下笔无言。</p>
-<p>待会还要帮同学修电脑，算了，帮他修吧。</p>
-<hr>
-<p>不知不觉已经写到了这里啊。</p>
-<p>那，我们明年再见吧。</p>
-<p>愿自己睁眼之时，眼前是一个光辉灿烂的明年。</p>
-<blockquote>
-<p>完笔于20241231 09:26</p>
-</blockquote>
-<h2>See also</h2>
-<ul>
-<li><a href="https://blog.chihuo2104.dev/posts/goodbye-2024">2024年度总结 - chihuo2104の部落格</a></li>
-<li><a href="https://sekaimoe.dpkg123.site/posts/end-of-2024/">二葉琉璃的 2024 - 二葉琉璃の自留地</a></li>
-<li><a href="https://blog.awaae001.top/posts/57024.html">再见2024 · 共赴一场烟火绚烂 - 呓语梦轩</a></li>
-<li><a href="https://nekomoe.xyz/index.html?type=article&amp;filename=2024-summary.md">2024 年终总结 - 柏园猫のBlog</a></li>
-<li><a href="https://koishi514.moe/blog/bbg/index.html?type=article&amp;filename=8YkDYKfG5wDN.md">我的 2024 年终总结 - 無意識の桜</a></li>
-<li><a href="https://blog.mjt.asia/posts/bc0e860c/">Y2025班次冬日列车 - 反応蒸留</a></li>
-<li><a href="https://blog.akuamar1n.com/2024/12/31/2024-summary/">2024年终总结 - zzjzxq33&amp;#39;s blog</a></li>
-<li><a href="https://xlog.mk1.io/goodbye-2024">辞旧迎新：Ray 的 2024 年终总结 - Ray&amp;#39;s xLog</a></li>
-</ul>
-<p>其他朋友的会在看到更新之后尽快（？）加上（</p>
-
-
-        ]]>
-      </content>
-      <summary type="html">又是一年。还是一年。 </summary>
-      <updated>2024-12-31T01:26:00.000Z</updated>
-      <published>2024-12-25T13:32:00.000Z</published>
-      </entry><entry>
-      <title>小碎记20231209</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=small-article-20231209.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=small-article-20231209.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>小碎记20231209</h1>
-<h2>前言</h2>
-<p>sorry，昨天溜得太匆忙有些东西忘写了，在Part 2那里，已经补上了。</p>
-<p>BTW，我说，没人评论吗（</p>
-<p>即使我迁移到waline我也会将所有评论迁移过去的（</p>
-<p>对了，还有换waline的话换域名也方便些。</p>
-<p>然后书接上回。</p>
-<h2>Part 11</h2>
-<p>服务器什么的，嘛，mzw一贯的热爱白嫖。</p>
-<p>最近也拿了好多，也抛了好多机子。</p>
-<p>放个监控吧，<a href="https://uptime.mzwing.eu.org">https://uptime.mzwing.eu.org</a></p>
-<h2>Part 12</h2>
-<p>pxy的话，抛弃了此前一直在用的vless+reality，改用了ss 2022，速度明显快了很多，也并没有遇到传说中的封锁问题，不过也有可能是我流量太少了不值得封（</p>
-<p>vless+grpc倒是因为速度比trojan快而被我保留了下来。</p>
-<p>sing-box v1.8.0 alpha也逐渐稳定了，虽说从v1.7.0到v1.8.0是个超大breaking change吧，但是速度明显快了很多。我此前也从没想过原来问题居然出在规则这一块，nekohasekai这么一trim+compile明显高速很多，感谢。</p>
-<p>日后会尝试将规则改成headless rules然后给GitHub Actions编译，速度和内存占用应该还会再好一点。</p>
-<h2>Part 13</h2>
-<p>Galgame的话，有很多想推的，但没什么时间。</p>
-<p>其实只要有时间，我推得并不慢，从我光速推完ATRI和sprb剩余部分就能看出来了。</p>
-<h2>Part 14</h2>
-<p>音乐方面，自己歌单的纯音乐比例进一步提高了。</p>
-<p>日后等我整理一下后会放出来里面的歌名及其来源，敬请期待（</p>
-<p>mzw一贯的喜欢先听其OST再去推gal。</p>
-<p>顺便感谢sci送来的五色浮影无损OST（</p>
-<h2>Part 15</h2>
-<p>最近很少去打比赛了，就这样。</p>
-<h2>Part 16</h2>
-<p>期中考试还行。下周月考。</p>
-<h2>Special Thanks</h2>
-<p>感谢猫猫，byn和chi的帮助。</p>
-<p>感谢sci送给我的Akile机子、无损OST，还告诉了我很多找gal的去处（好吧，其实很多是我stfw出来的，他就说了个缩写（</p>
-<blockquote>
-<p>之前承诺过sci的机器赞助商感谢（x</p>
-</blockquote>
-<p>感谢db提供的资讯。</p>
-<p>感谢ms让我认识到了冗余备份和本地备份的重要性。</p>
-<p>感谢各AI开发者让我玩上了这么多的AI。</p>
-<p>感谢gal资源分享的人和做种的人。</p>
-<p>以上。</p>
-
-
-        ]]>
-      </content>
-      <summary type="html">没错，是万恶的分割商法（逃</summary>
-      <updated>2023-12-09T00:00:00.000Z</updated>
-      <published>2023-12-09T00:00:00.000Z</published>
-      </entry><entry>
-      <title>小碎记20231208</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=small-article-20231208.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=small-article-20231208.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>小碎记20231208</h1>
-<h2>Part 1</h2>
-<p>最近发生了好多事啊。</p>
-<p>终点关站，樱花佬隐退，05小站也关站了。</p>
-<p>我的E5也快到期佬，属于被微软大开刀宰死的那一批之一。</p>
-<p>真可惜，怎么微软突然就不看GitHub贡献数了呢……</p>
-<p>db：<strong>你那也算多？</strong></p>
-<p>（x</p>
-<h2>Part 2</h2>
-<p>然后想抢救一下自己存在OD盘上的资源。</p>
-<p>本来的想法是自己全部拉到本地的。但是那换班的时候不就全都没了么。</p>
-<p>然后各种找大容量还给直链的网盘，失败。（下午更新：似乎找到了一些，以后会试试）</p>
-<p>然后去找了sci，希望让他帮我存一下。</p>
-<p>然后就去bath了，bath的时候突然想起，Telegram不就是最好的网盘嘛。</p>
-<p>于是想让sci帮我传上频道去，结果两天过去了他还没开始下（</p>
-<p>这期间发现了NeverInstall这个云电脑，给的网速不错。我就想能不能用这玩意传上Telegram。于是我让sci不用下了。</p>
-<p>然后就到今天佬，放弃NeverInstall这个想法了，动不动就死机、注销、重开、丢失所有正在下载的数据。我只能说我创不起（</p>
-<p>目前最新的想法是用GitHub Actions传一部分，一部分通过转发Visual Novel Channel完成备份。但那样就有很多不是我希望的7z格式佬，不过事到如今了也就这样吧。</p>
-<p>要是有人能替我保存并替我传上Telegram频道，我将不胜感激。（给管理员权限应该就行了吧（）</p>
-<p>下面是无法从vnc获取的资源：</p>
-<pre><code>https://alist.mzwing.gq/d/Onedrive/mzwing-lockinwize/Public/Game%20%E6%B8%B8%E6%88%8F/%EF%BC%88%E9%83%A8%E5%88%86English%EF%BC%89%E6%88%91%E7%9A%84%E5%A5%B3%E5%8F%8B%E6%98%AF%E6%81%B6%E9%9C%B8/My%20Bully%20is%20My%20Lover.7z
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;神奇……居然能将RWKV 5.2转换为RWKV 6.0……&lt;/p&gt;
+&lt;p&gt;于是果断开始实验，结果还被我干成功了？&lt;a href=&quot;https://huggingface.co/mzwing/RWKV-5.2-3B-NSFW-Role-16k-GGUF&quot;&gt;实验成果&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;后记&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/rwkv_gguf_quantization/#%E5%90%8E%E8%AE%B0&quot; aria-labelledby=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h2&gt;
+&lt;p&gt;总之这就是RWKV的诡异量化方式了……也算是做个备忘吧。现在高三了还搞这些也是顶了不少的压力。&lt;/p&gt;
+&lt;p&gt;另外本文我刚开始是打算让Deepseek代劳的，结果&lt;s&gt;不出意外的出意外了&lt;/s&gt;（VSCode的自动补全如是说道（x））Deepseek与我的文风差距过大，不得已决定自己动手完成这篇文章，也算是对&lt;s&gt;年更博主&lt;/s&gt;的一个交代吧（&lt;/p&gt;
+&lt;p&gt;本文出现的代码与文章遵循同样的开源协议（引用的代码部分则遵循其代码库的开源协议）。&lt;/p&gt;
+&lt;p&gt;谢谢你看到这里（&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>碎记•向明年的自己招个手</title>
+<link href="https://mzwing.eu.org/article/wave-to-my-future-self/"/>
+<id>https://mzwing.eu.org/article/wave-to-my-future-self/</id>
+<published>2024-12-25T13:32:00.000Z</published>
+<updated>2024-12-31T01:26:00.000Z</updated>
+<summary>又是一年。还是一年。</summary>
+<content type="html">&lt;h1 id=&quot;碎记•向明年的自己招个手&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/wave-to-my-future-self/#%E7%A2%8E%E8%AE%B0%E2%80%A2%E5%90%91%E6%98%8E%E5%B9%B4%E7%9A%84%E8%87%AA%E5%B7%B1%E6%8B%9B%E4%B8%AA%E6%89%8B&quot; aria-labelledby=&quot;碎记•向明年的自己招个手&quot;&gt;&lt;/a&gt;碎记•向明年的自己招个手&lt;/h1&gt;
+&lt;blockquote&gt;
+&lt;p&gt;起：20241225 Wed. 21:32&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;一年就这么过去了。
+又是多事的一年。&lt;/p&gt;
+&lt;p&gt;这一年主要调了一下心理状态，也不能说没有收获吧。然而真的调节好了吗？（疑）&lt;br&gt;
+懒得写小标题了，分隔线凑合着看吧。&lt;/p&gt;
+&lt;p&gt;这一年也是没怎么动（正经的）代码，倒是下半年瞎鼓捣AI让AI代劳写了点小玩意儿（暂时还是v0（）），要是时间充足可能年后开源了。&lt;br&gt;
+番倒是想看不少，然而一部都没开始就搁浅了……&lt;br&gt;
+Gal也几乎没动，就玩了一个黄油，还中（中）途（道）抛（崩）弃（殂）了（XP不对冲不动（））&lt;/p&gt;
+&lt;p&gt;很多文章写完了就不想打字了（多数是在学校写的，积压的文章到目前为止已经超过两个A5笔记本了），导致我blog已经1年没更新了，这里说句抱歉。&lt;br&gt;
+TG也是，很多信息想看也没时间，错过了很多和群友的良性互动（悲）&lt;/p&gt;
+&lt;p&gt;AI量化也少维护了，明年注意（）&lt;/p&gt;
+&lt;p&gt;另外，&lt;s&gt;泻药@sci&lt;/s&gt;（什么知乎体（x），尝试了下Gal翻译，虽然只做了一点点就因时间不够放下了，但明年会继续的（）&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;题外话：香子兰翻译同好会的各位都好强！我菜菜（日本語本当苦手）呜呜鸣（雾）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;现在在生病，重感冒，有点烦。&lt;br&gt;
+时间就像海绵里的水，挤挤总是会干的。消失的课间，踩点的我，愠怒的老师。也许，我从未适应过高三的生活。也可能，我所习惯的氛围，和这里格格不入。&lt;br&gt;
+&lt;em&gt;我从没觉得上高三有意思过。&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;续笔于20241231 07:48&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;病稍好一点了，继续写。关于病的情况，建议直接看我TG chan。&lt;/p&gt;
+&lt;p&gt;今年的心理状况比较不对，但愿明年会好一点吧。&lt;/p&gt;
+&lt;p&gt;本打算在年终做点事情，然而一场（确切地说是两场）病就轻易粉碎了我的计划，让我什么都做不成。&lt;/p&gt;
+&lt;p&gt;最近又听起了天依的歌。然而感觉最近的新曲都比较一般，只留下了几首。（从十二周年开始筛的）&lt;/p&gt;
+&lt;p&gt;对低内存本地AI推理的前景稍微有点失望了，这个以后再谈。&lt;/p&gt;
+&lt;p&gt;Mi Max 2由于Frsty eSIM的缘故被我折腾来折腾去，最后因为TWRP与它的Lineage OS(unofficial build)配合不好而切了Pixel Experience 13 Plus Edition，还算舒服，然而电量日常平地摔，而且电量统计似乎并不怎么准（40%电量直接猝死，重启就5%，关机充电又瞬间暴涨到40%）。&lt;/p&gt;
+&lt;p&gt;Firsty……唉，为了这玩意我已经投入了过多的精力了……只能说，实在是有点得不偿失。&lt;/p&gt;
+&lt;p&gt;Andnid这浑水得实在是……&lt;/p&gt;
+&lt;p&gt;纯音乐歌单也没有扩充，混乱的文件和书房也没有整理。游戏也玩不成，书也看不完。&lt;/p&gt;
+&lt;p&gt;唉。&lt;/p&gt;
+&lt;p&gt;阅读这方面倒是进展神速。速通了《战国策》和东野圭吾的几本推理小说，然后开始刷《资治通鉴》，然而只完成了1/13（当然了我从12月才开始看）。同时以电子书形式刷了 《明朝那些事儿》（看了一半）和《惊惊乐园》（上半年看完的）。还有很多，不再一一列出（懒）。&lt;/p&gt;
+&lt;p&gt;然而想看的书远远多于已看的书，希望明年继续推进吧。&lt;/p&gt;
+&lt;p&gt;我有时候都羡慕AI能超高速读完一本书……&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;希望自己和祝愿所有今年高考的朋友们都能鱼跃龙门，拔得头筹，奔赴自己所爱的大学和专业。特别祝福@chihuo2104，愿他在浙江首考中旗开得胜。&lt;/p&gt;
+&lt;p&gt;愿自己伤痕累累的心能在新的一年里重被修复。&lt;/p&gt;
+&lt;p&gt;愿自己做到计划中所期望的目标。&lt;/p&gt;
+&lt;p&gt;愿自己的病能好（&lt;/p&gt;
+&lt;p&gt;愿自己能产出一些高质量的代码。&lt;/p&gt;
+&lt;p&gt;希望明年暑假的香子兰meetup能最终成行。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;还有很多。写前千言，下笔无言。&lt;/p&gt;
+&lt;p&gt;待会还要帮同学修电脑，算了，帮他修吧。&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;不知不觉已经写到了这里啊。&lt;/p&gt;
+&lt;p&gt;那，我们明年再见吧。&lt;/p&gt;
+&lt;p&gt;愿自己睁眼之时，眼前是一个光辉灿烂的明年。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;完笔于20241231 09:26&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;See-also&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/wave-to-my-future-self/#See-also&quot; aria-labelledby=&quot;See-also&quot;&gt;&lt;/a&gt;See also&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.chihuo2104.dev/posts/goodbye-2024&quot;&gt;2024年度总结 - chihuo2104の部落格&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://sekaimoe.dpkg123.site/posts/end-of-2024/&quot;&gt;二葉琉璃的 2024 - 二葉琉璃の自留地&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.awaae001.top/posts/57024.html&quot;&gt;再见2024 · 共赴一场烟火绚烂 - 呓语梦轩&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://nekomoe.xyz/index.html?type=article&amp;amp;filename=2024-summary.md&quot;&gt;2024 年终总结 - 柏园猫のBlog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://koishi514.moe/blog/bbg/index.html?type=article&amp;amp;filename=8YkDYKfG5wDN.md&quot;&gt;我的 2024 年终总结 - 無意識の桜&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.mjt.asia/posts/bc0e860c/&quot;&gt;Y2025班次冬日列车 - 反応蒸留&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://blog.akuamar1n.com/2024/12/31/2024-summary/&quot;&gt;2024年终总结 - zzjzxq33&#39;s blog&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://xlog.mk1.io/goodbye-2024&quot;&gt;辞旧迎新：Ray 的 2024 年终总结 - Ray&#39;s xLog&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;其他朋友的会在看到更新之后尽快（？）加上（&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>小碎记20231209</title>
+<link href="https://mzwing.eu.org/article/small-article-20231209/"/>
+<id>https://mzwing.eu.org/article/small-article-20231209/</id>
+<published>2023-12-09T00:00:00.000Z</published>
+<updated>2023-12-09T00:00:00.000Z</updated>
+<summary>没错，是万恶的分割商法（逃</summary>
+<content type="html">&lt;h1 id=&quot;小碎记20231209&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231209/#%E5%B0%8F%E7%A2%8E%E8%AE%B020231209&quot; aria-labelledby=&quot;小碎记20231209&quot;&gt;&lt;/a&gt;小碎记20231209&lt;/h1&gt;
+&lt;h2 id=&quot;前言&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231209/#%E5%89%8D%E8%A8%80&quot; aria-labelledby=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;
+&lt;p&gt;sorry，昨天溜得太匆忙有些东西忘写了，在Part 2那里，已经补上了。&lt;/p&gt;
+&lt;p&gt;BTW，我说，没人评论吗（&lt;/p&gt;
+&lt;p&gt;即使我迁移到waline我也会将所有评论迁移过去的（&lt;/p&gt;
+&lt;p&gt;对了，还有换waline的话换域名也方便些。&lt;/p&gt;
+&lt;p&gt;然后书接上回。&lt;/p&gt;
+&lt;h2 id=&quot;Part-11&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231209/#Part-11&quot; aria-labelledby=&quot;Part-11&quot;&gt;&lt;/a&gt;Part 11&lt;/h2&gt;
+&lt;p&gt;服务器什么的，嘛，mzw一贯的热爱白嫖。&lt;/p&gt;
+&lt;p&gt;最近也拿了好多，也抛了好多机子。&lt;/p&gt;
+&lt;p&gt;放个监控吧，&lt;a href=&quot;https://uptime.mzwing.eu.org&quot;&gt;https://uptime.mzwing.eu.org&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;Part-12&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231209/#Part-12&quot; aria-labelledby=&quot;Part-12&quot;&gt;&lt;/a&gt;Part 12&lt;/h2&gt;
+&lt;p&gt;pxy的话，抛弃了此前一直在用的vless+reality，改用了ss 2022，速度明显快了很多，也并没有遇到传说中的封锁问题，不过也有可能是我流量太少了不值得封（&lt;/p&gt;
+&lt;p&gt;vless+grpc倒是因为速度比trojan快而被我保留了下来。&lt;/p&gt;
+&lt;p&gt;sing-box v1.8.0 alpha也逐渐稳定了，虽说从v1.7.0到v1.8.0是个超大breaking change吧，但是速度明显快了很多。我此前也从没想过原来问题居然出在规则这一块，nekohasekai这么一trim+compile明显高速很多，感谢。&lt;/p&gt;
+&lt;p&gt;日后会尝试将规则改成headless rules然后给GitHub Actions编译，速度和内存占用应该还会再好一点。&lt;/p&gt;
+&lt;h2 id=&quot;Part-13&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231209/#Part-13&quot; aria-labelledby=&quot;Part-13&quot;&gt;&lt;/a&gt;Part 13&lt;/h2&gt;
+&lt;p&gt;Galgame的话，有很多想推的，但没什么时间。&lt;/p&gt;
+&lt;p&gt;其实只要有时间，我推得并不慢，从我光速推完ATRI和sprb剩余部分就能看出来了。&lt;/p&gt;
+&lt;h2 id=&quot;Part-14&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231209/#Part-14&quot; aria-labelledby=&quot;Part-14&quot;&gt;&lt;/a&gt;Part 14&lt;/h2&gt;
+&lt;p&gt;音乐方面，自己歌单的纯音乐比例进一步提高了。&lt;/p&gt;
+&lt;p&gt;日后等我整理一下后会放出来里面的歌名及其来源，敬请期待（&lt;/p&gt;
+&lt;p&gt;mzw一贯的喜欢先听其OST再去推gal。&lt;/p&gt;
+&lt;p&gt;顺便感谢sci送来的五色浮影无损OST（&lt;/p&gt;
+&lt;h2 id=&quot;Part-15&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231209/#Part-15&quot; aria-labelledby=&quot;Part-15&quot;&gt;&lt;/a&gt;Part 15&lt;/h2&gt;
+&lt;p&gt;最近很少去打比赛了，就这样。&lt;/p&gt;
+&lt;h2 id=&quot;Part-16&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231209/#Part-16&quot; aria-labelledby=&quot;Part-16&quot;&gt;&lt;/a&gt;Part 16&lt;/h2&gt;
+&lt;p&gt;期中考试还行。下周月考。&lt;/p&gt;
+&lt;h2 id=&quot;Special-Thanks&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231209/#Special-Thanks&quot; aria-labelledby=&quot;Special-Thanks&quot;&gt;&lt;/a&gt;Special Thanks&lt;/h2&gt;
+&lt;p&gt;感谢猫猫，byn和chi的帮助。&lt;/p&gt;
+&lt;p&gt;感谢sci送给我的Akile机子、无损OST，还告诉了我很多找gal的去处（好吧，其实很多是我stfw出来的，他就说了个缩写（&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;之前承诺过sci的机器赞助商感谢（x&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;感谢db提供的资讯。&lt;/p&gt;
+&lt;p&gt;感谢ms让我认识到了冗余备份和本地备份的重要性。&lt;/p&gt;
+&lt;p&gt;感谢各AI开发者让我玩上了这么多的AI。&lt;/p&gt;
+&lt;p&gt;感谢gal资源分享的人和做种的人。&lt;/p&gt;
+&lt;p&gt;以上。&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>小碎记20231208</title>
+<link href="https://mzwing.eu.org/article/small-article-20231208/"/>
+<id>https://mzwing.eu.org/article/small-article-20231208/</id>
+<published>2023-12-08T00:00:00.000Z</published>
+<updated>2023-12-08T00:00:00.000Z</updated>
+<summary>一如既往的杂乱无章</summary>
+<content type="html">&lt;h1 id=&quot;小碎记20231208&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231208/#%E5%B0%8F%E7%A2%8E%E8%AE%B020231208&quot; aria-labelledby=&quot;小碎记20231208&quot;&gt;&lt;/a&gt;小碎记20231208&lt;/h1&gt;
+&lt;h2 id=&quot;Part-1&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231208/#Part-1&quot; aria-labelledby=&quot;Part-1&quot;&gt;&lt;/a&gt;Part 1&lt;/h2&gt;
+&lt;p&gt;最近发生了好多事啊。&lt;/p&gt;
+&lt;p&gt;终点关站，樱花佬隐退，05小站也关站了。&lt;/p&gt;
+&lt;p&gt;我的E5也快到期佬，属于被微软大开刀宰死的那一批之一。&lt;/p&gt;
+&lt;p&gt;真可惜，怎么微软突然就不看GitHub贡献数了呢……&lt;/p&gt;
+&lt;p&gt;db：&lt;strong&gt;你那也算多？&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;（x&lt;/p&gt;
+&lt;h2 id=&quot;Part-2&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231208/#Part-2&quot; aria-labelledby=&quot;Part-2&quot;&gt;&lt;/a&gt;Part 2&lt;/h2&gt;
+&lt;p&gt;然后想抢救一下自己存在OD盘上的资源。&lt;/p&gt;
+&lt;p&gt;本来的想法是自己全部拉到本地的。但是那换班的时候不就全都没了么。&lt;/p&gt;
+&lt;p&gt;然后各种找大容量还给直链的网盘，失败。（下午更新：似乎找到了一些，以后会试试）&lt;/p&gt;
+&lt;p&gt;然后去找了sci，希望让他帮我存一下。&lt;/p&gt;
+&lt;p&gt;然后就去bath了，bath的时候突然想起，Telegram不就是最好的网盘嘛。&lt;/p&gt;
+&lt;p&gt;于是想让sci帮我传上频道去，结果两天过去了他还没开始下（&lt;/p&gt;
+&lt;p&gt;这期间发现了NeverInstall这个云电脑，给的网速不错。我就想能不能用这玩意传上Telegram。于是我让sci不用下了。&lt;/p&gt;
+&lt;p&gt;然后就到今天佬，放弃NeverInstall这个想法了，动不动就死机、注销、重开、丢失所有正在下载的数据。我只能说我创不起（&lt;/p&gt;
+&lt;p&gt;目前最新的想法是用GitHub Actions传一部分，一部分通过转发Visual Novel Channel完成备份。但那样就有很多不是我希望的7z格式佬，不过事到如今了也就这样吧。&lt;/p&gt;
+&lt;p&gt;要是有人能替我保存并替我传上Telegram频道，我将不胜感激。（给管理员权限应该就行了吧（）&lt;/p&gt;
+&lt;p&gt;下面是无法从vnc获取的资源：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-txt&quot;&gt;https://alist.mzwing.gq/d/Onedrive/mzwing-lockinwize/Public/Game%20%E6%B8%B8%E6%88%8F/%EF%BC%88%E9%83%A8%E5%88%86English%EF%BC%89%E6%88%91%E7%9A%84%E5%A5%B3%E5%8F%8B%E6%98%AF%E6%81%B6%E9%9C%B8/My%20Bully%20is%20My%20Lover.7z
 
 https://alist.mzwing.gq/d/Onedrive/mzwing-lockinwize/Public/Game%20%E6%B8%B8%E6%88%8F/%EF%BC%88%E9%83%A8%E5%88%86English%EF%BC%89%E6%88%91%E7%9A%84%E5%A5%B3%E5%8F%8B%E6%98%AF%E6%81%B6%E9%9C%B8/MyBullyIsMyLover-Ch.1_Ep.3-pc.7z
 
@@ -889,623 +877,373 @@ https://alist.mzwing.gq/d/Onedrive/mzwing-lockinwize/Public/Game%20%E6%B8%B8%E6%
 https://alist.mzwing.gq/d/Onedrive/mzwing-lockinwize/Public/Game%20%E6%B8%B8%E6%88%8F/%E4%B8%8E%E9%9D%92%E6%A2%85%E7%AB%B9%E9%A9%AC%E5%A4%A7%E5%B0%8F%E5%A7%90%E7%94%9C%E5%AF%86%E6%80%A7%E7%A6%8F%E7%9A%84%E5%90%8C%E5%B1%85%E7%94%9F%E6%B4%BB/%E5%B9%BC%E3%81%AA%E3%81%98%E3%81%BF%E3%81%8A%E5%AC%A2%E6%A7%98%E3%81%A8%EF%BC%A8%E3%81%A7%E3%83%92%E3%83%9F%E3%83%84%E3%81%AA%E5%90%8C%E6%A3%B2%E7%94%9F%E6%B4%BB.7z
 
 https://alist.mzwing.gq/d/Onedrive/mzwing-lockinwize/Public/Game%20%E6%B8%B8%E6%88%8F/%E6%97%A0%E6%B3%95%E5%BF%8D%E8%80%90%E7%9A%84%E5%A4%84%E7%94%B7%E5%93%A5%E5%93%A5%E5%92%8C%E4%B8%8D%E7%9B%B4%E7%8E%87%E7%9A%84%E5%8F%9B%E9%80%86%E5%A6%B9%E5%A6%B9/%E3%82%AC%E3%83%9E%E3%83%B3%E3%81%8C%E3%81%A7%E3%81%8D%E3%81%AA%E3%81%84%E7%AB%A5%E8%B2%9E%E5%85%84%E3%82%AD%E3%81%A8%E3%80%81%E3%82%B9%E3%83%8A%E3%82%AA%E3%81%AB%E3%81%AA%E3%82%8C%E3%81%AA%E3%81%84%E5%8F%8D%E6%8A%97%E5%A6%B9.7z
-</code></pre>
-<p>如果可以，也请替我做一份磁力链保存起来，万分感谢。我自己家里用流量，学校是无法打洞且有防火墙的锥形NAT，bt只能拜托你们了。</p>
-<h2>Part 3</h2>
-<p>虽说没到年终，但这也勉强能算个总结了吧，毕竟我也不清楚到年终我还有没有时间去写这么一大篇文章了。</p>
-<h2>Part 4</h2>
-<p>打算将自己站的评论系统换成waline，感谢sci的工作。</p>
-<p>目前bbg公共评论系统没有邮件提醒，总归是不太好使。长时间用byn的leancloud key也总觉得不大厚道。valine又变闭源了，虽说没什么但总归不大放心。综上所述吧。</p>
-<h2>Part 5</h2>
-<p>打算这回用奖状再申请一次GitHub Student Developer Pack，不知道能不能。有这类经历的帮我支几招？（</p>
-<h2>Part 6</h2>
-<p>上了高二就没怎么再写代码，几乎所有的时间都投进运维和编译去了。</p>
-<p>现在代码水平应该是不如高一时候的自己了。</p>
-<h2>Part 7</h2>
-<p>现在教科技协会新生的计划也被无限期搁置了，懒，作业又多，而且说了他们也不一定能听懂。教了他们自学的方法就算了。修行靠个人吧。</p>
-<h2>Part 8</h2>
-<p>AI界也出了很多新奇玩意儿。</p>
-<p>太多了随便讲讲好了。</p>
-<p>最近比较想知道的是LCM、manba、llama.cpp、gguf这些，以后也向着这方面努力吧。</p>
-<p>提一嘴，manba据说是transformers的接班人，吸收了RWKV和transformers的优点，希望能做出来更好的架构吧。</p>
-<p>说实话，RWKV其实没什么竞争力，速度没transformers快，模型没transformers系好，生态也没有transformers大，就连宣传的无限tokens都被Long LoRA给破解了。当然多一个架构总是好事，希望manba可以做得更好吧，毕竟是一个崭新的架构，还很有机会。</p>
-<h2>Part 9</h2>
-<p>mzw一贯的多坑，现在几乎都写满一个本子了。</p>
-<p>打算建一个mzwing/hole仓库，以后你们谁想拿我点子就开一个issue告诉我，要是想完善我的点子的也欢迎issue。</p>
-<h2>Part 10</h2>
-<p>mzw的域名多了几个。</p>
-<p><code>mzwing.link</code>估计大家都知道了吧，不过目前这上面只有一个<a href="https://friends.mzwing.link">https://friends.mzwing.link</a>。BTW，没有首页，404属于正常现象。</p>
-<p>多了一个<code>official.free.hr</code>，目前这上面什么都没有，可能以后会建一个类似<a href="https://cloudflare-status.com">https://cloudflare-status.com</a>一样的好玩的网站，对我来说用就是没什么用的了，要是你们有替我想到用处的欢迎评论，要是想拿走玩玩的也可以告诉我（</p>
-<h2>以上</h2>
-<p>暂时就写这么多吧，以后有时间有想法再补点。</p>
-
-
-        ]]>
-      </content>
-      <summary type="html">一如既往的杂乱无章</summary>
-      <updated>2023-12-08T00:00:00.000Z</updated>
-      <published>2023-12-08T00:00:00.000Z</published>
-      </entry><entry>
-      <title>sing-box尝鲜</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=sing-box-try.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=sing-box-try.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>sing-box尝鲜</h1>
-<h2>前言</h2>
-<p>按<a href="https://sing-box.sagernet.org/zh/">官方文档</a>所述，sing-box是一款通用代理平台（说的真的好谦虚（））。这应该是我在这方面的软件中见过最强大的了。</p>
-<p>我最早关注它是在3月30日。在翻了一下<a href="https://github.com/SagerNet">@SagerNet</a>这个组织的项目以后，我发现了官方写的<a href="https://github.com/SagerNet/v2box">v2box</a>项目。当时我欣喜若狂，以为可以直接与我的v2A兼容了。然而最后我发现它基本上只是实现了转换功能（即将v2/x的配置转换成sing-box的配置，以及将dat格式的规则文件转换为sing-box所用的maxmind db文件），而且居然不支持websocket的节点，遂抛弃之。</p>
-<p>接下来我又找到了一个项目：<a href="https://github.com/Matsuridayo/nekoray">Nekoray</a>（猫猫射线（雾））。打开界面看了一下，Qt写的界面，嘛，说实话，不怎么样（前端人特有的对UI的极度挑剔（x））。然而，当我用了一下以后，我发现……</p>
-<p>我！不！会！用！（全恼</p>
-<p>大抵是在v2A待久了罢，已经变成v2A的形状力（悲）。以及，我发现它的分组功能也明显没有v2A好用，urltest功能是废的（更新：原因找到了，是Windows 7的加密DNS支持不行），启动后网络也是直接爆炸（恼）（更新：sing-box系列在Windows 7上接近于无法使用，建议转向<a href="https://docs.metacubex.one">clash meta</a>）</p>
-<p>于是，只有一条路可以走了！那就是——手写配置！</p>
-<p>第一次自己写配置，参考了很多人的文章，也踩了很多很多雷。在此对<a href="https://sing-box.sagernet.org/zh/">官方文档</a>表示衷心感谢，也感谢<a href="https://lala.im">荒岛博客</a>给出了很多sing-box的示例配置文件让我得以学习。</p>
-<blockquote>
-<p>若无特别说明，所示配置文件均只在Windows 11下测试通过</p>
-</blockquote>
-<h2>小坑点</h2>
-<p>想用cf家DNS的请先看看自己能否访问<a href="https://1.1.1.1">https://1.1.1.1</a>，看看是不是cf家的网站，不是就别傻乎乎的往那儿撞了，改用<code>https://1.0.0.1/dns-query</code>或者<code>h3://1.0.0.1/dns-query</code>罢。</p>
-<p>以及，Windows 7上基本就不要想着用sing-box了，wireguard、socks入站（包括mixed）、tun system模式、DoH实测无法在Windows 7上使用，tun gvisor模式倒是可以，不知为何。</p>
-<p>sing-box的DNS请求连接似乎可以很长，导致在大量DNS请求出错时会吃光所有CPU资源，因此<strong>请确保您的DNS配置可用</strong>！</p>
-<p>sing-box在网络连接不稳定的情况下tun模块似乎会大量拒绝直连请求，解决办法为设置一个系统代理，不知为何。</p>
-<p>sing-box 1.3版本以后DoQ疑似存在问题，会导致所有DoQ请求失败，请使用DoH3代替DoQ。</p>
-<h2>配置</h2>
-<p>这里只展示我的配置，应该可以覆盖绝大多数的应用场景了，至于更多配置，请自行查阅<a href="https://sing-box.sagernet.org/zh/">官方文档</a>，里面说的很明白了。</p>
-<p>如果你有过书写clash meta配置文件的经历，那么应该可以很快上手sing-box配置文件（题外话：貌似clash meta很多配置写法都是抄的sing-box哎（x））</p>
-<h3>日志</h3>
-<pre><code>&amp;quot;log&amp;quot;: {
-  &amp;quot;level&amp;quot;: &amp;quot;info&amp;quot;,
-  &amp;quot;timestamp&amp;quot;: true
-}
-</code></pre>
-<h3>DNS</h3>
-<pre><code>&amp;quot;dns&amp;quot;: {
-  &amp;quot;servers&amp;quot;: [
-    {
-      &amp;quot;tag&amp;quot;: &amp;quot;cloudflare&amp;quot;,
-      &amp;quot;address&amp;quot;: &amp;quot;h3://1.0.0.1/dns-query&amp;quot;,
-      &amp;quot;detour&amp;quot;: &amp;quot;direct&amp;quot;
-    },
-    {
-      &amp;quot;tag&amp;quot;: &amp;quot;dnspod&amp;quot;,
-      &amp;quot;address&amp;quot;: &amp;quot;https://1.12.12.12/dns-query&amp;quot;,
-      &amp;quot;detour&amp;quot;: &amp;quot;direct&amp;quot;
-    },
-    {
-      &amp;quot;tag&amp;quot;: &amp;quot;block&amp;quot;,
-      &amp;quot;address&amp;quot;: &amp;quot;rcode://success&amp;quot;
-    }
-  ],
-  &amp;quot;rules&amp;quot;: [
-    {
-      &amp;quot;geosite&amp;quot;: [
-        &amp;quot;category-ads-all&amp;quot;
-      ],
-      &amp;quot;server&amp;quot;: &amp;quot;block&amp;quot;,
-      &amp;quot;disable_cache&amp;quot;: true
-    },
-    {
-      &amp;quot;geosite&amp;quot;: [
-        &amp;quot;cn&amp;quot;
-      ],
-      &amp;quot;server&amp;quot;: &amp;quot;dnspod&amp;quot;
-    }
-  ],
-  &amp;quot;strategy&amp;quot;: &amp;quot;prefer_ipv4&amp;quot;
-}
-</code></pre>
-<p>这里要注意的是sing-box默认第一个DNS服务器为默认服务器，若没有命中规则则会走默认服务器，若默认服务器请求某域名失败则会取第二个DNS服务器继续请求，依此类推。</p>
-<p>如果要使用系统服务器，address为<code>local</code>。</p>
-<p>若要从路由器自动获得DNS服务器，使用<code>dhcp://auto</code>或<code>dhcp://${网卡名称}</code>。</p>
-<blockquote>
-<p>注意：从release下载的程序中不包含dhcp模块，无法使用<code>dhcp://</code>。如需使用，请自行参考<a href="https://sing-box.sagernet.org/zh/installation/from-source/">官方教程</a>进行构建。</p>
-</blockquote>
-<h3>入站</h3>
-<p>我推荐客户端入站用<code>mixed</code>+<code>tun</code>。</p>
-<pre><code>&amp;quot;inbounds&amp;quot;: [
-  {
-    &amp;quot;type&amp;quot;: &amp;quot;mixed&amp;quot;,
-    &amp;quot;tag&amp;quot;: &amp;quot;mixed-in&amp;quot;,
-    &amp;quot;listen&amp;quot;: &amp;quot;127.0.0.1&amp;quot;,
-    &amp;quot;listen_port&amp;quot;: 5353,
-    &amp;quot;udp_fragment&amp;quot;: true,
-    &amp;quot;sniff&amp;quot;: true,
-    &amp;quot;set_system_proxy&amp;quot;: true
-  },
-  {
-    &amp;quot;type&amp;quot;: &amp;quot;tun&amp;quot;,
-    &amp;quot;tag&amp;quot;: &amp;quot;tun-in&amp;quot;,
-    &amp;quot;interface_name&amp;quot;: &amp;quot;sing-box-tun&amp;quot;,
-    &amp;quot;inet4_address&amp;quot;: &amp;quot;172.18.0.1/28&amp;quot;,
-    &amp;quot;inet6_address&amp;quot;: &amp;quot;fdfe:dcbc:1515::1/126&amp;quot;,
-    &amp;quot;auto_route&amp;quot;: true,
-    &amp;quot;stack&amp;quot;: &amp;quot;system&amp;quot;,
-    &amp;quot;sniff&amp;quot;: true
-  }
-]
-</code></pre>
-<p>根据我的理解，tun的IPv4网卡IP可以随便写，保证开头为<code>172..</code>和第三位<code>0</code>就可以。<code>/</code>后不要随便动（因为我也不知道动了的后果，没学到家，会的大佬给我普及一下罢（）先谢谢了（））。</p>
-<p>IPv6网卡则建议自己随机生成一个（虽然我也不知道在哪能生成（）），保证为私有IP段应该就可以。</p>
-<p>（不过整个复制我的应该也没什么问题？（））</p>
-<p>sniff是域名嗅探器模块，可以确保路由规则分流正确，建议打开。有关sing-box中sniff的介绍，请看<a href="https://sing-box.sagernet.org/zh/configuration/route/sniff/">协议探测 - sing-box</a>。（虽然说这个介绍跟没介绍一个样，主要是看参数的）</p>
-<p>tun中的<code>auto_route: true</code>是必须打开的，防止流量环回。但是必须与<code>route.auto_detect_interface</code>或<code>route.default_interface</code>或<code>outbound.bind_interface</code>一起用才能生效。</p>
-<h3>出站</h3>
-<pre><code>&amp;quot;outbounds&amp;quot;: [
-  {
-    &amp;quot;type&amp;quot;: &amp;quot;direct&amp;quot;,
-    &amp;quot;tag&amp;quot;: &amp;quot;direct&amp;quot;
-  },
-  {
-    &amp;quot;type&amp;quot;: &amp;quot;block&amp;quot;,
-    &amp;quot;tag&amp;quot;: &amp;quot;block&amp;quot;
-  },
-  {
-    &amp;quot;type&amp;quot;: &amp;quot;dns&amp;quot;,
-    &amp;quot;tag&amp;quot;: &amp;quot;dns-out&amp;quot;
-  },
-  {
-    &amp;quot;tag&amp;quot;: &amp;quot;urltest&amp;quot;,
-    &amp;quot;type&amp;quot;: &amp;quot;urltest&amp;quot;,
-    &amp;quot;outbounds&amp;quot;: [
-      &amp;quot;server1&amp;quot;
-    ]
-  },
-  {
-    &amp;quot;tag&amp;quot;: &amp;quot;selector&amp;quot;,
-    &amp;quot;type&amp;quot;: &amp;quot;selector&amp;quot;,
-    &amp;quot;default&amp;quot;: &amp;quot;urltest&amp;quot;,
-    &amp;quot;outbounds&amp;quot;: [
-      &amp;quot;urltest&amp;quot;,
-      &amp;quot;server1&amp;quot;
-    ]
-  }
-]
-</code></pre>
-<p>就大致展示一下urltest和selector分组的作用。</p>
-<p>有clash订阅？可以使用<a href="https://github.com/xmdhs/clash2singbox">clash2singbox</a>快速将你的clash订阅转换为sing-box格式（请注意：这个软件除了-url参数（-和--都可以）和-o参数外，其他所有功能都是废掉的。这个软件的模板功能指的是在编译时指定模板，而非编译后……这个软件基于官方的<a href="https://github.com/SagerNet/serenity">@SagerNet/serenity</a>，但是官方的配置和i18n一言难尽……）</p>
-<p>以及社区的fork<a href="https://github.com/qjebbs/sing-box">@qjebbs/sing-box</a>有provider功能，但是我不推荐使用，看起来维护得不是特别即时，而且sing-box经常修复大量bug，所以建议还是用官方版。（看官方开发者<a href="https://github.com/nekohasekai">@nekohasekai</a>的意思，大概是希望sing-box只是一个纯粹的代理平台，至于订阅什么的让其他软件搞去）</p>
-<p>更详细的就自己看官方文档罢（）</p>
-<h3>实验性功能（clash api和部分v2ray api）</h3>
-<p>因为不用v2ray api（那玩意基本也就只有机场才会用到吧），所以就只展示clash api的了。</p>
-<p>sing-box的clash api支持是兼容clash meta的，也就是说clash meta的面板（如Yacd）可以直接用于sing-box。</p>
-<p>（这也是我在设计singA这个sing-box面板的时候迟迟拿不定设计主意的原因，毕竟sing-box的绝大部分功能都与clash相近，可是我又不喜欢clash面板的低自定义度，但让我彻底抛弃clash api这个这么好用的东西，我又舍不得）</p>
-<pre><code>&amp;quot;experimental&amp;quot;: {
-  &amp;quot;clash_api&amp;quot;: {
-    &amp;quot;external_controller&amp;quot;: &amp;quot;0.0.0.0:9090&amp;quot;,
-    &amp;quot;secret&amp;quot;: &amp;quot;&amp;quot;,
-    &amp;quot;cache_file&amp;quot;: &amp;quot;./resources/cache.db&amp;quot;,
-    &amp;quot;store_selected&amp;quot;: true
-  }
-}
-</code></pre>
-<h3>路由</h3>
-<pre><code>&amp;quot;route&amp;quot;: {
-  &amp;quot;geoip&amp;quot;: {
-    &amp;quot;download_url&amp;quot;: &amp;quot;https://github.com/soffchen/sing-geoip/releases/latest/download/geoip.db&amp;quot;,
-    &amp;quot;path&amp;quot;: &amp;quot;./resources/geoip.db&amp;quot;
-  },
-  &amp;quot;geosite&amp;quot;: {
-    &amp;quot;download_url&amp;quot;: &amp;quot;https://github.com/soffchen/sing-geosite/releases/latest/download/geosite.db&amp;quot;,
-    &amp;quot;path&amp;quot;: &amp;quot;./resources/geosite.db&amp;quot;
-  },
-  &amp;quot;rules&amp;quot;: [
-    {
-      &amp;quot;protocol&amp;quot;: &amp;quot;dns&amp;quot;,
-      &amp;quot;outbound&amp;quot;: &amp;quot;dns-out&amp;quot;
-    },
-    {
-      &amp;quot;geosite&amp;quot;: &amp;quot;category-ads-all&amp;quot;,
-      &amp;quot;outbound&amp;quot;: &amp;quot;block&amp;quot;
-    },
-    {
-      &amp;quot;geosite&amp;quot;: [
-        &amp;quot;cn&amp;quot;,
-        &amp;quot;apple&amp;quot;,
-        &amp;quot;category-games@cn&amp;quot;,
-        &amp;quot;hoyoverse&amp;quot;
-      ],
-      &amp;quot;geoip&amp;quot;: [
-        &amp;quot;private&amp;quot;,
-        &amp;quot;cn&amp;quot;
-      ],
-      &amp;quot;domain&amp;quot;: [
-        &amp;quot;addons.mozilla.org&amp;quot;
-      ],
-      &amp;quot;domain_suffix&amp;quot;: [
-        &amp;quot;huggingface.co&amp;quot;,
-        &amp;quot;graph.microsoft.com&amp;quot;
-      ],
-      &amp;quot;outbound&amp;quot;: &amp;quot;direct&amp;quot;
-    },
-  ],
-  &amp;quot;final&amp;quot;: &amp;quot;direct&amp;quot;,
-  &amp;quot;auto_detect_interface&amp;quot;: true
-}
-</code></pre>
-<p><code>dns</code>那里是为了正常发出DNS请求（不然tun是没法进行正常DNS请求的）。</p>
-<p>那个自定义的geosite.db和geoip.db下载链接是有LoyalSoldierSite和LoyalSoldierIP的拓展分类的，如果不需要可以直接删掉，官方的是与v2ray的dat保持一致的。</p>
-<p>如果你自己有dat，你可以用<a href="https://github.com/SagerNet/v2box">v2box</a>转换为db文件（然而sing-box并没有给出如何加载自定义规则文件的选项……目前唯一解法是将geoip.dat或geosite.dat继承下来再转换成db）。</p>
-<p><code>&amp;quot;auto_detect_interface&amp;quot;: true</code>在用tun的时候建议打开（当然你也可以用<a href="https://sing-box.sagernet.org/zh/configuration/route/#default_interface">default_interface</a>手动指定网卡，但是Windows的网卡显示和实际调用的名称一般都是对不上的（），而且优先级比<code>auto_detect_interface</code>低。但是如果你发现关掉sing-box之后可以正常联网，确定其他配置没有问题，而且Windows的网络和共享中心里面有一堆网卡，那大概率就是你的默认网卡是个虚拟机网卡了……这种时候要么手动指定网卡，要么调成正常优先级，自己搜索，此处不再赘述）</p>
-<p>Android还有一个<code>override_android_vpn</code>选项，接受<code>boolean</code>值，功能为启用<code>auto_detect_interface</code>时接受Android VPN作为上游网卡。</p>
-<h2>检查&amp;amp;格式化</h2>
-<blockquote>
-<p>在这里我把<code>sing-box</code>加进了Path，没加进Path的话自己修改</p>
-</blockquote>
-<p>运行<code>sing-box check -c &amp;quot;path/to/${配置文件名称}&amp;quot;</code>检查你的配置是否正确，不正确的话根据给出来的报错修改配置。</p>
-<p>如果配置文件名称是<code>config.json</code>或<code>config.jsonc</code>，可以把<code>-c &amp;quot;path/to/${配置文件名称}&amp;quot;</code>写成<code>-C &amp;quot;path/to/&amp;quot;</code>。如果你的运行目录与配置文件目录一致，可以进一步写成<code>-D &amp;quot;path/to/&amp;quot;</code>，如果运行目录与配置文件目录不一致，那么可以写成<code>-D &amp;quot;path/to/your_directory&amp;quot; -c &amp;quot;path/to/${配置文件名称}&amp;quot;</code>。以下同理。</p>
-<p>运行<code>sing-box format -c &amp;quot;path/to/${配置文件名称}&amp;quot; &amp;gt; &amp;quot;path/to/${配置文件名称}&amp;quot;</code>以格式化，指定值与默认值一致的将会被删除，wireguard reserved值也会变成缩写形式。注意后面那个配置文件名称最好不一致，因为如果终端编码不是UTF-8那么中文大概率乱码……</p>
-<h2>启动</h2>
-<p>以管理员身份运行<code>sing-box run -c &amp;quot;path/to/${配置文件名称}&amp;quot;</code>，就可以使用辣！</p>
-<blockquote>
-<p>tun模式用gvisor的话也许可以不使用管理员身份启动。<br>可以用<code>-C</code>、<code>-D</code>这些参数。</p>
-</blockquote>
-<p>Enjoy!</p>
-<h2>结尾flag</h2>
-<p>写个singA，类似于v2A的面板（看什么时候实现（））</p>
-
-
-        ]]>
-      </content>
-      <summary type="html">尝试使用sing-box的时候遇到了很多问题……</summary>
-      <updated>2023-07-11T00:00:00.000Z</updated>
-      <published>2023-07-11T00:00:00.000Z</published>
-      </entry><entry>
-      <title>NixOS初探-安装篇</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=nixos-explore-install.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=nixos-explore-install.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>NixOS初探-安装篇</h1>
-
-
-        ]]>
-      </content>
-      <summary type="html">NixOS可创了，可好玩了（）</summary>
-      <updated>2023-07-11T00:00:00.000Z</updated>
-      <published>2023-07-11T00:00:00.000Z</published>
-      </entry><entry>
-      <title>Windows下用v2A+3proxy+CloudflareSpeedTest加速海外cdn</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=win-v2a-cfst-3proxy-speed-cdn.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=win-v2a-cfst-3proxy-speed-cdn.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>Windows下用v2A+3proxy+CloudflareSpeedTest加速海外cdn</h1>
-<h2>前言</h2>
-<p><a href="https://github.com/XIU2/cloudflareSpeedTest">CloudflareSpeedTest</a>是我很早就star了的项目（虽然说我是starbot（x）），但我最近才重新注意到它。</p>
-<p>我认为这个项目相当不错，然而我拒绝装插件实现（x）（cfst对分流的建议是用switch-omega插件）于是，经过一番折腾，我用我用惯的RoutingA进行了分流。这样，所有遵循系统代理设置的应用就都能享受加速了。</p>
-<h2>正文</h2>
-<p>首先当然是……安装cfst了</p>
-<p>然后……安装3proxy（<a href="https://pan.lanzouf.com/b074km92f">cfst给出来的懒人版</a>（密码<code>xiu2</code>），<a href="https://github.com/z3APA3A/3proxy/releases/">3proxy官方版本</a>）（最好用cfst给出来的3proxy包安装，当然你也可以自行对比这两个的不同并使用3proxy官方版本，下文中提到的但是你在官方版本找不到的东西在cfst给出来的懒人版里面都有）</p>
-<blockquote>
-<p>提一句，scoop里面有cfst和3proxy官方版本，但是得自己添加社区源</p>
-</blockquote>
-<p>直接抄下面的<a href="#%E5%8F%82%E8%80%83%E6%95%99%E7%A8%8B">参考教程</a>吧，懒得写了（</p>
-<p>那么就装完cfst和3proxy了（</p>
-<p>记得运行cfst_3proxy.bat，这会自动进行cloudflare cdn测速并自动替换3proxy.cfg中的IP并重启3proxy服务。</p>
-<p>打开v2A面板，创建一个节点。类型http，地址<code>127.0.0.1</code>（当然你可以根据你的真实情况更改），端口2088（在3proxy.cfg换了的话自行修改），点击确定。新建分组，名称随意（此处叫<code>speedcdn</code>），然后选择刚创好的节点。</p>
-<p>进RoutingA，将<code>default:</code>后面改成<code>speedcdn</code>（你的分组名）。并新起一行加入一句<code>ip(geoip: private)-&amp;gt;direct</code>。</p>
-<blockquote>
-<p>实测在RoutingA中直接改<code>default</code>而且不加后面那句会导致v2A面板无法加载，idk why（</p>
-</blockquote>
-<p>完成。</p>
-<h2>进阶玩法</h2>
-<p>其实cfst还能测cloudfront与gcore（貌似这样jsdelivr就有就了？（）），但我不想玩了，暂时不写。想玩可以参考下面这两份Discusssions：</p>
-<p><a href="https://github.com/XIU2/CloudflareSpeedTest/discussions/303">Gcore CDN测速</a></p>
-<p><a href="https://github.com/XIU2/CloudflareSpeedTest/discussions/304">AWS Cloudfront CDN测速</a></p>
-<h2>后记</h2>
-<p>（其实说实话，用Linux iptables多好啊）</p>
-<p>（虽然说感觉sing-box比v2更香啊（x），但是Nekoray实在是过于简陋……自己写一个罢！（立flag）</p>
-<h2>参考教程</h2>
-<p><a href="https://github.com/XIU2/CloudflareSpeedTest/discussions/71">cfst官方教程</a></p>
-
-
-        ]]>
-      </content>
-      <summary type="html">说起来好像这个方案对加速pxy一点都没用的样子（</summary>
-      <updated>2023-03-31T00:00:00.000Z</updated>
-      <published>2023-03-31T00:00:00.000Z</published>
-      </entry><entry>
-      <title>对网易云音乐灰色歌曲解锁的小小吐槽</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=sth-about-netease-grey-music-unlock.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=sth-about-netease-grey-music-unlock.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>对网易云音乐灰色歌曲解锁的小小吐槽</h1>
-<ol>
-<li><p>首先，<a href="https://github.com/nondanee/UnblockNeteaseMusic">原项目@nondanee/UnblockNeteaseMusic</a>能启动，但是网易云会失败</p>
-</li>
-<li><p><a href="https://github.com/unlockneteasemusic/server">@unlockneteasemusic/server</a>在Windows 7上无法启动，不知为何</p>
-</li>
-<li><p>终于找到一个golang版本的，打开了端口，灰歌果真全白了，高兴地点开了《我是如此相信》（班歌），然后……</p>
-</li>
-</ol>
-<p>播 放 失 败</p>
-<p>mzw：***k！</p>
-<p>差点就暴走了啊（全恼</p>
-<p>最后还是老实地用回了Listen 1（x）</p>
-<p>（果然还是Listen 1 + musicn的组合香啊（赞赏））</p>
-
-
-        ]]>
-      </content>
-      <summary type="html">花了我一天，杰伦的歌还不是放不了……（恼</summary>
-      <updated>2023-03-31T00:00:00.000Z</updated>
-      <published>2023-03-31T00:00:00.000Z</published>
-      </entry><entry>
-      <title>白嫖WARP+的24PB密钥</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=free-warp-plus-key.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=free-warp-plus-key.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>白嫖WARP+的24PB密钥</h1>
-<h2>正文</h2>
-<p>进一个<a href="https://t.me/warpplus">Telegram Channel</a>（可以Preview），里面有公共key</p>
-<p>更好的选择是使用这个<a href="https://t.me/generatewarpplusbot">Telegram Bot</a>生成专属key，会更稳定，不过每天只能生成2条key（貌似？）</p>
-<p>有一条之后可以用<a href="https://github.com/totoroterror/warp-cloner">warp-cloner</a>得到更多的Warp+ key。</p>
-<blockquote>
-<p>请不要滥用此项服务</p>
-</blockquote>
-<h2>参考</h2>
-<p><a href="https://blog.misaka.rest/2023/03/19/warp-24pb/">《两种方式，获取WARP+的24PB流量账号》 - Misaka Blog</a>（警告：有大量ads）</p>
-
-
-        ]]>
-      </content>
-      <summary type="html">其实只是为了水篇文章（x</summary>
-      <updated>2023-03-31T00:00:00.000Z</updated>
-      <published>2023-03-31T00:00:00.000Z</published>
-      </entry><entry>
-      <title>在Windows7上使用最新版的VSCode</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=latest-vscode-on-win7.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=latest-vscode-on-win7.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>在Windows7上使用最新版的VSCode</h1>
-<ol>
-<li><p>转到全部下载，下载符合你系统架构的zip包</p>
-</li>
-<li><p>解压后双击<code>code.exe</code>就可以正常使用了</p>
-</li>
-<li><p>请不要理会下载更新选项，它在Windows 7上只能降级，所以建议关闭</p>
-</li>
-</ol>
-
-
-        ]]>
-      </content>
-      <summary type="html">VSCode这个家伙……Electron都还支持Win7呢（</summary>
-      <updated>2023-03-31T00:00:00.000Z</updated>
-      <published>2023-03-31T00:00:00.000Z</published>
-      </entry><entry>
-      <title>在Windows7上使用最新版的Node.js</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=latest-nodejs-on-win7.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=latest-nodejs-on-win7.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>在Windows7上使用最新版的Node.js</h1>
-<ol>
-<li><p>请下压缩包，不要下载安装程序</p>
-</li>
-<li><p>解压到你喜欢的位置</p>
-</li>
-<li><p>给Path加入Node.js的位置下的<code>/bin</code></p>
-</li>
-<li><p>加一个环境变量：<code>NODE_PATH = ${安装位置}/node_modules</code>，请自行替换<code>${安装位置}</code></p>
-</li>
-<li><p>再加一个：<code>NODE_SKIP_PLATFORM_CHECK = 1</code>，然后按确认关闭窗口</p>
-</li>
-<li><p>重启终端</p>
-</li>
-<li><p>Enjoy！</p>
-</li>
-</ol>
-
-
-        ]]>
-      </content>
-      <summary type="html">为了用上Node.js 20.x……</summary>
-      <updated>2023-03-31T00:00:00.000Z</updated>
-      <published>2023-03-31T00:00:00.000Z</published>
-      </entry><entry>
-      <title>推了Summer Pockets REFLECTION BLUE之后的一些感想</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=some-feeling-about-sprb.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=some-feeling-about-sprb.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>推了Summer Pockets REFLECTION BLUE之后的一些感想</h1>
-<h2>总结写前头（x</h2>
-<p>剧情很优秀，画风比较对我口味，OST里面的纯音乐好听（日语听不懂了啦），加上这是我入坑作（x），所以给了九分</p>
-<h2>正文开始（x</h2>
-<p>好吧，事实上我Pockets线还没推完，夏日口袋就应该在8月31日结束！（正论）</p>
-<h2>刀子程度</h2>
-<p>ALKA TALE是最刀的，不接受反驳（</p>
-<p>识线其次，因为那种跨越生死的爱恋实在是太感人了（悲</p>
-<p>苍线第三。然而由于我第二条线就选了苍线导致不懂事的我自己创造了很多把刀子刀自己以至于即使是HE结局也让我流了一夜泪（大悲</p>
-<p>剩下的不太好分，总之我觉得白羽线是最不刀的（然而白羽在ALKA中已经足够刀了……）</p>
-<h2>印象深刻程度（雾）</h2>
-<p>然而论给我留下印象的深刻程度……反而是苍线第一，识线、鸥线、静久线并列第二（可能等我过了P线以后会加）</p>
-<p>（白羽作为真女主印象反而没有其他深是怎么回事（））</p>
-<p>甚至A线都没有给我太强的触动，大致感觉就是悲伤过就算了，可能也与我当时已经快要开学没时间悲伤了有关（x</p>
-<p>不过，对我这种在语文考试看感人文本能看哭的人来说，每一条线放进去都是我能哭出来的程度。只能说吃了这么一大筐刀子，心理承受能力总算是提高了一点（）</p>
-<blockquote>
-<p>剩下什么的，推完Pockets线再补，咕咕咕</p>
-</blockquote>
-<h2>下一步推Gal计划（？）</h2>
-<p>先去推<code>ATRI - My Dear Moments -</code>（希望不会被刀死（悲）），春天有时间再去推春滚滚（学习byn速通！（雾））</p>
-<blockquote>
-<p>然而当文章敲完的时候已经是夏天力（x</p>
-</blockquote>
-<p>（说起来有没有人告诉我春滚滚刀不刀，不刀我就拿来解毒了（x））</p>
-
-
-        ]]>
-      </content>
-      <summary type="html">由于感触实在是太深因此专门写一篇（</summary>
-      <updated>2023-03-31T00:00:00.000Z</updated>
-      <published>2023-03-31T00:00:00.000Z</published>
-      </entry><entry>
-      <title>Windows11装机注册本地账户目前通用解法</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=win11-install-local-account.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=win11-install-local-account.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>Windows11装机注册本地账户目前通用解法</h1>
-<ol>
-<li><p><code>Shift</code>+<code>F10</code>启动cmd，输入<code>devmgmt.msc</code>启动设备管理器</p>
-</li>
-<li><p>禁用掉联网的网卡，然后关掉设备管理器</p>
-</li>
-<li><p>再回到cmd中，输入<code>oobe\ByPassNRO</code>（注意：<code>\</code>不可以打错！！！）</p>
-</li>
-<li><p>然后就会自动重启，之后跳过联网就能注册本地账户了</p>
-</li>
-<li><p>装完机后记得重新启用网卡并且最好升级一下（只是建议）</p>
-</li>
-<li><p>之后使用可能会弹出提示框说让使用联网账号，点击“3天后提醒我”即可</p>
-</li>
-</ol>
-
-
-        ]]>
-      </content>
-      <summary type="html">备忘（x</summary>
-      <updated>2023-03-31T00:00:00.000Z</updated>
-      <published>2023-03-31T00:00:00.000Z</published>
-      </entry><entry>
-      <title>安装ArchLinux+DDE</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=install-archlinux-and-dde.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=install-archlinux-and-dde.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>安装ArchLinux+DDE</h1>
-<h2>安装ArchLinux</h2>
-<h3>对于看不懂英文的</h3>
-<p>那似乎只有按照<a href="https://wiki.archlinux.org/title/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)">官方教程</a>直接开敲了嘛……</p>
-<h3>能看懂英文的</h3>
-<p>有一个无脑安装办法：</p>
-<pre><code>arch-install
-</code></pre>
-<p>然后直接对着提示输入就行了。</p>
-<p>想手敲代码的可以直接参考上面。</p>
-<h3>安装所需软件包</h3>
-<h4>按官方教程来的</h4>
-<p>建议先参考<a href="https://opentuna.cn/help/archlinux">此教程</a>去换个源，当然你也可以选择相信arch默认源的速度（反正广东这边不咋地）。</p>
-<p>然后为新系统安装nano（vim也可以，但我不会，所以后面都以nano为例）。</p>
-<pre><code>pacstrap -S nano
-</code></pre>
-<h4>用arch-install的</h4>
-<p>同样建议换源，但arch-install会提示你要不要换源并且还准备好了中国地区的一整套源（就很贴心）。</p>
-<p>arch-install会在安装中有提示，在那里输入nano就行了。</p>
-<h3>几个小坑点：</h3>
-<ul>
-<li><p>arch-install安装时建议直接选精简版（不安装任何桌面环境，因为我以前就试过plasma将dde整炸的情况）</p>
-</li>
-<li><p>arch-install安装内核时建议直接选默认选项，不然开机时很可能会出现桌面环境炸没+ping出现Tamporery Failure的情况（原因未知，似乎因为DDE直接依赖了最新版本的内核）</p>
-</li>
-<li><p>一定一定一定要新建用户！不然DDE会拒绝登录，同时建议将这个用户添加到wheel组（可以sudo）（同样，arch-install会有提示）</p>
-</li>
-<li><p>按官方教程来的建议查看教程文末链接，不然连不上网（亲身经历）（全程有线网络连接当我没说）</p>
-</li>
-</ul>
-<h2>安装DDE</h2>
-<p>此处假定是以非root用户登录的，同时请按顺序执行。</p>
-<pre><code>sudo pacman -Syu # 先同步软件源列表（顺手更了个新）
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;如果可以，也请替我做一份磁力链保存起来，万分感谢。我自己家里用流量，学校是无法打洞且有防火墙的锥形NAT，bt只能拜托你们了。&lt;/p&gt;
+&lt;h2 id=&quot;Part-3&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231208/#Part-3&quot; aria-labelledby=&quot;Part-3&quot;&gt;&lt;/a&gt;Part 3&lt;/h2&gt;
+&lt;p&gt;虽说没到年终，但这也勉强能算个总结了吧，毕竟我也不清楚到年终我还有没有时间去写这么一大篇文章了。&lt;/p&gt;
+&lt;h2 id=&quot;Part-4&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231208/#Part-4&quot; aria-labelledby=&quot;Part-4&quot;&gt;&lt;/a&gt;Part 4&lt;/h2&gt;
+&lt;p&gt;打算将自己站的评论系统换成waline，感谢sci的工作。&lt;/p&gt;
+&lt;p&gt;目前bbg公共评论系统没有邮件提醒，总归是不太好使。长时间用byn的leancloud key也总觉得不大厚道。valine又变闭源了，虽说没什么但总归不大放心。综上所述吧。&lt;/p&gt;
+&lt;h2 id=&quot;Part-5&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231208/#Part-5&quot; aria-labelledby=&quot;Part-5&quot;&gt;&lt;/a&gt;Part 5&lt;/h2&gt;
+&lt;p&gt;打算这回用奖状再申请一次GitHub Student Developer Pack，不知道能不能。有这类经历的帮我支几招？（&lt;/p&gt;
+&lt;h2 id=&quot;Part-6&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231208/#Part-6&quot; aria-labelledby=&quot;Part-6&quot;&gt;&lt;/a&gt;Part 6&lt;/h2&gt;
+&lt;p&gt;上了高二就没怎么再写代码，几乎所有的时间都投进运维和编译去了。&lt;/p&gt;
+&lt;p&gt;现在代码水平应该是不如高一时候的自己了。&lt;/p&gt;
+&lt;h2 id=&quot;Part-7&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231208/#Part-7&quot; aria-labelledby=&quot;Part-7&quot;&gt;&lt;/a&gt;Part 7&lt;/h2&gt;
+&lt;p&gt;现在教科技协会新生的计划也被无限期搁置了，懒，作业又多，而且说了他们也不一定能听懂。教了他们自学的方法就算了。修行靠个人吧。&lt;/p&gt;
+&lt;h2 id=&quot;Part-8&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231208/#Part-8&quot; aria-labelledby=&quot;Part-8&quot;&gt;&lt;/a&gt;Part 8&lt;/h2&gt;
+&lt;p&gt;AI界也出了很多新奇玩意儿。&lt;/p&gt;
+&lt;p&gt;太多了随便讲讲好了。&lt;/p&gt;
+&lt;p&gt;最近比较想知道的是LCM、manba、llama.cpp、gguf这些，以后也向着这方面努力吧。&lt;/p&gt;
+&lt;p&gt;提一嘴，manba据说是transformers的接班人，吸收了RWKV和transformers的优点，希望能做出来更好的架构吧。&lt;/p&gt;
+&lt;p&gt;说实话，RWKV其实没什么竞争力，速度没transformers快，模型没transformers系好，生态也没有transformers大，就连宣传的无限tokens都被Long LoRA给破解了。当然多一个架构总是好事，希望manba可以做得更好吧，毕竟是一个崭新的架构，还很有机会。&lt;/p&gt;
+&lt;h2 id=&quot;Part-9&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231208/#Part-9&quot; aria-labelledby=&quot;Part-9&quot;&gt;&lt;/a&gt;Part 9&lt;/h2&gt;
+&lt;p&gt;mzw一贯的多坑，现在几乎都写满一个本子了。&lt;/p&gt;
+&lt;p&gt;打算建一个mzwing/hole仓库，以后你们谁想拿我点子就开一个issue告诉我，要是想完善我的点子的也欢迎issue。&lt;/p&gt;
+&lt;h2 id=&quot;Part-10&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231208/#Part-10&quot; aria-labelledby=&quot;Part-10&quot;&gt;&lt;/a&gt;Part 10&lt;/h2&gt;
+&lt;p&gt;mzw的域名多了几个。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;mzwing.link&lt;/code&gt;估计大家都知道了吧，不过目前这上面只有一个&lt;a href=&quot;https://friends.mzwing.link&quot;&gt;https://friends.mzwing.link&lt;/a&gt;。BTW，没有首页，404属于正常现象。&lt;/p&gt;
+&lt;p&gt;多了一个&lt;code&gt;official.free.hr&lt;/code&gt;，目前这上面什么都没有，可能以后会建一个类似&lt;a href=&quot;https://cloudflare-status.com&quot;&gt;https://cloudflare-status.com&lt;/a&gt;一样的好玩的网站，对我来说用就是没什么用的了，要是你们有替我想到用处的欢迎评论，要是想拿走玩玩的也可以告诉我（&lt;/p&gt;
+&lt;h2 id=&quot;以上&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/small-article-20231208/#%E4%BB%A5%E4%B8%8A&quot; aria-labelledby=&quot;以上&quot;&gt;&lt;/a&gt;以上&lt;/h2&gt;
+&lt;p&gt;暂时就写这么多吧，以后有时间有想法再补点。&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>NixOS初探-安装篇</title>
+<link href="https://mzwing.eu.org/article/nixos-explore-install/"/>
+<id>https://mzwing.eu.org/article/nixos-explore-install/</id>
+<published>2023-07-11T00:00:00.000Z</published>
+<updated>2023-07-11T00:00:00.000Z</updated>
+<summary>NixOS可创了，可好玩了（）</summary>
+<content type="html">&lt;h1 id=&quot;NixOS初探-安装篇&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/nixos-explore-install/#NixOS%E5%88%9D%E6%8E%A2-%E5%AE%89%E8%A3%85%E7%AF%87&quot; aria-labelledby=&quot;NixOS初探-安装篇&quot;&gt;&lt;/a&gt;NixOS初探-安装篇&lt;/h1&gt;
+</content>
+</entry>
+<entry>
+<title>白嫖WARP+的24PB密钥</title>
+<link href="https://mzwing.eu.org/article/free-warp-plus-key/"/>
+<id>https://mzwing.eu.org/article/free-warp-plus-key/</id>
+<published>2023-03-31T00:00:00.000Z</published>
+<updated>2023-03-31T00:00:00.000Z</updated>
+<summary>其实只是为了水篇文章（x</summary>
+<content type="html">&lt;h1 id=&quot;白嫖WARP的24PB密钥&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/free-warp-plus-key/#%E7%99%BD%E5%AB%96WARP%E7%9A%8424PB%E5%AF%86%E9%92%A5&quot; aria-labelledby=&quot;白嫖WARP的24PB密钥&quot;&gt;&lt;/a&gt;白嫖WARP+的24PB密钥&lt;/h1&gt;
+&lt;h2 id=&quot;正文&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/free-warp-plus-key/#%E6%AD%A3%E6%96%87&quot; aria-labelledby=&quot;正文&quot;&gt;&lt;/a&gt;正文&lt;/h2&gt;
+&lt;p&gt;进一个&lt;a href=&quot;https://t.me/warpplus&quot;&gt;Telegram Channel&lt;/a&gt;（可以Preview），里面有公共key&lt;/p&gt;
+&lt;p&gt;更好的选择是使用这个&lt;a href=&quot;https://t.me/generatewarpplusbot&quot;&gt;Telegram Bot&lt;/a&gt;生成专属key，会更稳定，不过每天只能生成2条key（貌似？）&lt;/p&gt;
+&lt;p&gt;有一条之后可以用&lt;a href=&quot;https://github.com/totoroterror/warp-cloner&quot;&gt;warp-cloner&lt;/a&gt;得到更多的Warp+ key。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;请不要滥用此项服务&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/free-warp-plus-key/#%E5%8F%82%E8%80%83&quot; aria-labelledby=&quot;参考&quot;&gt;&lt;/a&gt;参考&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://blog.misaka.rest/2023/03/19/warp-24pb/&quot;&gt;《两种方式，获取WARP+的24PB流量账号》 - Misaka Blog&lt;/a&gt;（警告：有大量ads）&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>在Windows7上使用最新版的Node.js</title>
+<link href="https://mzwing.eu.org/article/latest-nodejs-on-win7/"/>
+<id>https://mzwing.eu.org/article/latest-nodejs-on-win7/</id>
+<published>2023-03-31T00:00:00.000Z</published>
+<updated>2023-03-31T00:00:00.000Z</updated>
+<summary>为了用上Node.js 20.x……</summary>
+<content type="html">&lt;h1 id=&quot;在Windows7上使用最新版的Node.js&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/latest-nodejs-on-win7/#%E5%9C%A8Windows7%E4%B8%8A%E4%BD%BF%E7%94%A8%E6%9C%80%E6%96%B0%E7%89%88%E7%9A%84Node.js&quot; aria-labelledby=&quot;在Windows7上使用最新版的Node.js&quot;&gt;&lt;/a&gt;在Windows7上使用最新版的Node.js&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;请下压缩包，不要下载安装程序&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解压到你喜欢的位置&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;给Path加入Node.js的位置下的&lt;code&gt;/bin&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;加一个环境变量：&lt;code&gt;NODE_PATH = ${安装位置}/node_modules&lt;/code&gt;，请自行替换&lt;code&gt;${安装位置}&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;再加一个：&lt;code&gt;NODE_SKIP_PLATFORM_CHECK = 1&lt;/code&gt;，然后按确认关闭窗口&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;重启终端&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Enjoy！&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+</entry>
+<entry>
+<title>在Windows7上使用最新版的VSCode</title>
+<link href="https://mzwing.eu.org/article/latest-vscode-on-win7/"/>
+<id>https://mzwing.eu.org/article/latest-vscode-on-win7/</id>
+<published>2023-03-31T00:00:00.000Z</published>
+<updated>2023-03-31T00:00:00.000Z</updated>
+<summary>VSCode这个家伙……Electron都还支持Win7呢（</summary>
+<content type="html">&lt;h1 id=&quot;在Windows7上使用最新版的VSCode&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/latest-vscode-on-win7/#%E5%9C%A8Windows7%E4%B8%8A%E4%BD%BF%E7%94%A8%E6%9C%80%E6%96%B0%E7%89%88%E7%9A%84VSCode&quot; aria-labelledby=&quot;在Windows7上使用最新版的VSCode&quot;&gt;&lt;/a&gt;在Windows7上使用最新版的VSCode&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;转到全部下载，下载符合你系统架构的zip包&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;解压后双击&lt;code&gt;code.exe&lt;/code&gt;就可以正常使用了&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;请不要理会下载更新选项，它在Windows 7上只能降级，所以建议关闭&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+</entry>
+<entry>
+<title>推了Summer Pockets REFLECTION BLUE之后的一些感想</title>
+<link href="https://mzwing.eu.org/article/some-feeling-about-sprb/"/>
+<id>https://mzwing.eu.org/article/some-feeling-about-sprb/</id>
+<published>2023-03-31T00:00:00.000Z</published>
+<updated>2023-03-31T00:00:00.000Z</updated>
+<summary>由于感触实在是太深因此专门写一篇（</summary>
+<content type="html">&lt;h1 id=&quot;推了Summer-Pockets-REFLECTION-BLUE之后的一些感想&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/some-feeling-about-sprb/#%E6%8E%A8%E4%BA%86Summer-Pockets-REFLECTION-BLUE%E4%B9%8B%E5%90%8E%E7%9A%84%E4%B8%80%E4%BA%9B%E6%84%9F%E6%83%B3&quot; aria-labelledby=&quot;推了Summer-Pockets-REFLECTION-BLUE之后的一些感想&quot;&gt;&lt;/a&gt;推了Summer Pockets REFLECTION BLUE之后的一些感想&lt;/h1&gt;
+&lt;h2 id=&quot;总结写前头（x&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/some-feeling-about-sprb/#%E6%80%BB%E7%BB%93%E5%86%99%E5%89%8D%E5%A4%B4%EF%BC%88x&quot; aria-labelledby=&quot;总结写前头（x&quot;&gt;&lt;/a&gt;总结写前头（x&lt;/h2&gt;
+&lt;p&gt;剧情很优秀，画风比较对我口味，OST里面的纯音乐好听（日语听不懂了啦），加上这是我入坑作（x），所以给了九分&lt;/p&gt;
+&lt;h2 id=&quot;正文开始（x&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/some-feeling-about-sprb/#%E6%AD%A3%E6%96%87%E5%BC%80%E5%A7%8B%EF%BC%88x&quot; aria-labelledby=&quot;正文开始（x&quot;&gt;&lt;/a&gt;正文开始（x&lt;/h2&gt;
+&lt;p&gt;好吧，事实上我Pockets线还没推完，夏日口袋就应该在8月31日结束！（正论）&lt;/p&gt;
+&lt;h2 id=&quot;刀子程度&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/some-feeling-about-sprb/#%E5%88%80%E5%AD%90%E7%A8%8B%E5%BA%A6&quot; aria-labelledby=&quot;刀子程度&quot;&gt;&lt;/a&gt;刀子程度&lt;/h2&gt;
+&lt;p&gt;ALKA TALE是最刀的，不接受反驳（&lt;/p&gt;
+&lt;p&gt;识线其次，因为那种跨越生死的爱恋实在是太感人了（悲&lt;/p&gt;
+&lt;p&gt;苍线第三。然而由于我第二条线就选了苍线导致不懂事的我自己创造了很多把刀子刀自己以至于即使是HE结局也让我流了一夜泪（大悲&lt;/p&gt;
+&lt;p&gt;剩下的不太好分，总之我觉得白羽线是最不刀的（然而白羽在ALKA中已经足够刀了……）&lt;/p&gt;
+&lt;h2 id=&quot;印象深刻程度（雾）&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/some-feeling-about-sprb/#%E5%8D%B0%E8%B1%A1%E6%B7%B1%E5%88%BB%E7%A8%8B%E5%BA%A6%EF%BC%88%E9%9B%BE%EF%BC%89&quot; aria-labelledby=&quot;印象深刻程度（雾）&quot;&gt;&lt;/a&gt;印象深刻程度（雾）&lt;/h2&gt;
+&lt;p&gt;然而论给我留下印象的深刻程度……反而是苍线第一，识线、鸥线、静久线并列第二（可能等我过了P线以后会加）&lt;/p&gt;
+&lt;p&gt;（白羽作为真女主印象反而没有其他深是怎么回事（））&lt;/p&gt;
+&lt;p&gt;甚至A线都没有给我太强的触动，大致感觉就是悲伤过就算了，可能也与我当时已经快要开学没时间悲伤了有关（x&lt;/p&gt;
+&lt;p&gt;不过，对我这种在语文考试看感人文本能看哭的人来说，每一条线放进去都是我能哭出来的程度。只能说吃了这么一大筐刀子，心理承受能力总算是提高了一点（）&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;剩下什么的，推完Pockets线再补，咕咕咕&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;下一步推Gal计划（？）&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/some-feeling-about-sprb/#%E4%B8%8B%E4%B8%80%E6%AD%A5%E6%8E%A8Gal%E8%AE%A1%E5%88%92%EF%BC%88%EF%BC%9F%EF%BC%89&quot; aria-labelledby=&quot;下一步推Gal计划（？）&quot;&gt;&lt;/a&gt;下一步推Gal计划（？）&lt;/h2&gt;
+&lt;p&gt;先去推&lt;code&gt;ATRI - My Dear Moments -&lt;/code&gt;（希望不会被刀死（悲）），春天有时间再去推春滚滚（学习byn速通！（雾））&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;然而当文章敲完的时候已经是夏天力（x&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;（说起来有没有人告诉我春滚滚刀不刀，不刀我就拿来解毒了（x））&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>对网易云音乐灰色歌曲解锁的小小吐槽</title>
+<link href="https://mzwing.eu.org/article/sth-about-netease-grey-music-unlock/"/>
+<id>https://mzwing.eu.org/article/sth-about-netease-grey-music-unlock/</id>
+<published>2023-03-31T00:00:00.000Z</published>
+<updated>2023-03-31T00:00:00.000Z</updated>
+<summary>花了我一天，杰伦的歌还不是放不了……（恼</summary>
+<content type="html">&lt;h1 id=&quot;对网易云音乐灰色歌曲解锁的小小吐槽&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/sth-about-netease-grey-music-unlock/#%E5%AF%B9%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E7%81%B0%E8%89%B2%E6%AD%8C%E6%9B%B2%E8%A7%A3%E9%94%81%E7%9A%84%E5%B0%8F%E5%B0%8F%E5%90%90%E6%A7%BD&quot; aria-labelledby=&quot;对网易云音乐灰色歌曲解锁的小小吐槽&quot;&gt;&lt;/a&gt;对网易云音乐灰色歌曲解锁的小小吐槽&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;首先，&lt;a href=&quot;https://github.com/nondanee/UnblockNeteaseMusic&quot;&gt;原项目@nondanee/UnblockNeteaseMusic&lt;/a&gt;能启动，但是网易云会失败&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/unlockneteasemusic/server&quot;&gt;@unlockneteasemusic/server&lt;/a&gt;在Windows 7上无法启动，不知为何&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;终于找到一个golang版本的，打开了端口，灰歌果真全白了，高兴地点开了《我是如此相信》（班歌），然后……&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;播 放 失 败&lt;/p&gt;
+&lt;p&gt;mzw：***k！&lt;/p&gt;
+&lt;p&gt;差点就暴走了啊（全恼&lt;/p&gt;
+&lt;p&gt;最后还是老实地用回了Listen 1（x）&lt;/p&gt;
+&lt;p&gt;（果然还是Listen 1 + musicn的组合香啊（赞赏））&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>Windows下用v2A+3proxy+CloudflareSpeedTest加速海外cdn</title>
+<link href="https://mzwing.eu.org/article/win-v2a-cfst-3proxy-speed-cdn/"/>
+<id>https://mzwing.eu.org/article/win-v2a-cfst-3proxy-speed-cdn/</id>
+<published>2023-03-31T00:00:00.000Z</published>
+<updated>2023-03-31T00:00:00.000Z</updated>
+<summary>说起来好像这个方案对加速pxy一点都没用的样子（</summary>
+<content type="html">&lt;h1 id=&quot;Windows下用v2A3proxyCloudflareSpeedTest加速海外cdn&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/win-v2a-cfst-3proxy-speed-cdn/#Windows%E4%B8%8B%E7%94%A8v2A3proxyCloudflareSpeedTest%E5%8A%A0%E9%80%9F%E6%B5%B7%E5%A4%96cdn&quot; aria-labelledby=&quot;Windows下用v2A3proxyCloudflareSpeedTest加速海外cdn&quot;&gt;&lt;/a&gt;Windows下用v2A+3proxy+CloudflareSpeedTest加速海外cdn&lt;/h1&gt;
+&lt;h2 id=&quot;前言&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/win-v2a-cfst-3proxy-speed-cdn/#%E5%89%8D%E8%A8%80&quot; aria-labelledby=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/XIU2/cloudflareSpeedTest&quot;&gt;CloudflareSpeedTest&lt;/a&gt;是我很早就star了的项目（虽然说我是starbot（x）），但我最近才重新注意到它。&lt;/p&gt;
+&lt;p&gt;我认为这个项目相当不错，然而我拒绝装插件实现（x）（cfst对分流的建议是用switch-omega插件）于是，经过一番折腾，我用我用惯的RoutingA进行了分流。这样，所有遵循系统代理设置的应用就都能享受加速了。&lt;/p&gt;
+&lt;h2 id=&quot;正文&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/win-v2a-cfst-3proxy-speed-cdn/#%E6%AD%A3%E6%96%87&quot; aria-labelledby=&quot;正文&quot;&gt;&lt;/a&gt;正文&lt;/h2&gt;
+&lt;p&gt;首先当然是……安装cfst了&lt;/p&gt;
+&lt;p&gt;然后……安装3proxy（&lt;a href=&quot;https://pan.lanzouf.com/b074km92f&quot;&gt;cfst给出来的懒人版&lt;/a&gt;（密码&lt;code&gt;xiu2&lt;/code&gt;），&lt;a href=&quot;https://github.com/z3APA3A/3proxy/releases/&quot;&gt;3proxy官方版本&lt;/a&gt;）（最好用cfst给出来的3proxy包安装，当然你也可以自行对比这两个的不同并使用3proxy官方版本，下文中提到的但是你在官方版本找不到的东西在cfst给出来的懒人版里面都有）&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;提一句，scoop里面有cfst和3proxy官方版本，但是得自己添加社区源&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;直接抄下面的&lt;a href=&quot;https://mzwing.eu.org/article/win-v2a-cfst-3proxy-speed-cdn/#%E5%8F%82%E8%80%83%E6%95%99%E7%A8%8B&quot;&gt;参考教程&lt;/a&gt;吧，懒得写了（&lt;/p&gt;
+&lt;p&gt;那么就装完cfst和3proxy了（&lt;/p&gt;
+&lt;p&gt;记得运行cfst_3proxy.bat，这会自动进行cloudflare cdn测速并自动替换3proxy.cfg中的IP并重启3proxy服务。&lt;/p&gt;
+&lt;p&gt;打开v2A面板，创建一个节点。类型http，地址&lt;code&gt;127.0.0.1&lt;/code&gt;（当然你可以根据你的真实情况更改），端口2088（在3proxy.cfg换了的话自行修改），点击确定。新建分组，名称随意（此处叫&lt;code&gt;speedcdn&lt;/code&gt;），然后选择刚创好的节点。&lt;/p&gt;
+&lt;p&gt;进RoutingA，将&lt;code&gt;default:&lt;/code&gt;后面改成&lt;code&gt;speedcdn&lt;/code&gt;（你的分组名）。并新起一行加入一句&lt;code&gt;ip(geoip: private)-&amp;gt;direct&lt;/code&gt;。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;实测在RoutingA中直接改&lt;code&gt;default&lt;/code&gt;而且不加后面那句会导致v2A面板无法加载，idk why（&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;完成。&lt;/p&gt;
+&lt;h2 id=&quot;进阶玩法&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/win-v2a-cfst-3proxy-speed-cdn/#%E8%BF%9B%E9%98%B6%E7%8E%A9%E6%B3%95&quot; aria-labelledby=&quot;进阶玩法&quot;&gt;&lt;/a&gt;进阶玩法&lt;/h2&gt;
+&lt;p&gt;其实cfst还能测cloudfront与gcore（貌似这样jsdelivr就有就了？（）），但我不想玩了，暂时不写。想玩可以参考下面这两份Discusssions：&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/XIU2/CloudflareSpeedTest/discussions/303&quot;&gt;Gcore CDN测速&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/XIU2/CloudflareSpeedTest/discussions/304&quot;&gt;AWS Cloudfront CDN测速&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;后记&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/win-v2a-cfst-3proxy-speed-cdn/#%E5%90%8E%E8%AE%B0&quot; aria-labelledby=&quot;后记&quot;&gt;&lt;/a&gt;后记&lt;/h2&gt;
+&lt;p&gt;（其实说实话，用Linux iptables多好啊）&lt;/p&gt;
+&lt;p&gt;（虽然说感觉sing-box比v2更香啊（x），但是Nekoray实在是过于简陋……自己写一个罢！（立flag）&lt;/p&gt;
+&lt;h2 id=&quot;参考教程&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/win-v2a-cfst-3proxy-speed-cdn/#%E5%8F%82%E8%80%83%E6%95%99%E7%A8%8B&quot; aria-labelledby=&quot;参考教程&quot;&gt;&lt;/a&gt;参考教程&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://github.com/XIU2/CloudflareSpeedTest/discussions/71&quot;&gt;cfst官方教程&lt;/a&gt;&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>Windows11装机注册本地账户目前通用解法</title>
+<link href="https://mzwing.eu.org/article/win11-install-local-account/"/>
+<id>https://mzwing.eu.org/article/win11-install-local-account/</id>
+<published>2023-03-31T00:00:00.000Z</published>
+<updated>2023-03-31T00:00:00.000Z</updated>
+<summary>备忘（x</summary>
+<content type="html">&lt;h1 id=&quot;Windows11装机注册本地账户目前通用解法&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/win11-install-local-account/#Windows11%E8%A3%85%E6%9C%BA%E6%B3%A8%E5%86%8C%E6%9C%AC%E5%9C%B0%E8%B4%A6%E6%88%B7%E7%9B%AE%E5%89%8D%E9%80%9A%E7%94%A8%E8%A7%A3%E6%B3%95&quot; aria-labelledby=&quot;Windows11装机注册本地账户目前通用解法&quot;&gt;&lt;/a&gt;Windows11装机注册本地账户目前通用解法&lt;/h1&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;code&gt;Shift&lt;/code&gt;+&lt;code&gt;F10&lt;/code&gt;启动cmd，输入&lt;code&gt;devmgmt.msc&lt;/code&gt;启动设备管理器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;禁用掉联网的网卡，然后关掉设备管理器&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;再回到cmd中，输入&lt;code&gt;oobe\ByPassNRO&lt;/code&gt;（注意：&lt;code&gt;\&lt;/code&gt;不可以打错！！！）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;然后就会自动重启，之后跳过联网就能注册本地账户了&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;装完机后记得重新启用网卡并且最好升级一下（只是建议）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;之后使用可能会弹出提示框说让使用联网账号，点击“3天后提醒我”即可&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+</entry>
+<entry>
+<title>安装ArchLinux+DDE</title>
+<link href="https://mzwing.eu.org/article/install-archlinux-and-dde/"/>
+<id>https://mzwing.eu.org/article/install-archlinux-and-dde/</id>
+<published>2022-06-06T00:00:00.000Z</published>
+<updated>2022-06-06T00:00:00.000Z</updated>
+<summary>由于安装过程中踩了一些坑，因此记录一下</summary>
+<content type="html">&lt;h1 id=&quot;安装ArchLinuxDDE&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/install-archlinux-and-dde/#%E5%AE%89%E8%A3%85ArchLinuxDDE&quot; aria-labelledby=&quot;安装ArchLinuxDDE&quot;&gt;&lt;/a&gt;安装ArchLinux+DDE&lt;/h1&gt;
+&lt;h2 id=&quot;安装ArchLinux&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/install-archlinux-and-dde/#%E5%AE%89%E8%A3%85ArchLinux&quot; aria-labelledby=&quot;安装ArchLinux&quot;&gt;&lt;/a&gt;安装ArchLinux&lt;/h2&gt;
+&lt;h3 id=&quot;对于看不懂英文的&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/install-archlinux-and-dde/#%E5%AF%B9%E4%BA%8E%E7%9C%8B%E4%B8%8D%E6%87%82%E8%8B%B1%E6%96%87%E7%9A%84&quot; aria-labelledby=&quot;对于看不懂英文的&quot;&gt;&lt;/a&gt;对于看不懂英文的&lt;/h3&gt;
+&lt;p&gt;那似乎只有按照&lt;a href=&quot;https://wiki.archlinux.org/title/Installation_guide_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)&quot;&gt;官方教程&lt;/a&gt;直接开敲了嘛……&lt;/p&gt;
+&lt;h3 id=&quot;能看懂英文的&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/install-archlinux-and-dde/#%E8%83%BD%E7%9C%8B%E6%87%82%E8%8B%B1%E6%96%87%E7%9A%84&quot; aria-labelledby=&quot;能看懂英文的&quot;&gt;&lt;/a&gt;能看懂英文的&lt;/h3&gt;
+&lt;p&gt;有一个无脑安装办法：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;arch-install
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后直接对着提示输入就行了。&lt;/p&gt;
+&lt;p&gt;想手敲代码的可以直接参考上面。&lt;/p&gt;
+&lt;h3 id=&quot;安装所需软件包&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/install-archlinux-and-dde/#%E5%AE%89%E8%A3%85%E6%89%80%E9%9C%80%E8%BD%AF%E4%BB%B6%E5%8C%85&quot; aria-labelledby=&quot;安装所需软件包&quot;&gt;&lt;/a&gt;安装所需软件包&lt;/h3&gt;
+&lt;h4 id=&quot;按官方教程来的&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/install-archlinux-and-dde/#%E6%8C%89%E5%AE%98%E6%96%B9%E6%95%99%E7%A8%8B%E6%9D%A5%E7%9A%84&quot; aria-labelledby=&quot;按官方教程来的&quot;&gt;&lt;/a&gt;按官方教程来的&lt;/h4&gt;
+&lt;p&gt;建议先参考&lt;a href=&quot;https://opentuna.cn/help/archlinux&quot;&gt;此教程&lt;/a&gt;去换个源，当然你也可以选择相信arch默认源的速度（反正广东这边不咋地）。&lt;/p&gt;
+&lt;p&gt;然后为新系统安装nano（vim也可以，但我不会，所以后面都以nano为例）。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;pacstrap -S nano
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h4 id=&quot;用arch-install的&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/install-archlinux-and-dde/#%E7%94%A8arch-install%E7%9A%84&quot; aria-labelledby=&quot;用arch-install的&quot;&gt;&lt;/a&gt;用arch-install的&lt;/h4&gt;
+&lt;p&gt;同样建议换源，但arch-install会提示你要不要换源并且还准备好了中国地区的一整套源（就很贴心）。&lt;/p&gt;
+&lt;p&gt;arch-install会在安装中有提示，在那里输入nano就行了。&lt;/p&gt;
+&lt;h3 id=&quot;几个小坑点：&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/install-archlinux-and-dde/#%E5%87%A0%E4%B8%AA%E5%B0%8F%E5%9D%91%E7%82%B9%EF%BC%9A&quot; aria-labelledby=&quot;几个小坑点：&quot;&gt;&lt;/a&gt;几个小坑点：&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;arch-install安装时建议直接选精简版（不安装任何桌面环境，因为我以前就试过plasma将dde整炸的情况）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;arch-install安装内核时建议直接选默认选项，不然开机时很可能会出现桌面环境炸没+ping出现Tamporery Failure的情况（原因未知，似乎因为DDE直接依赖了最新版本的内核）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;一定一定一定要新建用户！不然DDE会拒绝登录，同时建议将这个用户添加到wheel组（可以sudo）（同样，arch-install会有提示）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;按官方教程来的建议查看教程文末链接，不然连不上网（亲身经历）（全程有线网络连接当我没说）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;安装DDE&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/install-archlinux-and-dde/#%E5%AE%89%E8%A3%85DDE&quot; aria-labelledby=&quot;安装DDE&quot;&gt;&lt;/a&gt;安装DDE&lt;/h2&gt;
+&lt;p&gt;此处假定是以非root用户登录的，同时请按顺序执行。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sudo pacman -Syu # 先同步软件源列表（顺手更了个新）
 sudo pacman -S deepin deepin-extra # 安装DDE
 sudo systemctl enable lightdm # 开机自启DDE登陆界面
-</code></pre>
-<h2>（坑点）修复DDE无限循环登录问题</h2>
-<p>参考了很多教程，最后发现是因为DDE与lightdm是分离的，DDE主环境并不知道用户已经登录（然而当初在Manjaro上并没有发现这个问题）。</p>
-<p>解决办法是用.xinitrc在登陆后自动启动DDE（此处假定使用X11桌面环境，同时在非root用户下执行）。</p>
-<pre><code>nano ~/.xinitrc
-</code></pre>
-<p>然后输入以下内容（其实很简单）：</p>
-<pre><code>exec startdde
-</code></pre>
-<p>然后Ctrl+X并按提示即可退出并保存。</p>
-<h2>Enjoy！</h2>
-<pre><code>sudo su # 切换至root用户
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2 id=&quot;（坑点）修复DDE无限循环登录问题&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/install-archlinux-and-dde/#%EF%BC%88%E5%9D%91%E7%82%B9%EF%BC%89%E4%BF%AE%E5%A4%8DDDE%E6%97%A0%E9%99%90%E5%BE%AA%E7%8E%AF%E7%99%BB%E5%BD%95%E9%97%AE%E9%A2%98&quot; aria-labelledby=&quot;（坑点）修复DDE无限循环登录问题&quot;&gt;&lt;/a&gt;（坑点）修复DDE无限循环登录问题&lt;/h2&gt;
+&lt;p&gt;参考了很多教程，最后发现是因为DDE与lightdm是分离的，DDE主环境并不知道用户已经登录（然而当初在Manjaro上并没有发现这个问题）。&lt;/p&gt;
+&lt;p&gt;解决办法是用.xinitrc在登陆后自动启动DDE（此处假定使用X11桌面环境，同时在非root用户下执行）。&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;nano ~/.xinitrc
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后输入以下内容（其实很简单）：&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;language-xinitrc&quot;&gt;exec startdde
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;然后Ctrl+X并按提示即可退出并保存。&lt;/p&gt;
+&lt;h2 id=&quot;Enjoy！&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/install-archlinux-and-dde/#Enjoy%EF%BC%81&quot; aria-labelledby=&quot;Enjoy！&quot;&gt;&lt;/a&gt;Enjoy！&lt;/h2&gt;
+&lt;pre&gt;&lt;code class=&quot;language-bash&quot;&gt;sudo su # 切换至root用户
 reboot # 重启
-</code></pre>
-<p>重启就完成安装了！（至少我的是这样）</p>
-<p>（记得把安装介质弹掉）</p>
-
-
-        ]]>
-      </content>
-      <summary type="html">由于安装过程中踩了一些坑，因此记录一下</summary>
-      <updated>2022-06-06T00:00:00.000Z</updated>
-      <published>2022-06-06T00:00:00.000Z</published>
-      </entry><entry>
-      <title>碎记 · 从前的自己</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=some-old-things-about-me.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=some-old-things-about-me.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>碎记 · 从前的自己</h1>
-<p>翻看旧的笔记本，不禁莞尔一笑。  </p>
-<p>初中三年，立足江之尾，回首时光，讶异于自己变化之大。当年，还是什么都不懂，装得自大的小学生；而今，虽不敢认脱胎换骨、重塑新生，却也变了摸样，不似从前的庸俗，代之以进取的朝气。  </p>
-<p>一切，不过三年。  </p>
-<p>初一，沉迷于玄幻与言情小说，甚至于自己还动笔写过这两类的小说。只可惜极不入流，连“歪嘴战神”这类近似商业化的创作都比不上，最后便不了了之了。当然，这个时期也并不是一点好处都没有，最起码明白了：1. 玄幻和言情小说没什么大用；2. 自己不是什么写作的料。还有，从此确立了“轻”的原则——这也是为什么项目要叫&amp;quot;LiteXXX&amp;quot;的缘故：希望它有轻量而强大的能力，可以帮到更多的人。最后，自己的英文名（Mzwing）和网名（洛仙璃）均出自自己写的小说之中，有对这些名字的喜爱，也算是对当年的缅怀吧。  </p>
-<p>初二，偶读至科幻，击节称快。《三体》系列等科幻书都是在这时读完的。也许自己身上尚未褪去小学生的狂妄与自大，竟恬不知耻地尝试写科幻，却在书中大量引用《三体》里的概念，以致平淡无奇，味同嚼蜡，连自己都看不下去，觉得实在有辱《三体》，遂罢笔收工。诚然，那时自己几乎没有什么“科学”的概念，对科技前沿更是一无所知，恍若白痴，也怪不得当时的自己。  </p>
-<p>眨眼，初三下学期又要开始了，不知未来如何。或许只能仿孔夫子般在江上吟唱“逝者如斯夫”，然终无此胆魄，又无孔夫子之才德，只好胡乱奔波，茫茫然于红尘之中，亦无奈之如何。  </p>
-<p>然是也，若不述焉，又有谁知？</p>
-
-
-        ]]>
-      </content>
-      <summary type="html"></summary>
-      <updated>2022-01-26T00:00:00.000Z</updated>
-      <published>2022-01-26T00:00:00.000Z</published>
-      </entry><entry>
-      <title>some-thoughts-about-liteblog</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=some-thoughts-about-liteblog.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=some-thoughts-about-liteblog.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>LiteBlog的开发设想</h1>
-<h2>名称</h2>
-<p>LiteBlog</p>
-<h2>构思</h2>
-<ul>
-<li><p>PWA的支持（最近我才发现PWA和Service Worker的能力强得离谱，直接把SPA路由的问题搞定了）</p>
-</li>
-<li><p>使用Web Components（前身即是Google Chrome大名鼎鼎的HTML Import），将插件、markdown、XML全部当成组件去渲染（从Dev Tools看起来，比自己解析文档再插入节点好得多）。或许这也是个语义化的好办法？</p>
-</li>
-<li><p>直接使用RSS来读取文章信息并在首页输出（虽然有点怪，但直接实现了RSS的支持）</p>
-</li>
-<li><p>XML大概会用Web Components的形式（就是Templete标签打头的那种），虽然看起来很像Vue文件，但这是Web Components的原生语法！）</p>
-</li>
-</ul>
-<h2>其他的乱想</h2>
-<p>个人认为其实这个框架不应该只局限于Blog这样的一个小圈子，它应该可以发挥更大的作用……比如说Docs、Dashboard什么的都可以用这一套来搞定（话说我是不是太自恋了？）</p>
-
-
-        ]]>
-      </content>
-      <summary type="html">有关LiteBlog的一些小设想</summary>
-      <updated>2022-01-14T03:12:09.534Z</updated>
-      <published>2022-01-14T03:12:09.534Z</published>
-      </entry><entry>
-      <title>公告</title>
-      <link href="https://mzwing.eu.org/index.html?type=article&amp;filename=announcement.md"/>
-      <id>https://mzwing.eu.org/index.html?type=article&amp;filename=announcement.md</id>
-      <content type="html">
-        <![CDATA[
-          <h1>公告</h1>
-<h2>博客更新</h2>
-<p>目前博客改为托管在<a href="https://pages.dev">Cloudflare Pages</a>中，源码在<a href="https://github.com/mzwing/homepage-bbg">Github</a>上能找到</p>
-<h2>开发计划</h2>
-<p>目前不会再搞什么大的东西了，LiteBlog这个项目或许只能无限期搁浅（当然如果我有时间我会着手更新的）</p>
-<p>有关LiteBlog的开发设想我会在另一篇文章中细谈</p>
-<h2>小抱怨</h2>
-<p>初三真的好累啊……</p>
-<h2>最后</h2>
-<p>祝各位春节快乐，感谢各位的支持</p>
-
-
-        ]]>
-      </content>
-      <summary type="html">简要的博客更新</summary>
-      <updated>2022-01-14T03:12:09.534Z</updated>
-      <published>2022-01-14T03:12:09.534Z</published>
-      </entry></feed>
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;重启就完成安装了！（至少我的是这样）&lt;/p&gt;
+&lt;p&gt;（记得把安装介质弹掉）&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>碎记 · 从前的自己</title>
+<link href="https://mzwing.eu.org/article/some-old-things-about-me/"/>
+<id>https://mzwing.eu.org/article/some-old-things-about-me/</id>
+<published>2022-01-26T00:00:00.000Z</published>
+<updated>2022-01-26T00:00:00.000Z</updated>
+<summary>翻看旧的笔记本，不禁莞尔一笑。</summary>
+<content type="html">&lt;h1 id=&quot;碎记-·-从前的自己&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/some-old-things-about-me/#%E7%A2%8E%E8%AE%B0-%C2%B7-%E4%BB%8E%E5%89%8D%E7%9A%84%E8%87%AA%E5%B7%B1&quot; aria-labelledby=&quot;碎记-·-从前的自己&quot;&gt;&lt;/a&gt;碎记 · 从前的自己&lt;/h1&gt;
+&lt;p&gt;翻看旧的笔记本，不禁莞尔一笑。&lt;/p&gt;
+&lt;p&gt;初中三年，立足江之尾，回首时光，讶异于自己变化之大。当年，还是什么都不懂，装得自大的小学生；而今，虽不敢认脱胎换骨、重塑新生，却也变了摸样，不似从前的庸俗，代之以进取的朝气。&lt;/p&gt;
+&lt;p&gt;一切，不过三年。&lt;/p&gt;
+&lt;p&gt;初一，沉迷于玄幻与言情小说，甚至于自己还动笔写过这两类的小说。只可惜极不入流，连“歪嘴战神”这类近似商业化的创作都比不上，最后便不了了之了。当然，这个时期也并不是一点好处都没有，最起码明白了：1. 玄幻和言情小说没什么大用；2. 自己不是什么写作的料。还有，从此确立了“轻”的原则——这也是为什么项目要叫&amp;quot;LiteXXX&amp;quot;的缘故：希望它有轻量而强大的能力，可以帮到更多的人。最后，自己的英文名（Mzwing）和网名（洛仙璃）均出自自己写的小说之中，有对这些名字的喜爱，也算是对当年的缅怀吧。&lt;/p&gt;
+&lt;p&gt;初二，偶读至科幻，击节称快。《三体》系列等科幻书都是在这时读完的。也许自己身上尚未褪去小学生的狂妄与自大，竟恬不知耻地尝试写科幻，却在书中大量引用《三体》里的概念，以致平淡无奇，味同嚼蜡，连自己都看不下去，觉得实在有辱《三体》，遂罢笔收工。诚然，那时自己几乎没有什么“科学”的概念，对科技前沿更是一无所知，恍若白痴，也怪不得当时的自己。&lt;/p&gt;
+&lt;p&gt;眨眼，初三下学期又要开始了，不知未来如何。或许只能仿孔夫子般在江上吟唱“逝者如斯夫”，然终无此胆魄，又无孔夫子之才德，只好胡乱奔波，茫茫然于红尘之中，亦无奈之如何。&lt;/p&gt;
+&lt;p&gt;然是也，若不述焉，又有谁知？&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>公告</title>
+<link href="https://mzwing.eu.org/article/announcement/"/>
+<id>https://mzwing.eu.org/article/announcement/</id>
+<published>2022-01-14T03:12:09.534Z</published>
+<updated>2022-01-14T03:12:09.534Z</updated>
+<summary>简要的博客更新</summary>
+<content type="html">&lt;h1 id=&quot;公告&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/announcement/#%E5%85%AC%E5%91%8A&quot; aria-labelledby=&quot;公告&quot;&gt;&lt;/a&gt;公告&lt;/h1&gt;
+&lt;h2 id=&quot;博客更新&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/announcement/#%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0&quot; aria-labelledby=&quot;博客更新&quot;&gt;&lt;/a&gt;博客更新&lt;/h2&gt;
+&lt;p&gt;目前博客改为托管在&lt;a href=&quot;https://pages.dev&quot;&gt;Cloudflare Pages&lt;/a&gt;中，源码在&lt;a href=&quot;https://github.com/mzwing/homepage-bbg&quot;&gt;Github&lt;/a&gt;上能找到&lt;/p&gt;
+&lt;h2 id=&quot;开发计划&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/announcement/#%E5%BC%80%E5%8F%91%E8%AE%A1%E5%88%92&quot; aria-labelledby=&quot;开发计划&quot;&gt;&lt;/a&gt;开发计划&lt;/h2&gt;
+&lt;p&gt;目前不会再搞什么大的东西了，LiteBlog这个项目或许只能无限期搁浅（当然如果我有时间我会着手更新的）&lt;/p&gt;
+&lt;p&gt;有关LiteBlog的开发设想我会在另一篇文章中细谈&lt;/p&gt;
+&lt;h2 id=&quot;小抱怨&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/announcement/#%E5%B0%8F%E6%8A%B1%E6%80%A8&quot; aria-labelledby=&quot;小抱怨&quot;&gt;&lt;/a&gt;小抱怨&lt;/h2&gt;
+&lt;p&gt;初三真的好累啊……&lt;/p&gt;
+&lt;h2 id=&quot;最后&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/announcement/#%E6%9C%80%E5%90%8E&quot; aria-labelledby=&quot;最后&quot;&gt;&lt;/a&gt;最后&lt;/h2&gt;
+&lt;p&gt;祝各位春节快乐，感谢各位的支持&lt;/p&gt;
+</content>
+</entry>
+<entry>
+<title>some-thoughts-about-liteblog</title>
+<link href="https://mzwing.eu.org/article/some-thoughts-about-liteblog/"/>
+<id>https://mzwing.eu.org/article/some-thoughts-about-liteblog/</id>
+<published>2022-01-14T03:12:09.534Z</published>
+<updated>2022-01-14T03:12:09.534Z</updated>
+<summary>有关LiteBlog的一些小设想</summary>
+<content type="html">&lt;h1 id=&quot;LiteBlog的开发设想&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/some-thoughts-about-liteblog/#LiteBlog%E7%9A%84%E5%BC%80%E5%8F%91%E8%AE%BE%E6%83%B3&quot; aria-labelledby=&quot;LiteBlog的开发设想&quot;&gt;&lt;/a&gt;LiteBlog的开发设想&lt;/h1&gt;
+&lt;h2 id=&quot;名称&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/some-thoughts-about-liteblog/#%E5%90%8D%E7%A7%B0&quot; aria-labelledby=&quot;名称&quot;&gt;&lt;/a&gt;名称&lt;/h2&gt;
+&lt;p&gt;LiteBlog&lt;/p&gt;
+&lt;h2 id=&quot;构思&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/some-thoughts-about-liteblog/#%E6%9E%84%E6%80%9D&quot; aria-labelledby=&quot;构思&quot;&gt;&lt;/a&gt;构思&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;PWA的支持（最近我才发现PWA和Service Worker的能力强得离谱，直接把SPA路由的问题搞定了）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;使用Web Components（前身即是Google Chrome大名鼎鼎的HTML Import），将插件、markdown、XML全部当成组件去渲染（从Dev Tools看起来，比自己解析文档再插入节点好得多）。或许这也是个语义化的好办法？&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;直接使用RSS来读取文章信息并在首页输出（虽然有点怪，但直接实现了RSS的支持）&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;XML大概会用Web Components的形式（就是Templete标签打头的那种），虽然看起来很像Vue文件，但这是Web Components的原生语法！）&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;其他的乱想&quot;&gt;&lt;a class=&quot;bbg-anchor&quot; href=&quot;https://mzwing.eu.org/article/some-thoughts-about-liteblog/#%E5%85%B6%E4%BB%96%E7%9A%84%E4%B9%B1%E6%83%B3&quot; aria-labelledby=&quot;其他的乱想&quot;&gt;&lt;/a&gt;其他的乱想&lt;/h2&gt;
+&lt;p&gt;个人认为其实这个框架不应该只局限于Blog这样的一个小圈子，它应该可以发挥更大的作用……比如说Docs、Dashboard什么的都可以用这一套来搞定（话说我是不是太自恋了？）&lt;/p&gt;
+</content>
+</entry>
+</feed>

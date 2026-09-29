@@ -1,3 +1,11 @@
+---
+title: 对网易云音乐灰色歌曲解锁的小小吐槽
+tags:
+  - 吐槽
+created: 2023-03-31T00:00:00.000Z
+excerpt: 花了我一天，杰伦的歌还不是放不了……（恼
+---
+
 # 对网易云音乐灰色歌曲解锁的小小吐槽
 
 1. 首先，[原项目@nondanee/UnblockNeteaseMusic](https://github.com/nondanee/UnblockNeteaseMusic)能启动，但是网易云会失败

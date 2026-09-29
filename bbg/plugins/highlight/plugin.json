@@ -1,0 +1,13 @@
+{
+  "name": "highlight",
+  "version": "0.1.0",
+  "extensions": [],
+  "dependencies": {
+    "markdown": "^1.0.0"
+  },
+  "requiredOptions": [],
+  "configurable": false,
+  "assets": [
+    "assets"
+  ]
+}
