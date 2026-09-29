@@ -19,7 +19,8 @@
       "friends",
       "image-viewer",
       "highlight",
-      "twikoo"
+      "twikoo",
+      "hitokoto"
     ]
   },
   "theme": {
@@ -60,6 +61,13 @@
     },
     {
       "name": "twikoo",
+      "version": "0.1.0",
+      "extensions": [],
+      "dependencies": {},
+      "hasConfig": true
+    },
+    {
+      "name": "hitokoto",
       "version": "0.1.0",
       "extensions": [],
       "dependencies": {},
